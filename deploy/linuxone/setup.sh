@@ -22,8 +22,10 @@ fi
 # ---------------------------------------------------------------- OS packages
 say "Installing OS packages"
 if command -v apt-get >/dev/null; then
-  sudo apt-get update -y
-  sudo apt-get install -y git cmake build-essential pkg-config libopenblas-dev curl \
+  # Non-interactive: Ubuntu 24.04's needrestart otherwise prompts and hangs unattended runs.
+  export DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a
+  sudo -E apt-get update -y
+  sudo -E apt-get install -y git cmake build-essential pkg-config libopenblas-dev curl \
     python3 python3-venv python3-dev python3-pip python3-numpy python3-pandas
   PY=python3
 elif command -v dnf >/dev/null; then
@@ -57,6 +59,12 @@ cd "$ROOT"
 # ---------------------------------------------------------------- llama.cpp
 say "Building llama.cpp (OpenBLAS + VXE vector acceleration)"
 bash "$ROOT/deploy/linuxone/build_llamacpp.sh" "$OPT/llama.cpp"
+
+# On IBM z17 / LinuxONE 5, also build the on-chip AI accelerator (NNPA) variant.
+if grep -qw nnpa /proc/cpuinfo; then
+  say "Building the z17 AI-accelerator (zDNN) variant of llama.cpp"
+  bash "$ROOT/deploy/linuxone/build_zdnn.sh" || echo "zDNN build failed; continuing with the CPU build."
+fi
 
 # ---------------------------------------------------------------- model
 say "Downloading big-endian Granite 3.3 2B ($MODEL_FILE, ~2.7 GB)"

@@ -1,14 +1,15 @@
 [Unit]
-Description=PrioriHealth Granite model server (llama.cpp on IBM LinuxONE)
+Description=PrioriHealth Granite model server (llama.cpp on IBM LinuxONE; z17 NNPA via zDNN when built)
 After=network.target
 
 [Service]
 User=@USER@
-ExecStart=@OPT@/llama.cpp/build/bin/llama-server \
+Environment=LD_LIBRARY_PATH=@OPT@/zdnn-libs/lib
+ExecStart=@LLAMA_BIN@ \
   -m @OPT@/models/granite-3.3-2b-instruct-be.Q8_0.gguf \
   --alias granite-3.3-2b-instruct-be-q8_0 \
   --host 127.0.0.1 --port 8080 \
-  -c 8192 --parallel 2 -t @THREADS@
+  -c 8192 --parallel 2 -t @THREADS@ @FA@
 Restart=on-failure
 RestartSec=5
 

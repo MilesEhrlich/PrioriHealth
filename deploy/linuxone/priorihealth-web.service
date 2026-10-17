@@ -7,6 +7,7 @@ User=@USER@
 WorkingDirectory=@ROOT@
 Environment=PRIORIHEALTH_PROVIDER=llamacpp
 Environment=LLAMACPP_HOST=http://127.0.0.1:8080
+Environment=PRIORIHEALTH_ACCELERATOR=@ACCEL@
 ExecStart=@ROOT@/.venv/bin/python scripts/serve.py --host 0.0.0.0 --port @PORT@
 Restart=on-failure
 RestartSec=5

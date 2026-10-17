@@ -246,6 +246,17 @@ async def _llamacpp_ready() -> bool:
     return await llamacpp_ready()
 
 
+def _accelerator() -> str | None:
+    """The IBM z17 on-chip AI accelerator, when the model server was built to use it."""
+    if os.getenv("PRIORIHEALTH_ACCELERATOR") != "zdnn":
+        return None
+    try:
+        has_nnpa = "nnpa" in Path("/proc/cpuinfo").read_text().split()
+    except OSError:
+        has_nnpa = False
+    return "IBM z17 Telum II AI accelerator (NNPA, via zDNN)" if has_nnpa else None
+
+
 def _host_platform() -> dict[str, Any]:
     import platform
 
@@ -257,6 +268,7 @@ def _host_platform() -> dict[str, Any]:
         "python": platform.python_version(),
         "cpus": os.cpu_count(),
         "is_linuxone": machine == "s390x",
+        "accelerator": _accelerator(),
         "label": "IBM LinuxONE · s390x" if machine == "s390x" else f"{platform.system()} · {machine}",
     }
 

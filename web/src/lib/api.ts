@@ -164,7 +164,7 @@ export interface LiveProvider {
 }
 
 export interface SystemInfo {
-  platform: { machine: string; system: string; cpus: number | null; is_linuxone: boolean; label: string };
+  platform: { machine: string; system: string; cpus: number | null; is_linuxone: boolean; label: string; accelerator?: string | null };
   default_provider: string;
   engines: Record<string, boolean>;
 }

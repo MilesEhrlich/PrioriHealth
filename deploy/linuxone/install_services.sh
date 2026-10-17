@@ -11,13 +11,25 @@ USER_NAME="$(id -un)"
 PORT="${PRIORIHEALTH_PORT:-8000}"
 THREADS="$(nproc)"
 
+# Prefer the z17 AI-accelerator build (deploy/linuxone/build_zdnn.sh) when present.
+if [[ -x "$OPT/llama.cpp/build-zdnn/bin/llama-server" ]]; then
+  LLAMA_BIN="$OPT/llama.cpp/build-zdnn/bin/llama-server"; FA="-fa on"; ACCEL="zdnn"
+else
+  LLAMA_BIN="$OPT/llama.cpp/build/bin/llama-server"; FA=""; ACCEL="cpu"
+fi
+
 render() {  # fill the unit template placeholders
   sed -e "s#@ROOT@#$ROOT#g" -e "s#@OPT@#$OPT#g" -e "s#@USER@#$USER_NAME#g" \
-      -e "s#@PORT@#$PORT#g" -e "s#@THREADS@#$THREADS#g" "$1"
+      -e "s#@PORT@#$PORT#g" -e "s#@THREADS@#$THREADS#g" -e "s#@LLAMA_BIN@#$LLAMA_BIN#g" \
+      -e "s#@FA@#$FA#g" -e "s#@ACCEL@#$ACCEL#g" "$1"
 }
 
 render "$ROOT/deploy/linuxone/priorihealth-llama.service" | sudo tee /etc/systemd/system/priorihealth-llama.service >/dev/null
-render "$ROOT/deploy/linuxone/priorihealth-web.service" | sudo tee /etc/systemd/system/priorihealth-web.service >/dev/null
+# Behind Caddy/HTTPS (setup_https.sh) the app must only listen on localhost.
+WEB_HOST="0.0.0.0"
+if systemctl is-active --quiet caddy 2>/dev/null; then WEB_HOST="127.0.0.1"; fi
+render "$ROOT/deploy/linuxone/priorihealth-web.service" | sed "s#--host 0.0.0.0#--host $WEB_HOST#" \
+  | sudo tee /etc/systemd/system/priorihealth-web.service >/dev/null
 sudo systemctl daemon-reload
 sudo systemctl enable --now priorihealth-llama.service priorihealth-web.service
 
@@ -36,4 +48,8 @@ done
 curl -fs http://127.0.0.1:8080/health && echo " <- llama-server healthy"
 curl -fs "http://127.0.0.1:$PORT/api/system" && echo
 IP="$(hostname -I 2>/dev/null | awk '{print $1}')"
-echo "PrioriHealth: http://${IP:-<server-ip>}:$PORT   (also open port $PORT in the cloud security group if needed)"
+if [[ "$WEB_HOST" == "127.0.0.1" ]]; then
+  echo "PrioriHealth is served over HTTPS by Caddy (see /etc/caddy/Caddyfile)."
+else
+  echo "PrioriHealth: http://${IP:-<server-ip>}:$PORT   (also open port $PORT in the cloud security group if needed)"
+fi

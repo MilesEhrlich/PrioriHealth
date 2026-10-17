@@ -176,6 +176,9 @@ export default function HomePage() {
                   )
                 }
               />
+              {sys.data?.platform.accelerator && (
+                <StatusRow label="AI accelerator" value={<StatusText tone="info">On-chip NNPA (IBM z17)</StatusText>} />
+              )}
               <StatusRow label="Results shown" value={<StatusText tone="ok">{current?.label ?? "—"}</StatusText>} />
               <StatusRow
                 label="Local inference"
