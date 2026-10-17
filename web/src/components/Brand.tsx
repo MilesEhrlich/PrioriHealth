@@ -25,12 +25,12 @@ export function Wordmark({ className = "" }: { className?: string }) {
   );
 }
 
-export function Brand({ to = "/", sub }: { to?: string; sub?: string }) {
+export function Brand({ to = "/", sub, large = false }: { to?: string; sub?: string; large?: boolean }) {
   return (
     <Link to={to} className="flex items-center gap-2.5 rounded-[3px]" aria-label="PrioriHealth home">
-      <LogoMark />
+      <LogoMark size={large ? 36 : 28} />
       <span className="leading-tight">
-        <Wordmark className="block text-[19px]" />
+        <Wordmark className={`block ${large ? "text-[25px]" : "text-[19px]"}`} />
         {sub && <span className="block text-[11px] text-muted">{sub}</span>}
       </span>
     </Link>

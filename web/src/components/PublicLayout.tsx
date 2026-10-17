@@ -3,24 +3,75 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../lib/hooks";
 import { Brand } from "./Brand";
 
+function Chevron({ className = "" }: { className?: string }) {
+  return (
+    <svg width="7" height="11" viewBox="0 0 7 11" aria-hidden className={className}>
+      <path d="M1 1l4.5 4.5L1 10" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+/** Thin top strip: environment note + quick links (patient status, sign in). */
+function UtilityBar() {
+  const { user } = useAuth();
+  return (
+    <div className="border-t-[3px] border-t-sage bg-[#eef3ee] text-[13px] text-ink">
+      <div className="mx-auto flex h-10 max-w-[1200px] items-center gap-6 px-4 md:px-6">
+        <span className="hidden text-muted sm:inline">Decision support prototype · all hospitals are fictional</span>
+        <Link to="/status" className="ml-auto hover:text-accent">
+          Patient status
+        </Link>
+        {user ? (
+          <Link to="/app" className="hover:text-accent">
+            Dashboard
+          </Link>
+        ) : (
+          <Link to="/signin" className="hover:text-accent">
+            Sign in
+          </Link>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function PublicNav() {
   const { user } = useAuth();
   return (
-    <header className="border-b border-line bg-surface">
-      <div className="mx-auto flex h-16 max-w-[1200px] items-center px-4 md:px-6">
-        <Brand />
-        <div className="ml-auto flex items-center gap-2">
-          {user ? (
-            <Link to="/app" className="btn btn-primary">Open dashboard</Link>
-          ) : (
-            <>
-              <Link to="/signin" className="btn btn-ghost">Sign in</Link>
-              <Link to="/signup" className="btn btn-primary">Create account</Link>
-            </>
-          )}
-        </div>
+    <header className="sticky top-0 z-40 bg-surface/95 shadow-[0_1px_0_var(--color-line)] backdrop-blur">
+      <UtilityBar />
+      <div className="mx-auto flex h-[76px] max-w-[1200px] items-center gap-8 px-4 md:px-6">
+        <Brand large />
+        <nav className="ml-auto hidden items-center gap-7 text-[15px] text-ink md:flex" aria-label="Main">
+          <a href="/#what" className="hover:text-accent">Product</a>
+          <a href="/#how" className="hover:text-accent">How it works</a>
+          <Link to="/status" className="hover:text-accent">For patients</Link>
+        </nav>
+        <Link
+          to={user ? "/app" : "/signup"}
+          className="ml-auto inline-flex h-11 items-center gap-2.5 rounded-full border-2 border-sage px-5 text-[15px] font-semibold text-ink transition-colors hover:bg-accent-soft md:ml-0"
+        >
+          {user ? "Open dashboard" : "Get started"}
+          <Chevron />
+        </Link>
       </div>
     </header>
+  );
+}
+
+/** Floating help pill (bottom right), like a support widget: takes patients to their status page. */
+function PatientPill() {
+  return (
+    <Link
+      to="/status"
+      className="fixed right-4 bottom-4 z-40 inline-flex h-12 items-center gap-2.5 rounded-full bg-accent px-5 text-[15px] font-semibold text-white shadow-[0_10px_24px_-8px_rgb(31_58_46/55%)] hover:bg-accent-hover md:right-6 md:bottom-6"
+    >
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden>
+        <circle cx="9" cy="9" r="7.5" fill="none" stroke="#fff" strokeWidth="1.6" />
+        <path d="M9 4.8V9l2.8 1.8" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
+      </svg>
+      Check my wait
+    </Link>
   );
 }
 
@@ -76,6 +127,7 @@ export function PublicPage({ children }: { children: ReactNode }) {
       <PublicNav />
       <main className="flex-1">{children}</main>
       <PublicFooter />
+      <PatientPill />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
-import { Brand } from "../components/Brand";
+import { PublicPage } from "../components/PublicLayout";
 import { auth, type Hospital } from "../lib/api";
 import { useAuth } from "../lib/hooks";
 import { useDemoSignIn } from "./LandingPage";
@@ -10,35 +10,17 @@ function safeNext(next: string | null): string {
   return next && next.startsWith("/app") ? next : "/app";
 }
 
-function AuthLayout({ title, sub, children, image, quote }: {
-  title: string;
-  sub: ReactNode;
-  children: ReactNode;
-  image: string;
-  quote: { title: string; body: string };
-}) {
+function AuthLayout({ title, sub, children }: { title: string; sub: ReactNode; children: ReactNode }) {
   return (
-    <div className="grid min-h-screen bg-surface lg:grid-cols-[1fr_1.05fr]">
-      <div className="flex flex-col px-5 py-6 sm:px-10">
-        <Brand />
-        <div className="flex flex-1 items-center justify-center py-10">
-          <div className="w-full max-w-[400px]">
-            <h1 className="text-[28px] leading-9 font-semibold tracking-[-0.4px] text-ink">{title}</h1>
-            <p className="mt-2 text-sm text-muted">{sub}</p>
-            <div className="mt-8">{children}</div>
-          </div>
+    <PublicPage>
+      <section className="bg-gradient-to-r from-[#eef4ee] via-[#e3ede4] to-[#d3e3d6] px-4 py-12 md:py-16">
+        <div className="mx-auto w-full max-w-[460px] rounded-[16px] border border-line bg-surface p-7 shadow-[0_24px_48px_-28px_rgb(31_58_46/45%)] sm:p-9">
+          <h1 className="text-[28px] leading-9 font-semibold tracking-[-0.4px] text-ink">{title}</h1>
+          <p className="mt-2 text-sm text-muted">{sub}</p>
+          <div className="mt-7">{children}</div>
         </div>
-        <p className="text-xs text-subtle">Decision support prototype · not for clinical use · all hospitals are fictional</p>
-      </div>
-      <div className="relative hidden overflow-hidden lg:block">
-        <img src={image} alt="" className="absolute inset-0 size-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1f3a2e]/85 via-[#1f3a2e]/20 to-transparent" />
-        <div className="absolute inset-x-10 bottom-10 max-w-md text-white">
-          <div className="text-2xl leading-8 font-semibold">{quote.title}</div>
-          <p className="mt-2 text-[15px] leading-6 text-white/80">{quote.body}</p>
-        </div>
-      </div>
-    </div>
+      </section>
+    </PublicPage>
   );
 }
 
@@ -65,16 +47,6 @@ function FormError({ message }: { message: string | null }) {
   return (
     <div role="alert" className="rounded-lg border border-danger/30 bg-[#fdf1f0] px-3 py-2.5 text-sm text-ink">
       {message}
-    </div>
-  );
-}
-
-function Divider() {
-  return (
-    <div className="my-6 flex items-center gap-3 text-xs text-subtle">
-      <span className="h-px flex-1 bg-line" />
-      or
-      <span className="h-px flex-1 bg-line" />
     </div>
   );
 }
@@ -117,8 +89,6 @@ export function SignInPage() {
           </Link>
         </>
       }
-      image="/img/senior-doctor.jpg"
-      quote={{ title: "Every recommendation shows its reasoning.", body: "Review the panel's discussion, confirm the level, and keep the waiting room moving." }}
     >
       <form onSubmit={submit} className="space-y-5" noValidate>
         <FormError message={error ?? demo.error} />
@@ -136,15 +106,16 @@ export function SignInPage() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Field>
-        <button type="submit" className="btn btn-primary btn-lg w-full" disabled={busy || !email || !password}>
+        <button type="submit" className="btn btn-primary btn-lg w-full rounded-full" disabled={busy || !email || !password}>
           {busy ? "Signing in…" : "Sign in"}
         </button>
       </form>
-      <Divider />
-      <button className="btn btn-tertiary btn-lg w-full" onClick={demo.start} disabled={demo.busy}>
-        {demo.busy ? "Opening demo…" : "Try the demo instead"}
-      </button>
-      <p className="mt-3 text-center text-xs text-muted">Opens a shared demo account at Riverbend General Hospital.</p>
+      <p className="mt-6 text-center text-sm text-muted">
+        Just looking?{" "}
+        <button className="font-medium text-accent hover:underline" onClick={demo.start} disabled={demo.busy}>
+          {demo.busy ? "Opening demo…" : "Try the demo"}
+        </button>
+      </p>
     </AuthLayout>
   );
 }
@@ -219,8 +190,6 @@ export function SignUpPage() {
           </Link>
         </>
       }
-      image="/img/doctor-office.jpg"
-      quote={{ title: "A waiting room for your department.", body: "Each hospital gets its own live queue, ordered by acuity and time waited." }}
     >
       <form onSubmit={submit} className="space-y-5" noValidate>
         <FormError message={error} />
@@ -271,7 +240,7 @@ export function SignUpPage() {
             ))}
           </select>
         </Field>
-        <button type="submit" className="btn btn-primary btn-lg w-full" disabled={busy}>
+        <button type="submit" className="btn btn-primary btn-lg w-full rounded-full" disabled={busy}>
           {busy ? "Creating account…" : "Create account"}
         </button>
         <p className="text-center text-xs text-muted">This is a research demo. Don't reuse a password from another site.</p>
