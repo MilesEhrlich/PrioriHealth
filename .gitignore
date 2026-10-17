@@ -13,3 +13,8 @@ data/waitlist.json
 *.key
 data/waitlists/
 data/priorihealth.db*
+
+# Overview video build output
+video/node_modules/
+video/out/
+video/.models/

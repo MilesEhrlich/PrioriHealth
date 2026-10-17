@@ -1,0 +1,48 @@
+{
+  "kokoro": {
+    "voice": "af_heart",
+    "speed": 1.0
+  },
+  "pronounce": {
+    "PrioriHealth": "pɹaɪˈɔːɹᵻhˌɛlθ"
+  },
+  "say_fallback": {
+    "voice": "Samantha",
+    "rate": 175
+  },
+  "scenes": [
+    {
+      "id": "title",
+      "text": "PrioriHealth. Emergency triage support, with a nurse in the loop."
+    },
+    {
+      "id": "problem",
+      "text": "Emergency departments have to decide, fast, who needs care first. Often with a full waiting room."
+    },
+    {
+      "id": "arrival",
+      "text": "When a patient arrives, the triage nurse writes a short note: symptoms, history, and vital signs."
+    },
+    {
+      "id": "panel",
+      "text": "Ten AI reviewers, each with a different reasoning style, read the note and assess the patient independently."
+    },
+    {
+      "id": "discussion",
+      "text": "If they disagree, they discuss. They revise only for a clinical reason, until at least nine of ten agree."
+    },
+    {
+      "id": "escalation",
+      "text": "If they can't agree, or an urgent warning is overruled, the case goes straight to a nurse to decide."
+    },
+    {
+      "id": "waiting",
+      "text": "The waiting room is ordered by acuity and time waited, so the patients most overdue for care are seen first."
+    },
+    {
+      "id": "platform",
+      "text": "It all runs privately on IBM LinuxONE. PrioriHealth: decision support that keeps clinicians in charge.",
+      "mark": "It all runs privately on IBM LinuxONE."
+    }
+  ]
+}

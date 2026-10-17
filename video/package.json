@@ -1,0 +1,24 @@
+{
+  "name": "priorihealth-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "voice": "uv run --with kokoro-onnx==0.4.9 --with soundfile python -I scripts/make_voice_kokoro.py",
+    "voice:mac": "node scripts/make-voice.mjs",
+    "studio": "remotion studio",
+    "render": "remotion render Overview out/priorihealth-overview.mp4"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-sans": "5.1.1",
+    "@fontsource/ibm-plex-mono": "5.1.1",
+    "@remotion/cli": "4.0.531",
+    "@remotion/transitions": "4.0.531",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.531"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.2",
+    "typescript": "5.6.3"
+  }
+}
