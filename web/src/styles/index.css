@@ -38,6 +38,25 @@
   --shadow-lift: 0 8px 24px -12px rgb(16 40 28 / 25%);
 }
 
+/*
+ * Signed-in app: neutral whites and grays. The sage accent is kept only for primary buttons,
+ * links and the active state; the public site keeps the full sage look.
+ */
+.app-neutral {
+  --color-page: #f6f7f8;
+  --color-field: #f5f6f7;
+  --color-line: #e3e6e8;
+  --color-line-strong: #cbd0d4;
+  --color-ink: #1d2226;
+  --color-muted: #5a6168;
+  --color-subtle: #6d747b;
+  --color-hover: #f1f3f4;
+  --color-accent-soft: #eef1f0;
+  --color-chrome: #24292e;
+  --color-chrome-2: #2f353b;
+  --color-chrome-3: #3d444b;
+}
+
 @layer base {
   html {
     font-family: var(--font-sans);

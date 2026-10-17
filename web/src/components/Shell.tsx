@@ -129,15 +129,6 @@ function HospitalIcon() {
   );
 }
 
-function initials(name: string) {
-  return name
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((w) => w[0]!.toUpperCase())
-    .join("");
-}
-
 function UserMenu() {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
@@ -158,22 +149,21 @@ function UserMenu() {
   return (
     <div className="relative" ref={ref}>
       <button
-        className="flex items-center gap-2.5 rounded-lg py-1 pr-2 pl-1 hover:bg-hover"
+        className="flex items-center gap-2.5 rounded-[4px] px-2.5 py-1 hover:bg-hover"
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="menu"
         aria-expanded={open}
       >
-        <span className="grid size-8 place-items-center rounded-[4px] bg-accent text-xs font-semibold text-white">{initials(user.name)}</span>
-        <span className="hidden text-left leading-tight sm:block">
-          <span className="block text-sm font-medium text-ink">{user.name}</span>
-          <span className="block text-[11px] text-muted">{user.role}</span>
+        <span className="text-left leading-tight">
+          <span className="block max-w-[140px] truncate text-sm font-medium text-ink sm:max-w-none">{user.name}</span>
+          <span className="hidden text-[11px] text-muted sm:block">{user.role}</span>
         </span>
-        <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden className="hidden sm:block">
-          <path d="M1 1l4 4 4-4" stroke="#56655d" strokeWidth="1.5" fill="none" />
+        <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden>
+          <path d="M1 1l4 4 4-4" stroke="#5a6168" strokeWidth="1.5" fill="none" />
         </svg>
       </button>
       {open && (
-        <div role="menu" className="absolute top-12 right-0 w-72 overflow-hidden rounded-xl border border-line bg-surface shadow-[var(--shadow-lift)]">
+        <div role="menu" className="absolute top-12 right-0 w-72 max-w-[calc(100vw-24px)] overflow-hidden rounded-[6px] border border-line bg-surface shadow-[var(--shadow-lift)]">
           <div className="border-b border-line px-4 py-3">
             <div className="text-sm font-semibold text-ink">{user.name}</div>
             <div className="truncate text-xs text-muted">{user.email}</div>
@@ -229,7 +219,7 @@ export function Shell() {
   useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <div className="min-h-screen bg-page">
+    <div className="app-neutral min-h-screen bg-page">
       <header className="fixed inset-x-0 top-0 z-50 flex h-14 items-center gap-3 border-b border-line bg-surface px-3 md:px-5">
         <button
           className="grid size-10 place-items-center rounded-[3px] hover:bg-hover"
