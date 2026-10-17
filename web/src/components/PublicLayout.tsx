@@ -27,15 +27,44 @@ export function PublicNav() {
 export function PublicFooter() {
   return (
     <footer className="border-t border-line bg-surface">
-      <div className="mx-auto flex max-w-[1200px] flex-wrap justify-between gap-2 px-4 py-6 text-xs text-subtle md:px-6">
-        <span>Decision support prototype. Not for clinical use. All hospitals in this demo are fictional.</span>
-        <span>
-          Photos:{" "}
-          <a href="https://unsplash.com/@silverkblack" className="underline hover:text-ink" target="_blank" rel="noreferrer">
-            Vitaly Gariev
-          </a>{" "}
-          on Unsplash
-        </span>
+      <div className="mx-auto grid max-w-[1200px] gap-10 px-4 py-12 md:grid-cols-[1.6fr_1fr_1fr] md:px-6">
+        <div>
+          <Brand />
+          <p className="mt-4 max-w-sm text-sm leading-6 text-muted">
+            AI-assisted emergency department triage with a nurse in the loop. Decision support prototype, not a medical
+            device and not for clinical use.
+          </p>
+        </div>
+        <div className="text-sm">
+          <div className="font-semibold text-ink">Product</div>
+          <ul className="mt-3 space-y-2 text-muted">
+            <li><Link to="/signin" className="hover:text-ink">Sign in</Link></li>
+            <li><Link to="/signup" className="hover:text-ink">Create an account</Link></li>
+          </ul>
+        </div>
+        <div className="text-sm">
+          <div className="font-semibold text-ink">About</div>
+          <ul className="mt-3 space-y-2 text-muted">
+            <li>
+              <a href="https://github.com/MilesEhrlich/PrioriHealth" className="hover:text-ink" target="_blank" rel="noreferrer">
+                Source on GitHub
+              </a>
+            </li>
+            <li>Built on IBM LinuxONE and IBM Granite</li>
+          </ul>
+        </div>
+      </div>
+      <div className="border-t border-line">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap justify-between gap-2 px-4 py-5 text-xs text-subtle md:px-6">
+          <span>© {new Date().getFullYear()} PrioriHealth · All hospitals in this demo are fictional.</span>
+          <span>
+            Photos:{" "}
+            <a href="https://unsplash.com/@silverkblack" className="underline hover:text-ink" target="_blank" rel="noreferrer">
+              Vitaly Gariev
+            </a>{" "}
+            on Unsplash
+          </span>
+        </div>
       </div>
     </footer>
   );
