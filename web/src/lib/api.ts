@@ -185,6 +185,7 @@ export type LiveEvent =
 
 export interface WaitRow {
   id: string;
+  code: string;
   label: string;
   vignette: string;
   chief_complaint: string;
@@ -220,6 +221,17 @@ export interface WaitSnapshot {
   engine: string | null;
   panel_size: number;
   max_rounds: number;
+}
+
+export interface PatientStatus {
+  code: string;
+  hospital: { name: string };
+  state: "assessing" | "waiting" | "next" | "called";
+  position: number | null;
+  ahead: number | null;
+  estimate_min: [number, number] | null;
+  waited_min: number;
+  updated_at: number;
 }
 
 export interface Hospital {
@@ -278,6 +290,8 @@ async function get<T>(path: string): Promise<T> {
   const r = await fetch(path, { credentials: "same-origin" });
   return (await check(r, path)).json() as Promise<T>;
 }
+
+export const publicStatus = (code: string) => get<PatientStatus>(`/api/public/status/${encodeURIComponent(code)}`);
 
 export const auth = {
   hospitals: () => get<{ hospitals: Hospital[]; roles: string[] }>("/api/auth/hospitals"),

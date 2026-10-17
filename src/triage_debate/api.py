@@ -12,6 +12,7 @@ import asyncio
 import json
 import math
 import os
+import time
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -32,7 +33,7 @@ from .evaluate import consensus_threshold, panel_from_config, panel_temperature
 from .llm import LLMClient, TokenBudgetExceeded
 from .schemas import AgentResult, PatientView
 from .prompts import PERSONAS
-from .waitlist import EngineUnavailable, WaitingList, pick_demo_vignettes
+from .waitlist import EngineUnavailable, WaitingList, normalize_code, pick_demo_vignettes
 
 MODEL_LABELS = {
     "ibm/granite-4-h-small": "Granite 4 Small · watsonx",
@@ -53,7 +54,7 @@ app = FastAPI(title="PrioriHealth", docs_url="/api/docs", openapi_url="/api/open
 
 # ---------------------------------------------------------------- accounts
 
-PUBLIC_API = ("/api/auth/", "/api/system", "/api/docs", "/api/openapi.json")
+PUBLIC_API = ("/api/auth/", "/api/public/", "/api/system", "/api/docs", "/api/openapi.json")
 _AUTH: auth.AuthStore | None = None
 
 
@@ -635,6 +636,50 @@ async def simulate_arrivals(request: Request, req: SimulateRequest) -> dict[str,
     picks = pick_demo_vignettes(train, req.count)
     waitlist(_hospital_id(request)).simulate([p.vignette for p in picks], req.interval_s)
     return {"scheduled": len(picks), "interval_s": req.interval_s}
+
+
+# ---------------------------------------------------------------- patient status (public)
+
+STATUS_EXPIRES_S = 2 * 3600  # a patient's page stops working 2 h after they were seen
+_LOOKUPS: dict[str, list[float]] = {}
+_MISSES: dict[str, list[float]] = {}
+
+
+def _hit(store: dict[str, list[float]], key: str, window_s: float, limit: int, record: bool = True) -> bool:
+    """Sliding-window counter; True if `key` is over `limit` within `window_s`."""
+    now = time.time()
+    q = [t for t in store.get(key, []) if t > now - window_s]
+    if record:
+        q.append(now)
+    store[key] = q
+    return len(q) > limit if record else len(q) >= limit
+
+
+def _all_waitlists() -> list[tuple[str, WaitingList]]:
+    d = waitlist_dir()
+    ids = set(_WAITLISTS) | ({p.stem for p in d.glob("*.json")} & auth.HOSPITAL_IDS if d.exists() else set())
+    return [(hid, waitlist(hid)) for hid in sorted(ids)]
+
+
+@app.get("/api/public/status/{code}")
+def public_status(code: str, request: Request, response: Response) -> dict[str, Any]:
+    """A patient's place in line and estimated wait. No clinical details, no sign-in."""
+    response.headers["Cache-Control"] = "no-store"
+    ip = _client_ip(request)
+    if _hit(_LOOKUPS, ip, 60, 120) or _hit(_MISSES, ip, 600, 20, record=False):
+        raise HTTPException(429, "Too many requests. Please wait a few minutes and try again.")
+    norm = normalize_code(code)
+    default_mpp = float(load_config().get("waitlist", {}).get("minutes_per_patient", 12))
+    for hid, wl in _all_waitlists():
+        e = wl.by_code(norm) if len(norm) == 6 else None
+        if e is None:
+            continue
+        if e.status == "seen" and e.seen_at and wl.clock() - e.seen_at > STATUS_EXPIRES_S:
+            break
+        h = auth.hospital(hid) or {"name": hid}
+        return {"code": e.code, "hospital": {"name": h["name"]}, **wl.status_for(e, default_mpp)}
+    _hit(_MISSES, ip, 600, 20)
+    raise HTTPException(404, "We couldn't find that code. Check your ticket and try again.")
 
 
 # ---------------------------------------------------------------- built frontend

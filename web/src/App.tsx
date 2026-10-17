@@ -7,9 +7,11 @@ import { AuthContext, SetContext, readPref, useAuth, writePref } from "./lib/hoo
 import CasePage from "./pages/CasePage";
 import HomePage from "./pages/HomePage";
 import LandingPage from "./pages/LandingPage";
+import QrSignPage from "./pages/QrSignPage";
 import QueuePage from "./pages/QueuePage";
 import ResultsPage from "./pages/ResultsPage";
 import { SignInPage, SignUpPage } from "./pages/AuthPages";
+import { StatusLivePage, StatusLookupPage } from "./pages/StatusPages";
 import WaitingRoomPage from "./pages/WaitingRoomPage";
 
 function AuthProvider({ children }: { children: ReactNode }) {
@@ -105,9 +107,12 @@ export default function App() {
         <Route index element={<LandingPage />} />
         <Route path="signin" element={<SignInPage />} />
         <Route path="signup" element={<SignUpPage />} />
+        <Route path="status" element={<StatusLookupPage />} />
+        <Route path="status/:code" element={<StatusLivePage />} />
         <Route path="app" element={<ProtectedApp />}>
           <Route index element={<HomePage />} />
           <Route path="waiting" element={<WaitingRoomPage />} />
+          <Route path="waiting/sign" element={<QrSignPage />} />
           <Route path="queue" element={<QueuePage />} />
           <Route path="case" element={<CasePage />} />
           <Route path="case/:pid" element={<CasePage />} />

@@ -16,6 +16,8 @@ from __future__ import annotations
 import asyncio
 import json
 import random
+import secrets
+import statistics
 import time
 import uuid
 from collections.abc import Callable
@@ -34,6 +36,8 @@ RETRY_S = 10.0
 class EngineUnavailable(RuntimeError):
     """No free inference engine is online yet; the arrival stays queued and is retried."""
 DEFAULT_TARGETS = {1: 0, 2: 10, 3: 30, 4: 60, 5: 120}
+CODE_ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789"  # no 0/O, 1/I/L: easy to read aloud and type
+CODE_LEN = 6
 
 
 class Progress(BaseModel):
@@ -45,6 +49,7 @@ class Progress(BaseModel):
 
 class WaitEntry(BaseModel):
     id: str
+    code: str = ""                      # patient-facing ID for the public status page
     label: str
     vignette: str
     chief_complaint: str = ""
@@ -115,6 +120,51 @@ def priority_view(entries: list[WaitEntry], now: float,
     return {"waiting": waiting, "triaging": triaging, "seen": seen[:20]}
 
 
+def new_code(existing: set[str]) -> str:
+    """Random patient code from an unambiguous alphabet, unique within `existing`."""
+    while True:
+        code = "".join(secrets.choice(CODE_ALPHABET) for _ in range(CODE_LEN))
+        if code not in existing:
+            return code
+
+
+def normalize_code(raw: str) -> str:
+    return "".join(ch for ch in raw.upper() if ch.isalnum())
+
+
+def throughput_minutes(entries: list[WaitEntry], now: float, default: float = 12.0) -> float:
+    """Typical minutes between patients being seen: median gap over the last 2 h, else `default`."""
+    times = sorted(e.seen_at for e in entries if e.seen_at and now - e.seen_at <= 2 * 3600)
+    gaps = [(b - a) / 60.0 for a, b in zip(times, times[1:]) if b > a]
+    if len(gaps) < 2:  # needs at least 3 "seen" events
+        return default
+    return min(30.0, max(3.0, statistics.median(gaps)))
+
+
+def _round5(x: float) -> int:
+    return int(5 * round(x / 5))
+
+
+def patient_status(entry: WaitEntry, waiting: list[dict[str, Any]], now: float,
+                   minutes_per_patient: float) -> dict[str, Any]:
+    """What a patient may see about themselves: place in line and an estimate, nothing clinical."""
+    out: dict[str, Any] = {"state": "assessing", "position": None, "ahead": None, "estimate_min": None,
+                           "waited_min": round((((entry.seen_at or now) - entry.arrived_at) / 60.0), 1),
+                           "updated_at": now}
+    if entry.status == "seen":
+        out["state"] = "called"
+        return out
+    row = next((r for r in waiting if r["id"] == entry.id), None)
+    if row is None:  # queued or still being triaged
+        return out
+    ahead = row["position"] - 1
+    mid = ahead * minutes_per_patient
+    low, high = _round5(mid * 0.7), _round5(mid * 1.3)
+    out.update(state="next" if ahead == 0 else "waiting", position=row["position"], ahead=ahead,
+               estimate_min=[low, max(high, low + 5)])
+    return out
+
+
 def pick_demo_vignettes(train: list, n: int, seed: int | None = None) -> list:
     """Simulated arrivals: training cases only (never the evaluation test split)."""
     pool = [p for p in train if p.split == "train"]
@@ -147,7 +197,11 @@ class WaitingList:
         if self.path.exists():
             data = json.loads(self.path.read_text())
             self.entries = {d["id"]: WaitEntry.model_validate(d) for d in data.get("entries", [])}
+        codes = {e.code for e in self.entries.values() if e.code}
         for e in self.entries.values():
+            if not e.code:  # entries saved before patient codes existed
+                e.code = new_code(codes)
+                codes.add(e.code)
             if e.status == "triaging":  # interrupted by a restart: start over
                 e.status, e.progress = "queued", Progress()
 
@@ -227,7 +281,8 @@ class WaitingList:
         text = " ".join(vignette.split())
         async with self._lock:
             n = len(self.entries) + 1
-            e = WaitEntry(id=uuid.uuid4().hex[:8], label=label or f"Patient {n:03d}", vignette=text,
+            e = WaitEntry(id=uuid.uuid4().hex[:8], code=new_code({x.code for x in self.entries.values()}),
+                          label=label or f"Patient {n:03d}", vignette=text,
                           chief_complaint=generated_chief_complaints().get(patient_id(text))
                           or extract_chief_complaint(text), arrived_at=self.clock(),
                           source=source)
@@ -280,6 +335,15 @@ class WaitingList:
         view["targets"] = {str(k): v for k, v in self.targets.items()}
         view["simulating"] = bool(self._sim and not self._sim.done())
         return view
+
+    def by_code(self, code: str) -> WaitEntry | None:
+        return next((e for e in self.entries.values() if e.code == code), None)
+
+    def status_for(self, entry: WaitEntry, default_mpp: float = 12.0) -> dict[str, Any]:
+        now = self.clock()
+        entries = list(self.entries.values())
+        view = priority_view(entries, now, self.targets)
+        return patient_status(entry, view["waiting"], now, throughput_minutes(entries, now, default_mpp))
 
     def view(self, entry_id: str) -> PatientView:
         e = self.entries[entry_id]
