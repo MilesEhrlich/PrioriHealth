@@ -1,60 +1,123 @@
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { api } from "../lib/api";
-import { useAuth, useFetch, useResultSet } from "../lib/hooks";
+import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { useAuth, useResultSet } from "../lib/hooks";
 import { Brand } from "./Brand";
 
-const NAV: { group: string; items: { to: string; label: string }[] }[] = [
-  { group: "Overview", items: [{ to: "/app", label: "Home" }] },
+const NAV: { group: string; items: { to: string; label: string; hint: string }[] }[] = [
   {
-    group: "Clinical",
+    group: "Department",
     items: [
-      { to: "/app/waiting", label: "Waiting Room" },
-      { to: "/app/case", label: "Case Review" },
-      { to: "/app/queue", label: "Surge Replay" },
+      { to: "/app", label: "Dashboard", hint: "Today at a glance" },
+      { to: "/app/waiting", label: "Waiting Room", hint: "Live arrivals and nurse review" },
+      { to: "/app/case", label: "Case Review", hint: "Panel reasoning for each patient" },
     ],
   },
-  { group: "Analytics", items: [{ to: "/app/results", label: "Evaluation Results" }] },
+  {
+    group: "Research",
+    items: [
+      { to: "/app/queue", label: "Surge Replay", hint: "Replay a recorded surge" },
+      { to: "/app/results", label: "Evaluation Results", hint: "Accuracy, safety and cost" },
+    ],
+  },
 ];
 
-function Clock() {
-  const [now, setNow] = useState(() => new Date());
-  useEffect(() => {
-    const t = setInterval(() => setNow(new Date()), 30_000);
-    return () => clearInterval(t);
-  }, []);
+/** Benchmark result set picker (used on the research pages). */
+export function ResultSetSelect() {
+  const { sets, current, setCurrent } = useResultSet();
+  if (!current || sets.length < 2) return null;
   return (
-    <span className="num text-xs text-muted">
-      {now.toLocaleDateString(undefined, { day: "2-digit", month: "short", year: "numeric" })}{" "}
-      {now.toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit", hour12: false })}
-    </span>
+    <select
+      value={current.id}
+      onChange={(e) => setCurrent(e.target.value)}
+      className="input h-[34px] w-auto max-w-[280px]"
+      aria-label="Result set"
+    >
+      {sets.map((s) => (
+        <option key={s.id} value={s.id}>
+          {s.label} (n={s.n})
+        </option>
+      ))}
+    </select>
   );
 }
 
-function ModelSwitcher() {
-  const { sets, current, setCurrent } = useResultSet();
-  if (!current) return null;
+function MenuIcon({ open }: { open: boolean }) {
   return (
-    <label className="flex items-center gap-2 text-xs text-muted">
-      <span className="hidden xl:inline">Model</span>
-      <span className="relative">
-        <select
-          value={current.id}
-          onChange={(e) => setCurrent(e.target.value)}
-          className="h-8 max-w-[180px] appearance-none truncate rounded-lg border border-line bg-surface pr-8 pl-3 text-sm text-ink hover:border-line-strong md:max-w-[240px]"
-          aria-label="Result set"
-        >
-          {sets.map((s) => (
-            <option key={s.id} value={s.id}>
-              {s.label} (n={s.n})
-            </option>
-          ))}
-        </select>
-        <svg className="pointer-events-none absolute top-1/2 right-2.5 -translate-y-1/2" width="10" height="6" viewBox="0 0 10 6" aria-hidden>
-          <path d="M1 1l4 4 4-4" stroke="#56655d" strokeWidth="1.5" fill="none" />
-        </svg>
-      </span>
-    </label>
+    <svg width="18" height="14" viewBox="0 0 18 14" aria-hidden>
+      {open ? (
+        <path d="M3 1l12 12M15 1L3 13" stroke="#1c2b24" strokeWidth="1.6" />
+      ) : (
+        <path d="M0 1h18M0 7h18M0 13h18" stroke="#1c2b24" strokeWidth="1.6" />
+      )}
+    </svg>
+  );
+}
+
+function NavDrawer({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const { user } = useAuth();
+  useEffect(() => {
+    if (!open) return;
+    const esc = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    document.addEventListener("keydown", esc);
+    return () => document.removeEventListener("keydown", esc);
+  }, [open, onClose]);
+  return (
+    <AnimatePresence>
+      {open && (
+        <>
+          <motion.div
+            className="fixed inset-0 top-14 z-40 bg-ink/30"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+          />
+          <motion.aside
+            className="fixed top-14 bottom-0 left-0 z-50 flex w-[300px] max-w-[85vw] flex-col border-r border-line bg-surface"
+            initial={{ x: -320 }}
+            animate={{ x: 0 }}
+            exit={{ x: -320 }}
+            transition={{ type: "tween", duration: 0.2 }}
+            aria-label="Main navigation"
+          >
+            <nav className="flex-1 overflow-y-auto px-3 py-5">
+              {NAV.map((g) => (
+                <div key={g.group} className="mb-6">
+                  <div className="px-3 pb-2 text-[11px] font-semibold tracking-[0.6px] text-subtle uppercase">{g.group}</div>
+                  {g.items.map((n) => (
+                    <NavLink
+                      key={n.to}
+                      to={n.to}
+                      end={n.to === "/app"}
+                      onClick={onClose}
+                      className={({ isActive }) =>
+                        `mb-0.5 block rounded-[3px] border-l-[3px] px-3 py-2 transition-colors ${
+                          isActive ? "border-accent bg-accent-soft" : "border-transparent hover:bg-hover"
+                        }`
+                      }
+                    >
+                      {({ isActive }) => (
+                        <>
+                          <div className={`text-sm ${isActive ? "font-semibold text-accent" : "font-medium text-ink"}`}>{n.label}</div>
+                          <div className="text-xs text-muted">{n.hint}</div>
+                        </>
+                      )}
+                    </NavLink>
+                  ))}
+                </div>
+              ))}
+            </nav>
+            {user && (
+              <div className="border-t border-line px-6 py-4 text-xs text-muted">
+                <div className="font-medium text-ink">{user.hospital.name}</div>
+                <div>Fictional facility · decision support prototype</div>
+              </div>
+            )}
+          </motion.aside>
+        </>
+      )}
+    </AnimatePresence>
   );
 }
 
@@ -136,128 +199,65 @@ function UserMenu() {
   );
 }
 
-/** White band under the system header: breadcrumb, title, page actions. */
-export function PageHeader({ crumbs, title, sub, actions }: {
-  crumbs: string[];
+/** Page title row: title, one-line description, actions. */
+export function PageHeader({ title, sub, actions }: {
+  crumbs?: string[];
   title: ReactNode;
   sub?: ReactNode;
   actions?: ReactNode;
 }) {
   return (
-    <div className="border-b border-line bg-surface px-4 pt-4 pb-5 md:px-8">
-      <nav className="text-xs text-muted" aria-label="Breadcrumb">
-        {["PrioriHealth", ...crumbs].map((c, i, a) => (
-          <span key={c}>
-            {c}
-            {i < a.length - 1 && <span className="mx-2 text-line-strong">›</span>}
-          </span>
-        ))}
-      </nav>
-      <div className="mt-2 flex flex-wrap items-end justify-between gap-4">
-        <div className="min-w-0">
-          <h1 className="text-2xl leading-8 font-semibold tracking-[-0.2px] text-ink">{title}</h1>
-          {sub && <p className="mt-1 max-w-3xl text-sm text-muted">{sub}</p>}
-        </div>
-        {actions && <div className="flex items-center gap-2">{actions}</div>}
+    <div className="mx-auto flex max-w-[1280px] flex-wrap items-end justify-between gap-4 px-4 pt-8 pb-2 md:px-8">
+      <div className="min-w-0">
+        <h1 className="text-[26px] leading-8 font-semibold tracking-[-0.3px] text-ink">{title}</h1>
+        {sub && <p className="mt-1.5 max-w-3xl text-sm text-muted">{sub}</p>}
       </div>
+      {actions && <div className="flex flex-wrap items-center gap-2">{actions}</div>}
     </div>
   );
 }
 
 /** Standard page body padding + max width. */
 export function PageBody({ children }: { children: ReactNode }) {
-  return <div className="mx-auto flex max-w-[1584px] flex-col gap-4 px-4 py-6 md:px-8">{children}</div>;
+  return <div className="mx-auto flex max-w-[1280px] flex-col gap-5 px-4 py-6 md:px-8">{children}</div>;
 }
 
 export function Shell() {
-  const { current } = useResultSet();
   const { user } = useAuth();
   const [open, setOpen] = useState(false);
-  const sys = useFetch(() => api.system(), []);
-  const onLinuxONE = !!sys.data?.platform.is_linuxone;
+  const { pathname } = useLocation();
+  useEffect(() => setOpen(false), [pathname]);
 
   return (
     <div className="min-h-screen bg-page">
-      {/* Top bar */}
-      <header className="fixed inset-x-0 top-0 z-50 flex h-16 items-center gap-3 border-b border-line bg-surface/95 px-3 backdrop-blur md:px-5">
+      <header className="fixed inset-x-0 top-0 z-50 flex h-14 items-center gap-3 border-b border-line bg-surface px-3 md:px-5">
         <button
-          className="grid size-10 place-items-center rounded-lg hover:bg-hover lg:hidden"
+          className="grid size-10 place-items-center rounded-[3px] hover:bg-hover"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle navigation"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
         >
-          <svg width="16" height="12" viewBox="0 0 16 12" aria-hidden>
-            <path d="M0 1h16M0 6h16M0 11h16" stroke="#1c2b24" strokeWidth="1.5" />
-          </svg>
+          <MenuIcon open={open} />
         </button>
-        <Brand to="/app" sub="Emergency Department Triage" />
+        <Brand to="/app" />
         {user && (
-          <span className="ml-4 hidden items-center gap-2 border-l border-line pl-4 text-sm text-ink md:flex">
+          <span className="ml-3 hidden items-center gap-2 border-l border-line pl-4 text-sm text-muted md:flex">
             <HospitalIcon />
             {user.hospital.name}
           </span>
         )}
-        <div className="ml-auto flex items-center gap-3">
-          {onLinuxONE && (
-            <span className="hidden h-6 items-center rounded-[3px] bg-accent-soft px-2 text-[11px] font-medium text-accent xl:inline-flex">
-              IBM LinuxONE
-            </span>
-          )}
-          <span className="hidden lg:inline">
-            <Clock />
-          </span>
-          <span className="hidden md:block">
-            <ModelSwitcher />
-          </span>
+        <div className="ml-auto">
           <UserMenu />
         </div>
       </header>
+      <NavDrawer open={open} onClose={() => setOpen(false)} />
 
-      {/* Side navigation */}
-      <aside
-        className={`fixed top-16 bottom-0 left-0 z-40 flex w-[240px] flex-col border-r border-line bg-surface max-lg:transition-transform lg:translate-x-0 ${
-          open ? "translate-x-0 shadow-lg" : "-translate-x-full"
-        }`}
-      >
-        <nav className="flex-1 overflow-y-auto px-3 py-4" aria-label="Main">
-          {NAV.map((g) => (
-            <div key={g.group} className="mb-4">
-              <div className="px-3 pb-1.5 text-[11px] font-medium tracking-[0.5px] text-subtle uppercase">{g.group}</div>
-              {g.items.map((n) => (
-                <NavLink
-                  key={n.to}
-                  to={n.to}
-                  end={n.to === "/app"}
-                  onClick={() => setOpen(false)}
-                  className={({ isActive }) =>
-                    `mb-0.5 flex h-9 items-center rounded-lg px-3 text-sm transition-colors ${
-                      isActive ? "bg-accent-soft font-semibold text-accent" : "text-muted hover:bg-hover hover:text-ink"
-                    }`
-                  }
-                >
-                  {n.label}
-                </NavLink>
-              ))}
-            </div>
-          ))}
-        </nav>
-        <div className="m-3 rounded-[4px] border border-line bg-field px-3 py-3 text-xs">
-          <div className="text-[11px] tracking-[0.32px] text-subtle uppercase">Decision model</div>
-          <div className="mt-1 font-medium text-ink">{current?.label ?? "—"}</div>
-          <div className="mt-0.5 text-muted">
-            {current ? `${current.n} benchmark patients · ${current.kind === "full" ? "full test set" : "sample"}` : ""}
-          </div>
-        </div>
-      </aside>
-      {open && <div className="fixed inset-0 top-16 z-30 bg-ink/40 lg:hidden" onClick={() => setOpen(false)} />}
-
-      {/* Content */}
-      <div className="flex min-h-screen flex-col pt-16 lg:pl-[240px]">
+      <div className="flex min-h-screen flex-col pt-14">
         <main className="flex-1">
           <Outlet />
         </main>
-        <footer className="sticky bottom-0 z-10 flex items-center justify-between border-t border-line bg-surface px-4 py-2 text-xs text-muted md:px-8">
-          <span>Decision support prototype. Not for clinical use.</span>
-          <span className="hidden sm:inline">{user?.hospital.name ?? ""} · fictional facility</span>
+        <footer className="mx-auto w-full max-w-[1280px] px-4 py-6 text-xs text-subtle md:px-8">
+          Decision support prototype. Not for clinical use.
         </footer>
       </div>
     </div>

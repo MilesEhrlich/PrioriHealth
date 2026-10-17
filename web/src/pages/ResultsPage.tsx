@@ -1,5 +1,5 @@
 import { ServerFigure } from "../components/Plot";
-import { PageBody, PageHeader } from "../components/Shell";
+import { PageBody, PageHeader, ResultSetSelect } from "../components/Shell";
 import { ErrorNote, Notice, Panel, Skeleton } from "../components/ui";
 import { api, type MetricRow, type Overview } from "../lib/api";
 import { pct } from "../lib/format";
@@ -30,6 +30,7 @@ export default function ResultsPage() {
         crumbs={["Analytics", "Evaluation Results"]}
         title="Evaluation Results"
         sub={`Four configurations on the same ${o?.n_patients ?? "—"} held-out patients from the TriageAgent ESI benchmark, using ${o?.label ?? "—"}.`}
+        actions={<ResultSetSelect />}
       />
       <PageBody>
         <Notice title="Interpret with caution">

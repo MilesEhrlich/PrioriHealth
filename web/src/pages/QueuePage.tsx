@@ -173,7 +173,7 @@ export default function QueuePage() {
             title="Nurse review"
             sub="Pinned until a nurse confirms the level"
             actions={<span className="num text-sm text-ink">{reviewCount}</span>}
-            className="self-start xl:sticky xl:top-[64px]"
+            className="self-start xl:sticky xl:top-[72px]"
           >
             <div className="max-h-[600px] overflow-y-auto">
               {!step || !step.review.length ? (

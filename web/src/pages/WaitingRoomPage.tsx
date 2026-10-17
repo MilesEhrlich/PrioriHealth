@@ -26,8 +26,8 @@ export default function WaitingRoomPage() {
   const [error, setError] = useState<string | null>(null);
   const [offset, setOffset] = useState(0); // server clock - client clock (s)
   const [, tick] = useState(0);
-  const [addOpen, setAddOpen] = useState(false);
   const [params, setParams] = useSearchParams();
+  const [addOpen, setAddOpen] = useState(params.get("add") === "1");
   const reviewId = params.get("review");
   const setReviewId = (id: string | null) => setParams(id ? { review: id } : {}, { replace: true });
   const [simCount, setSimCount] = useState(6);
@@ -76,18 +76,11 @@ export default function WaitingRoomPage() {
       <PageHeader
         crumbs={["Clinical", "Waiting Room"]}
         title="Waiting Room"
-        sub={
-          <>
-            Live arrivals, triaged by the {snap?.panel_size ?? 10}-member panel and ordered by ESI-weighted wait: each level has a target
-            time to be seen
-            {snap ? ` (ESI 1 immediately, 2 within ${snap.targets["2"]} min, 3 within ${snap.targets["3"]}, 4 within ${snap.targets["4"]}, 5 within ${snap.targets["5"]})` : ""}.
-            Patients closest to or past their target are seen first.
-          </>
-        }
+        sub="Patients are ordered by how far they are past the target time for their acuity level."
         actions={
           <>
             <select
-              className="h-8 border-0 border-b border-[#8d8d8d] bg-field px-2 text-sm"
+              className="input h-[34px] w-auto"
               value={simCount}
               onChange={(e) => setSimCount(Number(e.target.value))}
               aria-label="Number of simulated arrivals"
@@ -99,7 +92,7 @@ export default function WaitingRoomPage() {
               ))}
             </select>
             <button className="btn btn-tertiary" disabled={busy} onClick={() => act(() => api.simulate(simCount, 25))}>
-              {snap?.simulating ? "Simulating…" : "Simulate arrivals"}
+              {snap?.simulating ? "Loading arrivals…" : "Load sample arrivals"}
             </button>
             <button
               className="btn btn-ghost"
@@ -115,26 +108,25 @@ export default function WaitingRoomPage() {
         }
       />
       <PageBody>
-        {error && <div className="border-l-[3px] border-l-danger bg-surface px-4 py-2 text-sm">Waiting room unavailable: {error}</div>}
+        {error && <div className="panel px-4 py-3 text-sm">Waiting room unavailable: {error}</div>}
 
         <KpiStrip>
-          <Kpi label="Waiting to be seen" value={snap ? waiting.length : "—"} sub="Triaged, not yet seen" />
-          <Kpi label="Being triaged" value={snap ? triaging.length : "—"} sub={snap?.engine ? `Engine: ${engineName(snap.engine)}` : "No engine online"} />
-          <Kpi label="Past target time" value={snap ? overdue : "—"} sub="Waiting longer than their ESI target" accent={overdue > 0} />
-          <Kpi label="Needs nurse review" value={snap ? review : "—"} sub="Escalated, level not yet confirmed" />
+          <Kpi label="Waiting to be seen" value={snap ? waiting.length : "—"} />
+          <Kpi label="Being triaged" value={snap ? triaging.length : "—"} />
+          <Kpi label="Needs nurse review" value={snap ? review : "—"} accent={review > 0} />
+          <Kpi label="Past target time" value={snap ? overdue : "—"} accent={overdue > 0} />
         </KpiStrip>
 
         {snap && !snap.engine && (
-          <div className="border-l-[3px] border-l-[#f1c21b] bg-surface px-4 py-2 text-sm text-ink">
-            No free inference engine is online. New arrivals wait in “Being triaged” and are processed automatically once Ollama
-            (Mac) or the llama.cpp server (LinuxONE) is running.
+          <div className="panel border-l-[3px] !border-l-[#f1c21b] px-4 py-3 text-sm text-ink">
+            The triage engine is offline. New arrivals will be assessed automatically when it comes back.
           </div>
         )}
 
         <AnimatePresence initial={false}>{addOpen && <AddPatient onDone={() => { setAddOpen(false); refresh(); }} />}</AnimatePresence>
 
         {triaging.length > 0 && (
-          <Panel title="Being triaged" sub="The panel is assessing these arrivals now; they join the list when it decides">
+          <Panel title="Being triaged" sub="These patients join the list once the panel decides">
             <table className="table">
               <thead>
                 <tr>
@@ -164,7 +156,7 @@ export default function WaitingRoomPage() {
 
         <Panel
           title="Waiting list"
-          sub="Ordered by minutes past ESI target; ESI 1 always first. Escalated cases rank by the most urgent level any member proposed until a nurse confirms."
+          sub="ESI 1 always first. Cases awaiting nurse review are ranked by their most urgent proposed level."
         >
           {!snap ? (
             <div className="p-4">
@@ -173,7 +165,7 @@ export default function WaitingRoomPage() {
           ) : !waiting.length ? (
             <EmptyState
               title="Nobody is waiting"
-              body="Add a patient or simulate arrivals. Each arrival is triaged by the panel, then placed in order of ESI-weighted wait."
+              body="Add a patient from a triage note, or load sample arrivals."
             />
           ) : (
             <div className="overflow-x-auto">
@@ -200,7 +192,7 @@ export default function WaitingRoomPage() {
                         <motion.tr
                           key={r.id}
                           layout="position"
-                          initial={{ opacity: 0, backgroundColor: "#edf5ff" }}
+                          initial={{ opacity: 0, backgroundColor: "#eaf2ec" }}
                           animate={{ opacity: 1, backgroundColor: "rgba(255,255,255,0)" }}
                           exit={{ opacity: 0 }}
                           transition={{ layout: { duration: 0.4 }, backgroundColor: { duration: 1.5 } }}

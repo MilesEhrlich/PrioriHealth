@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DecisionPanel, PanelDiscussion } from "../components/Debate";
 import { LiveDrawer } from "../components/LiveDrawer";
-import { PageBody, PageHeader } from "../components/Shell";
+import { PageBody, PageHeader, ResultSetSelect } from "../components/Shell";
 import { EmptyState, ErrorNote, EsiChip, Field, Panel, ReviewBadge, Segmented, Skeleton, Toggle, VitalsStrip, esiColor } from "../components/ui";
 import { api, type Esi } from "../lib/api";
 import { ageSex, shortId } from "../lib/format";
@@ -61,15 +61,18 @@ export default function CasePage() {
         title="Case Review"
         sub="Each agent's assessment, how it changed after discussion, and why the case was or wasn't routed to a nurse."
         actions={
-          <button className="btn btn-primary" onClick={() => setLiveOpen(true)}>
-            Triage new case
-          </button>
+          <>
+            <ResultSetSelect />
+            <button className="btn btn-primary" onClick={() => setLiveOpen(true)}>
+              Triage new case
+            </button>
+          </>
         }
       />
       <PageBody>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-[300px_minmax(0,1fr)]">
           {/* Worklist */}
-          <Panel title="Patients" actions={<span className="num text-xs text-muted">{filtered.length}</span>} className="self-start lg:sticky lg:top-[64px]">
+          <Panel title="Patients" actions={<span className="num text-xs text-muted">{filtered.length}</span>} className="self-start lg:sticky lg:top-[72px]">
             <div className="border-b border-line p-3">
               <input className="input" placeholder="Search ID or complaint" value={query} onChange={(e) => setQuery(e.target.value)} aria-label="Search patients" />
             </div>
