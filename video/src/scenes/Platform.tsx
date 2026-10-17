@@ -2,7 +2,7 @@ import { interpolate, useCurrentFrame } from "remotion";
 import marks from "../../voice/marks.json";
 import { clamp, fade, Scene, usePop, VOICE_DELAY } from "../common";
 import { FPS } from "../theme";
-import { LogoMark } from "../figures";
+import { LogoMark, Wordmark } from "../figures";
 import { C } from "../theme";
 
 function Server({ x, y }: { x: number; y: number }) {
@@ -53,7 +53,7 @@ export function Platform() {
       <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", opacity: close }}>
         <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
           <LogoMark size={96} />
-          <span style={{ fontSize: 80, fontWeight: 600, letterSpacing: -1.6 }}>PrioriHealth</span>
+          <Wordmark size={84} />
         </div>
         <div style={{ marginTop: 22, fontSize: 32, color: C.muted }}>Decision support that keeps clinicians in charge.</div>
         <div style={{ marginTop: 40, fontSize: 28, color: C.accent, fontFamily: "IBM Plex Mono, monospace" }}>priorihealth.miles-ehrlich.com</div>

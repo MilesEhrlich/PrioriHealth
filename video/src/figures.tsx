@@ -145,20 +145,46 @@ export function NoteCard({ progress = 1, width = 420, style }: { progress?: numb
   );
 }
 
+const LOGO = { outer: "#4E8A68", center: "#2F5A46", alert: "#D0393B" };
+
+/** Logo mark: sage cross of blocks + outlined red block. `draw` 0..1 brings the blocks in one by one. */
 export function LogoMark({ size = 96, draw = 1 }: { size?: number; draw?: number }) {
-  const len = 120;
+  const blocks = [
+    { x: 10.2, y: 10.2, fill: LOGO.center },
+    { x: 10.2, y: 0, fill: LOGO.outer },
+    { x: 0, y: 10.2, fill: LOGO.outer },
+    { x: 20.4, y: 10.2, fill: LOGO.outer },
+  ];
+  const step = (i: number) => Math.max(0, Math.min(1, draw * 5 - i));
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32">
-      <rect width="32" height="32" rx="4" fill={C.accent} opacity={Math.min(1, draw * 1.5)} />
-      <path
-        d="M13 7.5h6v5.5h5.5v6H19v5.5h-6V19H7.5v-6H13z"
+    <svg width={size} height={size} viewBox="0 0 30 30" style={{ overflow: "visible" }}>
+      {blocks.map((b, i) => {
+        const t = step(i);
+        return (
+          <rect key={i} x={b.x} y={b.y - (1 - t) * 4} width="9.6" height="9.6" fill={b.fill} opacity={t} />
+        );
+      })}
+      <rect
+        x="10.9"
+        y="20.9"
+        width="8.2"
+        height="8.2"
         fill="none"
-        stroke="#fff"
+        stroke={LOGO.alert}
         strokeWidth="1.4"
-        strokeDasharray={len}
-        strokeDashoffset={len * (1 - draw)}
+        strokeDasharray="33"
+        strokeDashoffset={33 * (1 - step(4))}
       />
-      <circle cx="16" cy="16" r="2.2" fill={C.sage} opacity={draw} />
     </svg>
+  );
+}
+
+/** "Priori" bold + "Health" regular, as in the logo. */
+export function Wordmark({ size, style }: { size: number; style?: CSSProperties }) {
+  return (
+    <span style={{ fontSize: size, letterSpacing: -size * 0.02, color: C.ink, ...style }}>
+      <span style={{ fontWeight: 600 }}>Priori</span>
+      <span style={{ fontWeight: 400 }}>Health</span>
+    </span>
   );
 }
