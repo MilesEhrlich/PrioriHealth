@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+/*
+ * Enterprise clinical design tokens. Flat surfaces, square corners, dense tables,
+ * one accent (IBM blue). ESI colors are reserved for acuity only.
+ */
+@theme {
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", Menlo, monospace;
+
+  --color-page: #f4f4f4;
+  --color-surface: #ffffff;
+  --color-field: #f4f4f4;
+  --color-line: #e0e0e0;
+  --color-line-strong: #c6c6c6;
+  --color-ink: #161616;
+  --color-muted: #525252;
+  --color-subtle: #6f6f6f;
+  --color-hover: #e8e8e8;
+  --color-chrome: #161616;
+  --color-chrome-2: #262626;
+  --color-chrome-3: #393939;
+  --color-accent: #0f62fe;
+  --color-accent-hover: #0353e9;
+  --color-accent-soft: #edf5ff;
+  --color-danger: #da1e28;
+
+  --color-esi-1: #da1e28;
+  --color-esi-2: #ff832b;
+  --color-esi-3: #f1c21b;
+  --color-esi-4: #24a148;
+  --color-esi-5: #0f62fe;
+
+  --radius-card: 0px;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background: var(--color-page);
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    margin: 0;
+    background: var(--color-page);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.16px;
+  }
+  ::selection {
+    background: var(--color-accent-soft);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -2px;
+  }
+  button {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
+@layer components {
+  .num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0;
+  }
+
+  /* Panels: flat, square, 1px rule. */
+  .card,
+  .panel {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+  }
+  .panel-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 48px;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .panel-title {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.32px;
+    color: var(--color-muted);
+    font-weight: 400;
+  }
+
+  /* Buttons: rectangular (Carbon-style). */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 32px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.16px;
+    border: 1px solid transparent;
+    transition: background 70ms ease, border-color 70ms ease, color 70ms ease;
+    white-space: nowrap;
+  }
+  .btn-lg {
+    height: 40px;
+  }
+  .btn-primary {
+    background: var(--color-accent);
+    color: #fff;
+  }
+  .btn-primary:hover:not(:disabled) {
+    background: var(--color-accent-hover);
+  }
+  .btn-primary:disabled,
+  .btn-secondary:disabled {
+    background: var(--color-line-strong);
+    color: #8d8d8d;
+  }
+  .btn-secondary {
+    background: var(--color-chrome-3);
+    color: #fff;
+  }
+  .btn-secondary:hover:not(:disabled) {
+    background: #4c4c4c;
+  }
+  .btn-tertiary {
+    background: transparent;
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+  .btn-tertiary:hover:not(:disabled) {
+    background: var(--color-accent);
+    color: #fff;
+  }
+  .btn-tertiary:disabled {
+    color: #8d8d8d;
+    border-color: var(--color-line-strong);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-accent);
+  }
+  .btn-ghost:hover:not(:disabled) {
+    background: var(--color-hover);
+  }
+
+  .input {
+    width: 100%;
+    height: 32px;
+    padding: 0 12px;
+    border: none;
+    border-bottom: 1px solid #8d8d8d;
+    background: var(--color-field);
+    font-size: 14px;
+    color: var(--color-ink);
+  }
+  .input::placeholder {
+    color: var(--color-subtle);
+  }
+  .input:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -2px;
+  }
+
+  /* Data tables. */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .table thead th {
+    background: var(--color-line);
+    color: var(--color-ink);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.32px;
+    height: 32px;
+    padding: 0 12px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  .table tbody td {
+    height: 40px;
+    padding: 0 12px;
+    border-bottom: 1px solid var(--color-line);
+    vertical-align: middle;
+  }
+  .table tbody tr:hover td {
+    background: var(--color-hover);
+  }
+}
+
+.js-plotly-plot .plotly .modebar {
+  display: none !important;
+}

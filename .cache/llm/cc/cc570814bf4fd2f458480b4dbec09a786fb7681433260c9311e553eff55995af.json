@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nMelissa, a 4-year-old with a ventriculo- peritoneal shunt (drains excess cerebrospinal fluid), is brought to the ED by her parents. The mother tells you that she is concerned that the shunt may be blocked because Melissa is not acting right. The child is sleepy but responds to verbal stimuli. When asked what was wrong, she tells you that her head hurts and she is going to throw up. T 98.6°F, RR 22, HR 120, SpO2 99% on room air, BP 94/76.",
+ "text": "{\n  \"chief_complaint\": \"Child with ventriculo-peritoneal shunt, lethargic, headache, nauseous\"\n}",
+ "input_tokens": 260,
+ "output_tokens": 38,
+ "latency_ms": 84951.6,
+ "created": 1792011664.8551161
+}

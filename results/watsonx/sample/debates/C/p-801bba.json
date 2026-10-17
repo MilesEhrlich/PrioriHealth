@@ -1,0 +1,160 @@
+{
+ "patient_id": "p-801bba",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Rusty nail puncture wound",
+     "Up-to-date tetanus vaccination status unknown",
+     "Normal vitals"
+    ],
+    "rationale": "Puncture wound with potential for tetanus exposure requires assessment and possible tetanus prophylaxis, but no immediate life threat or high-risk features."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 605,
+   "output_tokens": 81,
+   "latency_ms": 21663.9
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Tetanus shot needed after nail puncture",
+     "No distress or severe pain",
+     "Normal vitals"
+    ],
+    "rationale": "No life-threatening injury (A) or high-risk condition (B). Requires one resource (tetanus shot) but no urgent intervention, so ESI 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 595,
+   "output_tokens": 85,
+   "latency_ms": 22573.8
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Rusty nail puncture wound",
+     "Tetanus prophylaxis needed",
+     "No acute distress"
+    ],
+    "rationale": "Puncture wound with tetanus risk but no infection, pain, or systemic symptoms. Requires assessment and tetanus vaccine, but not urgent life-threatening intervention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 595,
+   "output_tokens": 73,
+   "latency_ms": 23045.3
+  }
+ ],
+ "round2": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 2,
+   "output": {
+    "esi": 4,
+    "confidence": 0.85,
+    "key_findings": [
+     "Rusty nail puncture wound",
+     "Unknown tetanus vaccination status",
+     "No acute distress"
+    ],
+    "rationale": "Puncture wound with potential tetanus exposure requires assessment and possible tetanus prophylaxis, but no immediate life threat or high-risk features. The unknown vaccination status and lack of distress lower urgency from ESI 3 to 4.",
+    "change_reason": "The patient's normal vitals and lack of distress reduce urgency, but the unknown tetanus status and potential for infection still warrant assessment."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 912,
+   "output_tokens": 128,
+   "latency_ms": 25596.4
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 2,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Tetanus shot needed after nail puncture",
+     "No distress or severe pain",
+     "Normal vitals"
+    ],
+    "rationale": "No life-threatening injury (A) or high-risk condition (B). Requires one resource (tetanus shot) but no urgent intervention, so ESI 4.",
+    "change_reason": "Patient does not meet criteria for ESI 2 (no high-risk situation, no severe pain/distress, no new confusion/lethargy/disorientation). Only one distinct resource type (tetanus shot) is needed, so ESI 4 is appropriate."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 904,
+   "output_tokens": 145,
+   "latency_ms": 26029.8
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 2,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Rusty nail puncture wound",
+     "Tetanus prophylaxis needed",
+     "No acute distress"
+    ],
+    "rationale": "Puncture wound with tetanus risk but no infection, pain, or systemic symptoms. Requires assessment and tetanus vaccine, but not urgent life-threatening intervention. ESI 4 is appropriate as it requires one resource (tetanus shot) and no immediate life-saving measures.",
+    "change_reason": "The other panel members correctly identified the need for tetanus prophylaxis and the lack of immediate life threat, but they did not consider the specific ESI criteria for a puncture wound with tetanus risk."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 903,
+   "output_tokens": 152,
+   "latency_ms": 26691.0
+  }
+ ],
+ "early_stopped": false,
+ "final_esis": {
+  "Cautious Clinician": 4,
+  "Resource Manager": 4,
+  "Equity Auditor": 4
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.85,
+  "Resource Manager": 0.95,
+  "Equity Auditor": 0.95
+ },
+ "aggregate": 4,
+ "majority": 4,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9166666666666666,
+ "disagreement_score": 0.08333333333333337,
+ "escalated": false,
+ "escalation_reasons": []
+}

@@ -1,0 +1,162 @@
+{
+ "patient_id": "p-dcc75c",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Ear foreign body",
+     "Normal vitals",
+     "No distress"
+    ],
+    "rationale": "Ear foreign body is a common, low-acuity issue. No pain, distress, or abnormal vitals. One resource (otoscopy) needed. ESI 3 is appropriate."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 621,
+   "output_tokens": 80,
+   "latency_ms": 31069.4
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Ear foreign body",
+     "No distress or pain",
+     "Normal vitals"
+    ],
+    "rationale": "Patient presents with ear foreign body from bug, no distress, pain, or abnormal vitals. Requires labs/ED visit for removal, but not immediate life-saving intervention or high-risk situation. Meets criteria for ESI 4 (2+ resource types)."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 611,
+   "output_tokens": 97,
+   "latency_ms": 31870.1
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Insect in ear, no pain or hearing loss",
+     "Normal vitals, no distress",
+     "No acute life threat"
+    ],
+    "rationale": "Ear foreign body is low acuity; no vital sign abnormalities, pain, or distress. Requires simple procedure (removal) but no immediate intervention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 611,
+   "output_tokens": 76,
+   "latency_ms": 32382.4
+  }
+ ],
+ "round2": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 2,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Ear foreign body",
+     "Normal vitals",
+     "No distress"
+    ],
+    "rationale": "Ear foreign body is a common, low-acuity issue. No pain, distress, or abnormal vitals. One resource (otoscopy) needed. ESI 3 is appropriate.",
+    "change_reason": "No new clinical findings identified; maintaining original ESI 3 assessment."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 942,
+   "output_tokens": 99,
+   "latency_ms": 17530.7
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 2,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Ear foreign body",
+     "No distress or pain",
+     "Normal vitals"
+    ],
+    "rationale": "Patient presents with ear foreign body from bug, no distress, pain, or abnormal vitals. Requires labs/ED visit for removal, but not immediate life-saving intervention or high-risk situation. Meets criteria for ESI 4 (1 resource type).",
+    "change_reason": "Patient has no distress, pain, or abnormal vitals, and does not meet criteria for ESI 1 or 2. Requires only one resource (otoscopy) for removal of ear foreign body. Therefore, ESI 4 is appropriate."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 934,
+   "output_tokens": 152,
+   "latency_ms": 18647.3
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 2,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Insect in ear, no pain or hearing loss",
+     "Normal vitals, no distress",
+     "No acute life threat"
+    ],
+    "rationale": "Ear foreign body is low acuity; no vital sign abnormalities, pain, or distress. Requires simple procedure (removal) but no immediate intervention.",
+    "change_reason": "All panel members correctly identified the low acuity nature of the ear foreign body and appropriate ESI assignment. No new clinical findings or algorithm steps were identified."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 933,
+   "output_tokens": 121,
+   "latency_ms": 19020.7
+  }
+ ],
+ "early_stopped": false,
+ "final_esis": {
+  "Cautious Clinician": 3,
+  "Resource Manager": 4,
+  "Equity Auditor": 4
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.9,
+  "Resource Manager": 0.95,
+  "Equity Auditor": 0.95
+ },
+ "aggregate": 4,
+ "majority": 4,
+ "disagreement_range": 1,
+ "mean_confidence": 0.9333333333333332,
+ "disagreement_score": 1.0666666666666669,
+ "escalated": true,
+ "escalation_reasons": [
+  "disagreement"
+ ]
+}

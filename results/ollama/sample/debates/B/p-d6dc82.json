@@ -1,0 +1,1204 @@
+{
+ "patient_id": "p-d6dc82",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3",
+  "Agent 4",
+  "Agent 5",
+  "Agent 6",
+  "Agent 7",
+  "Agent 8",
+  "Agent 9",
+  "Agent 10"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Agent 1",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with constipation for a week",
+      "7/10 abdominal pain, nausea, lack of appetite"
+     ],
+     "rationale": "Patient is a 10-year-old child with a history of constipation for a week, presenting with 7/10 abdominal pain, nausea, and lack of appetite. Vital signs are stable with no signs of shock or distress. The patient does not meet ESI 1 or 2 criteria. There are no distinct resource types indicated. The danger-zone vitals do not apply. This case falls…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 647,
+    "output_tokens": 211,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with severe abdominal pain, nausea, and constipation for a week"
+     ],
+     "rationale": "The patient is a child with severe abdominal pain (7/10), nausea, and constipation for a week, which meets the ESI 4 criteria under B 'Should not wait' due to high-risk situation and severe pain/distress (>= 7/10)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 647,
+    "output_tokens": 120,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with abdominal pain, nausea, lack of appetite for a week"
+     ],
+     "rationale": "The patient is a 10-year-old child presenting with abdominal pain, nausea, and lack of appetaleth for a week, which suggests a possible gastrointestinal issue. Although the pain is rated as 7/10, it does not meet the threshold for immediate life-saving intervention (ESI 1). The patient's vital signs are stable, with normal blood pressure, heart rate, respiratory rate, temperature, and oxygen…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 647,
+    "output_tokens": 239,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with constipation for a week",
+      "7/10 abdominal pain",
+      "nausea, lack of appetite"
+     ],
+     "rationale": "Patient is a 10-year-old with a history of constipation for a week, presenting with 7/10 abdominal pain, nausea, and lack of appetite. Vital signs are stable. This case does not meet ESI 1 or 2 criteria as there is no immediate life-threatening situation, nor is it a high-risk situation requiring immediate intervention. The patient does not require extensive resources (C).…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 647,
+    "output_tokens": 204,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with severe abdominal pain, nausea, and constipation for a week"
+     ],
+     "rationale": "The patient is a 10-year-old child presenting with severe abdominal pain (7/10), nausea, and constipation for a week. Although the pain is described as 7/10, it does not meet the criteria for immediate life-saving intervention or high-risk situation. The vital signs are within normal limits, and there is no evidence of high-risk conditions such as fever, lethargy, or confusion. The…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 647,
+    "output_tokens": 228,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with severe abdominal pain, nausea, and lack of appetelss for a…",
+      "normal vital signs"
+     ],
+     "rationale": "A 10-year-old presenting with severe abdominal pain, nausea, and lack of appetite for a week meets ESI level 4 criteria (Should not wait) due to the high-risk situation and severe pain (>= 7/10). Vital signs are normal, but the clinical presentation is concerning for a serious condition such as intestinal obstruction or ileus."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 647,
+    "output_tokens": 154,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Abdominal pain for a week",
+      "Nausea, lack of appetite"
+     ],
+     "rationale": "Patient is a 10-year-old with abdominal pain for a week, nausea, and lack of appetine. ESI 4 due to high-risk situation (chronic symptoms) and severe pain (> 7/10)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 647,
+    "output_tokens": 105,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with abdominal pain, nausea, and constipation for a week"
+     ],
+     "rationale": "The patient is a 10-year-old child with a week-long history of constipation, abdominal pain (7/10), and nausea. The vital signs are stable, with a normal blood pressure, heart rate, respiratory rate, temperature, and oxygen saturation. The patient does not require immediate life-saving intervention (A), nor should they not wait for treatment (B), as the presentation does not suggest a high-risk…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 647,
+    "output_tokens": 215,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with abdominal pain, nausea, and lack of appetelss for a week",
+      "Positive for constipation",
+      "Vitals within normal limits"
+     ],
+     "rationale": "The patient is a child with a high-risk situation (constipation for a week) and severe pain (7/10). Although vitals are within normal limits, the combination of symptoms and duration warrants a higher ESI level."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 647,
+    "output_tokens": 134,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with 1-week constipation, 7/10 abdominal pain, nausea, lack of appetite",
+      "Normal vital signs",
+      "No immediate life-saving intervention needed"
+     ],
+     "rationale": "The patient is a 10-year-old child presenting with a week-long history of constipation, associated abdominal pain (7/10), nausea, and lack of appetite. Although concerning, these symptoms do not meet the criteria for immediate life-saving intervention (ESI 1). The patient's vital signs are normal, with no signs of respiratory or circulatory compromise. The patient should not be discharged (ESI 2 does…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 647,
+    "output_tokens": 288,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Agent 1",
+    "round": 2,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with chronic constipation for a week",
+      "7/10 abdominal pain, nausea, lack of appetite",
+      "stable vital signs"
+     ],
+     "rationale": "Patient does not meet ESI 1 or 2 criteria; stable vital signs, no immediate life-saving intervention needed, but severe pain/distress (>= 7/10) justifies ESI 3.",
+     "message": "Agree with Agents 3, 4, 8, and 9. Disagree with Agents 2, 6, 7, and 9 who suggested ESI 4 due to high-risk situation and severe pain. The patient's stable vital signs and lack of shock/distress support ESI 3.",
+     "change_reason": "Reconsidered emphasis on stable vital signs and lack of shock/distress supporting ESI 3 rather than ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1629,
+    "output_tokens": 233,
+    "latency_ms": 17774.8
+   },
+   {
+    "agent": "Agent 2",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with chronic constipation",
+      "7/10 abdominal pain",
+      "nausea, lack of appetite"
+     ],
+     "rationale": "Meets ESI 4 criteria under B 'Should not wait' due to high-risk situation and severe pain/distress (>= 7/10).",
+     "message": "I acknowledge the panel's concern about stable vital signs, but the chronic symptoms and severity of pain warrant ESI 4.",
+     "change_reason": "None, as the initial assessment and rationale remain consistent with the ESI 4 decision."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1629,
+    "output_tokens": 158,
+    "latency_ms": 13187.3
+   },
+   {
+    "agent": "Agent 3",
+    "round": 2,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with constipation for a week",
+      "7/10 abdominal pain, nausea, lack of appetite",
+      "stable vital signs"
+     ],
+     "rationale": "The patient's pain, though severe, does not meet ESI 1 or 2 criteria as there's no immediate life-saving intervention needed or signs of shock. Stable vital signs support ESI 3.",
+     "message": "I agree with Agents 1, 4, 5, 6, 7, 8, 9, and 10 that this case does not meet ESI 1 or 2 criteria. The patient's stable vital signs and lack of shock support ESI 3.",
+     "change_reason": "No specific clinical finding or ESI step was missed; this response is based on agreement with the majority opinion."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1629,
+    "output_tokens": 213,
+    "latency_ms": 15983.7
+   },
+   {
+    "agent": "Agent 4",
+    "round": 2,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with chronic constipation for a week",
+      "7/10 abdominal pain, nausea, lack of appetite",
+      "stable vital signs"
+     ],
+     "rationale": "Patient does not meet ESI 1 or 2 criteria; pain is 7/10 but not immediate life-saving intervention. ESI 3 fits as it's a high-risk situation without requiring immediate intervention.",
+     "message": "I agree with Agents 1, 3, 5, 6, 8, 9, and 10 that this case is ESI 3 due to chronic constipation, 7/10 pain, and stable vitals. Disagree with Agents 2 and 7 suggesting ESI 4, as there's no high-risk situation necessitating immediate care.",
+     "change_reason": "None, as I maintained my initial assessment."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1629,
+    "output_tokens": 225,
+    "latency_ms": 16473.6
+   },
+   {
+    "agent": "Agent 5",
+    "round": 2,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with 7/10 abdominal pain, nausea, constipation for a week",
+      "stable vital signs"
+     ],
+     "rationale": "Patient does not meet ESI 1 or 2 criteria; pain not life-threatening, no immediate intervention needed, vital signs stable",
+     "message": "Agree with Agents 1, 3, 4, 8, and 9. Disagree with Agents 2, 6, 7, and 10 regarding ESI level. Change_reason: Re-evaluated the pain severity and its impact on immediate life-saving intervention, confirming it does not meet ESI 1 or 2 criteria.",
+     "change_reason": "Re-evaluated pain severity and its impact on immediate life-saving intervention, confirming it does not meet ESI 1 or 2 criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1629,
+    "output_tokens": 217,
+    "latency_ms": 16515.7
+   },
+   {
+    "agent": "Agent 6",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with severe abdominal pain (7/10), nausea, constipation for a week"
+     ],
+     "rationale": "High-risk situation (chronic symptoms) and severe pain (> 7/10) meet ESI 4 criteria under B 'Should not wait'.",
+     "message": "I agree with Agents 1, 2, 7, 9, and 10 who also assigned ESI 4. The patient's chronic constipation, severe abdominal pain, and associated symptoms warrant this level.",
+     "change_reason": "No specific clinical finding or ESI step was missed."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1629,
+    "output_tokens": 171,
+    "latency_ms": 14664.7
+   },
+   {
+    "agent": "Agent 7",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with chronic constipation for a week",
+      "7/10 abdominal pain, nausea, lack of appetite",
+      "stable vital signs"
+     ],
+     "rationale": "High-risk situation (chronic symptoms) and severe pain (> 7/10) meet ESI 4 criteria under B 'Should not wait'",
+     "message": "I agree with Agents 2, 6, 9, and 10. The patient's chronic constipation, severe pain, and lack of appetite warrant an ESI 4 due to a high-risk situation and severe pain/distress (>= 7/10).",
+     "change_reason": "No specific clinical finding or ESI step was missed; this response is based on agreement with the majority opinion."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1629,
+    "output_tokens": 207,
+    "latency_ms": 16576.9
+   },
+   {
+    "agent": "Agent 8",
+    "round": 2,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with constipation for a week",
+      "7/10 abdominal pain, nausea, stable vital signs"
+     ],
+     "rationale": "Patient does not meet ESI 1 or 2 criteria; stable vital signs, no immediate life-saving intervention needed, but high-risk situation due to chronic symptoms",
+     "message": "Agree with Agents 1, 3, 4, 5, 7, 9, and 10; disagree with Agents 2 and 6 regarding ESI level. The patient's stable vital signs and lack of immediate life-saving intervention needs do not warrant ESI 4.",
+     "change_reason": "Re-evaluated chronic nature of symptoms and stable vital signs"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1629,
+    "output_tokens": 197,
+    "latency_ms": 15352.8
+   },
+   {
+    "agent": "Agent 9",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with chronic constipation",
+      "7/10 abdominal pain",
+      "nausea, lack of appetite"
+     ],
+     "rationale": "High-risk situation (chronic constipation) and severe pain (>= 7/10).",
+     "message": "I agree with those who assigned ESI 4, as the patient's chronic constipation and severe pain meet the 'Should not wait' criteria.",
+     "change_reason": "No specific clinical finding or ESI step was missed; agreement with the majority."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1629,
+    "output_tokens": 148,
+    "latency_ms": 12467.5
+   },
+   {
+    "agent": "Agent 10",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with chronic constipation",
+      "7/10 abdominal pain",
+      "nausea, lack of appetite"
+     ],
+     "rationale": "High-risk situation (chronic symptoms) and severe pain (>= 7/10).",
+     "message": "I concur with Agents 2, 6, 7, and 9. The patient's chronic constipation, severe pain, and associated symptoms meet ESI 4 criteria.",
+     "change_reason": "No specific findings or ESI steps were initially missed; however, emphasizing the chronic nature of symptoms and severity of pain aligns with the majority opinion."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1628,
+    "output_tokens": 175,
+    "latency_ms": 13872.4
+   }
+  ],
+  [
+   {
+    "agent": "Agent 1",
+    "round": 3,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with chronic constipation",
+      "7/10 abdominal pain",
+      "stable vital signs"
+     ],
+     "rationale": "Chronic constipation, 7/10 pain, stable vitals; no immediate life-saving intervention needed",
+     "message": "Acknowledge Agents 2, 6, 7, and 9 for raising concerns about severity. However, stable vitals and lack of shock support ESI 3. Re-evaluated pain impact on immediate intervention needs",
+     "change_reason": "Reconsidered pain severity impact on immediate intervention; confirmed ESI 3"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1541,
+    "output_tokens": 171,
+    "latency_ms": 59067.6
+   },
+   {
+    "agent": "Agent 2",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "Chronic constipation for a week",
+      "7/10 generalized abdominal pain",
+      "Stable vital signs"
+     ],
+     "rationale": "Despite stable vital signs, chronic constipation and severe pain warrant ESI 4 due to potential complications.",
+     "message": "Respectfully, I reaffirm ESI 4, acknowledging stable vitals but considering the risk of complications from chronic constipation and severe pain.",
+     "change_reason": "No change in ESI; maintained focus on high-risk situation and severe pain/distress."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1541,
+    "output_tokens": 155,
+    "latency_ms": 33041.8
+   },
+   {
+    "agent": "Agent 3",
+    "round": 3,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Chronic constipation for a week",
+      "7/10 abdominal pain",
+      "Stable vital signs"
+     ],
+     "rationale": "The patient's stable vital signs and lack of shock support ESI 3, despite chronic symptoms and severe pain. No immediate life-saving intervention needed.",
+     "message": "Respectfully agree with Agents 1, 4, 5, 8, and 9. Disagree with Agents 2, 6, 7, and 10 regarding ESI level.",
+     "change_reason": "Re-evaluated pain severity impact on immediate life-saving intervention, confirming it does not meet ESI 1 or 2."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1541,
+    "output_tokens": 178,
+    "latency_ms": 59792.3
+   },
+   {
+    "agent": "Agent 4",
+    "round": 3,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with chronic constipation",
+      "7/10 abdominal pain",
+      "Stable vital signs"
+     ],
+     "rationale": "Chronic constipation, stable vitals, no immediate life-saving intervention needed; agrees with Agents 1, 3, 5, 8, 9, and 10",
+     "message": "I concur with Agents 1, 3, 5, 8, 9, and 10; disagree with Agents 2, 6, 7, regarding ESI level",
+     "change_reason": "Reaffirmed that stable vital signs and lack of shock support ESI 3"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1541,
+    "output_tokens": 177,
+    "latency_ms": 67629.3
+   },
+   {
+    "agent": "Agent 5",
+    "round": 3,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Chronic constipation for a week",
+      "7/10 generalized abdominal pain",
+      "Stable vital signs"
+     ],
+     "rationale": "The patient's stable vital signs and lack of shock/distress support ESI 3, despite chronic constipation and moderate pain. The pain does not meet ESI 1 criteria as it is not severe enough for immediate life-saving intervention.",
+     "message": "I agree with Agents 1, 3, 4, 8, and 9. Disagree with Agents 2, 6, 7, and 10 regarding ESI level. Change_reason: Re-evaluated the pain severity and its impact on immediate life-saving intervention, confirming it does not meet ESI 1 or 2.",
+     "change_reason": "Re-evaluated the pain severity and its impact on immediate life-saving intervention, confirming it does not meet ESI 1 or 2."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1541,
+    "output_tokens": 237,
+    "latency_ms": 61354.4
+   },
+   {
+    "agent": "Agent 6",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Chronic constipation for a week",
+      "7/10 generalized abdominal pain",
+      "Nausea, lack of appetite"
+     ],
+     "rationale": "The patient's chronic constipation, severe abdominal pain, and associated symptoms warrant an ESI 4 due to a high-risk situation and severe pain/distress (>= 7/10).",
+     "message": "Thank you for the discussion. I agree with Agents 2, 7, 9, and 10. The patient's chronic constipation, severe pain, and associated symptoms meet ESI 4 criteria.",
+     "change_reason": "None, I stand by my initial assessment."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1541,
+    "output_tokens": 181,
+    "latency_ms": 41622.1
+   },
+   {
+    "agent": "Agent 7",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Chronic constipation for a week",
+      "7/10 abdominal pain",
+      "Nausea, lack of appetite"
+     ],
+     "rationale": "Severe pain (>= 7/10) and high-risk situation (chronic constipation) warrant ESI 4.",
+     "message": "I acknowledge Agents 1, 3, 4, 5, 8, and 10. However, I maintain ESI 4 due to severe pain and high-risk situation.",
+     "change_reason": "None, I stand by initial assessment."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1541,
+    "output_tokens": 150,
+    "latency_ms": 60216.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 3,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with chronic constipation",
+      "7/10 abdominal pain",
+      "stable vital signs"
+     ],
+     "rationale": "Stable vital signs and lack of immediate life-saving intervention needs support ESI 3.",
+     "message": "Respectfully disagree with Agents 2, 6, 7, and 9; stable vital signs and no shock/distress support ESI 3.",
+     "change_reason": "Re-evaluated pain severity impact on immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1541,
+    "output_tokens": 142,
+    "latency_ms": 29142.9
+   },
+   {
+    "agent": "Agent 9",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "Chronic constipation for a week",
+      "10-year-old male with 7/10 abdominal pain",
+      "Stable vital signs"
+     ],
+     "rationale": "The patient's chronic constipation, severe abdominal pain, and associated symptoms warrant an ESI 4 due to a high-risk situation and severe pain/distress (>= 7/10).",
+     "message": "I acknowledge the panel's concern about stable vital signs, but the chronic symptoms and severity of pain warrant ESI 4.",
+     "change_reason": "None, agreement with Agents 2, 6, 7, and 9 on the severity of pain and chronic nature of symptoms."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1541,
+    "output_tokens": 186,
+    "latency_ms": 51071.4
+   },
+   {
+    "agent": "Agent 10",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Chronic constipation for a week",
+      "7/10 generalized abdominal pain",
+      "Nausea and lack of appetite"
+     ],
+     "rationale": "Meets ESI 4 criteria due to chronic symptoms and severe pain, despite stable vital signs.",
+     "message": "Agree with Agents 2, 6, 7, and 9; disagree with Agents 1, 3, 4, 5, 8 regarding ESI level. Change_reason: Re-evaluated pain severity and its impact on immediate life-saving intervention, confirming it does not meet ESI 1 or 2, but still warrants ESI 4 due to high-risk situation and severe pain/distress (>= 7/10).",
+     "change_reason": "Re-evaluated pain severity and its impact on immediate life-saving intervention, confirming it does not meet ESI 1 or 2, but still warrants ESI 4 due to high-risk situation and severe pain/distress (>= 7/10)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1540,
+    "output_tokens": 262,
+    "latency_ms": 77872.2
+   }
+  ],
+  [
+   {
+    "agent": "Agent 1",
+    "round": 4,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with chronic constipation",
+      "7/10 abdominal pain",
+      "Stable vital signs"
+     ],
+     "rationale": "Stable vitals, lack of shock, and no immediate life-saving intervention needed. Pain severity does not meet ESI 1 or 2 criteria.",
+     "message": "Respectfully acknowledge Agents 2, 6, 7, and 9 for raising concerns about severity, but stable vitals and lack of shock support ESI 3. Re-evaluated pain impact on immediate intervention needs.",
+     "change_reason": "No change in ESI, as pain severity and chronic symptoms do not meet ESI 1 or 2 criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1441,
+    "output_tokens": 181,
+    "latency_ms": 50849.4
+   },
+   {
+    "agent": "Agent 2",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with chronic constipation for a week",
+      "Severe abdominal pain (7/10)",
+      "Nausea and lack of appetite"
+     ],
+     "rationale": "Despite stable vitals, chronic constipation, severe pain, and associated symptoms warrant ESI 4 due to high-risk situation.",
+     "message": "Respectfully reaffirm ESI 4, acknowledging stable vitals but considering the risk of complications from chronic constipation and severe pain. Agree with Agents 6 and 9.",
+     "change_reason": "No change in ESI, as the risk of complications from chronic constipation and severe pain supports ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1441,
+    "output_tokens": 190,
+    "latency_ms": 15319.2
+   },
+   {
+    "agent": "Agent 3",
+    "round": 4,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with chronic constipation",
+      "7/10 abdominal pain",
+      "Stable vital signs"
+     ],
+     "rationale": "The patient's stable vitals and lack of shock support ESI 3. Although the pain is severe, it does not meet the criteria for immediate life-saving intervention or an unstable high-risk situation.",
+     "message": "Respectfully agree with Agents 1, 4, 5, 8, and 9; disagree with Agents 2, 6, 7, and 10 regarding ESI level. Change_reason: Re-evaluated pain severity and its impact on immediate life-saving intervention, confirming it does not meet ESI 1 or 2.",
+     "change_reason": "Re-evaluated pain severity and its impact on immediate life-saving intervention, confirming it does not meet ESI 1 or 2."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1441,
+    "output_tokens": 227,
+    "latency_ms": 66790.1
+   },
+   {
+    "agent": "Agent 4",
+    "round": 4,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Chronic constipation for a week",
+      "10-year-old male with abdominal pain, nausea, and lack of appetite",
+      "Stable vital signs"
+     ],
+     "rationale": "The patient's stable vital signs, lack of shock, and no immediate life-saving intervention needed align with ESI 3.",
+     "message": "I concur with Agents 1, 3, 5, 8, and 9. Disagree with Agents 2, 6, 7, and 10 regarding ESI level.",
+     "change_reason": "Re-evaluated pain severity and its impact on immediate life-saving intervention, confirming it does not meet ESI 1 or 2."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1441,
+    "output_tokens": 185,
+    "latency_ms": 28912.2
+   },
+   {
+    "agent": "Agent 5",
+    "round": 4,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Chronic constipation for a week",
+      "Abdominal pain 7/10",
+      "Nausea, lack of appetite"
+     ],
+     "rationale": "Stable vitals, no shock, pain does not meet ESI 1 criteria",
+     "message": "Agree with Agents 1, 3, 4, 8, and 9. Disagree with Agents 2, 6, 7, and 10 regarding ESI level. Change_reason: Re-evaluated pain severity and its impact on immediate intervention, confirming it does not meet ESI 1 or 2",
+     "change_reason": "Re-evaluated pain severity and its impact on immediate intervention, confirming it does not meet ESI 1"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1441,
+    "output_tokens": 189,
+    "latency_ms": 66912.9
+   },
+   {
+    "agent": "Agent 6",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with chronic constipation for a week",
+      "severe abdominal pain (7/10)",
+      "nausea and lack of appetite"
+     ],
+     "rationale": "Severe pain and chronic constipation leading to high-risk situation, aligning with ESI 4 criteria",
+     "message": "Respectfully maintain ESI 4, acknowledging stable vital signs but considering the risk of complications from chronic constipation and severe pain. Agree with Agents 2, 7, 9, and 10.",
+     "change_reason": "No change in ESI; reaffirming previous position based on clinical findings and ESI step application."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1441,
+    "output_tokens": 182,
+    "latency_ms": 42907.9
+   },
+   {
+    "agent": "Agent 7",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with chronic constipation, severe abdominal pain, nausea, lack of appetite"
+     ],
+     "rationale": "Severe pain and high-risk situation for complications from chronic constipation",
+     "message": "Respectfully maintain ESI 4, acknowledging stable vitals but considering the risk of complications from chronic constipation and severe pain",
+     "change_reason": "Re-evaluated pain severity and its impact on immediate intervention needs, confirming it does not meet ESI 1 or 2, but still warrants ESI 4 due to high-risk situation"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1441,
+    "output_tokens": 165,
+    "latency_ms": 48618.3
+   },
+   {
+    "agent": "Agent 8",
+    "round": 4,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with chronic constipation",
+      "7/10 abdominal pain",
+      "Stable vital signs"
+     ],
+     "rationale": "Stable vitals and lack of shock support ESI 3, despite severe pain. Risk of complications from chronic constipation does not necessitate immediate intervention.",
+     "message": "Respectfully disagree with Agents 2, 6, 7, and 9; stable vital signs and no shock/distress support ESI 3.",
+     "change_reason": "Re-evaluated pain impact on immediate intervention needs; confirmed not meeting ESI 1 or 2 criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1441,
+    "output_tokens": 171,
+    "latency_ms": 48636.4
+   },
+   {
+    "agent": "Agent 9",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "Chronic constipation for a week",
+      "7/10 abdominal pain",
+      "Nausea, lack of appetite"
+     ],
+     "rationale": "Despite stable vitals, the severity of pain and risk of complications from chronic constipation warrant ESI 4.",
+     "message": "Respectfully, I reaffirm ESI 4, acknowledging stable vitals but considering the risk of complications from chronic constipation and severe pain.",
+     "change_reason": "No change, as I initially considered the pain severity and high-risk situation."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1441,
+    "output_tokens": 153,
+    "latency_ms": 52570.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with chronic constipation",
+      "severe abdominal pain (7/10)",
+      "nausea, lack of appetite"
+     ],
+     "rationale": "Re-evaluated pain severity and its impact on immediate life-saving intervention, confirming it does not meet ESI 1 or 2, but considering high-risk situation due to chronic constipation and severe pain.",
+     "message": "Respectfully, I maintain ESI 4, acknowledging stable vital signs but considering the risk of complications from chronic constipation and severe pain. Thank you for the discussion.",
+     "change_reason": "Agree with Agents 2, 6, 7, and 9 regarding ESI level; re-evaluated pain impact on immediate intervention needs."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1440,
+    "output_tokens": 203,
+    "latency_ms": 70325.9
+   }
+  ],
+  [
+   {
+    "agent": "Agent 1",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with chronic constipation",
+      "7/10 abdominal pain",
+      "stable vitals"
+     ],
+     "rationale": "Respectfully acknowledge Agents 2, 6, 7, and 9 for raising concerns about severity, but stable vitals and lack of shock support ESI 3. Re-evaluated pain impact on immediate intervention needs.",
+     "message": "Thank you for the discussion. I respectfully maintain ESI 3 based on stable vitals and lack of shock, despite concerns about severity.",
+     "change_reason": "Re-evaluated pain severity and its impact on immediate intervention, confirming it does not meet ESI 1 or 2."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1446,
+    "output_tokens": 177,
+    "latency_ms": 51426.5
+   },
+   {
+    "agent": "Agent 2",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with chronic constipation for a week",
+      "7/10 abdominal pain, nausea, lack of appetite",
+      "stable vital signs"
+     ],
+     "rationale": "Respectfully reaffirm ESI 4, acknowledging stable vitals but considering the risk of complications from chronic constipation and severe pain. Agree with Agents 6, 7, and 9.",
+     "message": "Acknowledge Agents 6, 7, and 9; reaffirm ESI 4 based on risk of complications",
+     "change_reason": "No specific clinical finding or ESI step missed, reaffirming initial assessment"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1446,
+    "output_tokens": 177,
+    "latency_ms": 65762.1
+   },
+   {
+    "agent": "Agent 3",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with constipation for a week",
+      "7/10 abdominal pain, nausea, lack of appetite",
+      "Stable vitals: BP 107/66, HR 75, RR 20, T 98.6°F, SpO2 99%"
+     ],
+     "rationale": "Respectfully agree with Agents 1, 4, 5, 8, and 9; disagree with Agents 2, 6, 7, and 10 regarding ESI level. Change_reason: Re-evaluated pain severity and its impact on immediate life-saving intervention, confirming it does not meet ESI 1 or 2.",
+     "message": "Acknowledge Agents 1, 4, 5, 8, and 9; disagree with Agents 2, 6, 7, and 10; ESI 3 due to stable vitals and lack of shock/distress.",
+     "change_reason": "Re-evaluated pain severity and its impact on immediate intervention, confirming it does not meet ESI 1 or 2."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1446,
+    "output_tokens": 281,
+    "latency_ms": 82520.7
+   },
+   {
+    "agent": "Agent 4",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with chronic constipation",
+      "7/10 abdominal pain",
+      "stable vital signs"
+     ],
+     "rationale": "Stable vitals and lack of shock support ESI 3, despite severe pain which does not meet ESI 1 or 2 criteria.",
+     "message": "Respectfully acknowledge Agents 2, 6, 7, and 10 for raising concerns about severity, but stable vitals and lack of shock support ESI 3.",
+     "change_reason": "Re-evaluated pain impact on immediate intervention needs, confirming it does not meet ESI 1 or 2."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1446,
+    "output_tokens": 166,
+    "latency_ms": 59421.1
+   },
+   {
+    "agent": "Agent 5",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old male with constipation for a week",
+      "7/10 abdominal pain, nausea, lack of appetite",
+      "Vitals: BP 107/66, HR 75, RR 20, T 98.6°F, SpO2 99%"
+     ],
+     "rationale": "Stable vitals, no shock, re-evaluated pain severity impact on immediate intervention, confirming it does not meet ESI 1 or 2",
+     "message": "Respectfully acknowledge Agents 2, 6, 7, and 9 for raising concerns about severity, but stable vitals and lack of shock support ESI 3",
+     "change_reason": "No change, as re-evaluation confirmed ESI 3"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1446,
+    "output_tokens": 200,
+    "latency_ms": 33439.9
+   },
+   {
+    "agent": "Agent 6",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with chronic constipation for a week",
+      "7/10 abdominal pain, nausea, lack of appetite",
+      "stable vital signs"
+     ],
+     "rationale": "Respectfully maintain ESI 4, acknowledging stable vitals but considering the risk of complications from chronic constipation and severe pain. Agree with Agents 2, 7, 9, and 10.",
+     "message": "Agree with Agents 2, 7, 9, and 10; disagree with Agents 1, 3, 4, 5, 8 regarding ESI level. Change_reason: Re-evaluated pain severity and its impact on immediate intervention, confirming it does not meet ESI 1 or 2.",
+     "change_reason": "Re-evaluated pain severity and its impact on immediate intervention, confirming it does not meet ESI 1 or 2."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1446,
+    "output_tokens": 237,
+    "latency_ms": 15642.5
+   },
+   {
+    "agent": "Agent 7",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with chronic constipation for a week",
+      "7/10 abdominal pain, nausea, lack of appetite",
+      "stable vitals: BP 107/66, HR 75, RR 20, T 98.6°F, SpO2 99%"
+     ],
+     "rationale": "Respectfully maintain ESI 4, acknowledging stable vitals but considering the risk of complications from chronic constipation and severe pain. Agree with Agents 2, 6, 7, and 10.",
+     "message": "Thank you for the discussion. I respectfully maintain ESI 4, considering the potential complications from chronic constipation and severe pain, as per my initial assessment.",
+     "change_reason": "No changes, as I stand by the initial ESI 4 decision based on the risk of complications from chronic constipation and severe pain."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1446,
+    "output_tokens": 240,
+    "latency_ms": 15587.1
+   },
+   {
+    "agent": "Agent 8",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with chronic constipation",
+      "7/10 abdominal pain",
+      "stable vital signs"
+     ],
+     "rationale": "Stable vital signs and lack of shock/distress support ESI 3",
+     "message": "Respectfully disagree with Agents 2, 6, 7, and 9; stable vital signs and no shock/distress support ESI 3",
+     "change_reason": "Re-evaluated pain impact on immediate intervention needs, confirming it does not meet ESI 1 or 2"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1446,
+    "output_tokens": 150,
+    "latency_ms": 37965.1
+   },
+   {
+    "agent": "Agent 9",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with chronic constipation",
+      "severe abdominal pain",
+      "stable vitals"
+     ],
+     "rationale": "Severe pain from chronic constipation warrants ESI 4, despite stable vitals.",
+     "message": "Respectfully maintain ESI 4, acknowledging stable vitals but considering the risk of complications from chronic constipation and severe pain. Agree with Agents 2, 6, 7, and 10.",
+     "change_reason": "No change, as I adequately considered all ESI steps and findings."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1446,
+    "output_tokens": 157,
+    "latency_ms": 58708.4
+   },
+   {
+    "agent": "Agent 10",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with chronic constipation for a week",
+      "7/10 abdominal pain, nausea, and lack of appetite"
+     ],
+     "rationale": "Respectfully maintain ESI 4, acknowledging stable vital signs but considering the risk of complications from chronic constipation and severe pain. Agree with Agents 2, 6, 7, and 9.",
+     "message": "I appreciate the discussion and agree with Agents 2, 6, 7, and 9 regarding the risk of complications from chronic constipation and severe pain justifying ESI 4.",
+     "change_reason": "No changes needed, as the concern for complications from chronic constipation and severe pain supports ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1445,
+    "output_tokens": 201,
+    "latency_ms": 53421.5
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": false,
+ "consensus_share": 0.5,
+ "rounds_used": 5,
+ "first_round_esis": {
+  "Agent 1": 3,
+  "Agent 2": 4,
+  "Agent 3": 3,
+  "Agent 4": 3,
+  "Agent 5": 3,
+  "Agent 6": 4,
+  "Agent 7": 4,
+  "Agent 8": 3,
+  "Agent 9": 4,
+  "Agent 10": 4
+ },
+ "initial_range": 1,
+ "early_stopped": false,
+ "final_esis": {
+  "Agent 1": 3,
+  "Agent 2": 4,
+  "Agent 3": 3,
+  "Agent 4": 3,
+  "Agent 5": 3,
+  "Agent 6": 4,
+  "Agent 7": 4,
+  "Agent 8": 3,
+  "Agent 9": 4,
+  "Agent 10": 4
+ },
+ "final_confidences": {
+  "Agent 1": 0.95,
+  "Agent 2": 0.9,
+  "Agent 3": 0.9,
+  "Agent 4": 0.9,
+  "Agent 5": 0.95,
+  "Agent 6": 0.95,
+  "Agent 7": 0.95,
+  "Agent 8": 0.9,
+  "Agent 9": 0.9,
+  "Agent 10": 0.95
+ },
+ "aggregate": 4,
+ "majority": 3,
+ "disagreement_range": 1,
+ "mean_confidence": 0.925,
+ "disagreement_score": 3.075,
+ "escalated": true,
+ "escalation_reasons": [
+  "no_consensus"
+ ]
+}

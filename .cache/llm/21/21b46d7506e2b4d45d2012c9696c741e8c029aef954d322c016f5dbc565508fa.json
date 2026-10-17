@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nA 17-year-old female presents to the ED with complaints of severe abdominal pain that started a few hours ago. She is alert and in moderate discomfort but able to answer questions. Vital signs: BP 120/80, HR 88, RR 18, T 98.7°F. She denies any recent trauma or medical history.",
+ "text": "{\n  \"chief_complaint\": \"Severe abdominal pain, moderate discomfort, no trauma history\"\n}",
+ "input_tokens": 208,
+ "output_tokens": 31,
+ "latency_ms": 97415.8,
+ "created": 1792011772.233939
+}

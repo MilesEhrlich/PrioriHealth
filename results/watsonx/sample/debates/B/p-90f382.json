@@ -1,0 +1,93 @@
+{
+ "patient_id": "p-90f382",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3"
+ ],
+ "round1": [
+  {
+   "agent": "Agent 1",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Severe abdominal pain 8/10",
+     "High-risk abdominal pain",
+     "No immediate life-threatening condition"
+    ],
+    "rationale": "Patient has severe abdominal pain, a high-risk situation requiring urgent evaluation for possible appendicitis or other intra-abdominal pathology. No vital sign abnormalities or need for immediate life-saving intervention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 597,
+   "output_tokens": 90,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.85,
+    "key_findings": [
+     "Severe abdominal pain, worsening 24 hours",
+     "8/10 pain severity, nausea present",
+     "Stable vital signs, no fever"
+    ],
+    "rationale": "High-risk abdominal pain warrants consideration of surgical emergency like appendicitis. No immediate life threat per vitals. Requires resources (exam, labs, likely imaging)."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 597,
+   "output_tokens": 82,
+   "latency_ms": 1326.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Severe abdominal pain (8/10) 24h duration, focal RIF",
+     "Stable vitals (BP 120/80, HR 85, RR 16, SpO2 98%)",
+     "No fever, trauma, or other concerning symptoms"
+    ],
+    "rationale": "High-risk abdominal pain (possible appendicitis/other intra-abdominal pathology) warrants rapid evaluation. Stable vitals and lack of fever, trauma, or other red flag symptoms suggest ESI 2 rather than 1 or 3-5."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 597,
+   "output_tokens": 128,
+   "latency_ms": 0.0
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 2,
+  "Agent 2": 2,
+  "Agent 3": 2
+ },
+ "final_confidences": {
+  "Agent 1": 0.95,
+  "Agent 2": 0.85,
+  "Agent 3": 0.95
+ },
+ "aggregate": 2,
+ "majority": 2,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9166666666666666,
+ "disagreement_score": 0.08333333333333337,
+ "escalated": false,
+ "escalation_reasons": []
+}

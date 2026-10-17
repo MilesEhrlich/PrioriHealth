@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nAn 11-year-old presents to triage with his mother, who reports that her son has had a cough and runny nose for a week. The child is running around the waiting room and asking his mother for a snack. Vital signs are within normal limits.",
+ "text": "{\n  \"chief_complaint\": \"Cough, runny nose for a week\"\n}",
+ "input_tokens": 178,
+ "output_tokens": 23,
+ "latency_ms": 66987.6,
+ "created": 1792011741.805227
+}

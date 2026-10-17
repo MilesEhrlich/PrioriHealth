@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\n“I have this rash in my groin area,” reports a 20-year-old healthy male. “I think it’s jock rot, but I can’t get rid of it.” Using over the counter spray, No known drug allergies. Vital Signs: T 98˚F, HR 58, RR 16, BP 112/70.",
+ "text": "{\n  \"chief_complaint\": \"Rash in groin area, no relief with OTC spray\"\n}",
+ "input_tokens": 209,
+ "output_tokens": 29,
+ "latency_ms": 50279.4,
+ "created": 1792011630.182482
+}

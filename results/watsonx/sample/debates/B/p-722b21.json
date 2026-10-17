@@ -1,0 +1,93 @@
+{
+ "patient_id": "p-722b21",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3"
+ ],
+ "round1": [
+  {
+   "agent": "Agent 1",
+   "round": 1,
+   "output": {
+    "esi": 1,
+    "confidence": 0.95,
+    "key_findings": [
+     "Respiratory distress (RR 10, SpO2 86%)",
+     "History of depression and multiple superficial lacerations",
+     "Altered mental status (lethargic)"
+    ],
+    "rationale": "Patient requires immediate life-saving intervention. Respiratory distress with SpO2 < 90% and altered mental status indicate need for urgent airway and breathing interventions. Depression and self-harm increase risk of serious condition requiring immediate attention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 543,
+   "output_tokens": 115,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 1,
+   "output": {
+    "esi": 1,
+    "confidence": 0.97,
+    "key_findings": [
+     "Respiratory distress with SpO2 86%",
+     "Lethargy and possible overdose",
+     "Suicidal ideation with wrist lacerations"
+    ],
+    "rationale": "The patient is unresponsive, apneic/pulseless, and has severe respiratory distress with SpO2 < 90%, meeting the criteria for ESI level 1, the most urgent category."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 543,
+   "output_tokens": 103,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 1,
+   "output": {
+    "esi": 1,
+    "confidence": 0.95,
+    "key_findings": [
+     "Unresponsive patient",
+     "SpO2 86% on room air",
+     "Multiple superficial wrist lacerations"
+    ],
+    "rationale": "Patient requires immediate life-saving intervention for suspected overdose and respiratory compromise. Suicidal ideation and self-harm further support highest acuity level."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 543,
+   "output_tokens": 93,
+   "latency_ms": 0.0
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 1,
+  "Agent 2": 1,
+  "Agent 3": 1
+ },
+ "final_confidences": {
+  "Agent 1": 0.95,
+  "Agent 2": 0.97,
+  "Agent 3": 0.95
+ },
+ "aggregate": 1,
+ "majority": 1,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9566666666666667,
+ "disagreement_score": 0.043333333333333335,
+ "escalated": false,
+ "escalation_reasons": []
+}

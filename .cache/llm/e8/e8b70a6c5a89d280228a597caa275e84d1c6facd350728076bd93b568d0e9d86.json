@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nEMS arrives with a 32-year-old female who fell off a stepladder while cleaning her first-floor gutters. She has an obvious open fracture of her right lower leg. She has +2 pedal pulse. Her toes are warm, and she is able to wiggle them. Denies past medical history medications, or allergies. Vital signs are within normal limits for her age.",
+ "text": "{\n  \"chief_complaint\": \"Open fracture right lower leg, fall from stepladder\"\n}",
+ "input_tokens": 213,
+ "output_tokens": 27,
+ "latency_ms": 118837.8,
+ "created": 1792011793.656267
+}

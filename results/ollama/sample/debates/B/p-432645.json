@@ -1,0 +1,287 @@
+{
+ "patient_id": "p-432645",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3",
+  "Agent 4",
+  "Agent 5",
+  "Agent 6",
+  "Agent 7",
+  "Agent 8",
+  "Agent 9",
+  "Agent 10"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Agent 1",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Dislocated left shoulder",
+      "Severe pain (10/10)"
+     ],
+     "rationale": "The patient presents with a dislocated shoulder and severe pain. Although the neurovascular status is intact and vital signs are normal, the patient's condition warrants immediate attention due to the obvious deformity and significant pain. This case does not meet the criteria for ESI 1 or 2, as there is no immediate life-threatening situation or high-risk condition. The patient requires…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 610,
+    "output_tokens": 147,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Young adult male with shoulder dislocation",
+      "Severe pain (10/10)",
+      "Intact neurovascular status"
+     ],
+     "rationale": "The patient is a young adult with a dislocated shoulder and severe pain (10/10). Neurovascular status is intact, and vital signs are within normal limits. This case does not meet ESI level 1 or 2 criteria, as there is no immediate life-threatening situation or need for immediate intervention. It also does not meet ESI level 2 criteria for a high-risk…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 610,
+    "output_tokens": 191,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Dislocated left shoulder",
+      "Severe pain (10/10)",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient presents with a dislocated shoulder and severe pain (10/10), which warrants immediate attention. However, neurovascular status is intact, and vital signs are normal, ruling out immediate life-saving intervention (ESI 1) or high-risk situations requiring immediate treatment (ESI 2). The need for distinct resources (lab, ECG, imaging, IV fluids, meds) is not indicated, and the patient does not fall…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 610,
+    "output_tokens": 185,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Young male with obvious shoulder dislocation",
+      "10/10 severe pain",
+      "Intact neurovascular status, normal vital signs"
+     ],
+     "rationale": "The patient is a young adult with a dislocated shoulder, presenting with severe pain. Although painful, neurovascular status is intact, and vital signs are within normal limits. This situation does not require immediate life-saving intervention (ESI 1) nor does it present as a high-risk situation needing immediate attention (ESI 2). The injury will require further evaluation (ECG, X-ray) and possibly…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 610,
+    "output_tokens": 208,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Young adult male with obvious shoulder dislocation",
+      "Severe pain (10/10)",
+      "Intact neurovascular status"
+     ],
+     "rationale": "The patient presents with a dislocated shoulder, a complex procedure (ESI+2), and severe pain (ESI+2). Although the neurovascular status is intact and vital signs are normal, the combination of these factors places the patient in the ESI 3 category, as it requires further evaluation and intervention within 60 minutes."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 610,
+    "output_tokens": 139,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Dislocated left shoulder",
+      "Severe pain (10/10)"
+     ],
+     "rationale": "The patient presents with a dislocated shoulder and severe pain. While this is a high-acuity issue, it does not meet the criteria for ESI 1 or 2 due to normal vital signs and absence of life-threatening conditions. ESI 3 is appropriate as it requires prompt attention but does not present an immediate risk to life or limb."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 610,
+    "output_tokens": 125,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Obvious shoulder dislocation",
+      "Severe pain (10/10)",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient presents with a dislocated shoulder and severe pain (10/10). Although the neurovascular status is intact and vital signs are normal, this injury typically requires prompt attention and reduction, making it a higher acuity visit. The patient does not meet criteria for ESI 1 or 2, as there is no immediate life-threatening situation or high-risk condition present. The need…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 610,
+    "output_tokens": 186,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "20-year-old male",
+      "obvious dislocation of left shoulder",
+      "10/10 severe pain"
+     ],
+     "rationale": "The patient presents with a dislocated shoulder, which is a complex procedure (2). Although the pain is severe (>= 7/10), there is no immediate life-saving intervention needed, and neurovascular status is intact with normal vital signs. This case does not meet ESI level 1 or 2 criteria, and with one distinct resource type, it falls under ESI level 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 610,
+    "output_tokens": 147,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Dislocated left shoulder",
+      "Severe pain (10/10)"
+     ],
+     "rationale": "The patient presents with a dislocated shoulder and severe pain. Although the neurovascular status is intact and vital signs are normal, the ESI level is 3 due to the high severity of pain, which is considered >= 7/10, and the need for immediate orthopedic intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 610,
+    "output_tokens": 117,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.99,
+     "key_findings": [
+      "Dislocated left shoulder",
+      "Severe pain (10/10)",
+      "Intact neurovascular status"
+     ],
+     "rationale": "The patient presents with a dislocated shoulder, a complex procedure (2), and reports severe pain (>= 7/10). Although not immediately life-saving, the condition requires prompt intervention and cannot wait. The normal vital signs and intact neurovascular status rule out immediate life-saving intervention or high-risk situations. Therefore, the ESI level is 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 610,
+    "output_tokens": 146,
+    "latency_ms": 0.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 1.0,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Agent 1": 3,
+  "Agent 2": 3,
+  "Agent 3": 3,
+  "Agent 4": 3,
+  "Agent 5": 3,
+  "Agent 6": 3,
+  "Agent 7": 3,
+  "Agent 8": 3,
+  "Agent 9": 3,
+  "Agent 10": 3
+ },
+ "initial_range": 0,
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 3,
+  "Agent 2": 3,
+  "Agent 3": 3,
+  "Agent 4": 3,
+  "Agent 5": 3,
+  "Agent 6": 3,
+  "Agent 7": 3,
+  "Agent 8": 3,
+  "Agent 9": 3,
+  "Agent 10": 3
+ },
+ "final_confidences": {
+  "Agent 1": 0.95,
+  "Agent 2": 0.95,
+  "Agent 3": 0.95,
+  "Agent 4": 0.95,
+  "Agent 5": 0.95,
+  "Agent 6": 0.95,
+  "Agent 7": 0.9,
+  "Agent 8": 0.95,
+  "Agent 9": 0.95,
+  "Agent 10": 0.99
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9490000000000001,
+ "disagreement_score": 0.050999999999999934,
+ "escalated": false,
+ "escalation_reasons": []
+}

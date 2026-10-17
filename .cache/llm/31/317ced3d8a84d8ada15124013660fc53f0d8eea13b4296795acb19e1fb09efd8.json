@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an ED triage nurse. Assign an ESI level 1-5. Return JSON only.",
+ "user": "A 32-year-old female with shortness of breath for several hours, smoker, on birth control pills. RR 32, HR 96, SpO2 93%.",
+ "text": "{\n  \"esi\": 1,\n  \"confidence\": 90,\n  \"key_findings\": [\n    \"Shortness of breath for several hours\",\n    \"Respiratory rate 32\",\n    \"Heart rate 96 beats per minute (elevated for this context, could indicate distress or compensation for hypoxia or other underlying issues. However, tachycardia can also be seen in dehydrated patients or those in shock, so further evaluation is needed to determine the cause.)\\n 100 beats per minute or more is generally considered bradycardia in the context of sepsis, but this patient's heart rate is within normal range for other conditions. The context provided suggests an elevated rate, so it's noted as such.\\n 90-120 bpm is considered normal heart rate for adults, but in this case, the patient's elevated heart rate warrants attention due to symptoms of shortness of breath.\\n 60-100 bpm is normal for athletes or highly fit individuals, but this patient's heart rate does not suggest athletic exertion.\\n SpO2 93% on room air (hypoxic)\"\n  ],\n  \"rationale\": \"This patient presents with significant respiratory distress, indicated by tachypnea (rapid breathing rate), low oxygen saturation (hypoxia), and elevated heart rate. These findings suggest a potential life-threatening condition such as acute cor pulmonale, pulmonary embolism, or exacerbation of chronic obstructive pulmonary disease (COPD). Given the severity and potential for rapid deterioration, this patient should be assigned ESI level 1, requiring immediate resuscitation.\"\n}",
+ "input_tokens": 82,
+ "output_tokens": 396,
+ "latency_ms": 30308.9,
+ "created": 1791999039.675408
+}

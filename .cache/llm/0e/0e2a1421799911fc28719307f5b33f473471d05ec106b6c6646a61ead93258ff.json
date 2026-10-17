@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\n“I think my son has swimmer’s ear. He spends half the day in the pool with his friends, so I am not surprised,” the mother of a 10-year-old boy tells you. The child has no complaints except painful, itchy ears. Vital signs: T 97˚F, HR 88, RR 18, BP 100/68.",
+ "text": "{\n  \"chief_complaint\": \"Painful, itchy ears, suspect swimmer's ear\"\n}",
+ "input_tokens": 215,
+ "output_tokens": 30,
+ "latency_ms": 39951.4,
+ "created": 1792011714.766934
+}

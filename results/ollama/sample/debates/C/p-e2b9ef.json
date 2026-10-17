@@ -1,0 +1,386 @@
+{
+ "patient_id": "p-e2b9ef",
+ "condition": "C",
+ "agents": [
+  "Empath",
+  "Logician",
+  "Skeptic",
+  "Observer",
+  "Synthesizer",
+  "Pragmatist",
+  "Vigilant",
+  "Impartial",
+  "Mediator",
+  "Reflective"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Empath",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Severe abdominal pain in adolescent, moderate discomfort, no trauma history",
+      "Vitals within normal limits",
+      "Denies recent medical history"
+     ],
+     "rationale": "The patient is a 17-year-old female with severe abdominal pain, described as moderate discomfort. There is no recent trauma or medical history. Vital signs are within normal limits, HR 88, RR 18, BP 120/80, T 98.7°F. The pain is severe but not immediately life-threatening, nor does it meet criteria for immediate intervention. The patient's ability to answer questions and her…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 698,
+    "output_tokens": 207,
+    "latency_ms": 2101975.0
+   },
+   {
+    "agent": "Logician",
+    "round": 1,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 1,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 1,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Severe abdominal pain",
+      "Moderate discomfort",
+      "No recent trauma or medical history"
+     ],
+     "rationale": "The patient presents with severe abdominal pain, moderate distress, and no history of trauma or medical issues. While not immediately life-threatening, the pain could indicate a serious condition, warranting a higher ESI level than 5. The absence of danger-zone vitals and lack of high-risk factors according to B criteria make ESI 2 inapplicable. With one distinct resource type (likely imaging…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 684,
+    "output_tokens": 159,
+    "latency_ms": 2206166.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Severe abdominal pain in adolescent without trauma history",
+      "Moderate discomfort, alert, denies recent trauma"
+     ],
+     "rationale": "Patient presents with severe abdominal pain, moderate distress, no trauma history. Vitals within normal limits. Requires further workup (labs, imaging, possibly consult) but not immediate life-saving intervention or high-risk situation."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 689,
+    "output_tokens": 115,
+    "latency_ms": 2230936.7
+   },
+   {
+    "agent": "Vigilant",
+    "round": 1,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 1,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 1,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 1,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Severe abdominal pain",
+      "Moderate distress",
+      "No trauma history"
+     ],
+     "rationale": "Pain described as moderate, but patient is alert and vital signs are normal, not meeting ESI 1 or 2 criteria.",
+     "message": "Agree with Synthesizer and Pragmatist on ESI 3. The pain, while severe for the patient, does not meet ESI 1 or 2 criteria due to normal vital signs and lack of immediate life-threatening situation.",
+     "change_reason": "No clinical findings missed, ESI 3 remains appropriate."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1070,
+    "output_tokens": 154,
+    "latency_ms": 1690502.2
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Severe abdominal pain, no trauma history",
+      "Vitals within normal limits"
+     ],
+     "rationale": "Severe pain warrants higher ESI, but no immediate life-threatening signs or high-risk situation",
+     "message": "Agree with Empath and Pragmatist on pain severity and normal vitals, but lean towards ESI 3 due to lack of imminent threat",
+     "change_reason": "None, as ESI 3 aligns with discussion and findings"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1055,
+    "output_tokens": 129,
+    "latency_ms": 1699208.4
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Severe abdominal pain, moderate distress",
+      "No trauma history",
+      "Vitals within normal limits"
+     ],
+     "rationale": "Patient requires further workup but not immediate intervention or high-risk situation",
+     "message": "Agree with [Empath] and [Synthesizer] on pain severity and need for further workup. Disagree on ESI level; this case doesn't meet ESI 3 criteria as it's not an immediate life-threatening situation or high-risk condition. My ESI remains 4.",
+     "change_reason": "No specific clinical finding or ESI step missed; reaffirming ESI 4 based on discussion"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1059,
+    "output_tokens": 167,
+    "latency_ms": 1709806.7
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": false,
+ "consensus_share": 0.2,
+ "rounds_used": 5,
+ "first_round_esis": {
+  "Empath": 3,
+  "Synthesizer": 3,
+  "Pragmatist": 4
+ },
+ "initial_range": 1,
+ "early_stopped": false,
+ "final_esis": {
+  "Empath": 3,
+  "Synthesizer": 3,
+  "Pragmatist": 4
+ },
+ "final_confidences": {
+  "Empath": 0.95,
+  "Synthesizer": 0.9,
+  "Pragmatist": 0.95
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 1,
+ "mean_confidence": 0.9333333333333332,
+ "disagreement_score": 10.066666666666666,
+ "escalated": true,
+ "escalation_reasons": [
+  "agent_failure",
+  "no_consensus"
+ ]
+}

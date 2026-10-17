@@ -1,0 +1,781 @@
+{
+ "patient_id": "p-3e2204",
+ "condition": "C",
+ "agents": [
+  "Empath",
+  "Logician",
+  "Skeptic",
+  "Observer",
+  "Synthesizer",
+  "Pragmatist",
+  "Vigilant",
+  "Impartial",
+  "Mediator",
+  "Reflective"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Empath",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Infant, 3 months old",
+      "Tachycardia, RR 40",
+      "Dried mucus around nares"
+     ],
+     "rationale": "The infant has tachycardia, which is a key finding in ESI 3. The dried mucus around the nares, while concerning, does not meet the criteria for a higher ESI level in this case. The baby is alert and not in immediate distress, so the ESI level is not 1 or 2."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 685,
+    "output_tokens": 133,
+    "latency_ms": 289633.0
+   },
+   {
+    "agent": "Logician",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Infant, 3 months old",
+      "Increased respiratory rate (RR 40)",
+      "Dried mucus around nares"
+     ],
+     "rationale": "The infant is alert, but has a high respiratory rate of 40 breaths per minute and dried mucus around the nares, which suggests possible respiratory distress. However, the oxygen saturation is within normal range (99%). Given the age and the absence of other high-ESI criteria, this case falls under ESI 5, as it does not meet the criteria for a…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 675,
+    "output_tokens": 155,
+    "latency_ms": 303744.7
+   },
+   {
+    "agent": "Skeptic",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 0.9,
+     "key_findings": [
+      "Infant, 3 months old",
+      "Alert, looking around",
+      "Large amount of dried mucus around both nares"
+     ],
+     "rationale": "The infant is alert and not showing signs of immediate life-threatening conditions. The high heart rate could be due to age-appropriate variability, and other vitals are within normal limits. The large amount of dried mucus around the nares may indicate a possible upper respiratory infection, but it does not meet the criteria for ESI 1 or 2. The infant is…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 677,
+    "output_tokens": 191,
+    "latency_ms": 318037.4
+   },
+   {
+    "agent": "Observer",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 0.9,
+     "key_findings": [
+      "Infant, 3 months",
+      "No distress",
+      "Dried mucus around nares"
+     ],
+     "rationale": "The infant is alert, not in distress, and has dried mucus around the nares, which could indicate a possible upper respiratory infection. However, without further signs of airway compromise, such as increased work of breathing or retractions, and considering the normal SpO2, this does not meet the criteria for ESI 1 or 2. The absence of fever and other high-risk…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 672,
+    "output_tokens": 177,
+    "latency_ms": 328912.3
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 0.9,
+     "key_findings": [
+      "Infant, 3-month-old, tachycardia, increased respiratory rate"
+     ],
+     "rationale": "The infant's age, tachycardia, and increased respiratory rate (RR 40) qualify for ESI level 2. However, the baby is alert and not in immediate distress, with normal oxygen saturation. Considering the clinical picture and the given information, ESI level 5 is more appropriate, as there's no immediate life-threat or high-risk situation requiring urgent intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 671,
+    "output_tokens": 143,
+    "latency_ms": 337663.3
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 0.9,
+     "key_findings": [
+      "Infant, 3 months",
+      "Tachycardia, RR 40",
+      "Dried mucus around nares"
+     ],
+     "rationale": "The infant is alert, not in respiratory distress, and oxygen saturation is normal. Despite the tachycardia, the infant does not meet ESI 1 criteria due to lack of other signs of severe distress or high-risk conditions."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 676,
+    "output_tokens": 117,
+    "latency_ms": 346944.5
+   },
+   {
+    "agent": "Vigilant",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 0.9,
+     "key_findings": [
+      "Infant, 3 months old",
+      "Tachycardia",
+      "Tachypnea"
+     ],
+     "rationale": "The infant is alert and not showing signs of distress, despite tachycardia and tachypnea. The large amount of dried mucus around the nares could indicate a viral upper respiratory infection, which is common in infants and typically not urgent. The child's high heart rate and respiratory rate, while noteworthy, do not meet the criteria for ESI 1. The child's oxygen…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 676,
+    "output_tokens": 217,
+    "latency_ms": 362339.6
+   },
+   {
+    "agent": "Impartial",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 0.9,
+     "key_findings": [
+      "Infant, alert",
+      "Dried mucus around nares"
+     ],
+     "rationale": "The patient is a 3-month-old infant who is alert and presenting with dried mucus around the nares, which suggests a possible respiratory issue. However, the infant is not in immediate respiratory distress as indicated by normal SpO2 and alertness. No other concerning symptoms or signs are mentioned. Given the age and the absence of immediate life-threatening conditions, this case does…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 698,
+    "output_tokens": 206,
+    "latency_ms": 377014.3
+   },
+   {
+    "agent": "Mediator",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 0.9,
+     "key_findings": [
+      "Infant, 3 months",
+      "Respiratory rate 40",
+      "Large dried mucus around nares"
+     ],
+     "rationale": "The infant is alert and not showing signs of immediate life-threatening conditions. The high heart rate (132) and elevated respiratory rate (40) do not meet the criteria for ESI 1 or 2. The large amount of dried mucus around the nares suggests possible respiratory issue, but it does not indicate an immediate need for life-saving intervention or high-risk situation warranting…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 674,
+    "output_tokens": 194,
+    "latency_ms": 390024.6
+   },
+   {
+    "agent": "Reflective",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.85,
+     "key_findings": [
+      "Infant, 3-month-old",
+      "Difficulty feeding",
+      "Dried mucus around nares"
+     ],
+     "rationale": "The infant's age (3 months) and symptoms (difficulty feeding, dried mucus around nares) suggest a possible respiratory issue, which could potentially escalate. The heart rate is elevated (132 bpm), and SpO2 is within normal range (99%). While not immediately life-threatening, the combination of symptoms warrants a higher ESI level than 5. No immediate life-saving intervention is required, but the infant…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 674,
+    "output_tokens": 167,
+    "latency_ms": 400311.2
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": false,
+ "consensus_share": 0.8,
+ "rounds_used": 5,
+ "first_round_esis": {
+  "Empath": 3,
+  "Logician": 5,
+  "Skeptic": 5,
+  "Observer": 5,
+  "Synthesizer": 5,
+  "Pragmatist": 5,
+  "Vigilant": 5,
+  "Impartial": 5,
+  "Mediator": 5,
+  "Reflective": 4
+ },
+ "initial_range": 2,
+ "early_stopped": false,
+ "final_esis": {
+  "Empath": 3,
+  "Logician": 5,
+  "Skeptic": 5,
+  "Observer": 5,
+  "Synthesizer": 5,
+  "Pragmatist": 5,
+  "Vigilant": 5,
+  "Impartial": 5,
+  "Mediator": 5,
+  "Reflective": 4
+ },
+ "final_confidences": {
+  "Empath": 0.9,
+  "Logician": 1.0,
+  "Skeptic": 0.9,
+  "Observer": 0.9,
+  "Synthesizer": 0.9,
+  "Pragmatist": 0.9,
+  "Vigilant": 0.9,
+  "Impartial": 0.9,
+  "Mediator": 0.9,
+  "Reflective": 0.85
+ },
+ "aggregate": 5,
+ "majority": 5,
+ "disagreement_range": 2,
+ "mean_confidence": 0.905,
+ "disagreement_score": 4.095,
+ "escalated": true,
+ "escalation_reasons": [
+  "no_consensus"
+ ]
+}

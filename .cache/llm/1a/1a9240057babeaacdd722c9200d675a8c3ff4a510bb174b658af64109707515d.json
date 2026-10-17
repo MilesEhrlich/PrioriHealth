@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nI was so disappointed about not making the varsity soccer team that I punched a wall,” reports a 15-year-old healthy male. His hand is swollen and tender to touch. Vital signs: T 97°F, RR 16, HR 58, BP 106/80, SpO2 100%. Pain 5/10.",
+ "text": "{\n  \"chief_complaint\": \"Punched wall, hand swelling, tenderness\"\n}",
+ "input_tokens": 212,
+ "output_tokens": 25,
+ "latency_ms": 34710.2,
+ "created": 1792011614.6130502
+}

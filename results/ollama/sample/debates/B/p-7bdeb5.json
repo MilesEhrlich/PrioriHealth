@@ -1,0 +1,290 @@
+{
+ "patient_id": "p-7bdeb5",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3",
+  "Agent 4",
+  "Agent 5",
+  "Agent 6",
+  "Agent 7",
+  "Agent 8",
+  "Agent 9",
+  "Agent 10"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Agent 1",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "Fell on ice, no deformity",
+      "Normal vital signs",
+      "Pain 5/10"
+     ],
+     "rationale": "Patient is a 58-year-old with a fall and wrist pain. No immediate life-threatening conditions (A), and pain is moderate (B). She has no danger-zone vitals (D). She meets the criteria for ESI level 4 due to need for distinct resource types (C), specifically imaging (X-ray) for potential fracture."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 605,
+    "output_tokens": 141,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Fell on ice, no deformity",
+      "Normal vital signs",
+      "Pain 5/10"
+     ],
+     "rationale": "Patient is a 58-year-old female with a history of migraines who fell on ice and reported no deformity. Vital signs are normal, and pain is rated at 5/10. This case does not meet criteria for ESI 1-3, as there is no immediate life-threatening situation, no need for immediate intervention, and no high-risk conditions. The patient does not require extensive resources,…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 605,
+    "output_tokens": 208,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Fell on ice, no deformity",
+      "Normal vital signs",
+      "Pain 5/10"
+     ],
+     "rationale": "Patient is a 58-year-old female with a history of migraines who fell on ice, reports no deformity, has normal vital signs, and describes pain as 5/10. She does not meet criteria for ESI 1-3, and while she has one resource type (ECG for rule out cardiac cause), she does not meet criteria for ESI 5. The injury is not severe…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 605,
+    "output_tokens": 166,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "Fell on ice, no deformity",
+      "Normal vital signs",
+      "Pain 5/10"
+     ],
+     "rationale": "Patient is a 58-year-old female with a history of migraines who fell on ice with no deformity and normal vital signs, reporting a pain level of 5/10. This meets the ESI level 4 criteria as it involves an injury with multiple resource requirements (ECG, X-ray, IV fluids)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 605,
+    "output_tokens": 130,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Fell on ice, no deformity",
+      "Normal vital signs",
+      "Pain 5/10"
+     ],
+     "rationale": "Patient is a 58-year-old female with a history of migraines who fell on ice with no deformity and normal vital signs. She reports a pain level of 5/10. This case meets the criteria for ESI level 4 due to the mechanism of injury and history of migraines, which may indicate a possible fracture or soft tissue injury."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 605,
+    "output_tokens": 141,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "Fell on ice, no deformity",
+      "Normal vital signs",
+      "Pain 5/10"
+     ],
+     "rationale": "Patient is a 58-year-old female with a history of migraines who fell on ice, reports no deformity, has normal vital signs, and rates her pain as 5/10. This case involves a single resource type (exam, POC tests) and does not meet criteria for ESI 1-3. The pain level does not meet the threshold for ESI 2, and there is no…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 605,
+    "output_tokens": 182,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Fell on ice, injured wrist",
+      "No deformity",
+      "Normal vital signs, mild pain 5/10"
+     ],
+     "rationale": "Patient is a 58-year-old with a wrist injury from a fall on ice, presenting with normal vital signs and mild pain. The injury does not meet ESI 1 or 2 criteria, as it does not involve immediate life-saving intervention or a high-risk situation. Although there is no obvious deformity, the injury warrants further evaluation (ECG, X-ray) to rule out fracture…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 605,
+    "output_tokens": 205,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "Fell on ice, no deformity",
+      "Normal vital signs",
+      "Pain 5/10"
+     ],
+     "rationale": "Patient is a 58-year-old female with a history of migraines who fell on ice with no deformity and normal vital signs. She reports a pain level of 5/10. This case meets the criteria for ESI level 4 (urgent) due to the mechanism of injury and history of migraines, which may indicate a potential undiagnosed issue."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 605,
+    "output_tokens": 141,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "Fell on ice, no deformity",
+      "Vital signs normal",
+      "Pain 5/10"
+     ],
+     "rationale": "Patient is a 58-year-old female with a history of migraines who fell on ice and reports pain of 5/10 without deformity or abnormal vital signs. This fits ESI level 4 as it is a moderately urgent situation due to the fall mechanism and history of migraines, requiring further evaluation and imaging (ECG, X-ray) but not immediately life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 605,
+    "output_tokens": 148,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Fell on ice, no deformity",
+      "Normal vital signs",
+      "Pain 5/10"
+     ],
+     "rationale": "Patient is a 58-year-old female with a history of migraines who fell on ice with no deformity and normal vital signs. Pain is rated as 5/10. This case does not meet criteria for ESI 1-3 due to lack of immediate life-saving intervention, high-risk situation, or severe symptoms. The patient requires distinct resource types (ECG, X-ray) for further evaluation, meeting criteria…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 605,
+    "output_tokens": 161,
+    "latency_ms": 0.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 1.0,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Agent 1": 4,
+  "Agent 2": 4,
+  "Agent 3": 4,
+  "Agent 4": 4,
+  "Agent 5": 4,
+  "Agent 6": 4,
+  "Agent 7": 4,
+  "Agent 8": 4,
+  "Agent 9": 4,
+  "Agent 10": 4
+ },
+ "initial_range": 0,
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 4,
+  "Agent 2": 4,
+  "Agent 3": 4,
+  "Agent 4": 4,
+  "Agent 5": 4,
+  "Agent 6": 4,
+  "Agent 7": 4,
+  "Agent 8": 4,
+  "Agent 9": 4,
+  "Agent 10": 4
+ },
+ "final_confidences": {
+  "Agent 1": 0.9,
+  "Agent 2": 0.95,
+  "Agent 3": 0.95,
+  "Agent 4": 0.9,
+  "Agent 5": 0.95,
+  "Agent 6": 0.9,
+  "Agent 7": 0.95,
+  "Agent 8": 0.9,
+  "Agent 9": 0.9,
+  "Agent 10": 0.95
+ },
+ "aggregate": 4,
+ "majority": 4,
+ "disagreement_range": 0,
+ "mean_confidence": 0.925,
+ "disagreement_score": 0.07499999999999996,
+ "escalated": false,
+ "escalation_reasons": []
+}

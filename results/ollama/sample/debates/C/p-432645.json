@@ -1,0 +1,776 @@
+{
+ "patient_id": "p-432645",
+ "condition": "C",
+ "agents": [
+  "Empath",
+  "Logician",
+  "Skeptic",
+  "Observer",
+  "Synthesizer",
+  "Pragmatist",
+  "Vigilant",
+  "Impartial",
+  "Mediator",
+  "Reflective"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Empath",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Obvious dislocation",
+      "10/10 severe pain",
+      "Intact neurovascular status"
+     ],
+     "rationale": "Needs immediate life-saving intervention due to severe pain (10/10) and obvious dislocation, indicating potential need for urgent reduction and further evaluation."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 676,
+    "output_tokens": 88,
+    "latency_ms": 405687.3
+   },
+   {
+    "agent": "Logician",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Dislocated shoulder",
+      "10/10 severe pain",
+      "Normal vital signs, intact neurovascular status"
+     ],
+     "rationale": "The patient presents with a dislocated shoulder and reports 10/10 severe pain. However, neurovascular status is intact and vital signs are within normal limits. The situation does not require immediate life-saving intervention (ESI 1) nor presents a high-risk situation warranting ESI 2. There are no immediate requirements for advanced resources (ESI 4 or 3). The danger-zone vitals are not breached.…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 666,
+    "output_tokens": 186,
+    "latency_ms": 416091.1
+   },
+   {
+    "agent": "Skeptic",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "Obvious shoulder dislocation",
+      "Severe pain (10/10)"
+     ],
+     "rationale": "The patient presents with a dislocated shoulder, an obvious deformity, and severe pain. While not immediately life-threatening, this condition requires urgent reduction to alleviate pain and prevent further damage. The pain score alone elevates this to ESI 4. No immediate life-threat is present, and no high-risk conditions are indicated. The patient's vital signs are normal, and neurovascular status is intact,…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 668,
+    "output_tokens": 152,
+    "latency_ms": 424624.3
+   },
+   {
+    "agent": "Observer",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Dislocated left shoulder",
+      "10/10 severe pain",
+      "Normal vital signs, intact neurovascular"
+     ],
+     "rationale": "The patient presents with a dislocated shoulder, a complex procedure requiring reduction and further management, thus scoring 2+ for distinct resource types. Despite severe pain, vitals are normal and neurovascular status intact, precluding ESI 1 or 2. The injury doesn't pose immediate life threat or require urgent intervention, thus ESI 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 663,
+    "output_tokens": 140,
+    "latency_ms": 432798.3
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Obvious dislocation of left shoulder",
+      "Severe pain (10/10)"
+     ],
+     "rationale": "The patient presents with a dislocated shoulder and severe pain (10/10). Although neurovascular status is intact and vital signs are normal, the severe pain warrants a higher ESI level (4) due to potential need for immediate intervention and pain management."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 662,
+    "output_tokens": 113,
+    "latency_ms": 439430.7
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Dislocated shoulder",
+      "Severe pain (10/10)"
+     ],
+     "rationale": "Patient presents with a dislocated shoulder and severe pain (10/10). Although painful, neurovascular status is intact, vital signs are normal, and no immediate life-saving intervention or danger-zone vitals are present. The need for distinct resources such as imaging (X-ray) and potential procedural intervention (reduction) justifies an ESI level 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 667,
+    "output_tokens": 134,
+    "latency_ms": 447132.1
+   },
+   {
+    "agent": "Vigilant",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Obvious shoulder dislocation",
+      "Severe pain (10/10)"
+     ],
+     "rationale": "The patient presents with an obvious shoulder dislocation and severe pain (10/10). While this is a high-acuity condition, it does not meet the criteria for ESI 1 or 2. Neurovascular status is intact, and vital signs are within normal limits. There are no signs of life-threatening conditions or high-risk situations, so it does not meet the criteria for ESI 1.…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 667,
+    "output_tokens": 220,
+    "latency_ms": 459199.8
+   },
+   {
+    "agent": "Impartial",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "20-year-old male",
+      "obvious dislocation of left shoulder",
+      "10/10 severe pain"
+     ],
+     "rationale": "The patient presents with a dislocated shoulder, which is a condition that often requires immediate medical attention to prevent further damage. The high pain score (10/10) indicates severe pain, which is a key factor in determining the urgency. The normal vital signs and intact neurovascular status suggest that the patient is not in immediate life-threatening danger, but the need for…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 689,
+    "output_tokens": 159,
+    "latency_ms": 468028.6
+   },
+   {
+    "agent": "Mediator",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "Dislocated left shoulder",
+      "Severe pain (10/10)",
+      "Intact neurovascular status"
+     ],
+     "rationale": "The patient presents with a dislocated shoulder, severe pain, and intact neurovascular status. While painful, there's no immediate life-saving intervention needed, and vital signs are normal. The injury requires urgent reduction but does not meet ESI 1 or 2 criteria. The distinct resource type (imaging for reduction) and severity of pain (ESI 4) justify this ESI level."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 665,
+    "output_tokens": 147,
+    "latency_ms": 476460.3
+   },
+   {
+    "agent": "Reflective",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Obvious dislocation",
+      "Severe pain (10/10)"
+     ],
+     "rationale": "The patient presents with a dislocated shoulder and severe pain. While the pain score is high, neurovascular status is intact, and vital signs are normal. This situation does not meet the criteria for immediate life-saving intervention (ESI 1) or high-risk situations requiring immediate attention (ESI 2). The patient can wait for resources without immediate need for complex interventions (ESI 4),…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 665,
+    "output_tokens": 161,
+    "latency_ms": 485286.4
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": false,
+ "consensus_share": 0.4,
+ "rounds_used": 5,
+ "first_round_esis": {
+  "Empath": 1,
+  "Logician": 5,
+  "Skeptic": 4,
+  "Observer": 3,
+  "Synthesizer": 4,
+  "Pragmatist": 3,
+  "Vigilant": 3,
+  "Impartial": 1,
+  "Mediator": 4,
+  "Reflective": 3
+ },
+ "initial_range": 4,
+ "early_stopped": false,
+ "final_esis": {
+  "Empath": 1,
+  "Logician": 5,
+  "Skeptic": 4,
+  "Observer": 3,
+  "Synthesizer": 4,
+  "Pragmatist": 3,
+  "Vigilant": 3,
+  "Impartial": 1,
+  "Mediator": 4,
+  "Reflective": 3
+ },
+ "final_confidences": {
+  "Empath": 1.0,
+  "Logician": 1.0,
+  "Skeptic": 0.9,
+  "Observer": 0.9,
+  "Synthesizer": 0.95,
+  "Pragmatist": 0.95,
+  "Vigilant": 0.9,
+  "Impartial": 1.0,
+  "Mediator": 0.9,
+  "Reflective": 0.9
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 4,
+ "mean_confidence": 0.9400000000000001,
+ "disagreement_score": 6.06,
+ "escalated": true,
+ "escalation_reasons": [
+  "no_consensus",
+  "urgent_dissent_overruled"
+ ]
+}

@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nHe was running after his brother, fell, and cut his lip on the corner of the coffee table. There was blood everywhere,” recalls the mother of a healthy 19-month-old. “He’ll never stay still for the doctor.” You notice that the baby has a 2- centimeter lip laceration that extends through the vermilion border. Vital signs are within normal limits for age.",
+ "text": "{\n  \"chief_complaint\": \"Lip laceration from fall\"\n}",
+ "input_tokens": 210,
+ "output_tokens": 20,
+ "latency_ms": 12251.5,
+ "created": 1792011592.153174
+}

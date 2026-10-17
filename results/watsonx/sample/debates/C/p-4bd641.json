@@ -1,0 +1,93 @@
+{
+ "patient_id": "p-4bd641",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Pain 8/10",
+     "Red, tender, swollen belly button piercing",
+     "Pus draining from site"
+    ],
+    "rationale": "Painful infected piercing with purulent drainage is a 2-resource (exam + antibiotics) issue that is not immediately life-threatening, so ESI 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 650,
+   "output_tokens": 87,
+   "latency_ms": 12342.2
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Piercing site red, tender, swollen, purulent discharge",
+     "Pain 8/10",
+     "Vital signs stable"
+    ],
+    "rationale": "Pain 8/10 meets Decision Point B criteria for severe pain/distress. No life-threatening condition (Decision Point A). Counting resources: labs, wound care, antibiotics = 3 distinct resources, so proceed to Decision Point D. No danger-zone vitals, so assign ESI 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 640,
+   "output_tokens": 120,
+   "latency_ms": 13279.8
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Piercing site infection",
+     "Severe pain 8/10",
+     "Normal vitals"
+    ],
+    "rationale": "Piercing site infection with severe pain warrants evaluation and possible antibiotics. No life threat, not high-risk, and only 1 resource (antibiotics or incision/drainage if needed)."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 640,
+   "output_tokens": 90,
+   "latency_ms": 13609.6
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Cautious Clinician": 3,
+  "Resource Manager": 3,
+  "Equity Auditor": 3
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.95,
+  "Resource Manager": 0.95,
+  "Equity Auditor": 0.95
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9499999999999998,
+ "disagreement_score": 0.050000000000000155,
+ "escalated": false,
+ "escalation_reasons": []
+}

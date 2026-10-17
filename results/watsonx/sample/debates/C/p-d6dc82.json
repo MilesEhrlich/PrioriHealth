@@ -1,0 +1,92 @@
+{
+ "patient_id": "p-d6dc82",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "10-year-old with constipation, nausea, abdominal pain",
+     "Vital signs stable",
+     "No red flags for urgent condition"
+    ],
+    "rationale": "Healthy child with constipation and abdominal pain, no life-threatening signs. ESI 3 balances observation and labs without immediate intervention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 633,
+   "output_tokens": 82,
+   "latency_ms": 29370.4
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Abdominal pain 7/10",
+     "Constipation 1 week",
+     "Vitals stable"
+    ],
+    "rationale": "No life-threatening condition (A). No high-risk situation or severe distress (B). Requires 2 distinct resources: labs/abdominal X-ray and possible IV fluids for dehydration. Meets criteria for ESI 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 623,
+   "output_tokens": 97,
+   "latency_ms": 30127.8
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "10yo male, 1 week constipation, abdominal pain 7/10",
+     "Vitals stable: BP 107/66, HR 75, RR 20, T 98.6°F, SpO2 99%"
+    ],
+    "rationale": "No life threat, not high-risk, 1 resource (abdominal exam), no danger-zone vitals -> ESI 3"
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 623,
+   "output_tokens": 99,
+   "latency_ms": 30561.3
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Cautious Clinician": 3,
+  "Resource Manager": 3,
+  "Equity Auditor": 3
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.95,
+  "Resource Manager": 0.95,
+  "Equity Auditor": 0.95
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9499999999999998,
+ "disagreement_score": 0.050000000000000155,
+ "escalated": false,
+ "escalation_reasons": []
+}

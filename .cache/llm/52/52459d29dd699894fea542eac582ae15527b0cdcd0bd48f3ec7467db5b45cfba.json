@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nA healthy middle-aged man presents to the emergency department with his left hand wrapped in a bloody cloth. “I was using my table saw, and my hand slipped. I think I lost of couple of fingertips.” No past medical history, no med or allergies. Vital signs are within normal limits. Pain 6/10.",
+ "text": "{\n  \"chief_complaint\": \"Table saw injury, left hand fingertips amputated\"\n}",
+ "input_tokens": 197,
+ "output_tokens": 28,
+ "latency_ms": 58666.5,
+ "created": 1792011733.482242
+}

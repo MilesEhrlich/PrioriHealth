@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency triage nurse. Reply with JSON only.",
+ "user": "Assign an ESI level (1-5) to: 45-year-old with crushing chest pain and diaphoresis, HR 118.",
+ "text": "{\n  \"esi\": 1,\n  \"reason\": \"The patient is presenting with crushing chest pain and diaphoresis, which are indicative of potential life-threatening conditions such as acute myocardial infarction or cardiac contusion. The high heart rate further supports the need for immediate intervention.\"\n}",
+ "input_tokens": 66,
+ "output_tokens": 75,
+ "latency_ms": 4900.5,
+ "created": 1791999063.6846468
+}

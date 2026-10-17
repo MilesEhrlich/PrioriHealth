@@ -1,0 +1,160 @@
+{
+ "patient_id": "p-7bdeb5",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3"
+ ],
+ "round1": [
+  {
+   "agent": "Agent 1",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.85,
+    "key_findings": [
+     "Wrist injury, no deformity",
+     "Normal vitals",
+     "Pain 5/10"
+    ],
+    "rationale": "No life-threatening issues, high-risk conditions, or severe distress. Requires labs/X-ray and possible IV fluids for pain control, indicating 2 resource types. No danger-zone vitals. Consistent with ESI level 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 513,
+   "output_tokens": 97,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Wrist pain, no deformity",
+     "Normal vitals",
+     "Pain 5/10"
+    ],
+    "rationale": "Normal vitals, no life-threatening injury, 2 resources (X-ray, analgesia) -> ESI 3"
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 513,
+   "output_tokens": 88,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.9,
+    "key_findings": [
+     "Wrist pain after fall",
+     "Pain 5/10",
+     "No deformity, vitals normal"
+    ],
+    "rationale": "Adult with single musculoskeletal complaint, no vital sign abnormalities or high-risk features. Requires 1 resource type (likely X-ray). Meets ESI 4 criteria."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 513,
+   "output_tokens": 99,
+   "latency_ms": 0.0
+  }
+ ],
+ "round2": [
+  {
+   "agent": "Agent 1",
+   "round": 2,
+   "output": {
+    "esi": 3,
+    "confidence": 0.85,
+    "key_findings": [
+     "Wrist injury, no deformity",
+     "Normal vitals",
+     "Pain 5/10"
+    ],
+    "rationale": "No life-threatening conditions, high-risk scenarios, or severe distress. Requires X-ray and pain management, indicating 2 resource types (labs/procedures). No danger-zone vitals. Consistent with ESI level 3.",
+    "change_reason": "Held ESI level 3, as all panel members correctly identified key findings and applied ESI criteria."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 834,
+   "output_tokens": 113,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 2,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Wrist pain, no deformity",
+     "Normal vitals",
+     "Pain 5/10"
+    ],
+    "rationale": "Adult with single musculoskeletal complaint, no life-threatening injury or high-risk features. Requires 2 resource types (likely X-ray and analgesia), meeting ESI 3 criteria. Vitals are normal, pain is moderate.",
+    "change_reason": "Agent 1 correctly identified need for 2 resource types (X-ray and pain control)"
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 834,
+   "output_tokens": 121,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 2,
+   "output": {
+    "esi": 3,
+    "confidence": 0.8,
+    "key_findings": [
+     "Fall on ice, wrist pain",
+     "No deformity, vitals normal",
+     "Pain 5/10"
+    ],
+    "rationale": "While the initial assessment suggested ESI 4, the mechanism of injury (fall on ice) raises suspicion for a more serious injury, potentially warranting higher acuity. No life-threatening issues, but requires X-ray and possible IV fluids for pain management, aligning with ESI 3 criteria.",
+    "change_reason": "Reconsidering based on the potential for a high-risk situation due to the fall on ice, which could increase the likelihood of a more serious injury."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 834,
+   "output_tokens": 146,
+   "latency_ms": 2317.2
+  }
+ ],
+ "early_stopped": false,
+ "final_esis": {
+  "Agent 1": 3,
+  "Agent 2": 3,
+  "Agent 3": 3
+ },
+ "final_confidences": {
+  "Agent 1": 0.85,
+  "Agent 2": 0.9,
+  "Agent 3": 0.8
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 0,
+ "mean_confidence": 0.85,
+ "disagreement_score": 0.15000000000000002,
+ "escalated": false,
+ "escalation_reasons": []
+}

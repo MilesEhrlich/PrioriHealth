@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nI don’t know what is wrong with my son,” reports the worried mother of a normally healthy eight-year-old male. “He’s losing weight and acting so cranky. Last night he was up to the bathroom every hour, and he can’t seem to get enough to drink.” The child is alert and oriented and answers your questions appropriately. Vital signs: T 98.6°F, RR 30, HR 98, BP 92/78, SpO2 98%.",
+ "text": "{\n  \"chief_complaint\": \"Unexplained weight loss, irritability, polydipsia, and polyuria\"\n}",
+ "input_tokens": 238,
+ "output_tokens": 33,
+ "latency_ms": 86867.9,
+ "created": 1792011594.698663
+}

@@ -1,0 +1,283 @@
+{
+ "patient_id": "p-3e2204",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3",
+  "Agent 4",
+  "Agent 5",
+  "Agent 6",
+  "Agent 7",
+  "Agent 8",
+  "Agent 9",
+  "Agent 10"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Agent 1",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infant, 3 months old, with difficulty feeding and nasal congestion"
+     ],
+     "rationale": "The patient is a 3-month-old infant with difficulty feeding and nasal congestion, presenting with tachycardia (HR 132) but no respiratory distress (SpO2 99%). This scenario does not meet ESI level 1 or 2 criteria, as there is no immediate life-saving intervention needed, and the infant appears stable without a high-risk situation causing severe pain or confusion. The infant has one…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 619,
+    "output_tokens": 170,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infant with difficulty feeding",
+      "Dried mucus around nares",
+      "Tachycardia"
+     ],
+     "rationale": "The patient is a 3-month-old infant with difficulty feeding and dried mucus around the nares, suggesting possible respiratory distress. Although the oxygen saturation is normal, the heart rate is elevated, indicating a need for further evaluation. This does not meet the criteria for ESI 1 or 2, but the combination of symptoms warrants a higher ESI level than ESI 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 619,
+    "output_tokens": 145,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Infant, 3 months old",
+      "Increased respiratory rate (40)",
+      "Tachycardia (132 bpm)"
+     ],
+     "rationale": "Infant, 3 months old with increased respiratory rate and tachycardia, indicating a potential infection. Dried mucus around the nares is suggestive of nasal congestion, but not severe enough to warrant ESI 2. The baby is alert and not in immediate distress."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 619,
+    "output_tokens": 130,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infant with difficulty feeding",
+      "Dried mucus around nares"
+     ],
+     "rationale": "The patient is a 3-month-old infant with difficulty feeding and dried mucus around the nares. The heart rate is elevated at 132, but the SpO2 is within normal range at 99%. This presentation does not meet the criteria for ESI 1 or 2, as there is no immediate life-saving intervention needed and the infant is not in a high-risk situation.…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 619,
+    "output_tokens": 212,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infant, 3 months old",
+      "Tachycardia, RR 40",
+      "High risk situation: young age"
+     ],
+     "rationale": "The infant is 3 months old, has tachycardia with a respiratory rate of 40, and is in a high-risk age group. Despite alertness and normal SpO2, the tachycardia warrants further evaluation for potential infection or airway issue."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 619,
+    "output_tokens": 123,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Infant with difficulty feeding",
+      "Dried mucus around nares"
+     ],
+     "rationale": "The patient is a 3-month-old with feeding difficulty and dried mucus around the nares. The heart rate is elevated (132 bpm), but the baby is alert and not in immediate danger (ESI 1 criteria not met). The baby is not showing signs of respiratory distress (SpO2 99%). The situation does not meet ESI 2 criteria. The situation involves two resource…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 619,
+    "output_tokens": 173,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infant, 3 months old, difficulty feeding",
+      "Dried mucus around nares"
+     ],
+     "rationale": "The patient is a 3-month-old infant with difficulty feeding and dried mucus around the nares, which is concerning but not immediately life-threatening. The heart rate is elevated (132 bpm), but the oxygen saturation is normal (99%). This case does not meet ESI 1 or 2 criteria, and with one resource type (exam, POC tests), it falls under ESI 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 619,
+    "output_tokens": 155,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infant with difficulty feeding",
+      "Dried mucus around nares"
+     ],
+     "rationale": "The patient is an infant with difficulty feeding and dried mucus around the nares, which could indicate respiratory distress. Although the oxygen saturation is normal, the respiratory rate is elevated at 40 breaths per minute, which is above the age-specific threshold for infants 3 months and under (>60 breaths per minute). This warrants a higher ESI level than 5, but…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 619,
+    "output_tokens": 164,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infant with difficulty feeding",
+      "Dried mucus around nares"
+     ],
+     "rationale": "The patient is a 3-month-old infant with difficulty feeding and dried mucus around the nares, which could indicate respiratory distress. Although the oxygen saturation is within normal limits, the respiratory rate is elevated at 40 breaths per minute, and the heart rate is also increased at 132 beats per minute. These findings suggest a need for further evaluation, but they…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 619,
+    "output_tokens": 174,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "3-month-old with feeding difficulty, nasal congestion"
+     ],
+     "rationale": "The patient is a 3-month-old with feeding difficulty and nasal congestion. Although the heart rate is elevated (132 bpm), the baby is alert and not showing signs of respiratory distress (SpO2 99%). This presentation does not meet the criteria for ESI 1 or 2, but the need for further evaluation and potential treatment makes it more urgent than ESI 5.…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 619,
+    "output_tokens": 153,
+    "latency_ms": 0.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 1.0,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Agent 1": 3,
+  "Agent 2": 3,
+  "Agent 3": 3,
+  "Agent 4": 3,
+  "Agent 5": 3,
+  "Agent 6": 3,
+  "Agent 7": 3,
+  "Agent 8": 3,
+  "Agent 9": 3,
+  "Agent 10": 3
+ },
+ "initial_range": 0,
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 3,
+  "Agent 2": 3,
+  "Agent 3": 3,
+  "Agent 4": 3,
+  "Agent 5": 3,
+  "Agent 6": 3,
+  "Agent 7": 3,
+  "Agent 8": 3,
+  "Agent 9": 3,
+  "Agent 10": 3
+ },
+ "final_confidences": {
+  "Agent 1": 0.95,
+  "Agent 2": 0.95,
+  "Agent 3": 0.9,
+  "Agent 4": 0.95,
+  "Agent 5": 0.95,
+  "Agent 6": 0.9,
+  "Agent 7": 0.95,
+  "Agent 8": 0.95,
+  "Agent 9": 0.95,
+  "Agent 10": 0.95
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9400000000000001,
+ "disagreement_score": 0.05999999999999994,
+ "escalated": false,
+ "escalation_reasons": []
+}

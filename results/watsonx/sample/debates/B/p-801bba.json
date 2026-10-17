@@ -1,0 +1,93 @@
+{
+ "patient_id": "p-801bba",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3"
+ ],
+ "round1": [
+  {
+   "agent": "Agent 1",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Foot laceration from rusty nail",
+     "Tetanus shot needed",
+     "No distress or vitals abnormal"
+    ],
+    "rationale": "Foot injury requires assessment and tetanus prophylaxis, but no acute distress or abnormal vitals. One resource (tetanus shot) places this at ESI level 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 515,
+   "output_tokens": 89,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Foot puncture wound from rusty nail",
+     "Up-to-date tetanus immunization status unknown",
+     "Normal vital signs"
+    ],
+    "rationale": "Puncture wound from contaminated object warrants tetanus assessment. No other acute issues or high-risk factors. Requires labs/meds and procedure (tetanus vaccine)."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 515,
+   "output_tokens": 98,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Non-life-threatening injury",
+     "Single resource (tetanus shot)",
+     "No acute distress"
+    ],
+    "rationale": "Step on rusty nail is high-risk mechanism but no signs of infection or wound complication. Needs only tetanus shot, no labs or imaging. No acute distress or vital sign abnormalities."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 515,
+   "output_tokens": 84,
+   "latency_ms": 0.0
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 3,
+  "Agent 2": 3,
+  "Agent 3": 3
+ },
+ "final_confidences": {
+  "Agent 1": 0.95,
+  "Agent 2": 0.9,
+  "Agent 3": 0.9
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9166666666666666,
+ "disagreement_score": 0.08333333333333337,
+ "escalated": false,
+ "escalation_reasons": []
+}

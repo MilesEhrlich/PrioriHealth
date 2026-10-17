@@ -1,0 +1,273 @@
+{
+ "patient_id": "p-74d15b",
+ "condition": "C",
+ "agents": [
+  "Empath",
+  "Logician",
+  "Skeptic",
+  "Observer",
+  "Synthesizer",
+  "Pragmatist",
+  "Vigilant",
+  "Impartial",
+  "Mediator",
+  "Reflective"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Empath",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Rapid heart rate, dyspnea, chest pressure",
+      "High heart rate (178 bpm)",
+      "Tachypnea (32 breaths/min)"
+     ],
+     "rationale": "High heart rate, tachypnea, and cool, diaphoretic skin suggest a high-risk situation (possible ACS or unstable tachycardia). This meets the criteria for ESI 1 (needs immediate life-saving intervention)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 695,
+    "output_tokens": 121,
+    "latency_ms": 872432.0
+   },
+   {
+    "agent": "Logician",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Rapid heart rate, Dysnia, Chest pressure"
+     ],
+     "rationale": "The patient's age (21), high heart rate (178 bpm), low blood pressure (82/60), rapid respiratory rate (32), cool clammy skin, and symptoms of chest pressure and difficulty breathing indicate a need for immediate life-saving intervention. The ESI level is 1 due to the presence of severe respiratory distress and unstable vital signs."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 685,
+    "output_tokens": 133,
+    "latency_ms": 880690.6
+   },
+   {
+    "agent": "Skeptic",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Rapid heart rate, tachycardia; Respiratory distress; Hypotension"
+     ],
+     "rationale": "The patient is a 21-year-old female with a heart rate of 178, respiratory distress, and hypotension. These findings indicate a need for immediate life-saving intervention, placing her at ESI level 1."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 687,
+    "output_tokens": 105,
+    "latency_ms": 887262.6
+   },
+   {
+    "agent": "Observer",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 0.99,
+     "key_findings": [
+      "Rapid heart rate, RR 32",
+      "Inability to catch breath",
+      "Chest pressure"
+     ],
+     "rationale": "Rapid heart rate (>160 in adults), low blood pressure, high respiratory rate, and inability to catch breath suggest severe respiratory distress. This aligns with ESI 1 (Needs immediate life-saving intervention)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 682,
+    "output_tokens": 107,
+    "latency_ms": 894385.1
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Rapid heart rate, tachypnea, chest pressure, cool diaphoretic skin, hypotension"
+     ],
+     "rationale": "The patient's high heart rate (178 bpm) along with tachypnea (32 breaths per minute), chest pressure, cool diaphoretic skin, and hypotension (82/60 mmHg) suggest a possible unstable condition. These findings align with ESI level 1, as they indicate potential severe, life-threatening issues such as unstable tachycardia or severe respiratory distress. The patient's symptoms and vital signs collectively imply a need…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 681,
+    "output_tokens": 182,
+    "latency_ms": 905209.5
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 0.99,
+     "key_findings": [
+      "Rapid heart rate, tachycardia",
+      "Difficulty breathing, respiratory distress",
+      "Chest pressure"
+     ],
+     "rationale": "The patient, a 21-year-old female, presents with tachycardia (178 bpm), respiratory distress (rapid, shallow breaths, RR 32), hypotension (BP 82/60), and chest pressure. These symptoms, combined with her cool, diaphoretic skin, indicate a need for immediate life-saving intervention. The high heart rate, low blood pressure, and inability to catch breath suggest a critical, potentially life-threatening condition. This scenario aligns with…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 686,
+    "output_tokens": 212,
+    "latency_ms": 918285.4
+   },
+   {
+    "agent": "Vigilant",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Rapid heart rate, shortness of breath, chest pressure",
+      "Tachycardia, tachypnea, hypotension"
+     ],
+     "rationale": "ESI 1 assigned due to high-risk situation (possible ACS, unstable tachycardia) and severe symptoms (shortness of breath, chest pressure, hypotension)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 686,
+    "output_tokens": 103,
+    "latency_ms": 924341.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Rapid heart rate",
+      "Difficulty breathing",
+      "Chest pressure"
+     ],
+     "rationale": "The patient's high heart rate (178 bpm), low blood pressure (82/60), rapid respirations (32/min), cool and diaphoretic skin, and symptoms such as difficulty breathing and chest pressure indicate a potentially life-threatening situation, fitting ESI level 1. The patient requires immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 708,
+    "output_tokens": 122,
+    "latency_ms": 931259.4
+   },
+   {
+    "agent": "Mediator",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Tachycardia, dyspnea, chest pressure, age 21"
+     ],
+     "rationale": "ESI 1 assigned due to tachycardia (178 bpm), low blood pressure (82/60), rapid respirations (32/min), and cool, diaphoretic skin, indicating potential for immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 684,
+    "output_tokens": 104,
+    "latency_ms": 937296.5
+   },
+   {
+    "agent": "Reflective",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 0.95,
+     "key_findings": [
+      "Tachycardia, Dyspnea, Chest pain, Hypotension"
+     ],
+     "rationale": "The patient's rapid heart rate (178 bpm) and hypotension (BP 82/60) along with dyspnea and chest pressure align with ESI 1 due to potential unstable condition. Cool, diaphoretic skin suggests compensatory mechanism."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 684,
+    "output_tokens": 108,
+    "latency_ms": 943514.8
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 1.0,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Empath": 1,
+  "Logician": 1,
+  "Skeptic": 1,
+  "Observer": 1,
+  "Synthesizer": 1,
+  "Pragmatist": 1,
+  "Vigilant": 1,
+  "Impartial": 1,
+  "Mediator": 1,
+  "Reflective": 1
+ },
+ "initial_range": 0,
+ "early_stopped": true,
+ "final_esis": {
+  "Empath": 1,
+  "Logician": 1,
+  "Skeptic": 1,
+  "Observer": 1,
+  "Synthesizer": 1,
+  "Pragmatist": 1,
+  "Vigilant": 1,
+  "Impartial": 1,
+  "Mediator": 1,
+  "Reflective": 1
+ },
+ "final_confidences": {
+  "Empath": 1.0,
+  "Logician": 1.0,
+  "Skeptic": 1.0,
+  "Observer": 0.99,
+  "Synthesizer": 1.0,
+  "Pragmatist": 0.99,
+  "Vigilant": 1.0,
+  "Impartial": 1.0,
+  "Mediator": 1.0,
+  "Reflective": 0.95
+ },
+ "aggregate": 1,
+ "majority": 1,
+ "disagreement_range": 0,
+ "mean_confidence": 0.993,
+ "disagreement_score": 0.007000000000000006,
+ "escalated": false,
+ "escalation_reasons": []
+}

@@ -1,0 +1,92 @@
+{
+ "patient_id": "p-44fff4",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Eye pain, photophobia, red eye",
+     "Pain 6/10",
+     "No systemic symptoms"
+    ],
+    "rationale": "Eye injury without systemic illness or high-risk features warrants ESI 3. No abnormal vitals, no need for immediate intervention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 619,
+   "output_tokens": 78,
+   "latency_ms": 10482.4
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Corneal abrasion with photophobia",
+     "Pain 6/10",
+     "Normal vitals"
+    ],
+    "rationale": "No life threat (A) or high acuity (B). One resource (eye exam). Distinct resources = 1 -> ESI 4, but pain 6/10 pushes to ESI 3 per D."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 609,
+   "output_tokens": 98,
+   "latency_ms": 11187.3
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Corneal abrasion suspected",
+     "Photophobia, pain 6/10"
+    ],
+    "rationale": "Eye injury with moderate pain and photophobia, but stable vitals and no systemic concerns. Requires exam, fluorescein staining, possible topical meds - 2 resources (ESI 3)."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 609,
+   "output_tokens": 78,
+   "latency_ms": 11621.1
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Cautious Clinician": 3,
+  "Resource Manager": 3,
+  "Equity Auditor": 3
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.9,
+  "Resource Manager": 0.9,
+  "Equity Auditor": 0.9
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9,
+ "disagreement_score": 0.09999999999999998,
+ "escalated": false,
+ "escalation_reasons": []
+}

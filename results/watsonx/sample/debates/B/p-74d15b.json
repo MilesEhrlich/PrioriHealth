@@ -1,0 +1,95 @@
+{
+ "patient_id": "p-74d15b",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3"
+ ],
+ "round1": [
+  {
+   "agent": "Agent 1",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "HR 178, RR 32, BP 82/60",
+     "Feels short of breath, chest pressure",
+     "Cool, diaphoretic skin"
+    ],
+    "rationale": "Patient is unstable with tachycardia, tachypnea, hypotension, and altered skin perfusion. High-risk ESI 2 due to vital sign abnormalities and potential cardiac cause."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 534,
+   "output_tokens": 108,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.9,
+    "key_findings": [
+     "Rapid heart rate 178 bpm",
+     "Respiratory rate 32, low BP 82/60",
+     "Complains of chest pressure, SOB"
+    ],
+    "rationale": "High HR and RR with hypotension indicate possible ACS or pulmonary embolism, a high-risk situation requiring immediate evaluation. No other red flags for ESI 1."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 534,
+   "output_tokens": 110,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.9,
+    "key_findings": [
+     "Tachycardia (HR 178)",
+     "Tachypnea (RR 32)",
+     "Hypotension (BP 82/60)"
+    ],
+    "rationale": "The patient is hemodynamically unstable with hypotension and tachycardia, which meets criteria for ESI 2. The concern for possible ACS or other life-threatening cause of the symptoms also supports ESI 2 rather than ESI 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [
+    "findings_trimmed"
+   ],
+   "calls": 1,
+   "input_tokens": 534,
+   "output_tokens": 142,
+   "latency_ms": 0.0
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 2,
+  "Agent 2": 2,
+  "Agent 3": 2
+ },
+ "final_confidences": {
+  "Agent 1": 0.95,
+  "Agent 2": 0.9,
+  "Agent 3": 0.9
+ },
+ "aggregate": 2,
+ "majority": 2,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9166666666666666,
+ "disagreement_score": 0.08333333333333337,
+ "escalated": false,
+ "escalation_reasons": []
+}

@@ -1,0 +1,282 @@
+{
+ "patient_id": "p-dcc75c",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3",
+  "Agent 4",
+  "Agent 5",
+  "Agent 6",
+  "Agent 7",
+  "Agent 8",
+  "Agent 9",
+  "Agent 10"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Agent 1",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Insect in ear",
+      "Buzzing noise",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient has a foreign body in the ear causing discomfort and distress, but there are no immediate life-threatening symptoms or high-risk conditions present. Vital signs are normal. This case does not require immediate intervention or advanced resources."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 624,
+    "output_tokens": 98,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Insect in ear",
+      "Buzzing noise",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient reports an insect in the ear causing buzzing noise. Despite discomfort, normal vital signs and lack of high-risk conditions indicate ESI level 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 624,
+    "output_tokens": 85,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Insect in ear",
+      "Buzzing noise",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient presents with an insect in the ear causing buzzing noise. Despite discomfort, vital signs are normal and no immediate life-saving intervention is required. This is not a high-risk situation and no urgent resources are needed."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 624,
+    "output_tokens": 100,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Insect in ear",
+      "Buzzing noise",
+      "No medical history"
+     ],
+     "rationale": "The patient presents with a non-life-threatening condition (insect in ear causing buzzing noise). There is no immediate life-saving intervention needed, and the patient's vital signs are normal. This does not fit criteria for ESI 2 or higher, as it is not a high-risk situation or severe pain/distress. The patient does not require distinct resource types beyond a simple exam. The…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 624,
+    "output_tokens": 153,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Insect in ear",
+      "Buzzing noise",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient reports an insect in the ear causing buzzing noise, which is distressing but not a medical emergency. Normal vital signs support ESI level 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 624,
+    "output_tokens": 83,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Insect in ear",
+      "Buzzing noise",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient has an insect in her ear causing a buzzing noise, which is distressing her. However, her vital signs are normal and there is no indication for immediate life-saving intervention, high-risk situation, or need for resource-intensive testing or procedures. This is not an emergency."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 624,
+    "output_tokens": 112,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Insect in ear",
+      "Buzzing noise",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient has a foreign body in the ear causing discomfort and a buzzing noise, but vital signs are normal and there is no indication for immediate life-saving intervention, high-risk situation, or need for advanced resources."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 624,
+    "output_tokens": 95,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Foreign body in ear",
+      "No previous medical history",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient has a foreign body in the ear, but there is no evidence of immediate life-threatening conditions, high-risk situations, or need for immediate resource-intensive interventions. The patient's normal vital signs and lack of medical history support ESI level 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 624,
+    "output_tokens": 103,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Insect in ear",
+      "Buzzing noise",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient has a non-life-threatening condition with an insect in the ear causing a bothersome buzzing noise. The patient's vital signs are normal and there is no immediate risk of deterioration. This does not meet any ESI 1-2 criteria, thus assigned ESI 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 624,
+    "output_tokens": 112,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Foreign body in ear",
+      "Buzzing noise",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient has a foreign body in the ear causing buzzing noise, but vital signs are normal and no immediate life-saving intervention is needed."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 624,
+    "output_tokens": 77,
+    "latency_ms": 0.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 1.0,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Agent 1": 5,
+  "Agent 2": 5,
+  "Agent 3": 5,
+  "Agent 4": 5,
+  "Agent 5": 5,
+  "Agent 6": 5,
+  "Agent 7": 5,
+  "Agent 8": 5,
+  "Agent 9": 5,
+  "Agent 10": 5
+ },
+ "initial_range": 0,
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 5,
+  "Agent 2": 5,
+  "Agent 3": 5,
+  "Agent 4": 5,
+  "Agent 5": 5,
+  "Agent 6": 5,
+  "Agent 7": 5,
+  "Agent 8": 5,
+  "Agent 9": 5,
+  "Agent 10": 5
+ },
+ "final_confidences": {
+  "Agent 1": 1.0,
+  "Agent 2": 1.0,
+  "Agent 3": 1.0,
+  "Agent 4": 1.0,
+  "Agent 5": 1.0,
+  "Agent 6": 1.0,
+  "Agent 7": 1.0,
+  "Agent 8": 1.0,
+  "Agent 9": 1.0,
+  "Agent 10": 1.0
+ },
+ "aggregate": 5,
+ "majority": 5,
+ "disagreement_range": 0,
+ "mean_confidence": 1.0,
+ "disagreement_score": 0.0,
+ "escalated": false,
+ "escalation_reasons": []
+}

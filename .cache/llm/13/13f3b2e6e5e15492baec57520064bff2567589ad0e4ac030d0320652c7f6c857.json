@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\n36-year-old male presents to the emergency department reporting severe abdominal pain for the past 24 hours. The patient has no significant medical history, and the pain started in the lower right quadrant of the abdomen, progressively worsening. He rates the pain as 8/10, and reports nausea but no vomiting or fever. His vital signs are stable, with a blood pressure of 120/80 mmHg, a heart rate of 85 beats per minute, a respiratory rate of 16 breaths per minute, and an oxygen saturation of 98%. The patient denies any recent trauma or unusual physical activity. No other associated symptoms like chest pain or dizziness are reported.",
+ "text": "{\n  \"chief_complaint\": \"Severe abdominal pain, 24 hours duration\"\n}",
+ "input_tokens": 292,
+ "output_tokens": 26,
+ "latency_ms": 37058.6,
+ "created": 1792011711.874114
+}

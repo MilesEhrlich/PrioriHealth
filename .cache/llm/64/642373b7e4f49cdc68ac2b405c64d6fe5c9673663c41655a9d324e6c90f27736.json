@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\n14-year-old female is brought in by EMS after diving into the pool and hitting her head. She is awake, alert, and moving all extremities. She is currently immobilized on a back board with c-collar in place. VS: BP 118/72, HR 76, RR 14.",
+ "text": "{\n  \"chief_complaint\": \"Head injury after diving accident, awake, alert, stable vital signs\"\n}",
+ "input_tokens": 198,
+ "output_tokens": 31,
+ "latency_ms": 20211.1,
+ "created": 1792011695.0234082
+}

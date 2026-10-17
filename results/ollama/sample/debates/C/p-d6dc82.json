@@ -1,0 +1,599 @@
+{
+ "patient_id": "p-d6dc82",
+ "condition": "C",
+ "agents": [
+  "Empath",
+  "Logician",
+  "Skeptic",
+  "Observer",
+  "Synthesizer",
+  "Pragmatist",
+  "Vigilant",
+  "Impartial",
+  "Mediator",
+  "Reflective"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Empath",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with 1-week constipation, 7/10 abdominal pain, nausea, lack of appetite",
+      "Vitals: BP 107/66, HR 75, RR 20, T 98.6°F, SpO2 99%"
+     ],
+     "rationale": "The patient is a child with a history of constipation presenting with abdominal pain, nausea, and lack of appetite, suggesting a possible bowel obstruction or other serious condition. The pain is rated as 7/10, meeting the criteria for ESI 2 under B (severe pain). However, considering the lack of immediate life-threatening signs and the absence of high-risk conditions, the ESI…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 713,
+    "output_tokens": 254,
+    "latency_ms": 1570525.4
+   },
+   {
+    "agent": "Logician",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with constipation for a week",
+      "7/10 abdominal pain, nausea, lack of appetite"
+     ],
+     "rationale": "The patient is a child with a history of constipation for a week, presenting with 7/10 abdominal pain, nausea, and lack of appetite. The vital signs are stable, with normal blood pressure, heart rate, respiratory rate, temperature, and oxygen saturation. This case does not meet criteria for ESI 1-3, as it does not involve immediate life-saving intervention, a high-risk situation,…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 703,
+    "output_tokens": 229,
+    "latency_ms": 1592895.8
+   },
+   {
+    "agent": "Skeptic",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "Duration of constipation: 1 week",
+      "Abdominal pain: 7/10",
+      "Nausea, lack of appetite"
+     ],
+     "rationale": "The patient is a 10-year-old with a week-long history of constipation, presenting with abdominal pain (7/10), nausea, and lack of appetite. Although concerning, the symptoms are not immediately life-threatening. The vital signs are within normal limits, and there is no evidence of shock or respiratory distress. This case meets the criteria for ESI level 4 due to the moderate severity…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 705,
+    "output_tokens": 177,
+    "latency_ms": 1616154.6
+   },
+   {
+    "agent": "Observer",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with 1-week constipation",
+      "7/10 abdominal pain",
+      "normal vital signs"
+     ],
+     "rationale": "The patient is a 10-year-old presenting with a week-long history of constipation, associated 7/10 abdominal pain, nausea, and lack of appetite. Vital signs are within normal limits. Given the absence of life-threatening conditions (ESI 1) or high-risk situations (ESI 2), we proceed to resource evaluation. With only one distinct resource type (exam), the patient is categorized as ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 700,
+    "output_tokens": 172,
+    "latency_ms": 1647084.1
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.85,
+     "key_findings": [
+      "Abdominal pain, nausea, lack of appetelss for 7 days",
+      "No immediate life-saving intervention needed",
+      "Distinct resource types: ECG, X-ray"
+     ],
+     "rationale": "A 10-year-old male with abdominal pain, nausea, and lack of appetite for a week is assigned ESI 4. Although there is no immediate life-saving intervention needed, distinct resource types such as ECG and X-ray are indicated for further evaluation and management."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 699,
+    "output_tokens": 137,
+    "latency_ms": 1672411.3
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 1,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 1,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 1,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 1,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.85,
+     "key_findings": [
+      "10-year-old with severe abdominal pain, nausea, and constipation for a week",
+      "Normal vital signs except for abdominal pain"
+     ],
+     "rationale": "A 10-year-old presenting with severe abdominal pain, nausea, and constipation for a week falls under ESI 4 (urgent). Although vital signs are normal, the duration and intensity of symptoms suggest a possible serious condition, such as partial bowel obstruction or inflammatory bowel disease. Further diagnostic tests, including lab work and possibly imaging, are needed to rule out critical conditions."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 702,
+    "output_tokens": 162,
+    "latency_ms": 1826776.5
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with week-long constipation",
+      "7/10 abdominal pain",
+      "nausea, lack of appetite"
+     ],
+     "rationale": "Meeting ESI 2 criteria for severe pain, but vital signs stable, no immediate life threat",
+     "message": "Agree with all members on ESI 4. The severity of pain meets the criteria for ESI 2, but stable vital signs and absence of high-risk situations justify ESI 4. No specific clinical finding or ESI step was missed.",
+     "change_reason": "None, as all panel members correctly identified the appropriate ESI level."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1358,
+    "output_tokens": 165,
+    "latency_ms": 1708349.4
+   },
+   {
+    "agent": "Logician",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with constipation for a week",
+      "7/10 abdominal pain, nausea, lack of appetite",
+      "Stable vital signs"
+     ],
+     "rationale": "Child with prolonged constipation, significant pain, and associated symptoms; vital signs within normal limits; no immediate life-saving intervention required, but resources for further evaluation are indicated.",
+     "message": "Agree with Empath, Observer, and Reflective on ESI 4. The patient's history, symptoms, and stable vitals support this level. Skeptic, while acknowledging your concerns, I maintain ESI 4 due to the duration and intensity of symptoms suggesting a serious condition. Change reason: None, as I previously identified distinct resource needs for further evaluation.",
+     "change_reason": "No change in ESI; reaffirming the need for resources indicated for ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1348,
+    "output_tokens": 220,
+    "latency_ms": 1725061.7
+   },
+   {
+    "agent": "Skeptic",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "10-year-old with week-long constipation",
+      "7/10 abdominal pain",
+      "Normal vital signs"
+     ],
+     "rationale": "Child's symptoms suggest a serious condition, but vital signs are within normal limits, justifying ESI 4.",
+     "message": "@Empath, @Logician, @Observer, @Reflective, while considering the severity of symptoms, I maintain ESI 4 due to normal vital signs. @Synthesizer, I agree distinct resources are needed, but current ESI remains 4.",
+     "change_reason": "Reaffirmed ESI 4 based on normal vital signs despite severity of symptoms."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1349,
+    "output_tokens": 168,
+    "latency_ms": 1737292.5
+   },
+   {
+    "agent": "Observer",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "10-year-old with week-long constipation",
+      "7/10 abdominal pain, nausea, lack of appetite",
+      "normal vital signs"
+     ],
+     "rationale": "Absent life-threatening conditions or high-risk situations, but distinct resources needed for evaluation.",
+     "message": "Agree with all members on ESI 4. No specific finding or ESI step missed. Vital signs within normal limits, no immediate life-saving intervention needed.",
+     "change_reason": "None; vital signs and symptoms justify ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1346,
+    "output_tokens": 148,
+    "latency_ms": 1748507.5
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.85,
+     "key_findings": [
+      "10-year-old with week-long constipation, 7/10 abdominal pain, nausea, lack of appetite",
+      "Vitals stable, SpO2 99%",
+      "ECG and X-ray indicated for further evaluation"
+     ],
+     "rationale": "Patient's symptoms, while concerning, do not meet criteria for ESI 1 or 2. Distinct resources, ECG and X-ray, are needed for diagnosis.",
+     "message": "Agree with Empath, Logician, Skeptic, Observer, and Reflective on ESI 4. The patient's history, symptoms, and stable vitals support this level. No immediate life-saving intervention or high-risk situation is present. ECG and X-ray are indicated for further evaluation.",
+     "change_reason": "No specific clinical finding or ESI step was missed; this response confirms agreement with the panel."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1343,
+    "output_tokens": 225,
+    "latency_ms": 1763645.2
+   },
+   {
+    "agent": "Reflective",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.85,
+     "key_findings": [
+      "10-year-old with week-long constipation, 7/10 abdominal pain, nausea, lack of appetite",
+      "normal vital signs"
+     ],
+     "rationale": "Severity and duration of symptoms suggest possible serious condition, such as partial bowel obstruction",
+     "message": "Agree with Empath, Logician, Observer, and Synthesizer on ESI 4. Skeptic, while I respect your cautious approach, the symptoms' duration and intensity warrant further investigation for potential serious conditions.",
+     "change_reason": "No, my position remains consistent with the panel's majority and supported by the patient's symptoms and history."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1347,
+    "output_tokens": 170,
+    "latency_ms": 1775944.3
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": false,
+ "consensus_share": 0.6,
+ "rounds_used": 5,
+ "first_round_esis": {
+  "Empath": 4,
+  "Logician": 4,
+  "Skeptic": 4,
+  "Observer": 4,
+  "Synthesizer": 4,
+  "Reflective": 4
+ },
+ "initial_range": 0,
+ "early_stopped": false,
+ "final_esis": {
+  "Empath": 4,
+  "Logician": 4,
+  "Skeptic": 4,
+  "Observer": 4,
+  "Synthesizer": 4,
+  "Reflective": 4
+ },
+ "final_confidences": {
+  "Empath": 0.95,
+  "Logician": 0.95,
+  "Skeptic": 0.9,
+  "Observer": 0.95,
+  "Synthesizer": 0.85,
+  "Reflective": 0.85
+ },
+ "aggregate": 4,
+ "majority": 4,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9083333333333332,
+ "disagreement_score": 6.091666666666667,
+ "escalated": true,
+ "escalation_reasons": [
+  "agent_failure",
+  "no_consensus"
+ ]
+}

@@ -1,0 +1,291 @@
+{
+ "patient_id": "p-935ede",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3",
+  "Agent 4",
+  "Agent 5",
+  "Agent 6",
+  "Agent 7",
+  "Agent 8",
+  "Agent 9",
+  "Agent 10"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Agent 1",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "10-year-old with swimmer's ear symptoms",
+      "No respiratory distress",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "The patient is a 10-year-old child with symptoms of swimmer's ear, no respiratory distress, and vital signs within normal limits. This does not meet the criteria for ESI level 1 or 2. The child does not require immediate life-saving intervention, nor should they not wait for further evaluation. There are no distinct resource types indicated, and the vital signs do…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 639,
+    "output_tokens": 169,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "10-year-old with swimmer's ear symptoms",
+      "painful, itchy ears",
+      "normal vital signs"
+     ],
+     "rationale": "The child is a 10-year-old with symptoms suggestive of swimmer's ear, including painful, itchy ears. However, the vital signs are normal, and there are no signs of high-risk conditions or immediate life-saving intervention needed. This case does not meet the criteria for ESI levels 1-4, as it does not require immediate care, has no high-risk conditions, and does not need…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 639,
+    "output_tokens": 171,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "10-year-old with swimmer's ear symptoms",
+      "No respiratory distress",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient is a 10-year-old child with symptoms of swimmer's ear, no respiratory distress, and normal vital signs. This does not meet the criteria for ESI 1-4, and no immediate life-saving intervention is needed. Therefore, the ESI level is 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 639,
+    "output_tokens": 127,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "10-year-old with painful, itchy ears due to suspected swimmer's ear",
+      "No respiratory distress, shock, or overdose",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "The patient is a 10-year-old child with painful, itchy ears due to suspected swimmer's ear, which does not meet the criteria for immediate life-saving intervention (A), nor does it present a high-risk situation requiring immediate care (B). The child has normal vital signs and no need for advanced resources (C). Therefore, this case is assigned ESI level 5, indicating a…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 639,
+    "output_tokens": 174,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "10-year-old with swimmer's ear symptoms",
+      "no respiratory distress",
+      "vitals within normal range"
+     ],
+     "rationale": "The patient is a 10-year-old boy presenting with symptoms of swimmer's ear, which is not a life-threatening condition. He does not require immediate intervention, nor does he present in a high-risk situation. His vitals are within normal limits, and no resources are needed for diagnosis or treatment other than examination and possible topical ear drops. Therefore, this case is assigned…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 639,
+    "output_tokens": 159,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "10-year-old with swimmer's ear symptoms",
+      "No respiratory distress",
+      "Normal vital signs"
+     ],
+     "rationale": "The child is a 10-year-old with symptoms of swimmer's ear, no respiratory distress, and normal vital signs. This does not meet the criteria for ESI 1-4, and thus is classified as ESI 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 639,
+    "output_tokens": 116,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "10-year-old with swimmer's ear symptoms",
+      "no respiratory distress",
+      "normal vital signs"
+     ],
+     "rationale": "The patient is a 10-year-old with swimmer's ear symptoms, no respiratory distress, and normal vital signs. This does not meet the criteria for ESI 1-4, and no immediate life-saving intervention is needed. Therefore, the ESI level is 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 639,
+    "output_tokens": 125,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "10-year-old with swimmer's ear symptoms",
+      "no respiratory distress",
+      "stable vital signs"
+     ],
+     "rationale": "The child is a 10-year-old with symptoms of swimmer's ear, no respiratory distress, and stable vital signs. This case does not meet criteria for ESI 1-4 and does not present a high-risk situation or require immediate life-saving intervention. Therefore, it is classified as ESI 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 639,
+    "output_tokens": 134,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "10-year-old with swimmer's ear symptoms",
+      "no respiratory distress",
+      "stable vital signs"
+     ],
+     "rationale": "The patient is a 10-year-old child with symptoms of swimmer's ear, specifically painful and itchy ears, without any signs of immediate life-threatening conditions or high-risk situations. The vital signs are stable, with a normal temperature, heart rate, respiratory rate, and blood pressure. The child does not meet the criteria for ESI level 1, 2, or 3, and no further resources…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 639,
+    "output_tokens": 171,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "10-year-old with swimmer's ear symptoms",
+      "reported painful, itchy ears"
+     ],
+     "rationale": "The child is a 10-year-old with symptoms of swimmer's ear, reported as painful, itchy ears. The vital signs are within normal limits, and there are no signs of immediate life-threatening conditions or high-risk situations. The child does not require immediate life-saving intervention, nor should they wait for further treatment, as this is not a high-risk situation. There are no distinct…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 639,
+    "output_tokens": 181,
+    "latency_ms": 0.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 1.0,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Agent 1": 5,
+  "Agent 2": 5,
+  "Agent 3": 5,
+  "Agent 4": 5,
+  "Agent 5": 5,
+  "Agent 6": 5,
+  "Agent 7": 5,
+  "Agent 8": 5,
+  "Agent 9": 5,
+  "Agent 10": 5
+ },
+ "initial_range": 0,
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 5,
+  "Agent 2": 5,
+  "Agent 3": 5,
+  "Agent 4": 5,
+  "Agent 5": 5,
+  "Agent 6": 5,
+  "Agent 7": 5,
+  "Agent 8": 5,
+  "Agent 9": 5,
+  "Agent 10": 5
+ },
+ "final_confidences": {
+  "Agent 1": 1.0,
+  "Agent 2": 1.0,
+  "Agent 3": 1.0,
+  "Agent 4": 1.0,
+  "Agent 5": 1.0,
+  "Agent 6": 1.0,
+  "Agent 7": 1.0,
+  "Agent 8": 1.0,
+  "Agent 9": 1.0,
+  "Agent 10": 1.0
+ },
+ "aggregate": 5,
+ "majority": 5,
+ "disagreement_range": 0,
+ "mean_confidence": 1.0,
+ "disagreement_score": 0.0,
+ "escalated": false,
+ "escalation_reasons": []
+}

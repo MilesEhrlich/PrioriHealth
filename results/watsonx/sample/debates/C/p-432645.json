@@ -1,0 +1,93 @@
+{
+ "patient_id": "p-432645",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Shoulder dislocation",
+     "Severe pain",
+     "Normal vitals"
+    ],
+    "rationale": "Dislocation is a 2-resource case (X-ray, procedure). Pain is severe but not life-threatening. Vitals are normal. Meets ESI 3 criteria."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 604,
+   "output_tokens": 80,
+   "latency_ms": 8602.4
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Shoulder dislocation",
+     "Severe pain (10/10)",
+     "Normal vitals"
+    ],
+    "rationale": "Patient is stable with no life-threatening condition (A). No high-risk situation or severe distress (B). Requires 1 distinct resource (X-ray) and pain management, so ESI 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 594,
+   "output_tokens": 89,
+   "latency_ms": 9326.8
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Shoulder dislocation",
+     "Severe pain 10/10",
+     "Normal vitals"
+    ],
+    "rationale": "Dislocation is a 2-resource case (X-ray, reduction). Pain is severe but not life-threatening. No unstable vitals or high-risk mechanism."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 594,
+   "output_tokens": 71,
+   "latency_ms": 9861.2
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Cautious Clinician": 3,
+  "Resource Manager": 3,
+  "Equity Auditor": 3
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.95,
+  "Resource Manager": 0.95,
+  "Equity Auditor": 0.95
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9499999999999998,
+ "disagreement_score": 0.050000000000000155,
+ "escalated": false,
+ "escalation_reasons": []
+}

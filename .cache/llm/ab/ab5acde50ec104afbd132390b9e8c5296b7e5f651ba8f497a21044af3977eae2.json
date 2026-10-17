@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nEMS arrives with a 14-year-old male who was snowboarding at a nearby ski area, lost control, and ran into a tree. The patient was wearing a ski helmet, is currently aware, alert, and oriented and is complaining of left upper- quadrant pain and left thigh pain. His left femur appears to be broken. BP 112/80, HR 86, RR 14, SpO2 98%, and temperature is normal.",
+ "text": "{\n  \"chief_complaint\": \"Snowboarding trauma, left femur fracture, abdominal pain\"\n}",
+ "input_tokens": 231,
+ "output_tokens": 31,
+ "latency_ms": 69886.5,
+ "created": 1792011649.78983
+}

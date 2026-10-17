@@ -1,0 +1,162 @@
+{
+ "patient_id": "p-04cd61",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3"
+ ],
+ "round1": [
+  {
+   "agent": "Agent 1",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "2cm lip laceration through vermilion border",
+     "Normal vitals",
+     "Healthy 19-month-old"
+    ],
+    "rationale": "Laceration requires suturing (complex procedure 2). No vital abnormalities or danger signs. Meets two-resource criterion for ESI 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 542,
+   "output_tokens": 83,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.9,
+    "key_findings": [
+     "2 cm lip laceration through vermilion border",
+     "No vital sign abnormalities",
+     "Healthy 19-month-old"
+    ],
+    "rationale": "One distinct resource type (sutures) needed. No high-risk situation, no vital sign derangement, no severe pain/distress. Simple laceration repair warrants ESI 4."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 542,
+   "output_tokens": 92,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Lip laceration extends through vermilion border",
+     "Wound repair needed",
+     "No distress or vital sign abnormalities"
+    ],
+    "rationale": "Well-appearing toddler with a simple laceration requiring sutures. No life threats or high-risk conditions. Involves one resource: suturing. No abnormal vitals. Assign ESI 4."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 542,
+   "output_tokens": 98,
+   "latency_ms": 0.0
+  }
+ ],
+ "round2": [
+  {
+   "agent": "Agent 1",
+   "round": 2,
+   "output": {
+    "esi": 4,
+    "confidence": 0.9,
+    "key_findings": [
+     "2 cm lip laceration through vermilion border",
+     "No distress or vital sign abnormalities",
+     "Healthy 19-month-old"
+    ],
+    "rationale": "Well-appearing toddler with simple laceration requiring sutures. No life threats, high-risk conditions, or abnormal vitals. Involves one resource: suturing. Meets one-resource criterion for ESI 4.",
+    "change_reason": "Held original ESI 4 as no other panel members identified findings to suggest a lower acuity."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 875,
+   "output_tokens": 126,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 2,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "2 cm lip laceration through vermilion border",
+     "Normal vitals",
+     "Healthy 19-month-old"
+    ],
+    "rationale": "Laceration requires suturing (complex procedure 2). No vital abnormalities or danger signs. Meets two-resource criterion for ESI 3.",
+    "change_reason": "Agent 1 correctly identified the laceration as a complex procedure requiring sutures, meeting the two-resource criterion for ESI 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 875,
+   "output_tokens": 105,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 2,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Lip laceration extends through vermilion border",
+     "Wound repair needed",
+     "No distress or vital sign abnormalities"
+    ],
+    "rationale": "Well-appearing toddler with a complex laceration requiring sutures. No life threats or high-risk conditions. Involves two resources: suturing and anesthetic. No abnormal vitals. Assign ESI 3.",
+    "change_reason": "Agent 1 correctly identified that suturing a 2 cm lip laceration extending through the vermilion border is a complex procedure requiring 2 resource types."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 875,
+   "output_tokens": 135,
+   "latency_ms": 0.0
+  }
+ ],
+ "early_stopped": false,
+ "final_esis": {
+  "Agent 1": 4,
+  "Agent 2": 3,
+  "Agent 3": 3
+ },
+ "final_confidences": {
+  "Agent 1": 0.9,
+  "Agent 2": 0.9,
+  "Agent 3": 0.95
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 1,
+ "mean_confidence": 0.9166666666666666,
+ "disagreement_score": 1.0833333333333335,
+ "escalated": true,
+ "escalation_reasons": [
+  "disagreement"
+ ]
+}

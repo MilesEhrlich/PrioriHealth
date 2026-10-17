@@ -1,0 +1,286 @@
+{
+ "patient_id": "p-f7ee7e",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3",
+  "Agent 4",
+  "Agent 5",
+  "Agent 6",
+  "Agent 7",
+  "Agent 8",
+  "Agent 9",
+  "Agent 10"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Agent 1",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "2-week-old with fever",
+      "elevated heart rate",
+      "elevated respiratory rate"
+     ],
+     "rationale": "Newborn with fever and elevated heart and respiratory rates, requiring further evaluation to rule out serious infection."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 628,
+    "output_tokens": 77,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "2-week-old with fever",
+      "tachycardia",
+      "tachypnea"
+     ],
+     "rationale": "A 2-week-old with fever requires immediate evaluation due to potential for serious infection. The baby's tachycardia (154 bpm) and tachypnea (42 breaths/min) indicate respiratory distress, making this a high-risk situation. Although not immediately life-saving, the symptoms warrant further investigation and treatment, placing this patient in ESI level 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 628,
+    "output_tokens": 151,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "2-week-old with fever",
+      "high heart rate",
+      "high respiratory rate"
+     ],
+     "rationale": "Newborn with fever requiring medical attention, high heart rate, and high respiratory rate. ESI level 3 due to high-risk situation and new confusion/lethargy/disorientation."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 628,
+    "output_tokens": 98,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "2-week-old with fever",
+      "T 101˚F",
+      "HR 154, RR 42, SpO2 100%"
+     ],
+     "rationale": "The patient is a 2-week-old with a fever (T 101˚F), which, along with the high heart rate (154), qualifies for an ESI level of 3 due to the vulnerability of the young age and the danger-zone vitals. The baby is acting appropriately, but the fever and tachycardia warrant further evaluation and treatment."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 628,
+    "output_tokens": 163,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "2-week-old with fever",
+      "high heart rate",
+      "high respiratory rate"
+     ],
+     "rationale": "A newborn with fever requires immediate attention due to potential serious illness. The high heart rate and respiratory rate indicate potential instability, but the baby is acting appropriately and vital signs are stable without the need for immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 628,
+    "output_tokens": 105,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "2-week-old with fever",
+      "tachycardia",
+      "tachypnea"
+     ],
+     "rationale": "Infant with fever and tachycardia, tachypnea, no immediate life-saving intervention needed, but high-risk situation due to age and fever, warrants emergent evaluation."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 628,
+    "output_tokens": 96,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "2-week-old with fever",
+      "elevated heart rate",
+      "elevated respiratory rate"
+     ],
+     "rationale": "Infant with fever, elevated heart rate, and respiratory rate, meeting ESI level 3 criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 628,
+    "output_tokens": 83,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "2-week-old with fever",
+      "elevated heart rate",
+      "maternal report of pediatrician's advice"
+     ],
+     "rationale": "The infant is 2 weeks old with a fever and an elevated heart rate of 154, which meets the criteria for ESI level 3 due to being in the danger-zone. The mother was advised by the pediatrician to bring the infant in for evaluation, indicating a need for further assessment but not immediate life-saving intervention or high-risk situation as defined…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 628,
+    "output_tokens": 171,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "2-week-old with fever",
+      "high heart rate",
+      "high respiratory rate"
+     ],
+     "rationale": "A 2-week-old presenting with fever (101˚F) warrants ESI 3 due to high heart rate (154 bpm) and respiratory rate (42 breaths/min), despite being clinically active. The patient falls under ESI category B (should not wait) due to high-risk situation and danger-zone vitals. The patient does not meet ESI category A (needs immediate life-saving intervention) nor C criteria based on available…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 628,
+    "output_tokens": 160,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "2-week-old with fever",
+      "T 101˚F",
+      "HR 154, RR 42, SpO2 100%"
+     ],
+     "rationale": "The patient is a 2-week-old with fever (T 101˚F), high heart rate (HR 154), and tachypnea (RR 42), which are not immediate life-saving intervention (A) but indicate a high-risk situation (B) for sepsis or other serious infection. The baby is acting appropriately, suggesting no immediate need for complex interventions (C). Vital signs are within the danger-zone range (D) for age,…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 628,
+    "output_tokens": 194,
+    "latency_ms": 0.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 1.0,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Agent 1": 3,
+  "Agent 2": 3,
+  "Agent 3": 3,
+  "Agent 4": 3,
+  "Agent 5": 3,
+  "Agent 6": 3,
+  "Agent 7": 3,
+  "Agent 8": 3,
+  "Agent 9": 3,
+  "Agent 10": 3
+ },
+ "initial_range": 0,
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 3,
+  "Agent 2": 3,
+  "Agent 3": 3,
+  "Agent 4": 3,
+  "Agent 5": 3,
+  "Agent 6": 3,
+  "Agent 7": 3,
+  "Agent 8": 3,
+  "Agent 9": 3,
+  "Agent 10": 3
+ },
+ "final_confidences": {
+  "Agent 1": 0.95,
+  "Agent 2": 0.95,
+  "Agent 3": 0.9,
+  "Agent 4": 0.95,
+  "Agent 5": 0.95,
+  "Agent 6": 0.95,
+  "Agent 7": 0.95,
+  "Agent 8": 0.95,
+  "Agent 9": 0.95,
+  "Agent 10": 0.95
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 0,
+ "mean_confidence": 0.945,
+ "disagreement_score": 0.05500000000000005,
+ "escalated": false,
+ "escalation_reasons": []
+}

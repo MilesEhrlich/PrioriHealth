@@ -1,0 +1,782 @@
+{
+ "patient_id": "p-4bd641",
+ "condition": "C",
+ "agents": [
+  "Empath",
+  "Logician",
+  "Skeptic",
+  "Observer",
+  "Synthesizer",
+  "Pragmatist",
+  "Vigilant",
+  "Impartial",
+  "Mediator",
+  "Reflective"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Empath",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Pus from piercing site",
+      "Fever",
+      "Tender, swollen, red area"
+     ],
+     "rationale": "The patient presents with a painful, pus-draining piercing, fever, and local signs of infection. While distressing, the pain is an 8/10, not immediately life-threatening or requiring urgent intervention. The situation does not meet ESI 1 or 2 criteria, but the need for medical evaluation and likely antibiotics makes it more urgent than a routine ESI 5. Vital signs are stable,…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 736,
+    "output_tokens": 163,
+    "latency_ms": 586327.7
+   },
+   {
+    "agent": "Logician",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Piercing site redness, swelling, pus discharge",
+      "19-year-old with fever",
+      "Moderate pain 8/10"
+     ],
+     "rationale": "The patient presents with signs of a possible infectious process at a piercing site (redness, swelling, pus discharge), fever, and moderate pain. While not immediately life-threatening, these symptoms indicate a condition that should not wait (ESI 2 or 3). However, given the absence of high-risk conditions outlined in B, and with only one resource type (antibiotics, possibly), this case falls…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 726,
+    "output_tokens": 186,
+    "latency_ms": 598175.6
+   },
+   {
+    "agent": "Skeptic",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Piercing site swelling, redness, pus discharge",
+      "Pain level 8/10"
+     ],
+     "rationale": "The patient presents with signs of a possible infected piercing, including local signs of infection (redness, swelling, pus discharge), pain, and fever. Despite being a 19-year-old healthy college student, the symptoms indicate a condition that requires medical attention within a moderate time frame (ESI 4). The immediate life-saving intervention (ESI 1) criteria and high-risk situations (ESI 2) do not apply…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 728,
+    "output_tokens": 180,
+    "latency_ms": 609649.5
+   },
+   {
+    "agent": "Observer",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Pierced navel with purulent discharge",
+      "Severe pain (8/10) in young adult"
+     ],
+     "rationale": "The patient presents with a navel piercing infection characterized by purulent discharge, severe pain (8/10), and fever (100˚F). Although the condition is distressing, it does not meet ESI 1 criteria as it does not involve immediate life-threatening situations like respiratory distress, shock, or poor breathing. The danger-zone vitals are not met (HR 74, RR 18), and there's no sign of…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 723,
+    "output_tokens": 216,
+    "latency_ms": 623086.8
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Pus at piercing site, pain 8/10",
+      "Fever 100˚F",
+      "Tender, swollen, red area"
+     ],
+     "rationale": "The patient presents with signs of a possible infectious process (pus, fever, local signs of inflammation) at a piercing site, causing severe pain. While not immediately life-threatening, this situation warrants prompt attention to prevent complications like cellulitis or systemic spread of infection. The pain score of 8/10 indicates significant distress, supporting an ESI level of 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 722,
+    "output_tokens": 156,
+    "latency_ms": 632819.9
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Signs of infected piercing",
+      "Pain level 8/10",
+      "Vital signs normal"
+     ],
+     "rationale": "The patient is a 19-year-old with a painful, red, tender, and swollen belly button piercing site with pus oozing, indicating a localized infection. The pain level is 8/10, which is high. However, vital signs are normal (T 100˚F, HR 74, RR 18, BP 102/70, SpO2 100%). This scenario falls under category B, as it's a high-risk situation involving a possible…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 727,
+    "output_tokens": 234,
+    "latency_ms": 647134.5
+   },
+   {
+    "agent": "Vigilant",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Pus at piercing site",
+      "Tenderness and swelling",
+      "Fever"
+     ],
+     "rationale": "Presents with fever, localized signs of infection (pus, tenderness, swelling) at a piercing site, and mild pain. No immediate life-threatening signs or high-risk conditions identified, but warrants prompt evaluation and treatment for possible cellulitis or abscess."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 727,
+    "output_tokens": 113,
+    "latency_ms": 654172.7
+   },
+   {
+    "agent": "Impartial",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Signs of infected piercing",
+      "Moderate pain",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient has a painful, red, tender, and swollen piercing site with pus discharge, indicating a local infection. The pain score is 8/10, which is significant. However, vital signs are normal, and there are no systemic signs of infection. This case fits ESI 3 due to moderate pain and local signs of infection, without systemic involvement."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 749,
+    "output_tokens": 139,
+    "latency_ms": 663218.8
+   },
+   {
+    "agent": "Mediator",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Pus oozing from piercing site",
+      "Elevated temperature",
+      "Tender, swollen, red piercing area"
+     ],
+     "rationale": "The patient presents with a local infection at a piercing site, evidenced by pus discharge, redness, swelling, and tenderness. The fever further supports the diagnosis of infection. Although the pain is significant (8/10), it does not elevate the ESI level. The patient is young and otherwise healthy with stable vital signs, excluding immediate life-saving intervention or urgent conditions. This case…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 725,
+    "output_tokens": 210,
+    "latency_ms": 675396.5
+   },
+   {
+    "agent": "Reflective",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Pierced navel with purulent discharge",
+      "Moderate pain",
+      "Normal vitals except fever"
+     ],
+     "rationale": "The patient presents with a healed piercing site infection, characterized by purulent discharge, pain, and fever. Although the pain is described as 8/10, it doesn't reach the immediate life-saving intervention threshold (ESI 1). The fever (100˚F) and local signs of infection (redness, tenderness, swelling, purulent discharge) elevate the urgency, suggesting a condition that should not wait (ESI 2). However, considering…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 725,
+    "output_tokens": 276,
+    "latency_ms": 690577.6
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 5,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": false,
+ "consensus_share": 0.5,
+ "rounds_used": 5,
+ "first_round_esis": {
+  "Empath": 3,
+  "Logician": 3,
+  "Skeptic": 4,
+  "Observer": 4,
+  "Synthesizer": 3,
+  "Pragmatist": 4,
+  "Vigilant": 3,
+  "Impartial": 3,
+  "Mediator": 4,
+  "Reflective": 4
+ },
+ "initial_range": 1,
+ "early_stopped": false,
+ "final_esis": {
+  "Empath": 3,
+  "Logician": 3,
+  "Skeptic": 4,
+  "Observer": 4,
+  "Synthesizer": 3,
+  "Pragmatist": 4,
+  "Vigilant": 3,
+  "Impartial": 3,
+  "Mediator": 4,
+  "Reflective": 4
+ },
+ "final_confidences": {
+  "Empath": 0.95,
+  "Logician": 0.95,
+  "Skeptic": 0.95,
+  "Observer": 0.95,
+  "Synthesizer": 0.95,
+  "Pragmatist": 0.95,
+  "Vigilant": 0.95,
+  "Impartial": 0.95,
+  "Mediator": 0.95,
+  "Reflective": 0.95
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 1,
+ "mean_confidence": 0.95,
+ "disagreement_score": 3.05,
+ "escalated": true,
+ "escalation_reasons": [
+  "no_consensus"
+ ]
+}

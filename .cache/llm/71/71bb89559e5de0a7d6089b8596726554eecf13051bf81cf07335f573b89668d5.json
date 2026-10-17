@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nEMS arrives with a 28-year-old male who was stabbed in the left side of his neck during an altercation. You notice a large hematoma around the wound, and the patient is moaning he can’t breathe. HR 110, RR 36, SpO2 89%.",
+ "text": "{\n  \"chief_complaint\": \"Stab wound to neck, difficulty breathing\"\n}",
+ "input_tokens": 197,
+ "output_tokens": 26,
+ "latency_ms": 21321.0,
+ "created": 1792011601.2236319
+}

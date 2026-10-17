@@ -1,0 +1,280 @@
+{
+ "patient_id": "p-d0dde1",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3",
+  "Agent 4",
+  "Agent 5",
+  "Agent 6",
+  "Agent 7",
+  "Agent 8",
+  "Agent 9",
+  "Agent 10"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Agent 1",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Fell from second-story balcony",
+      "Severe abdominal pain",
+      "Difficulty breathing"
+     ],
+     "rationale": "Patient met criteria for ESI level 1 due to falling from a significant height, which indicates potential internal injuries or other severe conditions. Severe abdominal pain and difficulty breathing, along with vital signs of hypotension, tachycardia, tachypnea, and mild hypoxemia, suggest an unstable condition requiring immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 620,
+    "output_tokens": 137,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Fell from second-story balcony",
+      "Severe abdominal pain",
+      "Difficulty breathing"
+     ],
+     "rationale": "Patient met ESI level 1 criteria as he fell from a significant height (second-story balcony), presenting with severe abdominal pain and difficulty breathing, suggesting possible internal injuries or pulmonary contusion. Vital signs indicate shock (BP 90/50) and tachycardia (HR 130), which further support the need for immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 620,
+    "output_tokens": 145,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Fell from second-story balcony",
+      "Severe abdominal pain",
+      "Difficulty breathing"
+     ],
+     "rationale": "Patient is a 25-year-old male with a high-risk mechanism of injury (fall from a second-story balcony), severe pain (abdominal distress), and respiratory distress (difficulty breathing with SpO2 of 92%). These findings indicate a need for immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 620,
+    "output_tokens": 127,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Fell from second-story balcony",
+      "Severe abdominal pain",
+      "Difficulty breathing"
+     ],
+     "rationale": "Patient meets ESI level 1 criteria as he fell from a significant height, indicating potential internal injuries or other life-threatening conditions. Severe abdominal pain and difficulty breathing further support the need for immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 620,
+    "output_tokens": 107,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Fell from second-story balcony",
+      "Severe abdominal pain",
+      "Difficulty breathing"
+     ],
+     "rationale": "Patient met criteria for ESI 1 due to fall from height, severe abdominal pain, and difficulty breathing (tachypnea, low SpO2)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 620,
+    "output_tokens": 89,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Fell from second-story balcony",
+      "Severe abdominal pain",
+      "Difficulty breathing"
+     ],
+     "rationale": "Patient meets criteria for ESI 1 due to unstable trauma mechanism and danger-zone vital signs (HR 130, RR 28, SpO2 92%)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 620,
+    "output_tokens": 95,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Fell from second-story balcony",
+      "Severe abdominal pain",
+      "Difficulty breathing"
+     ],
+     "rationale": "Patient is a 25-year-old male with a history of a high-mechanism fall from a second-story balcony, presenting with severe abdominal pain and difficulty breathing. Vital signs reveal hypotension, tachycardia, tachypnea, and mild hypoxemia. These findings suggest potential internal injuries or organ damage requiring immediate life-saving intervention. Therefore, this case is assigned ESI level 1."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 620,
+    "output_tokens": 156,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Fell from second-story balcony",
+      "Severe abdominal pain",
+      "Difficulty breathing"
+     ],
+     "rationale": "Patient meets ESI 1 criteria as he has a high-risk mechanism of injury (fall), severe pain, and signs of shock (hypotension, tachycardia, tachypnea, SpO2 92%)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 620,
+    "output_tokens": 107,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Fall from height",
+      "Severe abdominal pain",
+      "Difficulty breathing"
+     ],
+     "rationale": "Patient met criteria for ESI 1 due to fall from height, severe abdominal pain, and difficulty breathing, suggesting potential internal injuries or other life-threatening conditions."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 620,
+    "output_tokens": 87,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Fell from second-story balcony",
+      "Severe abdominal pain",
+      "Difficulty breathing"
+     ],
+     "rationale": "The patient is a 25-year-old male who fell from a second-story balcony, resulting in severe abdominal pain and difficulty breathing. His vital signs indicate hypotension, tachycardia, and tachypnea, suggesting potential internal injuries. Given the mechanism of injury and vital signs, this patient needs immediate life-saving intervention (ESI 1)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 620,
+    "output_tokens": 144,
+    "latency_ms": 0.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 1.0,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Agent 1": 1,
+  "Agent 2": 1,
+  "Agent 3": 1,
+  "Agent 4": 1,
+  "Agent 5": 1,
+  "Agent 6": 1,
+  "Agent 7": 1,
+  "Agent 8": 1,
+  "Agent 9": 1,
+  "Agent 10": 1
+ },
+ "initial_range": 0,
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 1,
+  "Agent 2": 1,
+  "Agent 3": 1,
+  "Agent 4": 1,
+  "Agent 5": 1,
+  "Agent 6": 1,
+  "Agent 7": 1,
+  "Agent 8": 1,
+  "Agent 9": 1,
+  "Agent 10": 1
+ },
+ "final_confidences": {
+  "Agent 1": 1.0,
+  "Agent 2": 1.0,
+  "Agent 3": 1.0,
+  "Agent 4": 1.0,
+  "Agent 5": 1.0,
+  "Agent 6": 1.0,
+  "Agent 7": 1.0,
+  "Agent 8": 1.0,
+  "Agent 9": 1.0,
+  "Agent 10": 1.0
+ },
+ "aggregate": 1,
+ "majority": 1,
+ "disagreement_range": 0,
+ "mean_confidence": 1.0,
+ "disagreement_score": 0.0,
+ "escalated": false,
+ "escalation_reasons": []
+}

@@ -1,0 +1,162 @@
+{
+ "patient_id": "p-74d15b",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 1,
+    "confidence": 0.95,
+    "key_findings": [
+     "Unstable tachycardia (HR 178)",
+     "Severe tachypnea (RR 32)",
+     "Hypotension (BP 82/60)"
+    ],
+    "rationale": "Patient is in cardiogenic shock with life-threatening tachycardia, tachypnea, and hypotension requiring immediate life-saving intervention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 624,
+   "output_tokens": 88,
+   "latency_ms": 17941.3
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "HR 178, RR 32, BP 82/60",
+     "Cool diaphoretic skin",
+     "Subjective SOB and chest pressure"
+    ],
+    "rationale": "Meets decision point B criteria: high-risk situation (possible ACS) and severe distress (SOB, chest pressure). Does not meet A (no life-saving intervention needed). Distinct resources used: labs, ECG, IV fluids, specialty consult. 2 resources -> go to D. Vitals not in danger zone, so ESI 2."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 614,
+   "output_tokens": 133,
+   "latency_ms": 19088.5
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 1,
+    "confidence": 0.95,
+    "key_findings": [
+     "Unstable tachycardia, tachypnea, hypotension",
+     "Altered mental status, diaphoresis",
+     "Concern for possible sepsis or ACS"
+    ],
+    "rationale": "Unresponsive to initial question, tachycardia >160, RR 32, hypotension <90, altered mental status, diaphoresis. Meets criteria for ESI 1 - needs immediate life-saving intervention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 614,
+   "output_tokens": 107,
+   "latency_ms": 19527.4
+  }
+ ],
+ "round2": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 2,
+   "output": {
+    "esi": 1,
+    "confidence": 0.95,
+    "key_findings": [
+     "Unstable tachycardia (HR 178)",
+     "Severe tachypnea (RR 32)",
+     "Hypotension (BP 82/60)"
+    ],
+    "rationale": "Patient is in cardiogenic shock with life-threatening tachycardia, tachypnea, and hypotension requiring immediate life-saving intervention.",
+    "change_reason": "The patient's vitals (HR 178, RR 32, BP 82/60) and symptoms (SOB, chest pressure, diaphoresis) meet the criteria for ESI 1 - needs immediate life-saving intervention. No change needed."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 1029,
+   "output_tokens": 155,
+   "latency_ms": 27413.5
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 2,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "HR 178, RR 32, BP 82/60",
+     "Cool diaphoretic skin",
+     "Subjective SOB and chest pressure"
+    ],
+    "rationale": "Meets decision point C with 4 distinct resources, not in danger zone (D). Does not meet A (no life-saving intervention) or B (no high-risk situation or severe distress).",
+    "change_reason": "Patient does not meet A or B criteria for ESI 1 or 2. No life-saving intervention needed (A). No high-risk situation or severe distress (B). Distinct resources used: labs, ECG, IV fluids, specialty consult = 4 resources -> ESI 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 1021,
+   "output_tokens": 165,
+   "latency_ms": 27936.2
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 2,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Unstable tachycardia, tachypnea, hypotension",
+     "Altered mental status, diaphoresis",
+     "Concern for possible sepsis or ACS"
+    ],
+    "rationale": "Patient meets ESI 2 criteria B: high-risk situation (possible sepsis or ACS) with altered mental status and diaphoresis. Unstable vital signs and high resource needs also support ESI 2.",
+    "change_reason": "Patient's altered mental status and diaphoresis are concerning for possible sepsis or ACS, which would meet ESI 2 criteria B (high-risk situation). The other panel members correctly identified the unstable vital signs and high resource needs, but did not explicitly…"
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 1020,
+   "output_tokens": 175,
+   "latency_ms": 28584.4
+  }
+ ],
+ "early_stopped": false,
+ "final_esis": {
+  "Cautious Clinician": 1,
+  "Resource Manager": 3,
+  "Equity Auditor": 2
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.95,
+  "Resource Manager": 0.9,
+  "Equity Auditor": 0.95
+ },
+ "aggregate": 2,
+ "majority": 1,
+ "disagreement_range": 2,
+ "mean_confidence": 0.9333333333333332,
+ "disagreement_score": 2.066666666666667,
+ "escalated": true,
+ "escalation_reasons": [
+  "disagreement"
+ ]
+}

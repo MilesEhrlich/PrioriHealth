@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nI think he broke it,” reports the mother of a 9- year-old boy. “He was climbing a tree and fell about 5 feet, landing on his arm. I am a nurse, so I put on a splint and applied ice. He has a good pulse.” The arm is obviously deformed. Vital signs: T 98°F, RR 26, HR 90, SpO2 99%. Pain 5/10.",
+ "text": "{\n  \"chief_complaint\": \"Fell from tree, arm deformity, pain\"\n}",
+ "input_tokens": 226,
+ "output_tokens": 25,
+ "latency_ms": 74306.3,
+ "created": 1792011654.2096891
+}

@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nEMS radios in that they are in route with a 17- year-old with a single gunshot wound to the left chest. On scene the patient was alert, oriented and had a BP of 82/40. Two large- bore IVs were immediately inserted. Two minutes prior to arrival in the ED, the patient’s HR was 130 and BP was 78/40",
+ "text": "{\n  \"chief_complaint\": \"Gunshot wound to chest, hemodynamic instability\"\n}",
+ "input_tokens": 212,
+ "output_tokens": 27,
+ "latency_ms": 9753.0,
+ "created": 1792011684.5646038
+}

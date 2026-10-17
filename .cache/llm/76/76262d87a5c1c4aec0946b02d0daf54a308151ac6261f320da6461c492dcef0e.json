@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\n13-year-old male walks into the ED with his mother on a Friday night. Mom states, “I didn’t realize he was out of his medications for his ADHD, and I don’t want him to miss a day.” The patient is cooperative and pleasant. VS: BP 108/72, HR 78, RR 14, T 98.6°F.",
+ "text": "{\n  \"chief_complaint\": \"ADHD medication refill request\"\n}",
+ "input_tokens": 215,
+ "output_tokens": 21,
+ "latency_ms": 52082.1,
+ "created": 1792011631.985186
+}

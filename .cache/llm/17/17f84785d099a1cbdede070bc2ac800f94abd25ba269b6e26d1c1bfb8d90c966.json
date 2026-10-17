@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nEMS presents to the ED with an 18-year-old female with a suspected medication overdose. Her college roommates found her lethargic and “not acting right,” so they called 911. The patient has a history of depression. On exam, you notice multiple superficial lacerations to both wrists. Her respiratory rate is 10, and her SpO2 on room air is 86 percent.",
+ "text": "{\n  \"chief_complaint\": \"Suspected medication overdose, lethargic, wrist lacerations, hypoxia\"\n}",
+ "input_tokens": 222,
+ "output_tokens": 36,
+ "latency_ms": 13676.0,
+ "created": 1792011688.487852
+}

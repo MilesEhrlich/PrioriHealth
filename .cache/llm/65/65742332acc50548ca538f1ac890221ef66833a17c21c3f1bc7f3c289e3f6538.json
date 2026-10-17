@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nParamedics arrive with a 16-year-old unrestrained driver who hit a tree while traveling at approximately 45 miles per hour. The passenger side of the car had significant damage. The driver was moaning but moving all extremities when help arrived. His initial vital signs were BP 74/50, HR 132, RR 36, SPO2 99%, T 98.6˚F.",
+ "text": "{\n  \"chief_complaint\": \"Motor vehicle collision, unrestrained driver, altered mental status\"\n}",
+ "input_tokens": 226,
+ "output_tokens": 28,
+ "latency_ms": 46619.5,
+ "created": 1792011626.522523
+}

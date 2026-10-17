@@ -1,0 +1,93 @@
+{
+ "patient_id": "p-90f382",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.9,
+    "key_findings": [
+     "Severe abdominal pain (8/10) for 24 hours",
+     "Nausea without vomiting or fever",
+     "Stable vital signs"
+    ],
+    "rationale": "Severe abdominal pain with nausea raises concern for possible appendicitis or other intra-abdominal pathology. While vitals are stable, the pain severity and duration warrant further evaluation and monitoring, making ESI 2 appropriate."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 687,
+   "output_tokens": 104,
+   "latency_ms": 23755.6
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Severe abdominal pain (8/10) for 24 hours",
+     "Nausea without vomiting or fever",
+     "Stable vitals (BP 120/80, HR 85, RR 16, SpO2 98%)"
+    ],
+    "rationale": "Meets Decision Point B criteria: severe pain (8/10) warrants ESI 2. No life-saving intervention needed (A). Distinct resources used: labs, abdominal X-ray, IV fluids. Two resources place him at ESI 2 per D."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 677,
+   "output_tokens": 134,
+   "latency_ms": 24636.4
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Severe abdominal pain (8/10)",
+     "New onset, progressive, localized to right lower quadrant",
+     "No fever, vomiting, trauma, or other concerning symptoms"
+    ],
+    "rationale": "Severe pain with high-risk location (right lower quadrant) raises concern for appendicitis or other intra-abdominal pathology. No immediate life threat, but warrants prompt evaluation and imaging. One resource (likely CT scan) needed."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 677,
+   "output_tokens": 111,
+   "latency_ms": 25047.6
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Cautious Clinician": 2,
+  "Resource Manager": 2,
+  "Equity Auditor": 2
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.9,
+  "Resource Manager": 0.95,
+  "Equity Auditor": 0.95
+ },
+ "aggregate": 2,
+ "majority": 2,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9333333333333332,
+ "disagreement_score": 0.06666666666666676,
+ "escalated": false,
+ "escalation_reasons": []
+}

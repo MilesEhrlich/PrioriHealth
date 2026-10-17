@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\n12-year-old female brought into the ED by mother. Claims she cut her thumb while washing dishes.She has a 2 cm superficial laceration to her right thumb. VS: BP 110/70, HR 72, RR 14, T 98.0°F.",
+ "text": "{\n  \"chief_complaint\": \"Thumb cut from dish washing, 2 cm laceration\"\n}",
+ "input_tokens": 191,
+ "output_tokens": 27,
+ "latency_ms": 28981.6,
+ "created": 1792011703.79394
+}

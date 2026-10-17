@@ -1,0 +1,64 @@
+# TriageDebate configuration. Secrets live in .env, never here.
+seed: 42
+
+data:
+  raw_dir: data/raw/TriageAgent
+  repo_url: https://github.com/Lucanyc/TriageAgent
+  repo_commit: 5577df8b910abaaae481bc4bcb1e290875d812dc
+  test_files: [Test-1, Test-2, Test-3]
+  train_file: Train_scenario
+  sample_size: 20            # default run size; --full uses every test patient
+  near_duplicate_ratio: 0.9  # difflib ratio above which two vignettes count as the same case
+
+llm:
+  provider: watsonx          # watsonx | ollama | llamacpp | anthropic (env PRIORIHEALTH_PROVIDER overrides)
+  models:
+    watsonx: ibm/granite-4-h-small  # only Granite chat model offered in us-south (checked 2026-10-14)
+    ollama: granite3.3:8b
+    llamacpp: granite-3.3-2b-instruct-be-q8_0  # big-endian GGUF on IBM LinuxONE (s390x)
+    anthropic: claude-haiku-5-5
+  temperature: 0.0
+  temperature_sampling: 0.7  # used where independent samples are needed (condition B)
+  max_tokens: 400
+  # Requests in flight per engine. Ollama and llama.cpp on a laptop/VM process one request at a
+  # time, so extra concurrency only queues inside the engine and trips timeouts.
+  max_concurrency: {default: 4, ollama: 1, llamacpp: 2, watsonx: 4}
+  max_retries: 5
+  timeout_s: {default: 120, ollama: 600, llamacpp: 900}   # per request, seconds
+  cache_dir: .cache/llm
+  # Uncached tokens allowed per calendar month, per provider (ledger in .cache/usage/).
+  # watsonx Lite includes 300,000/month. LOCKED at current usage: no new watsonx calls
+  # until the owner explicitly approves raising this. Cached results still work.
+  monthly_token_budget:
+    watsonx: 186338
+  # Request-rate caps per provider (watsonx Lite allows 2 requests/second per instance).
+  requests_per_second:
+    watsonx: 1.6
+
+debate:
+  few_shot_k: 0
+  early_stop: true           # stop as soon as the panel reaches consensus
+  consensus_threshold: 0.9   # share of the panel that must agree (0.9 = 9 of 10; 1.0 = unanimous)
+  max_rounds: 5              # independent round + up to 4 discussion rounds
+  temperature: 0.7           # panel sampling (B and C); at 0 a single-model panel answers in unison
+  protocol: v2-trait-consensus
+  # Ten reasoning-style members (see prompts.PERSONAS). Shorten the list for a faster panel.
+  panel: [empath, logician, skeptic, observer, synthesizer, pragmatist, vigilant, impartial, mediator, reflective]
+
+escalation:
+  range_threshold: 1
+  safety_override: true
+
+waitlist:
+  # Target minutes from arrival to being seen, per ESI level (ESI-weighted wait ordering).
+  targets: {1: 0, 2: 10, 3: 30, 4: 60, 5: 120}
+  store: data/waitlist.json
+
+queue:
+  n_patients: 20
+  mean_interarrival_min: 4.0
+
+fairness:
+  n_cases: 50
+
+results_dir: results

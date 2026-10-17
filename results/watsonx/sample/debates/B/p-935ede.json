@@ -1,0 +1,163 @@
+{
+ "patient_id": "p-935ede",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3"
+ ],
+ "round1": [
+  {
+   "agent": "Agent 1",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Ear pain, no distress",
+     "Normal vitals",
+     "Simple history"
+    ],
+    "rationale": "Child has self-limited ear pain without distress. No abnormal vitals or distress. Requires 1 resource (exam)."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 538,
+   "output_tokens": 69,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.9,
+    "key_findings": [
+     "Painful, itchy ears in 10-year-old boy",
+     "No other complaints or concerning symptoms",
+     "Normal vital signs"
+    ],
+    "rationale": "Child has single symptom of painful, itchy ears likely from swimming, with no other complaints or concerning signs. Only one resource type (likely simple procedure or meds) needed. Vital signs are normal. Meets criteria for ESI level 4."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 538,
+   "output_tokens": 118,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Swimmer's ear, no distress",
+     "Normal vitals",
+     "Simple history"
+    ],
+    "rationale": "Child has swimmer's ear, a common, low-risk condition. No acute distress or abnormal vitals. Requires 1 resource (ear exam) and simple treatment."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 538,
+   "output_tokens": 81,
+   "latency_ms": 0.0
+  }
+ ],
+ "round2": [
+  {
+   "agent": "Agent 1",
+   "round": 2,
+   "output": {
+    "esi": 4,
+    "confidence": 0.9,
+    "key_findings": [
+     "Child has swimmer's ear, a low-risk condition",
+     "No acute distress or abnormal vitals",
+     "Requires only 1 resource (ear exam) and simple treatment"
+    ],
+    "rationale": "Child presents with swimmer's ear without acute distress or abnormal vitals. Meets ESI 4 criteria of single symptom without concerning signs and needing only 1 resource (ear exam) and simple treatment.",
+    "change_reason": "No disagreement with other answers; holding ESI 4."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 855,
+   "output_tokens": 125,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 2,
+   "output": {
+    "esi": 4,
+    "confidence": 0.9,
+    "key_findings": [
+     "Painful, itchy ears in 10-year-old boy",
+     "No other complaints or concerning symptoms",
+     "Normal vital signs"
+    ],
+    "rationale": "Child has single symptom of painful, itchy ears likely from swimming, with no other complaints or concerning signs. Only one resource type (likely simple procedure or meds) needed. Vital signs are normal. Meets criteria for ESI level 4.",
+    "change_reason": "After reviewing other agents' rationales, I maintain my original ESI assignment of 4."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 855,
+   "output_tokens": 128,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 2,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Ear pain in child with swimmer's ear risk factor",
+     "No acute distress or abnormal vitals",
+     "Simple history"
+    ],
+    "rationale": "10-year-old child with swimmer's ear risk factor (frequent swimming) and no acute distress meets high-risk ESI 2 criteria. Requires at least 2 resources (ear exam and prescription) and close follow-up.",
+    "change_reason": "Mother's history of frequent swimming suggests swimmer's ear is likely, but child's age (10 years) and lack of distress still meet high-risk criteria for otitis externa, warranting ESI 2."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 855,
+   "output_tokens": 141,
+   "latency_ms": 3088.5
+  }
+ ],
+ "early_stopped": false,
+ "final_esis": {
+  "Agent 1": 4,
+  "Agent 2": 4,
+  "Agent 3": 2
+ },
+ "final_confidences": {
+  "Agent 1": 0.9,
+  "Agent 2": 0.9,
+  "Agent 3": 0.95
+ },
+ "aggregate": 4,
+ "majority": 4,
+ "disagreement_range": 2,
+ "mean_confidence": 0.9166666666666666,
+ "disagreement_score": 2.0833333333333335,
+ "escalated": true,
+ "escalation_reasons": [
+  "safety_override",
+  "disagreement"
+ ]
+}

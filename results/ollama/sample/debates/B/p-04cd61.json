@@ -1,0 +1,285 @@
+{
+ "patient_id": "p-04cd61",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3",
+  "Agent 4",
+  "Agent 5",
+  "Agent 6",
+  "Agent 7",
+  "Agent 8",
+  "Agent 9",
+  "Agent 10"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Agent 1",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "19-month-old with lip laceration",
+      "2 cm, through vermilion border"
+     ],
+     "rationale": "The patient is a 19-month-old with a lip laceration that extends through the vermilion border. Despite the appearance, the vital signs are within normal limits for age, and there is no evidence of immediate life-saving intervention needed (A), high-risk situation (B), or requiring multiple resource types (C). The injury does not warrant a higher ESI level, so ESI 5 is…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 634,
+    "output_tokens": 145,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "19-month-old with lip laceration",
+      "2 cm, through vermilion border"
+     ],
+     "rationale": "The patient is a 19-month-old with a 2 cm lip laceration that extends through the vermilion border. Vital signs are within normal limits for age. This injury does not meet the criteria for ESI 1-4 based on A-D. It does not require immediate life-saving intervention, is not a high-risk situation, does not require extensive resources, and does not have danger-zone…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 634,
+    "output_tokens": 158,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "19-month-old with lip laceration",
+      "Vermilion border involved",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient is a 19-month-old with a lip laceration that extends through the vermilion border, which meets the criteria for ESI level 3. However, the vital signs are within normal limits for age, and there is no evidence of airway compromise, infection, or other concerning features. The child's behavioral history of not staying still for doctor visits also supports this…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 634,
+    "output_tokens": 160,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "19-month-old with lip laceration",
+      "Vermilion border involvement",
+      "Normal vital signs"
+     ],
+     "rationale": "Lip laceration, despite being through the vermilion border, does not meet ESI 1 criteria as it does not require immediate life-saving intervention or pose a high-risk situation. Normal vital signs and absence of other concerning features result in ESI level 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 634,
+    "output_tokens": 114,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "19-month-old with lip laceration",
+      "2 cm, extends through vermilion border"
+     ],
+     "rationale": "The patient is a 19-month-old with a lip laceration that extends through the vermilion border. Although the wound is concerning, it does not meet the criteria for ESI 1, 2, or 3. The patient is not exhibiting signs of shock, distress, or high-risk conditions. The vital signs are within normal limits for age. There is no need for immediate life-saving…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 634,
+    "output_tokens": 193,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "19-month-old with lip laceration",
+      "2 cm, through vermilion border"
+     ],
+     "rationale": "The patient is a 19-month-old with a 2 cm lip laceration that extends through the vermilion border. Vital signs are within normal limits for age. This injury does not meet the criteria for ESI 1-4 based on the provided guidelines, and no immediate life-saving intervention is required. Therefore, the ESI level is 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 634,
+    "output_tokens": 131,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "19-month-old with lip laceration",
+      "extends through vermilion border",
+      "vital signs within normal limits"
+     ],
+     "rationale": "The patient is a 19-month-old with a lip laceration that extends through the vermilion border, which meets the criteria for ESI level 3. However, since the vital signs are within normal limits for age and there is no evidence of immediate life-saving intervention, high-risk situation, or need for extensive resources, the ESI level is downgraded to 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 634,
+    "output_tokens": 143,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "19-month-old with lip laceration",
+      "extends through vermilion border",
+      "vital signs within normal limits for age"
+     ],
+     "rationale": "The patient is a 19-month-old with a lip laceration that extends through the vermilion border. Although concerning, the vital signs are within normal limits for age, and there are no signs of airway compromise or infection. This does not meet the criteria for ESI 1-4, thus assigned ESI 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 634,
+    "output_tokens": 133,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.99,
+     "key_findings": [
+      "19-month-old with lip laceration",
+      "2 cm, through vermilion border"
+     ],
+     "rationale": "Lip laceration, though not trivial, does not require immediate life-saving intervention or pose high-risk situations. The baby's vital signs are within normal limits for age, and there are no signs of infection or significant bleeding. This case involves one resource type (complex procedure, suture). The child's age does not meet the fever criteria for ESI 2. Therefore, it is classified…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 634,
+    "output_tokens": 146,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "19-month-old with lip laceration",
+      "2 cm, through vermilion border",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "Lip laceration does not meet criteria for ESI 1-4. No immediate life-saving intervention needed. No high-risk situation identified. No need for advanced resources. Vital signs within normal limits for age. Therefore, ESI 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 634,
+    "output_tokens": 112,
+    "latency_ms": 0.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 0.9,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Agent 1": 5,
+  "Agent 2": 5,
+  "Agent 3": 5,
+  "Agent 4": 5,
+  "Agent 5": 5,
+  "Agent 6": 5,
+  "Agent 7": 5,
+  "Agent 8": 5,
+  "Agent 9": 3,
+  "Agent 10": 5
+ },
+ "initial_range": 2,
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 5,
+  "Agent 2": 5,
+  "Agent 3": 5,
+  "Agent 4": 5,
+  "Agent 5": 5,
+  "Agent 6": 5,
+  "Agent 7": 5,
+  "Agent 8": 5,
+  "Agent 9": 3,
+  "Agent 10": 5
+ },
+ "final_confidences": {
+  "Agent 1": 1.0,
+  "Agent 2": 1.0,
+  "Agent 3": 1.0,
+  "Agent 4": 1.0,
+  "Agent 5": 1.0,
+  "Agent 6": 1.0,
+  "Agent 7": 1.0,
+  "Agent 8": 1.0,
+  "Agent 9": 0.99,
+  "Agent 10": 1.0
+ },
+ "aggregate": 5,
+ "majority": 5,
+ "disagreement_range": 2,
+ "mean_confidence": 0.999,
+ "disagreement_score": 2.001,
+ "escalated": false,
+ "escalation_reasons": []
+}

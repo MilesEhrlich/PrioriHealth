@@ -1,0 +1,13 @@
+{
+ "provider": "watsonx",
+ "model": "ibm/granite-4-h-small",
+ "temperature": 0.7,
+ "sample_idx": 0,
+ "system": "You are an experienced emergency department triage nurse. Assign an ESI level using the reference below.\n\nESI v4 (1 = most urgent). Apply A-D in order; stop at the first that fits.\nA. Needs immediate life-saving intervention? -> ESI 1. (Unresponsive, apneic/pulseless, severe\n   respiratory distress, SpO2 < 90%, shock, unstable major trauma, overdose with poor breathing.)\nB. Should not wait? -> ESI 2 if high-risk situation (e.g. possible ACS, stroke, ectopic, suicidal or\n   homicidal, high-risk mechanism, febrile infant, immunocompromised with fever), OR new\n   confusion/lethargy/disorientation, OR severe pain/distress (>= 7/10).\nC. Count distinct resource types: labs, ECG, X-ray, CT/MRI/US, IV fluids, IV/IM/nebulized meds,\n   specialty consult, simple procedure (1), complex procedure (2). Not resources: exam, POC tests,\n   saline lock, oral meds, tetanus, refill, simple wound care, splint/sling/crutches.\n   0 -> ESI 5; 1 -> ESI 4; 2+ -> go to D.\nD. Danger-zone vitals -> consider ESI 2, else ESI 3. HR/RR limits: <3 mo >180/>50; 3 mo-3 y\n   >160/>40; 3-8 y >140/>30; >8 y >100/>20. Any age SpO2 < 92%. Fever >= 38.0 C: age 1-28 days\n   is at least ESI 2; 1-3 months consider ESI 2.\n\nUse only clinical information from the vignette. Reply with JSON only:\n{\"esi\": 1-5, \"confidence\": 0.0-1.0, \"key_findings\": [<=3 phrases, <10 words each], \"rationale\": \"<=60 words\"}",
+ "user": "PATIENT VIGNETTE\nEMS presents to the ED with an 18-year-old female with a suspected medication overdose. Her college roommates found her lethargic and “not acting right,” so they called 911. The patient has a history of depression. On exam, you notice multiple superficial lacerations to both wrists. Her respiratory rate is 10, and her SpO2 on room air is 86 percent.\n\nAssign the ESI level.",
+ "text": "{\"confidence\": 0.95, \"esi\": 1, \"key_findings\": [\"Respiratory distress (RR 10, SpO2 86%)\", \"History of depression and multiple superficial lacerations\", \"Altered mental status (lethargic)\"], \"rationale\": \"Patient requires immediate life-saving intervention. Respiratory distress with SpO2 < 90% and altered mental status indicate need for urgent airway and breathing interventions. Depression and self-harm increase risk of serious condition requiring immediate attention.\"}",
+ "input_tokens": 543,
+ "output_tokens": 115,
+ "latency_ms": 13298.9,
+ "created": 1792009253.992741
+}

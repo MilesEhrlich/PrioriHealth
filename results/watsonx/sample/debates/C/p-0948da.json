@@ -1,0 +1,160 @@
+{
+ "patient_id": "p-0948da",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.9,
+    "key_findings": [
+     "Facial trauma from diving",
+     "Tingling in both hands",
+     "No respiratory distress or altered mental status"
+    ],
+    "rationale": "Facial injury from diving is concerning for possible cervical spine injury or intracranial bleed, warranting imaging and monitoring. Tingling in hands suggests potential nerve injury or systemic issue. No vital sign abnormalities or high-risk features to escalate to ESI 1."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 612,
+   "output_tokens": 106,
+   "latency_ms": 5136.2
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Abrasions on forehead and nose",
+     "Tingling in both hands",
+     "No respiratory or circulatory compromise"
+    ],
+    "rationale": "Patient is stable with minor injury and no life-threatening conditions. No immediate life-saving intervention needed (A). No high-risk situation or severe pain/distress (B). Requires 1 distinct resource type (labs/ECG for neuro assessment), so ESI 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 602,
+   "output_tokens": 108,
+   "latency_ms": 5793.5
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Facial abrasion from diving",
+     "Tingling in both hands"
+    ],
+    "rationale": "No life threat, no high-risk situation, 1 resource (exam). Vitals not provided, but no danger-zone signs. ESI 3 fits."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 602,
+   "output_tokens": 69,
+   "latency_ms": 5929.2
+  }
+ ],
+ "round2": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 2,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Facial trauma from diving",
+     "Tingling in both hands",
+     "No respiratory distress or altered mental status"
+    ],
+    "rationale": "Facial injury from diving warrants imaging and monitoring for possible cervical spine injury or intracranial bleed. Tingling in hands suggests potential nerve injury or systemic issue. No vital sign abnormalities or high-risk features to escalate to ESI 1. No labs, ECG, imaging, IV fluids, meds, or consults indicated yet, so ESI 3.",
+    "change_reason": "Equity Auditor correctly identified that no vital signs were provided, so danger-zone criteria cannot be applied."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 962,
+   "output_tokens": 149,
+   "latency_ms": 37185.1
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 2,
+   "output": {
+    "esi": 2,
+    "confidence": 0.85,
+    "key_findings": [
+     "Facial trauma from diving",
+     "Tingling in both hands",
+     "No respiratory distress or altered mental status"
+    ],
+    "rationale": "Facial injury from diving warrants consideration of cervical spine injury, which is a high-risk situation (B). Tingling in hands suggests potential nerve injury or systemic issue. No immediate life-saving intervention needed (A). Requires 1 distinct resource type (exam), but high-risk situation justifies ESI 2 over ESI 3.",
+    "change_reason": "Reconsidering based on potential cervical spine injury concern raised by Cautious Clinician"
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 954,
+   "output_tokens": 143,
+   "latency_ms": 37624.0
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 2,
+   "output": {
+    "esi": 2,
+    "confidence": 0.85,
+    "key_findings": [
+     "Facial abrasion from diving",
+     "Tingling in both hands"
+    ],
+    "rationale": "Facial injury from diving warrants consideration of cervical spine injury or intracranial bleed, placing patient in high-risk category (B). No immediate life-saving intervention needed (A). Requires 1 distinct resource type (neuro assessment), so ESI 2.",
+    "change_reason": "Cautious Clinician highlighted concern for cervical spine injury or intracranial bleed, which I initially overlooked in my assessment."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 953,
+   "output_tokens": 129,
+   "latency_ms": 38391.9
+  }
+ ],
+ "early_stopped": false,
+ "final_esis": {
+  "Cautious Clinician": 3,
+  "Resource Manager": 2,
+  "Equity Auditor": 2
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.9,
+  "Resource Manager": 0.85,
+  "Equity Auditor": 0.85
+ },
+ "aggregate": 2,
+ "majority": 2,
+ "disagreement_range": 1,
+ "mean_confidence": 0.8666666666666667,
+ "disagreement_score": 1.1333333333333333,
+ "escalated": true,
+ "escalation_reasons": [
+  "disagreement"
+ ]
+}

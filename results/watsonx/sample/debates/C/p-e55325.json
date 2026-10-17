@@ -1,0 +1,91 @@
+{
+ "patient_id": "p-e55325",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 1,
+    "confidence": 0.95,
+    "key_findings": [
+     "Unresponsive 17-year-old male",
+     "History of suicidality",
+     "Multiple empty liquor and pill bottles"
+    ],
+    "rationale": "Unresponsive patient with potential overdose and history of suicidality requires immediate life-saving intervention, meeting ESI level 1 criteria."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 585,
+   "output_tokens": 90,
+   "latency_ms": 34861.3
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 1,
+    "confidence": 0.95,
+    "key_findings": [
+     "Unresponsive patient",
+     "History of suicidality",
+     "Alcohol and pill bottles present"
+    ],
+    "rationale": "Patient is unresponsive, which meets ESI 1 criteria A for immediate life-saving intervention. The history of suicidality and presence of alcohol/pill bottles further support the need for urgent care."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 575,
+   "output_tokens": 89,
+   "latency_ms": 35548.3
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 1,
+    "confidence": 0.95,
+    "key_findings": [
+     "Unresponsive, possible overdose"
+    ],
+    "rationale": "Unresponsive patient with alcohol and pill bottles present indicates potential life-threatening overdose requiring immediate intervention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 575,
+   "output_tokens": 47,
+   "latency_ms": 35750.7
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Cautious Clinician": 1,
+  "Resource Manager": 1,
+  "Equity Auditor": 1
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.95,
+  "Resource Manager": 0.95,
+  "Equity Auditor": 0.95
+ },
+ "aggregate": 1,
+ "majority": 1,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9499999999999998,
+ "disagreement_score": 0.050000000000000155,
+ "escalated": false,
+ "escalation_reasons": []
+}

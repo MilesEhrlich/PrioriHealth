@@ -1,0 +1,8 @@
+{
+  "accuracy": "The persona debate got 50% exactly right vs 45% for a single agent (n = 20; wide intervals).",
+  "critical_miss": "A single agent called 56% of critical patients non-urgent; with the debate, 33% slipped through without a nurse seeing them.",
+  "coverage": "At the default setting the debate sends 5% of cases to a nurse and is right on 53% of the rest.",
+  "auroc": "Agent disagreement flags errors no better than a single agent's own confidence (AUROC 0.68 vs 0.69).",
+  "cost": "The debate costs 3.8 calls and 3,654 tokens per patient, about 4.7x a single agent.",
+  "fairness": "Swapping only the patient's sex changed the decision in 2 of 14 cases for a single agent and 3 of 14 for the debate."
+}

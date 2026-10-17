@@ -1,0 +1,91 @@
+{
+ "patient_id": "p-7bdeb5",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Wrist pain after slip on ice",
+     "No deformity, normal vitals",
+     "Pain 5/10"
+    ],
+    "rationale": "No life threat, no high-risk situation, 1 resource (X-ray if needed), pain below 7/10, vitals normal."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 603,
+   "output_tokens": 84,
+   "latency_ms": 20115.4
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Wrist pain, no deformity",
+     "Pain 5/10",
+     "Normal vitals"
+    ],
+    "rationale": "Patient is stable, no life-threatening injury (A), no high-risk situation (B). Distinct resources used: X-ray, IV fluids, pain meds. 2 resources place her at ESI 3 per D."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 593,
+   "output_tokens": 96,
+   "latency_ms": 20553.8
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Wrist pain, no deformity, normal vitals"
+    ],
+    "rationale": "No life threat, no high-risk situation, 1 resource (pain control), pain 5/10 not severe."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 593,
+   "output_tokens": 59,
+   "latency_ms": 20915.0
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Cautious Clinician": 3,
+  "Resource Manager": 3,
+  "Equity Auditor": 3
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.9,
+  "Resource Manager": 0.9,
+  "Equity Auditor": 0.9
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9,
+ "disagreement_score": 0.09999999999999998,
+ "escalated": false,
+ "escalation_reasons": []
+}

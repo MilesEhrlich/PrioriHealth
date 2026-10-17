@@ -1,0 +1,95 @@
+{
+ "patient_id": "p-3e2204",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3"
+ ],
+ "round1": [
+  {
+   "agent": "Agent 1",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.8,
+    "key_findings": [
+     "Tachypnea 40/min",
+     "Tachycardia 132/min",
+     "Alert, good SpO2"
+    ],
+    "rationale": "RR >40/min for <3mo meets danger-zone criteria (ESI 2). Alert, good perfusion, no other red flags lower acuity."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 526,
+   "output_tokens": 98,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "3-month-old with respiratory distress",
+     "Fever 38.0°C (100.4°F)",
+     "Tachycardia (HR 132)"
+    ],
+    "rationale": "Fever and tachypnea in a young infant are concerning for possible serious bacterial infection. Tachycardia and normal oxygen saturation do not require immediate life-saving intervention. This meets high-risk situation criteria for ESI level 2."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [
+    "findings_trimmed"
+   ],
+   "calls": 1,
+   "input_tokens": 526,
+   "output_tokens": 109,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Fever 100.4°F (38.0°C)",
+     "RR 40",
+     "HR 132"
+    ],
+    "rationale": "Age 1-3 months with fever warrants ESI 2. Tachypnea (RR 40) and tachycardia (HR 132) support high acuity. Alert mental status prevents ESI 1. No life-threatening signs."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 526,
+   "output_tokens": 106,
+   "latency_ms": 0.0
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 2,
+  "Agent 2": 2,
+  "Agent 3": 2
+ },
+ "final_confidences": {
+  "Agent 1": 0.8,
+  "Agent 2": 0.95,
+  "Agent 3": 0.95
+ },
+ "aggregate": 2,
+ "majority": 2,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9,
+ "disagreement_score": 0.09999999999999998,
+ "escalated": false,
+ "escalation_reasons": []
+}

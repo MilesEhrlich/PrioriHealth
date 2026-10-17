@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nI was seen in the ED last night for my fractured wrist. The bone doctor put this cast on and told me to come back if I had any problems. As you can see, my hand is really swollen and the cast is cutting into my fingers. The pain is just unbearable.” Circulation, sensation, and movement are decreased.",
+ "text": "{\n  \"chief_complaint\": \"Swollen wrist, cast causing pain, decreased circulation, sensation, movement\"\n}",
+ "input_tokens": 199,
+ "output_tokens": 34,
+ "latency_ms": 61976.3,
+ "created": 1792011641.87946
+}

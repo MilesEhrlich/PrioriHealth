@@ -1,0 +1,162 @@
+{
+ "patient_id": "p-086c1a",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Rectal foreign body",
+     "No abdominal pain or tenderness",
+     "Pain 4/10"
+    ],
+    "rationale": "Patient is stable with no life-threatening issues. Requires procedure and possible imaging, but no immediate life-saving intervention or high-risk situation."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 624,
+   "output_tokens": 77,
+   "latency_ms": 2888.2
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Rectal foreign body",
+     "No abdominal pain or tenderness",
+     "Pain 4/10"
+    ],
+    "rationale": "Patient is stable with no life-threatening or high-risk conditions. Requires 1 ED resource (simple procedure to remove foreign body). Meets ESI decision point C with 1 resource type, proceeding to D which does not indicate ESI 2, so ESI 4 is assigned."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 614,
+   "output_tokens": 109,
+   "latency_ms": 3794.7
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Rectal foreign body",
+     "Pain 4/10",
+     "No distress or risk factors"
+    ],
+    "rationale": "No life threat, no high-risk situation, 1 resource (simple procedure to remove object)."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 614,
+   "output_tokens": 60,
+   "latency_ms": 4082.9
+  }
+ ],
+ "round2": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 2,
+   "output": {
+    "esi": 4,
+    "confidence": 0.9,
+    "key_findings": [
+     "Rectal foreign body",
+     "No abdominal pain or tenderness",
+     "Pain 4/10"
+    ],
+    "rationale": "Patient is stable with no life-threatening issues. Requires procedure and possible imaging, but no immediate life-saving intervention or high-risk situation.",
+    "change_reason": "The patient's presentation does not meet any of the criteria for ESI 1 or 2. While the situation is embarrassing for the patient, it is not a life-threatening emergency. The key findings and rationale remain the same, but the ESI…"
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 938,
+   "output_tokens": 143,
+   "latency_ms": 36913.3
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 2,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Rectal foreign body",
+     "No abdominal pain or tenderness",
+     "Pain 4/10"
+    ],
+    "rationale": "The patient is stable with no life-threatening or high-risk conditions. The rectal foreign body removal is a simple procedure, meeting ESI decision point C with 1 resource type. Decision point D does not indicate ESI 2. Therefore, ESI 4 is assigned.",
+    "change_reason": "The patient's presentation does not meet any criteria for ESI 1 or 2. The rectal foreign body does not constitute a life-threatening situation or require immediate life-saving intervention. The patient is stable with no high-risk conditions. The procedure to remove…"
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 930,
+   "output_tokens": 185,
+   "latency_ms": 37955.0
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 2,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Rectal foreign body",
+     "Pain 4/10",
+     "No life-threatening signs"
+    ],
+    "rationale": "Patient is stable but requires a procedure and evaluation for possible high-risk situation or severe distress related to the foreign body.",
+    "change_reason": "The patient's presentation does not meet any criteria for ESI 1 or 2. While the foreign body removal is a simple procedure, the patient's embarrassment and the need for a potentially invasive procedure to remove the object warrants closer evaluation…"
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 929,
+   "output_tokens": 133,
+   "latency_ms": 38390.9
+  }
+ ],
+ "early_stopped": false,
+ "final_esis": {
+  "Cautious Clinician": 4,
+  "Resource Manager": 4,
+  "Equity Auditor": 3
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.9,
+  "Resource Manager": 0.95,
+  "Equity Auditor": 0.9
+ },
+ "aggregate": 4,
+ "majority": 4,
+ "disagreement_range": 1,
+ "mean_confidence": 0.9166666666666666,
+ "disagreement_score": 1.0833333333333335,
+ "escalated": true,
+ "escalation_reasons": [
+  "disagreement"
+ ]
+}

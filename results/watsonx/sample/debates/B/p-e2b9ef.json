@@ -1,0 +1,93 @@
+{
+ "patient_id": "p-e2b9ef",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3"
+ ],
+ "round1": [
+  {
+   "agent": "Agent 1",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.8,
+    "key_findings": [
+     "Severe abdominal pain",
+     "No recent trauma or medical history",
+     "Vitals within normal limits"
+    ],
+    "rationale": "Patient is alert with moderate pain but stable vitals. No life-threatening conditions or high-risk situations. Requires more than simple resources like labs and exam."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 531,
+   "output_tokens": 93,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Abdominal pain, moderate severity",
+     "No trauma or medical history",
+     "Vital signs stable"
+    ],
+    "rationale": "This 17yo female with moderate abdominal pain, no trauma or significant history, and stable vitals requires evaluation but is not immediately life-threatening. 1 resource (likely labs/imaging). Does not meet ESI 1-2 criteria."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 531,
+   "output_tokens": 100,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Severe abdominal pain",
+     "No recent trauma or medical history",
+     "Vital signs stable"
+    ],
+    "rationale": "The patient's primary complaint is severe abdominal pain without trauma or history. Vitals are normal. This meets criteria for ESI 3: 1 resource (assessment) and moderate severity."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 531,
+   "output_tokens": 98,
+   "latency_ms": 0.0
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 3,
+  "Agent 2": 3,
+  "Agent 3": 3
+ },
+ "final_confidences": {
+  "Agent 1": 0.8,
+  "Agent 2": 0.9,
+  "Agent 3": 0.9
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 0,
+ "mean_confidence": 0.8666666666666667,
+ "disagreement_score": 0.1333333333333333,
+ "escalated": false,
+ "escalation_reasons": []
+}

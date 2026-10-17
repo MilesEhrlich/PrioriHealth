@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\n“This is so embarrassing,” reports a 29-year-old male. “For the last 12 hours, I have had this thing stuck in my rectum. I have tried and tried to get it out with no success. Can someone help me?” The patient denies abdominal pain or tenderness. Vital signs are within normal limits. Pain 4/10.",
+ "text": "{\n  \"chief_complaint\": \"Foreign object in rectum, no pain\"\n}",
+ "input_tokens": 207,
+ "output_tokens": 22,
+ "latency_ms": 10715.1,
+ "created": 1792011590.617738
+}

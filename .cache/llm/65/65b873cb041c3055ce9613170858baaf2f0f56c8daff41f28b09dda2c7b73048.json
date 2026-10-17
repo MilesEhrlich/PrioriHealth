@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nMy son woke me up about 3 hours ago complaining of a right earache. I gave him some acetaminophen but it didn’t help,” the 4- year-old’s mother tells you. No fever, other vital signs within normal limits for age.",
+ "text": "{\n  \"chief_complaint\": \"Earache, no fever, acetaminophen ineffective\"\n}",
+ "input_tokens": 181,
+ "output_tokens": 29,
+ "latency_ms": 44292.3,
+ "created": 1792011624.1952908
+}

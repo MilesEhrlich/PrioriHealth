@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\n“I have a fever and a sore throat. I have finals this week, and I am scared this is strep,” reports a 19-year-old college student. She is sitting at triage drinking bottled water. No past medical history, medications: birth control pills, no allergies to medications. Vital signs: T 100.6˚F, HR 88, RR 18, BP 112/76.",
+ "text": "{\n  \"chief_complaint\": \"Fever, sore throat, suspected strep\"\n}",
+ "input_tokens": 231,
+ "output_tokens": 27,
+ "latency_ms": 92783.9,
+ "created": 1792011767.601919
+}

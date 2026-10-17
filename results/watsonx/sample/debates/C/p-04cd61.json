@@ -1,0 +1,163 @@
+{
+ "patient_id": "p-04cd61",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Lip laceration extending through vermilion border",
+     "No abnormal vitals",
+     "Healthy 19-month-old"
+    ],
+    "rationale": "Laceration requires suturing, but no life threat, instability, or high-risk features. One resource (sutures) needed. No concerning vitals or age-related red flags."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 632,
+   "output_tokens": 91,
+   "latency_ms": 1357.0
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Lip laceration extending through vermilion border",
+     "No respiratory or circulatory compromise",
+     "Normal vitals for age"
+    ],
+    "rationale": "The child has a simple laceration requiring sutures (1 resource type). No life-threatening conditions or high-risk situations per ESI decision points A and B. With 1 distinct ED resource, the ESI level is 4."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 622,
+   "output_tokens": 104,
+   "latency_ms": 2023.8
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Lip laceration extending through vermilion border",
+     "Minor mechanism (fall)",
+     "No vital sign abnormalities"
+    ],
+    "rationale": "Simple laceration without life threat, high-risk features, or significant resources needed. ESI 4 reflects routine care."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 622,
+   "output_tokens": 69,
+   "latency_ms": 2281.7
+  }
+ ],
+ "round2": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 2,
+   "output": {
+    "esi": 2,
+    "confidence": 0.9,
+    "key_findings": [
+     "Lip laceration extending through vermilion border",
+     "Febrile infant risk (age 1-3 months)",
+     "No vital sign abnormalities"
+    ],
+    "rationale": "ESI 2 is appropriate because the child is a febrile infant aged 1-3 months, which is a high-risk situation requiring immediate evaluation per ESI decision point B. The laceration itself does not change the urgency.",
+    "change_reason": "The child's age (19 months) places them in the high-risk febrile infant category; without knowing the temperature, I cannot exclude ESI 2."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 964,
+   "output_tokens": 148,
+   "latency_ms": 37207.2
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 2,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Lip laceration extending through vermilion border",
+     "No respiratory or circulatory compromise",
+     "Normal vitals for age"
+    ],
+    "rationale": "The child has a simple laceration requiring sutures (1 resource type). No life-threatening conditions or high-risk situations per ESI decision points A and B. With 1 distinct ED resource, the ESI level is 4.",
+    "change_reason": "No new clinical findings identified by other panel members that would alter the ESI assignment."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 956,
+   "output_tokens": 124,
+   "latency_ms": 37262.2
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 2,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Lip laceration extending through vermilion border",
+     "Minor mechanism (fall)",
+     "No vital sign abnormalities"
+    ],
+    "rationale": "Simple laceration without life threat, high-risk features, or significant resources beyond suturing. ESI 4 reflects routine care.",
+    "change_reason": "The other panel members correctly identified that the laceration requires suturing, which is a single distinct resource type, aligning with ESI 4 criteria. No additional clinical findings were missed."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 955,
+   "output_tokens": 124,
+   "latency_ms": 37866.0
+  }
+ ],
+ "early_stopped": false,
+ "final_esis": {
+  "Cautious Clinician": 2,
+  "Resource Manager": 4,
+  "Equity Auditor": 4
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.9,
+  "Resource Manager": 0.95,
+  "Equity Auditor": 0.95
+ },
+ "aggregate": 4,
+ "majority": 4,
+ "disagreement_range": 2,
+ "mean_confidence": 0.9333333333333332,
+ "disagreement_score": 2.066666666666667,
+ "escalated": true,
+ "escalation_reasons": [
+  "safety_override",
+  "disagreement"
+ ]
+}

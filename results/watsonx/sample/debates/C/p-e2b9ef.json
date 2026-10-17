@@ -1,0 +1,93 @@
+{
+ "patient_id": "p-e2b9ef",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.85,
+    "key_findings": [
+     "Severe abdominal pain",
+     "No trauma or medical history",
+     "Vital signs stable"
+    ],
+    "rationale": "Abdominal pain without red flags, normal vitals, no life threat or high-risk situation. Requires assessment and possible imaging, but not immediate intervention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 621,
+   "output_tokens": 79,
+   "latency_ms": 33084.1
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Severe abdominal pain",
+     "No trauma or medical history",
+     "Vital signs stable"
+    ],
+    "rationale": "Patient is stable, does not meet ESI 1 or 2 criteria. Requires 2 distinct resources (labs, imaging), so ESI 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 611,
+   "output_tokens": 80,
+   "latency_ms": 33536.0
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Severe abdominal pain",
+     "Normal vitals",
+     "No trauma or history"
+    ],
+    "rationale": "Severe pain warrants ESI 2, but normal vitals and lack of high-risk features drop to ESI 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 611,
+   "output_tokens": 72,
+   "latency_ms": 34184.6
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Cautious Clinician": 3,
+  "Resource Manager": 3,
+  "Equity Auditor": 3
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.85,
+  "Resource Manager": 0.9,
+  "Equity Auditor": 0.9
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 0,
+ "mean_confidence": 0.8833333333333333,
+ "disagreement_score": 0.1166666666666667,
+ "escalated": false,
+ "escalation_reasons": []
+}

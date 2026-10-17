@@ -1,0 +1,93 @@
+{
+ "patient_id": "p-935ede",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Swimmer's ear in healthy child",
+     "No distress or systemic symptoms",
+     "Normal vitals"
+    ],
+    "rationale": "Swimmer's ear is a low-acuity condition. No vital sign abnormalities, pain/discomfort is mild, and child is otherwise well. Meets criteria for ESI 4 (1 resource)."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 628,
+   "output_tokens": 81,
+   "latency_ms": 25609.0
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Ear pain/itching only",
+     "Normal vitals",
+     "No distress"
+    ],
+    "rationale": "Swimmer's ear is a low-acuity condition. No life-threatening issues (A), no urgent high-risk situations (B). Only 1 resource type (ear exam/OTC drops). Meets ESI 4 criteria."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 618,
+   "output_tokens": 93,
+   "latency_ms": 26247.0
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Ear pain, itching, no distress",
+     "Normal vitals, no fever",
+     "History of swimming"
+    ],
+    "rationale": "Ear pain alone is low acuity. No vital abnormalities, fever, or systemic symptoms. One resource (exam) needed. ESI 4."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 618,
+   "output_tokens": 72,
+   "latency_ms": 26696.1
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Cautious Clinician": 4,
+  "Resource Manager": 4,
+  "Equity Auditor": 4
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.95,
+  "Resource Manager": 0.95,
+  "Equity Auditor": 0.95
+ },
+ "aggregate": 4,
+ "majority": 4,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9499999999999998,
+ "disagreement_score": 0.050000000000000155,
+ "escalated": false,
+ "escalation_reasons": []
+}

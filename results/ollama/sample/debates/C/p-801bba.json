@@ -1,0 +1,287 @@
+{
+ "patient_id": "p-801bba",
+ "condition": "C",
+ "agents": [
+  "Empath",
+  "Logician",
+  "Skeptic",
+  "Observer",
+  "Synthesizer",
+  "Pragmatist",
+  "Vigilant",
+  "Impartial",
+  "Mediator",
+  "Reflective"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Empath",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Penetrating foot injury",
+      "Washed wound",
+      "No vital signs abnormal"
+     ],
+     "rationale": "The patient has a penetrating foot injury with a rusty nail, requiring further medical attention, but given the vital signs are within normal limits and the patient has no previous medical history, this does not meet the criteria for ESI 1-4. Therefore, it is classified as ESI 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 670,
+    "output_tokens": 118,
+    "latency_ms": 1032119.8
+   },
+   {
+    "agent": "Logician",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Penetrating injury",
+      "Wound cleaning",
+      "No high-risk conditions"
+     ],
+     "rationale": "The patient presents with a penetrating injury and cleaned the wound. However, there are no immediate life-threatening conditions, high-risk situations, or need for advanced resources. Vital signs are normal, and there is no mention of any acute symptoms or high-risk factors. According to ESI guidelines, this case does not meet criteria for ESI levels 1-4 and falls under ESI level…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 660,
+    "output_tokens": 149,
+    "latency_ms": 1043762.1
+   },
+   {
+    "agent": "Skeptic",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Penetrating injury",
+      "Normal vital signs",
+      "No medical history"
+     ],
+     "rationale": "Penetrating injury, but normal vital signs and no medical history result in ESI 5. No immediate life-threat, not requiring immediate intervention, and no high-risk conditions or severe pain present."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 662,
+    "output_tokens": 93,
+    "latency_ms": 1051186.2
+   },
+   {
+    "agent": "Observer",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Penetrating injury",
+      "No abnormal vital signs"
+     ],
+     "rationale": "A penetrating injury is present, but no immediate life-saving intervention is needed, and there are no abnormal vital signs. The risk is low for conditions requiring immediate attention based on the provided information."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 657,
+    "output_tokens": 89,
+    "latency_ms": 1058116.7
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Penetrating injury",
+      "No abnormal vital signs",
+      "No evidence of infection or systemic symptoms"
+     ],
+     "rationale": "The patient sustained a penetrating injury with a rusty nail, which requires attention but does not meet ESI 1 criteria as there are no immediate life-threatening conditions, no abnormal vital signs, and no signs of infection or systemic symptoms. The patient's request for a tetanus shot is a precautionary measure, not an urgent need for medical intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 656,
+    "output_tokens": 145,
+    "latency_ms": 1071663.3
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Penetrating injury",
+      "Wound cleaning",
+      "No abnormal vital signs"
+     ],
+     "rationale": "The patient has a penetrating injury with a rusty nail, but they washed the wound thoroughly and has normal vital signs. No immediate life-saving intervention, high-risk situation, or resource intensity is indicated. The patient does not meet criteria for ESI 1-4, thus, ESI 5 is assigned."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 661,
+    "output_tokens": 123,
+    "latency_ms": 1083703.2
+   },
+   {
+    "agent": "Vigilant",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Penetrating foot injury",
+      "Washed wound",
+      "No high-risk signs"
+     ],
+     "rationale": "The patient has a penetrating foot injury from a rusty nail but has no signs of systemic infection, shock, or other urgent conditions. Washing the wound is appropriate. No immediate life-saving intervention is needed, nor should the patient not wait for further evaluation. No distinct resources are required at this time, and danger-zone vitals are not present. Therefore, this case…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 661,
+    "output_tokens": 145,
+    "latency_ms": 1097685.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Penetrating foot injury",
+      "Wound cleaning",
+      "No abnormal vital signs"
+     ],
+     "rationale": "The patient has a penetrating foot injury with a foreign body and self-reported washing of the wound. However, vital signs are normal, and there is no evidence of infection or systemic symptoms. Given the absence of clinical features indicating immediate life-saving intervention, high-risk conditions, significant resource needs, or danger-zone vitals, this case is classified as ESI 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 683,
+    "output_tokens": 139,
+    "latency_ms": 1118277.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Penetrating foot injury",
+      "Washing the wound",
+      "Concerned about tetanus shot"
+     ],
+     "rationale": "The patient has a penetrating foot injury requiring immediate medical attention, but no immediate life-saving intervention or danger-zone vitals. The patient's normal vital signs and lack of systemic symptoms rule out ESI 1-3. The need for a tetanus shot does not warrant a higher ESI, as it doesn't constitute an acute, high-risk situation. The patient doesn't require any complex resources…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 659,
+    "output_tokens": 158,
+    "latency_ms": 1146925.8
+   },
+   {
+    "agent": "Reflective",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 0.95,
+     "key_findings": [
+      "Penetrating injury",
+      "No previous medical history",
+      "Vital signs normal"
+     ],
+     "rationale": "The patient has a penetrating injury with a foreign body, which is a high-risk mechanism (ESI 2). However, the patient's vital signs are normal and stable, and they do not meet the criteria for ESI 1. They do not require immediate life-saving intervention or any immediate high-risk procedures. The patient's primary concern is a potential need for a tetanus shot,…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 659,
+    "output_tokens": 172,
+    "latency_ms": 1156443.6
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 1.0,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Empath": 5,
+  "Logician": 5,
+  "Skeptic": 5,
+  "Observer": 5,
+  "Synthesizer": 5,
+  "Pragmatist": 5,
+  "Vigilant": 5,
+  "Impartial": 5,
+  "Mediator": 5,
+  "Reflective": 5
+ },
+ "initial_range": 0,
+ "early_stopped": true,
+ "final_esis": {
+  "Empath": 5,
+  "Logician": 5,
+  "Skeptic": 5,
+  "Observer": 5,
+  "Synthesizer": 5,
+  "Pragmatist": 5,
+  "Vigilant": 5,
+  "Impartial": 5,
+  "Mediator": 5,
+  "Reflective": 5
+ },
+ "final_confidences": {
+  "Empath": 1.0,
+  "Logician": 1.0,
+  "Skeptic": 1.0,
+  "Observer": 1.0,
+  "Synthesizer": 1.0,
+  "Pragmatist": 1.0,
+  "Vigilant": 1.0,
+  "Impartial": 1.0,
+  "Mediator": 1.0,
+  "Reflective": 0.95
+ },
+ "aggregate": 5,
+ "majority": 5,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9949999999999999,
+ "disagreement_score": 0.0050000000000001155,
+ "escalated": false,
+ "escalation_reasons": []
+}

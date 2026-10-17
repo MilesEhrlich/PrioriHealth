@@ -1,0 +1,93 @@
+{
+ "patient_id": "p-d0dde1",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Severe abdominal pain",
+     "Difficulty breathing",
+     "Hypotension, tachycardia, tachypnea"
+    ],
+    "rationale": "High-risk mechanism (fall from height) with vital sign abnormalities (hypotension, tachycardia, tachypnea) and severe abdominal pain suggest possible intra-abdominal injury and respiratory compromise, warranting urgent assessment and intervention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 607,
+   "output_tokens": 106,
+   "latency_ms": 27555.4
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.9,
+    "key_findings": [
+     "Severe abdominal pain",
+     "Difficulty breathing",
+     "Hypotension, tachycardia, tachypnea"
+    ],
+    "rationale": "Patient has severe pain and respiratory distress, but is not unresponsive or in shock. Meets ESI decision point B criteria for severe pain/distress (>=7/10) and possible ACS. No immediate life-saving intervention needed, so not ESI 1. Distinct resources used: IV fluids, pain control, likely imaging. Meets ESI 2 criteria."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 597,
+   "output_tokens": 132,
+   "latency_ms": 28318.8
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Severe abdominal pain",
+     "Difficulty breathing",
+     "Hypotension, tachycardia, tachypnea"
+    ],
+    "rationale": "Unstable mechanism with hypotension, tachycardia, tachypnea, and severe pain suggests possible intra-abdominal injury and respiratory compromise requiring urgent assessment and intervention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 597,
+   "output_tokens": 85,
+   "latency_ms": 28586.6
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Cautious Clinician": 2,
+  "Resource Manager": 2,
+  "Equity Auditor": 2
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.95,
+  "Resource Manager": 0.9,
+  "Equity Auditor": 0.95
+ },
+ "aggregate": 2,
+ "majority": 2,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9333333333333332,
+ "disagreement_score": 0.06666666666666676,
+ "escalated": false,
+ "escalation_reasons": []
+}

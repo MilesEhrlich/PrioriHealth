@@ -1,0 +1,290 @@
+{
+ "patient_id": "p-086c1a",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3",
+  "Agent 4",
+  "Agent 5",
+  "Agent 6",
+  "Agent 7",
+  "Agent 8",
+  "Agent 9",
+  "Agent 10"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Agent 1",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Object in rectum for 12 hours",
+      "No abdominal pain or tenderness",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient's complaint of an object stuck in the rectum for 12 hours without any signs of abdominal pain or tenderness, and normal vital signs, does not indicate immediate life-saving intervention, high-risk situation, or need for extensive resources. This is a non-urgent condition, ESI level 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 631,
+    "output_tokens": 129,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Foreign object in rectum for 12 hours",
+      "No abdominal pain or tenderness",
+      "Normal vital signs"
+     ],
+     "rationale": "This case does not meet criteria for ESI 1-4. The patient's complaint of a foreign object in the rectum for 12 hours without abdominal pain, tenderness, or abnormal vital signs is not an immediate life-threatening situation. It does not involve high-risk conditions or severe pain. It does not require multiple distinct resources for diagnosis or treatment. The danger-zone vitals are…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 631,
+    "output_tokens": 162,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Foreign object in rectum for 12 hours",
+      "No abdominal pain or tenderness",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "This case does not meet criteria for ESI 1-4. The patient presents with a foreign object in the rectum for 12 hours, which is not immediately life-saving, and denies abdominal pain or tenderness. Vital signs are within normal limits and pain is rated at 4/10. This situation does not require immediate medical attention, thus ESI 5 is assigned."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 631,
+    "output_tokens": 145,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Foreign object in rectum for 12 hours",
+      "No abdominal pain or tenderness",
+      "Normal vital signs"
+     ],
+     "rationale": "This case falls under ESI 5 as it does not meet any criteria for higher ESI levels. The patient is not in immediate danger (A), as their vital signs are normal and there's no sign of shock or respiratory distress. The issue, while uncomfortable, is not immediately life-threatening and does not require urgent medical intervention (B). The situation does not…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 631,
+    "output_tokens": 190,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Foreign object in rectum for 12 hours",
+      "Patient unable to remove",
+      "No abdominal pain or tenderness"
+     ],
+     "rationale": "This case does not meet criteria for ESI 1-4. It does not present a high-risk situation (ESI 2), immediate life-saving intervention (ESI 1), or require distinct resources (ESI 3 or 4). The patient's vital signs are within normal limits, and the pain is described as 4/10, which is not severe. This is a non-emergency situation, hence ESI 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 631,
+    "output_tokens": 154,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Foreign object in rectum for 12 hours",
+      "Denies abdominal pain or tenderness",
+      "Normal vital signs"
+     ],
+     "rationale": "This case does not meet criteria for ESI 1-4. The patient's condition is not life-threatening and does not require immediate intervention (A). It's not a high-risk situation that requires immediate attention (B), nor does it involve distinct resource types (C). The patient's vital signs are normal, and there's no danger-zone vitals (D). This is considered a non-urgent case."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 631,
+    "output_tokens": 147,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Foreign object in rectum for 12 hours",
+      "Patient unable to remove",
+      "Normal vital signs, mild pain"
+     ],
+     "rationale": "A foreign object in the rectum for 12 hours with the patient unable to remove it constitutes a high-risk situation (ESI 2). However, normal vital signs and mild pain (4/10) suggest ESI 5, as it does not require immediate life-saving intervention or exceed the threshold for ESI 2 in other categories."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 631,
+    "output_tokens": 134,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Foreign object in rectum for 12 hours",
+      "No abdominal pain or tenderness",
+      "Normal vital signs"
+     ],
+     "rationale": "This case does not meet criteria for ESI 1-4. It does not present a life-threatening situation (A), nor does it involve high-risk conditions or severe pain (B). The patient does not require immediate life-saving intervention, nor does the situation pose an immediate threat to the patient's health. The distinct resource types (C) are not significantly utilized, and danger-zone vitals (D)…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 631,
+    "output_tokens": 208,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Foreign object in rectum for 12 hours",
+      "No abdominal pain or tenderness",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "This case does not meet criteria for ESI 1-4. It does not present an immediate life-threatening situation (A), nor does it involve a high-risk condition requiring immediate attention (B). There are no immediate life-saving interventions needed. The patient's vital signs are normal and pain level is moderate. The situation does not require distinct resource types (C) or present with danger-zone…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 631,
+    "output_tokens": 177,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Foreign object in rectum for 12 hours",
+      "Patient unable to remove",
+      "Normal vital signs, mild pain"
+     ],
+     "rationale": "The patient has a foreign object lodged in the rectum for 12 hours and is unable to remove it. Although the vital signs are normal and pain is mild, this situation requires prompt attention to avoid complications such as infection or injury. The immediate life-saving intervention requirement is not met, but the urgency of the situation warrants an ESI level…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 631,
+    "output_tokens": 138,
+    "latency_ms": 0.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 1.0,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Agent 1": 5,
+  "Agent 2": 5,
+  "Agent 3": 5,
+  "Agent 4": 5,
+  "Agent 5": 5,
+  "Agent 6": 5,
+  "Agent 7": 5,
+  "Agent 8": 5,
+  "Agent 9": 5,
+  "Agent 10": 5
+ },
+ "initial_range": 0,
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 5,
+  "Agent 2": 5,
+  "Agent 3": 5,
+  "Agent 4": 5,
+  "Agent 5": 5,
+  "Agent 6": 5,
+  "Agent 7": 5,
+  "Agent 8": 5,
+  "Agent 9": 5,
+  "Agent 10": 5
+ },
+ "final_confidences": {
+  "Agent 1": 1.0,
+  "Agent 2": 1.0,
+  "Agent 3": 1.0,
+  "Agent 4": 1.0,
+  "Agent 5": 1.0,
+  "Agent 6": 1.0,
+  "Agent 7": 1.0,
+  "Agent 8": 1.0,
+  "Agent 9": 1.0,
+  "Agent 10": 1.0
+ },
+ "aggregate": 5,
+ "majority": 5,
+ "disagreement_range": 0,
+ "mean_confidence": 1.0,
+ "disagreement_score": 0.0,
+ "escalated": false,
+ "escalation_reasons": []
+}

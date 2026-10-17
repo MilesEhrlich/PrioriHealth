@@ -1,0 +1,92 @@
+{
+ "patient_id": "p-722b21",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 1,
+    "confidence": 0.95,
+    "key_findings": [
+     "Respiratory distress with SpO2 86%",
+     "Altered mental status, lethargic",
+     "Suicidal ideation, self-harm with lacerations"
+    ],
+    "rationale": "Unresponsive/poor breathing, altered mental status, and suicidal risk require immediate life-saving intervention (ESI 1)."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 633,
+   "output_tokens": 90,
+   "latency_ms": 16242.7
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 1,
+    "confidence": 0.95,
+    "key_findings": [
+     "Respiratory distress with SpO2 86%",
+     "Lethargy, suicidal ideation",
+     "Multiple superficial wrist lacerations"
+    ],
+    "rationale": "Patient requires immediate life-saving intervention for respiratory compromise and possible overdose. Suicidal ideation and self-harm further support highest acuity level per ESI decision point A."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 623,
+   "output_tokens": 94,
+   "latency_ms": 16844.5
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 1,
+    "confidence": 0.95,
+    "key_findings": [
+     "Respiratory distress with SpO2 86%",
+     "Altered mental status, lethargic"
+    ],
+    "rationale": "Unresponsive/altered mental status with respiratory compromise (SpO2 <90%) meets ESI 1 criteria for immediate life-saving intervention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 623,
+   "output_tokens": 72,
+   "latency_ms": 17265.9
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Cautious Clinician": 1,
+  "Resource Manager": 1,
+  "Equity Auditor": 1
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.95,
+  "Resource Manager": 0.95,
+  "Equity Auditor": 0.95
+ },
+ "aggregate": 1,
+ "majority": 1,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9499999999999998,
+ "disagreement_score": 0.050000000000000155,
+ "escalated": false,
+ "escalation_reasons": []
+}

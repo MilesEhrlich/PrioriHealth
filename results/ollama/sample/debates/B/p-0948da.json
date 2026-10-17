@@ -1,0 +1,281 @@
+{
+ "patient_id": "p-0948da",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3",
+  "Agent 4",
+  "Agent 5",
+  "Agent 6",
+  "Agent 7",
+  "Agent 8",
+  "Agent 9",
+  "Agent 10"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Agent 1",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Teenager after head injury in pool",
+      "Tingling in both hands"
+     ],
+     "rationale": "Teenager presented after a head injury from diving into a pool, reporting tingling in both hands. This suggests potential for neurological symptoms, which warrants a higher ESI level. The patient does not meet criteria for ESI 1 or 2, and resource utilization is minimal. The danger-zone vitals are not present in this case. Therefore, the ESI level is determined to…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 614,
+    "output_tokens": 137,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Teenager after facial trauma",
+      "Tingling in both hands"
+     ],
+     "rationale": "Teenager presented with facial trauma and tingling in both hands post-dive. While concerning, immediate life-saving intervention is not required. The symptoms do not meet ESI 2 criteria, and resource utilization is moderate. Danger-zone vitals not indicated. Therefore, ESI 3 is assigned."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 614,
+    "output_tokens": 118,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Teenager dived into pool, hit face",
+      "Tingling in both hands"
+     ],
+     "rationale": "Teenager presents with facial trauma and tingling in both hands, suggesting potential cervical spine injury. Symptoms do not meet ESI 1 or 2 criteria, but tingling could indicate nerve involvement, warranting further evaluation. Danger-zone vitals not present, and no immediate life-saving intervention needed. ESI 3 applies due to potential serious injury."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 614,
+    "output_tokens": 137,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Teenager after facial trauma",
+      "Tingling in both hands"
+     ],
+     "rationale": "A 16-year-old male presents with facial trauma following a dive into a pool, reporting tingling in both hands. This scenario does not meet criteria for ESI 1 or 2 due to absence of immediate life-saving intervention needs or high-risk situations. It also does not meet criteria for ESI 0 as there are distinct resource types (ECG, IV fluids, specialty consult,…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 614,
+    "output_tokens": 189,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "16-year-old male with facial trauma and tingling in both hands",
+      "Possible neurological symptoms post-trauma",
+      "No immediate life-threatening signs"
+     ],
+     "rationale": "The patient is a 16-year-old male who suffered facial trauma and reports tingling in both hands following a dive into a pool. While there are concerns about potential neurological involvement due to the described symptoms, there is no immediate life-threatening situation. The patient does not meet the criteria for ESI level 1 or 2. Considering the distinct resource types, this…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 614,
+    "output_tokens": 179,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Teenager after head impact",
+      "Tingling in both hands"
+     ],
+     "rationale": "The patient is a teenager who suffered a head impact after diving into a pool and now presents with tingling in both hands. While not immediately life-threatening, this scenario warrants concern for potential neurological issues, such as cervical spine injury or concussion, which may require further investigation and management. The symptoms do not meet ESI 1 or 2 criteria, but…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 614,
+    "output_tokens": 147,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Teenager hit face on pool bottom",
+      "Tingling in both hands"
+     ],
+     "rationale": "Patient is a teenager who hit their face on a pool bottom and now has tingling in both hands. This suggests possible trauma with neurological symptoms, warranting an ESI level 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 614,
+    "output_tokens": 92,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Teenager after head injury in pool",
+      "Tingling in both hands"
+     ],
+     "rationale": "Teenager presented after a head injury from diving into a pool, reporting tingling in both hands. This suggests a possible neurological issue, making it an ESI 3 due to potential seriousness but no immediate life-saving intervention required."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 614,
+    "output_tokens": 101,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Teenager hit face on pool bottom",
+      "Tingling in both hands"
+     ],
+     "rationale": "Patient is a teenager who hit his face on pool bottom and reports tingling in both hands, suggesting possible neurological symptoms. While not immediately life-threatening, these symptoms warrant further evaluation to rule out serious conditions like concussion or nerve damage. The patient's age and symptoms place him in the ESI 3 category, indicating patients who should be seen relatively soon…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 614,
+    "output_tokens": 143,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Teenager dove into pool, hit face, abrasions",
+      "Tingling in both hands"
+     ],
+     "rationale": "The patient is a teenager who experienced a head injury with resultant abrasions and now presents with tingling in both hands. This could indicate a high-risk situation due to potential nerve damage or other complications. However, the symptoms are not immediately life-threatening, hence ESI 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 614,
+    "output_tokens": 122,
+    "latency_ms": 0.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 1.0,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Agent 1": 3,
+  "Agent 2": 3,
+  "Agent 3": 3,
+  "Agent 4": 3,
+  "Agent 5": 3,
+  "Agent 6": 3,
+  "Agent 7": 3,
+  "Agent 8": 3,
+  "Agent 9": 3,
+  "Agent 10": 3
+ },
+ "initial_range": 0,
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 3,
+  "Agent 2": 3,
+  "Agent 3": 3,
+  "Agent 4": 3,
+  "Agent 5": 3,
+  "Agent 6": 3,
+  "Agent 7": 3,
+  "Agent 8": 3,
+  "Agent 9": 3,
+  "Agent 10": 3
+ },
+ "final_confidences": {
+  "Agent 1": 0.9,
+  "Agent 2": 0.95,
+  "Agent 3": 0.95,
+  "Agent 4": 0.95,
+  "Agent 5": 0.95,
+  "Agent 6": 0.95,
+  "Agent 7": 0.95,
+  "Agent 8": 0.9,
+  "Agent 9": 0.95,
+  "Agent 10": 0.95
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9400000000000001,
+ "disagreement_score": 0.05999999999999994,
+ "escalated": false,
+ "escalation_reasons": []
+}

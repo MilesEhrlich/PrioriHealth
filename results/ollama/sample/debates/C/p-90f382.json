@@ -1,0 +1,896 @@
+{
+ "patient_id": "p-90f382",
+ "condition": "C",
+ "agents": [
+  "Empath",
+  "Logician",
+  "Skeptic",
+  "Observer",
+  "Synthesizer",
+  "Pragmatist",
+  "Vigilant",
+  "Impartial",
+  "Mediator",
+  "Reflective"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Empath",
+    "round": 1,
+    "output": {
+     "esi": 2,
+     "confidence": 0.95,
+     "key_findings": [
+      "Severe abdominal pain (8/10)",
+      "Progressive lower right quadrant pain for 24 hours",
+      "Nausea without vomiting or fever"
+     ],
+     "rationale": "The patient reports severe abdominal pain (8/10), which has been progressively worsening for 24 hours. The pain's location in the lower right quadrant suggests possible appendicitis or other serious intra-abdominal pathology. Although vital signs are stable, the severity and duration of the pain, along with the patient's description, warrant a high ESI level of 2."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 782,
+    "output_tokens": 155,
+    "latency_ms": 1165457.9
+   },
+   {
+    "agent": "Logician",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Severe abdominal pain, 8/10",
+      "Progressive lower right quadrant onset",
+      "No significant medical history, stable vitals"
+     ],
+     "rationale": "The patient presents with severe abdominal pain (8/10) localized to the lower right quadrant, progressing over 24 hours. There's no history of trauma or unusual activity, and vitals are stable. This scenario fits ESI level 3 (not immediately life-threatening but requires urgent attention). It doesn't meet ESI 1 criteria (immediate life-saving intervention) nor ESI 2 (should not wait) due to…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 772,
+    "output_tokens": 327,
+    "latency_ms": 1183026.2
+   },
+   {
+    "agent": "Skeptic",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.85,
+     "key_findings": [
+      "Severe abdominal pain (8/10) in lower right quadrant, 24 hours duration",
+      "No significant medical history, no trauma or unusual activity",
+      "Stable vital signs, no fever, no vomiting"
+     ],
+     "rationale": "The patient presents with severe, localized abdominal pain lasting 24 hours, rated 8/10, which meets the criterion for high-intensity pain (B) in the ESI guidelines. Despite stable vital signs and lack of fever, recent onset of significant abdominal pain warrants further investigation. The absence of other symptoms and significant past medical history suggests a potential surgical cause, placing this patient…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 774,
+    "output_tokens": 185,
+    "latency_ms": 1193441.7
+   },
+   {
+    "agent": "Observer",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Severe abdominal pain, 24-hour duration, rated 8/10",
+      "No fever or vomiting, stable vitals",
+      "Denies trauma or unusual activity"
+     ],
+     "rationale": "Severe pain (8/10) with concerning abdominal localization (lower right quadrant) warrants a higher ESI. The absence of fever, stable vitals, and lack of other alarming symptoms suggest it's not urgent enough for ESI 1 or 2. Distinct resources (labs, imaging) would be needed, supporting ESI 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 769,
+    "output_tokens": 154,
+    "latency_ms": 1202131.7
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Severe abdominal pain, 8/10, lasting 24 hours",
+      "No significant medical history, no trauma",
+      "Stable vital signs, no fever or vomiting"
+     ],
+     "rationale": "The patient presents with severe, progressive abdominal pain lasting 24 hours, rated 8/10, but with stable vital signs and no fever or vomiting. The absence of significant medical history, trauma, or other concerning symptoms suggests a condition requiring further evaluation (ESI 3), rather than immediate life-saving intervention or a high-risk situation warranting ESI 1 or 2."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 768,
+    "output_tokens": 167,
+    "latency_ms": 1213869.7
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.85,
+     "key_findings": [
+      "Severe abdominal pain, 8/10, 24 hours duration",
+      "No fever, stable vitals",
+      "Denies trauma, unusual activity"
+     ],
+     "rationale": "The patient presents with severe, progressive abdominal pain of 24 hours duration, rated 8/10. Although pain is high, there's no evidence of shock, poor breathing, or instability. Vitals are stable, no fever, and no other red flags. The patient denies trauma or unusual activity. Given the pain severity, this case meets ESI 3 criteria under 'B. Should not wait' due…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 773,
+    "output_tokens": 189,
+    "latency_ms": 1226244.6
+   },
+   {
+    "agent": "Vigilant",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Severe abdominal pain, 8/10, lower right quadrant, 24 hours duration",
+      "No fever, stable vitals, no trauma or unusual activity"
+     ],
+     "rationale": "The patient presents with severe abdominal pain (8/10) localized to the lower right quadrant for 24 hours. Although the pain is significant, it does not meet the criteria for immediate life-saving intervention (ESI 1) as the patient is hemodynamically stable with normal vital signs (BP 120/80, HR 85, RR 16, SpO2 98%). There's no fever, recent trauma, or unusual activity…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 773,
+    "output_tokens": 231,
+    "latency_ms": 1245012.3
+   },
+   {
+    "agent": "Impartial",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Severe abdominal pain (8/10) in lower right quadrant for 24 hours",
+      "No significant medical history",
+      "Stable vital signs"
+     ],
+     "rationale": "The patient's severe abdominal pain localized to the lower right quadrant for 24 hours without improvement or significant medical history, along with stable vital signs, suggests a potentially serious condition requiring further investigation (ESI 3). The pain is not immediately life-threatening (A) nor does it indicate an immediate need for intervention (B). There is one distinct resource type (likely imaging…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 795,
+    "output_tokens": 171,
+    "latency_ms": 1258835.2
+   },
+   {
+    "agent": "Mediator",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Severe abdominal pain, 8/10, 24 hours duration",
+      "No fever, stable vitals",
+      "Denies trauma or unusual activity"
+     ],
+     "rationale": "The patient's severe abdominal pain, lasting 24 hours, rated 8/10, warrants a high ESI due to potential serious internal organ involvement. Despite severe pain, stable vitals and lack of fever rule out immediate life-saving intervention (ESI 1) or high-risk conditions like ACS, stroke, or ectopic pregnancy (ESI 2). No distinct resources are needed for diagnosis, and danger-zone vitals aren't met.…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 771,
+    "output_tokens": 200,
+    "latency_ms": 1276509.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.85,
+     "key_findings": [
+      "Severe abdominal pain, 24 hours duration, 8/10 intensity",
+      "No fever, stable vitals",
+      "Negative trauma history"
+     ],
+     "rationale": "The patient presents with severe abdominal pain (8/10) lasting 24 hours, localized to the lower right quadrant. Although the vital signs are stable, the persistent high-intensity pain suggests a high-risk situation (ESI 2). However, given the absence of fever, shock, or other red flag symptoms, and considering the patient's negative trauma history, the ESI is adjusted to 3, reflecting a…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 771,
+    "output_tokens": 182,
+    "latency_ms": 1293787.4
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 5,
+    "output": {
+     "esi": 2,
+     "confidence": 0.95,
+     "key_findings": [
+      "Severe pain (8/10) in lower right quadrant for 24 hours",
+      "No significant medical history, trauma, or other alarming symptoms",
+      "Stable vital signs"
+     ],
+     "rationale": "The patient's report of severe, progressive abdominal pain localized to the lower right quadrain, along with stable vital signs and lack of fever or other red flags, warrants an ESI 2 due to the high-intensity pain and potential for serious intra-abdominal pathology.",
+     "message": "I concur with [Logician], [Skeptic], [Observer], [Synthesizer], [Pragmatist], [Vigilant], [Impartial], [Mediator], and [Reflective] that this case is not immediately life-threatening. However, considering the ESI guidelines, the high-intensity pain (8/10) and the duration of 24 hours without improvement meet the criteria for ESI 2, as per step B. I disagree with the proposed ESI 3, as the patient's presentation does not…",
+     "change_reason": "I initially considered ESI 3 based on stable vitals, but the persistent high-intensity pain and duration of symptoms align with ESI 2 according to the guidelines."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "message_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 1755,
+    "output_tokens": 307,
+    "latency_ms": 1883558.9
+   },
+   {
+    "agent": "Logician",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Severe, localized abdominal pain (8/10) for 24 hours",
+      "Lower right quadrant localization",
+      "Stable vital signs, no fever or vomiting"
+     ],
+     "rationale": "ESI 3 based on severe pain, concerning localization, and lack of immediate life-threatening features.",
+     "message": "Agree with Empath, Skeptic, Observer, Synthesizer, Pragmatist, Vigilant, Impartial, Mediator, and Reflective on ESI 3. Disagree with none due to consistent reasoning.",
+     "change_reason": "No changes, as all members converged on ESI 3, aligning with the reasoning that the pain is severe and suggests a serious condition, but stable vitals rule out immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1745,
+    "output_tokens": 200,
+    "latency_ms": 1900762.9
+   },
+   {
+    "agent": "Skeptic",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.85,
+     "key_findings": [
+      "Severe abdominal pain (8/10) for 24 hours",
+      "Localized to lower right quadrant",
+      "Stable vital signs"
+     ],
+     "rationale": "The patient meets ESI 4 criteria due to high-intensity pain (B) and distinct resources needed (labs, imaging).",
+     "message": "I concur with [Empath]'s ESI 2, but the pain intensity and progression necessitate ESI 4 based on guidelines. Distinct resources are required for diagnosis.",
+     "change_reason": "Emphasis on distinct resources for diagnosis and pain intensity."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1746,
+    "output_tokens": 153,
+    "latency_ms": 1914371.5
+   },
+   {
+    "agent": "Observer",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Severe pain (8/10), localized to lower right quadrant",
+      "24 hours duration, no improvement",
+      "Stable vital signs, no fever, no vomiting"
+     ],
+     "rationale": "Severe pain localized to lower right quadrain for 24 hours warrants higher ESI. Stable vitals, lack of fever, and no vomiting suggest not urgent enough for ESI 1 or 2.",
+     "message": "Agree with most panel members on ESI 3. Specifically, the patient's stable vitals, lack of fever, and absence of vomiting, despite severe pain, align with this assessment.",
+     "change_reason": "None, as the specific findings supporting ESI 3 are well-articulated and considered."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1743,
+    "output_tokens": 192,
+    "latency_ms": 1930135.8
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Severe abdominal pain (8/10), progressive over 24 hours",
+      "Lower right quadrant localization",
+      "Stable vital signs, no fever, no trauma or unusual activity"
+     ],
+     "rationale": "The patient's presentation aligns with ESI 3 due to severe, localized abdominal pain without signs of immediate life-threatening conditions or high-risk situations as per ESI guidelines.",
+     "message": "I concur with the majority, acknowledging the severity of pain but maintaining ESI 3 due to stable vital signs and lack of other alarming symptoms.",
+     "change_reason": "No changes needed; the decision aligns with ESI step B (high-intensity pain) and the absence of other urgent criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1740,
+    "output_tokens": 187,
+    "latency_ms": 1945483.3
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.85,
+     "key_findings": [
+      "Severe, progressive abdominal pain",
+      "24 hours duration",
+      "Stable vital signs, no fever"
+     ],
+     "rationale": "Pain is high but not immediately life-threatening; no signs of instability or shock",
+     "message": "Agree with most, especially [Empath], [Logician], [Observer], [Synthesizer], [Vigilant], [Impartial], [Mediator], and [Reflective] on ESI 3. The patient's presentation suggests a concerning condition needing evaluation, not immediate intervention.",
+     "change_reason": "No specific clinical finding or ESI step missed; reaffirming ESI 3 based on discussion"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1744,
+    "output_tokens": 171,
+    "latency_ms": 1960008.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Severe abdominal pain (8/10) for 24 hours",
+      "Localized to lower right quadrant",
+      "Stable vital signs, no fever or vomiting"
+     ],
+     "rationale": "Patient presents with severe, localized abdominal pain, suggestive of serious intra-abdominal pathology. However, stable vital signs and lack of fever, shock, or other red flags prevent immediate life-saving intervention.",
+     "message": "Agree with most members advocating for ESI 3. The persistent high-intensity pain in the lower right quadrant warrants a higher ESI, but stable vitals and lack of fever rule out ESI 1 or 2.",
+     "change_reason": "No change needed as I initially positioned for ESI 3, aligning with the majority and supported by clinical findings."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1744,
+    "output_tokens": 208,
+    "latency_ms": 1976455.8
+   },
+   {
+    "agent": "Impartial",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Severe, localized abdominal pain (8/10) for 24 hours",
+      "No significant medical history, trauma, or unusual activity",
+      "Stable vital signs"
+     ],
+     "rationale": "The patient's severe abdominal pain localized to the lower right quadrant for 24 hours without improvement or significant medical history suggests a potentially serious condition requiring further investigation (ESI 3). The pain is not immediately life-threatening, and vital signs are stable.",
+     "message": "I concur with Empath, Logician, Observer, Synthesizer, Pragmatist, Vigilant, Mediator, and Reflective. I disagree with Skeptic's suggestion of ESI 4, as the patient's stable vital signs and lack of fever do not meet the criteria for ESI 2 or higher.",
+     "change_reason": "No change in ESI, as all clinical features align with ESI 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1767,
+    "output_tokens": 229,
+    "latency_ms": 1993970.1
+   },
+   {
+    "agent": "Mediator",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Severe, localized abdominal pain (8/10) for 24 hours",
+      "Lower right quadrant localization",
+      "Stable vital signs, no fever"
+     ],
+     "rationale": "Severe pain localized for 24 hours, lacking immediate life-threatening signs or high-risk conditions warrants ESI 3.",
+     "message": "I concur with Empath, Logician, Observer, Synthesizer, Pragmatist, Vigilant, Impartial, and Reflective. The patient's presentation aligns with ESI 3. No specific clinical finding or ESI step was missed.",
+     "change_reason": "None; agreement with the majority supports ESI 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1745,
+    "output_tokens": 176,
+    "latency_ms": 2008874.7
+   },
+   {
+    "agent": "Reflective",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.85,
+     "key_findings": [
+      "Severe abdominal pain (8/10) for 24 hours",
+      "Localized to lower right quadrant",
+      "Stable vital signs, no fever or vomiting"
+     ],
+     "rationale": "High-risk situation due to severe, persistent pain, but no signs of imminent collapse or high-risk conditions",
+     "message": "Agree with Empath, Logician, Skeptic, Observer, Synthesizer, Pragmatist, Vigilant, Impartial, and Mediator on ESI 3. The absence of fever, shock, or other red flags, along with stable vitals, supports this decision. No specific clinical finding or ESI step was missed.",
+     "change_reason": "None, as the rationale aligns with the collective panel discussion."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1744,
+    "output_tokens": 198,
+    "latency_ms": 2025213.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": false,
+ "consensus_share": 0.8,
+ "rounds_used": 5,
+ "first_round_esis": {
+  "Empath": 2,
+  "Logician": 3,
+  "Skeptic": 4,
+  "Observer": 3,
+  "Synthesizer": 3,
+  "Pragmatist": 3,
+  "Vigilant": 3,
+  "Impartial": 3,
+  "Mediator": 3,
+  "Reflective": 3
+ },
+ "initial_range": 2,
+ "early_stopped": false,
+ "final_esis": {
+  "Empath": 2,
+  "Logician": 3,
+  "Skeptic": 4,
+  "Observer": 3,
+  "Synthesizer": 3,
+  "Pragmatist": 3,
+  "Vigilant": 3,
+  "Impartial": 3,
+  "Mediator": 3,
+  "Reflective": 3
+ },
+ "final_confidences": {
+  "Empath": 0.95,
+  "Logician": 0.95,
+  "Skeptic": 0.85,
+  "Observer": 0.9,
+  "Synthesizer": 0.9,
+  "Pragmatist": 0.85,
+  "Vigilant": 0.9,
+  "Impartial": 0.95,
+  "Mediator": 0.95,
+  "Reflective": 0.85
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 2,
+ "mean_confidence": 0.9049999999999999,
+ "disagreement_score": 4.095,
+ "escalated": true,
+ "escalation_reasons": [
+  "no_consensus",
+  "urgent_dissent_overruled"
+ ]
+}

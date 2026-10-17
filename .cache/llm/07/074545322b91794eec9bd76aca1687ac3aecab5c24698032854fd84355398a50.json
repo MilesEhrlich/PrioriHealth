@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nA 23-year-old male is brought in by his roommate after he collapsed during a workout at the gym. The patient is pale, sweating profusely, and complaining of chest pain radiating to his left arm. His heart rate is 130, blood pressure is 90/60, respiratory rate is 28, and oxygen saturation is 92%.",
+ "text": "{\n  \"chief_complaint\": \"Sudden collapse, chest pain, profuse sweating, pale, tachycardia, hypotension, tachypnea\"\n}",
+ "input_tokens": 212,
+ "output_tokens": 45,
+ "latency_ms": 56984.5,
+ "created": 1792011636.887664
+}

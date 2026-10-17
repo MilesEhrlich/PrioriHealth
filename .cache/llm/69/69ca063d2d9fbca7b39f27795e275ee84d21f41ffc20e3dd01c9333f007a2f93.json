@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nThis sounds really strange. A bug flew into my right ear while I was gardening. I tried to get it out by using a Q-tip. I just don’t know what else to do, but this buzzing noise is driving me crazy,” a 55-year-old female tells you. No previous medical history and vital signs are within normal limits",
+ "text": "{\n  \"chief_complaint\": \"Insect in ear, buzzing noise\"\n}",
+ "input_tokens": 200,
+ "output_tokens": 23,
+ "latency_ms": 90586.5,
+ "created": 1792011765.404499
+}

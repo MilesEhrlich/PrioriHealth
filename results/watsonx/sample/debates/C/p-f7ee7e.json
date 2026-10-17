@@ -1,0 +1,91 @@
+{
+ "patient_id": "p-f7ee7e",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Fever in neonate <28 days",
+     "Tachycardia and tachypnea"
+    ],
+    "rationale": "Fever in a neonate <28 days is a high-risk situation requiring urgent evaluation for serious bacterial infection. Tachycardia and tachypnea are abnormal vital signs for age. No other red flags present."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 618,
+   "output_tokens": 88,
+   "latency_ms": 36762.1
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Fever in neonate <28 days",
+     "Tachycardia and tachypnea",
+     "Well-appearing infant"
+    ],
+    "rationale": "Fever in a neonate <28 days is a high-risk situation per ESI decision point B, warranting ESI 2. The infant is acting well, with normal oxygen saturation, so does not meet criteria for ESI 1. Tachycardia and tachypnea support a higher acuity than ESI 3-5."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 608,
+   "output_tokens": 131,
+   "latency_ms": 37868.3
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Fever in neonate <28 days",
+     "Tachycardia and tachypnea"
+    ],
+    "rationale": "Fever in a neonate <28 days is a high-risk situation requiring urgent evaluation. Tachycardia and tachypnea further support ESI 2."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 608,
+   "output_tokens": 78,
+   "latency_ms": 37874.9
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Cautious Clinician": 2,
+  "Resource Manager": 2,
+  "Equity Auditor": 2
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.95,
+  "Resource Manager": 0.95,
+  "Equity Auditor": 0.95
+ },
+ "aggregate": 2,
+ "majority": 2,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9499999999999998,
+ "disagreement_score": 0.050000000000000155,
+ "escalated": false,
+ "escalation_reasons": []
+}

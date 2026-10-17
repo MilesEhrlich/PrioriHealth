@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\n“I just don’t feel right,” reports a 21-year-old female who presented in the ED complaining of a rapid heart rate. “I can barely catch my breath, and I have this funny pressure feeling in my chest.” HR is 178 and regular, RR 32, BP 82/60. Her skin is cool and diaphoretic.",
+ "text": "{\n  \"chief_complaint\": \"Rapid heart rate, dyspnea, chest pressure\"\n}",
+ "input_tokens": 205,
+ "output_tokens": 26,
+ "latency_ms": 17349.4,
+ "created": 1792011692.161624
+}

@@ -1,0 +1,296 @@
+{
+ "patient_id": "p-618a0d",
+ "condition": "C",
+ "agents": [
+  "Empath",
+  "Logician",
+  "Skeptic",
+  "Observer",
+  "Synthesizer",
+  "Pragmatist",
+  "Vigilant",
+  "Impartial",
+  "Mediator",
+  "Reflective"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Empath",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Unconscious for 30 seconds",
+      "Severe headache",
+      "Nausea"
+     ],
+     "rationale": "The patient was unconscious for 30 seconds after a fall, suggesting a potential traumatic brain injury. The presence of severe headache and nausea supports this concern. While the patient is currently conscious and responsive, the combination of these factors places the case in the 'Should not wait' category (ESI 2) due to high-risk mechanism and reported symptoms."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 735,
+    "output_tokens": 135,
+    "latency_ms": 698076.4
+   },
+   {
+    "agent": "Logician",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "12-year-old boy, head injury with loss of consciousness",
+      "Conscious with severe headache and nausea",
+      "No other injuries, no vomiting"
+     ],
+     "rationale": "The patient presents with a head injury following a fall and loss of consciousness, which is concerning. Although the child is currently conscious and responsive, the mechanism of injury and brief loss of consciousness warrant further evaluation. The absence of other injuries and the normal vital signs (BP 108/72, HR 90, RR 18) suggest the injury is not immediately life-threatening…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 725,
+    "output_tokens": 290,
+    "latency_ms": 713127.3
+   },
+   {
+    "agent": "Skeptic",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "12-year-old boy, head injury",
+      "unconsciousness for 30 seconds",
+      "conscious with headache and nausea"
+     ],
+     "rationale": "The patient is a 12-year-old boy with a head injury following a fall from a bicycle, resulting in unconsciousness for 30 seconds. Although conscious upon arrival, he reports severe headache and nausea. The danger-zone vitals are not met, and there are no immediate life-threatening symptoms or high-risk conditions. The vignette lacks evidence for immediate life-saving intervention (ESI 1) or a…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 727,
+    "output_tokens": 206,
+    "latency_ms": 724025.3
+   },
+   {
+    "agent": "Observer",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "12-year-old boy, head injury, unconsciousness for 30 seconds",
+      "conscious now, severe headache, nausea",
+      "vital signs stable"
+     ],
+     "rationale": "The patient is a 12-year-old boy with a head injury from a fall, unconscious for 30 seconds. He is conscious now, reporting severe headache and nausea. Vital signs are stable. While concerning, this scenario doesn't meet ESI 1 or 2 criteria: no immediate life-threat, and while high-risk, not an immediate need for intervention. ESI 3 is appropriate due to potential…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 722,
+    "output_tokens": 177,
+    "latency_ms": 733635.2
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Fall with head injury, loss of consciousness for 30 seconds",
+      "Conscious but complaining of severe headache and nausea",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient is a 12-year-old boy who fell off a bicycle, hit his head, lost consciousness for 30 seconds, and now presents with a severe headache and nausea. He is conscious and vital signs are normal. This case does not meet ESI 1 criteria (immediate life-saving intervention) as the patient is conscious and not showing signs of severe distress or…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 721,
+    "output_tokens": 270,
+    "latency_ms": 747884.5
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.9,
+     "key_findings": [
+      "12-year-old boy, post head injury",
+      "unconscious for 30 seconds",
+      "conscious now with headache and nausea"
+     ],
+     "rationale": "The patient is a 12-year-old boy who experienced a head injury after falling off a bicycle and was unconscious for 30 seconds. Although he is now conscious, he reports a severe headache and nausea. Given the mechanism of injury, loss of consciousness, and persistent symptoms, this patient requires further evaluation to rule out intracranial injury, placing him in ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 726,
+    "output_tokens": 165,
+    "latency_ms": 756949.6
+   },
+   {
+    "agent": "Vigilant",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.85,
+     "key_findings": [
+      "Unconsciousness for 30 seconds",
+      "Severe headache",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient is a 12-year-old boy who experienced a head injury after a fall, resulting in unconsciousness for 30 seconds. He presents with a severe headache and nauseousness but has no other noted injuries and normal vital signs. This scenario fits criteria under ESI 3 due to the high-risk mechanism and symptoms, specifically the unconsciousness and potential for traumatic brain…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 726,
+    "output_tokens": 151,
+    "latency_ms": 765292.6
+   },
+   {
+    "agent": "Impartial",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "12-year-old boy, post head injury with loss of consciousness",
+      "Presenting with headache and nausea",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "The patient is a pediatric trauma case with a head injury and loss of consciousness, presenting with symptoms like headache and nausea. Although vital signs are within normal limits, the mechanism of injury (fall without helmet) and reported unconsciousness suggest a need for further evaluation to rule out serious conditions (e.g., epidural hematoma, concussion). This falls under ESI 3 as…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 748,
+    "output_tokens": 182,
+    "latency_ms": 775177.7
+   },
+   {
+    "agent": "Mediator",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Head injury with loss of consciousness",
+      "Severe headache",
+      "Nausea"
+     ],
+     "rationale": "The patient is a 12-year-old boy with a head injury after a fall, reporting loss of consciousness, severe headache, and nausea. Although conscious and answering questions, these symptoms, coupled with the mechanism of injury, suggest a possible concussion (mild traumatic brain injury). The ESI level is 3 due to the need for further evaluation and monitoring, including neurological assessment, imaging…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 724,
+    "output_tokens": 193,
+    "latency_ms": 785759.7
+   },
+   {
+    "agent": "Reflective",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.8,
+     "key_findings": [
+      "Conscious but unresponsive for 30 seconds",
+      "Severe headache and nausea",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient is a 12-year-old boy who suffered a head injury after a fall, was unconscious for 30 seconds, and presents with severe headache and nausea. Although vital signs are normal, the mechanism of injury, loss of consciousness, and persistent symptoms warrant a higher ESI level than 5. The patient does not meet criteria for ESI 1 or 2, so…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 724,
+    "output_tokens": 211,
+    "latency_ms": 797116.9
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 0.9,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Empath": 3,
+  "Logician": 3,
+  "Skeptic": 3,
+  "Observer": 3,
+  "Synthesizer": 3,
+  "Pragmatist": 4,
+  "Vigilant": 3,
+  "Impartial": 3,
+  "Mediator": 3,
+  "Reflective": 3
+ },
+ "initial_range": 1,
+ "early_stopped": true,
+ "final_esis": {
+  "Empath": 3,
+  "Logician": 3,
+  "Skeptic": 3,
+  "Observer": 3,
+  "Synthesizer": 3,
+  "Pragmatist": 4,
+  "Vigilant": 3,
+  "Impartial": 3,
+  "Mediator": 3,
+  "Reflective": 3
+ },
+ "final_confidences": {
+  "Empath": 0.95,
+  "Logician": 0.95,
+  "Skeptic": 0.9,
+  "Observer": 0.9,
+  "Synthesizer": 0.95,
+  "Pragmatist": 0.9,
+  "Vigilant": 0.85,
+  "Impartial": 0.9,
+  "Mediator": 0.9,
+  "Reflective": 0.8
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 1,
+ "mean_confidence": 0.9,
+ "disagreement_score": 1.1,
+ "escalated": false,
+ "escalation_reasons": []
+}

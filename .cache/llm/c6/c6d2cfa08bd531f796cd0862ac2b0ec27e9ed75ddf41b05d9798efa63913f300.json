@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nI got my belly button pierced a month ago and now it hurts so bad,” reports a 19-year-old healthy college student who is accompanied by her roommate. They are chatting about plans for the evening. The area is red, tender, and swollen, and pus is oozing from around the site. Vital signs: T 100˚F, HR 74, RR 18, BP 102/70, SpO2 100%. Pain 8/10.",
+ "text": "{\n  \"chief_complaint\": \"Belly button piercing infection, pain, swelling, discharge\"\n}",
+ "input_tokens": 246,
+ "output_tokens": 30,
+ "latency_ms": 67147.6,
+ "created": 1792011647.050879
+}

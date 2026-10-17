@@ -1,0 +1,16 @@
+# Python packages for IBM LinuxONE (s390x).
+# numpy and pandas are NOT listed: PyPI has no s390x wheels for them, so they come from
+# the OS (apt: python3-numpy python3-pandas) and the venv is created with
+# --system-site-packages. Everything below is pure Python or ships s390x wheels.
+pydantic>=2.7
+plotly>=5.22
+fastapi>=0.115
+uvicorn>=0.30
+pyyaml>=6.0
+python-dotenv>=1.0
+tenacity>=8.3
+httpx>=0.27
+pytest>=8.2
+pytest-asyncio>=0.23
+# watsonx client (optional at runtime; depends on pandas, satisfied by the OS package)
+ibm-watsonx-ai>=1.1

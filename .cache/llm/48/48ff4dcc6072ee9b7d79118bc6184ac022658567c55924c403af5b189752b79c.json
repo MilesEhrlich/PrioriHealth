@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nOur pediatrician told us to bring the baby to the emergency department to see a surgeon and have some tests. Every time I feed him, he vomits and it just comes flying out,” reports the mother of a healthy appearing 3–week-old. “None of my other kids did this.” Normal vaginal delivery. Vital signs are within normal limits.",
+ "text": "{\n  \"chief_complaint\": \"Infant emesis during feeding\"\n}",
+ "input_tokens": 202,
+ "output_tokens": 22,
+ "latency_ms": 102539.8,
+ "created": 1792011777.357922
+}

@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\n“I have an awful toothache right here,” a 38- year-old male tells you as he points to his right lower jaw. “I lost my dental insurance, so I haven’t seen a dentist for a couple of years.” No obvious swelling is noted. Vital signs are within normal limits. Pain 9/10.",
+ "text": "{\n  \"chief_complaint\": \"Severe toothache, no swelling\"\n}",
+ "input_tokens": 200,
+ "output_tokens": 23,
+ "latency_ms": 86829.7,
+ "created": 1792011666.733192
+}

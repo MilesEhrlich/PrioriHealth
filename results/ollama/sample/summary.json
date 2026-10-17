@@ -1,0 +1,220 @@
+{
+  "run_id": "20261016-133212",
+  "git": "uncommitted",
+  "provider": "ollama",
+  "model": "granite3.3:8b",
+  "platform": {
+    "machine": "arm64",
+    "system": "Darwin",
+    "node": "MacBookPro.lan"
+  },
+  "n_patients": 20,
+  "full": false,
+  "seed": 42,
+  "protocol": "v2-trait-consensus",
+  "panel": [
+    "empath",
+    "logician",
+    "skeptic",
+    "observer",
+    "synthesizer",
+    "pragmatist",
+    "vigilant",
+    "impartial",
+    "mediator",
+    "reflective"
+  ],
+  "max_rounds": 5,
+  "escalation": {
+    "range_threshold": 1,
+    "safety_override": true
+  },
+  "temperature": 0.0,
+  "temperature_sampling_B": 0.7,
+  "dataset": {
+    "raw_rows": {
+      "Test-1": 72,
+      "Test-2": 72,
+      "Test-3": 72,
+      "Train_scenario": 174
+    },
+    "test_duplicates_merged": 138,
+    "train_dropped_overlap": 10,
+    "n_test": 75,
+    "n_train": 164,
+    "test_label_counts": {
+      "1": 14,
+      "2": 22,
+      "3": 12,
+      "4": 12,
+      "5": 15
+    },
+    "train_label_counts": {
+      "1": 16,
+      "2": 77,
+      "3": 38,
+      "4": 16,
+      "5": 17
+    },
+    "coverage": {
+      "age": 0.92,
+      "sex": 0.92,
+      "any_vitals": 0.53,
+      "race": 0.0
+    }
+  },
+  "conditions": {
+    "A": {
+      "n": 20,
+      "exact_acc": 0.45,
+      "within1_acc": 0.85,
+      "under_triage": 0.4,
+      "over_triage": 0.15,
+      "critical_miss": 0.5555555555555556,
+      "critical_miss_unreviewed": 0.5555555555555556,
+      "escalation_rate": 0.0,
+      "acc_non_escalated": 0.45,
+      "acc_escalated": null,
+      "auroc_uncertainty": 0.6868686868686869,
+      "auroc_range": null,
+      "failures": 0,
+      "calls_per_patient": 1.0,
+      "tokens_per_patient": 773.3,
+      "latency_s_per_patient": 0.0,
+      "exact_acc_ci": [
+        0.2,
+        0.65
+      ],
+      "critical_miss_ci": [
+        0.2222222222222222,
+        0.8888888888888888
+      ],
+      "wall_s_per_patient": 0.5357060312409885
+    },
+    "B": {
+      "n": 20,
+      "exact_acc": 0.5,
+      "within1_acc": 0.85,
+      "under_triage": 0.4,
+      "over_triage": 0.1,
+      "critical_miss": 0.5555555555555556,
+      "critical_miss_unreviewed": 0.5555555555555556,
+      "escalation_rate": 0.15,
+      "acc_non_escalated": 0.47058823529411764,
+      "acc_escalated": 0.6666666666666666,
+      "auroc_uncertainty": 0.6,
+      "auroc_range": 0.51,
+      "failures": 0,
+      "calls_per_patient": 11.7,
+      "tokens_per_patient": 10787.3,
+      "latency_s_per_patient": 5911.640625,
+      "exact_acc_ci": [
+        0.3,
+        0.7
+      ],
+      "critical_miss_ci": [
+        0.2222222222222222,
+        0.8888888888888888
+      ],
+      "wall_s_per_patient": 237.13360305000097
+    },
+    "C": {
+      "n": 20,
+      "exact_acc": 0.5,
+      "within1_acc": 0.9,
+      "under_triage": 0.45,
+      "over_triage": 0.05,
+      "critical_miss": 0.4444444444444444,
+      "critical_miss_unreviewed": 0.2222222222222222,
+      "escalation_rate": 0.45,
+      "acc_non_escalated": 0.5454545454545454,
+      "acc_escalated": 0.4444444444444444,
+      "auroc_uncertainty": 0.64,
+      "auroc_range": 0.67,
+      "failures": 0,
+      "calls_per_patient": 11.35,
+      "tokens_per_patient": 11297.4,
+      "latency_s_per_patient": 13244.36789,
+      "exact_acc_ci": [
+        0.3,
+        0.7
+      ],
+      "critical_miss_ci": [
+        0.125,
+        0.7777777777777778
+      ],
+      "wall_s_per_patient": 564.827831385401
+    },
+    "D": {
+      "n": 20,
+      "exact_acc": 0.5,
+      "within1_acc": 0.9,
+      "under_triage": 0.45,
+      "over_triage": 0.05,
+      "critical_miss": 0.4444444444444444,
+      "critical_miss_unreviewed": 0.1111111111111111,
+      "escalation_rate": 0.55,
+      "acc_non_escalated": 0.6666666666666666,
+      "acc_escalated": 0.36363636363636365,
+      "auroc_uncertainty": 0.65,
+      "auroc_range": 0.73,
+      "failures": 0,
+      "calls_per_patient": 9.25,
+      "tokens_per_patient": 7756.95,
+      "latency_s_per_patient": 9371.158009999997,
+      "exact_acc_ci": [
+        0.3,
+        0.7
+      ],
+      "critical_miss_ci": [
+        0.125,
+        0.7777777777777778
+      ],
+      "wall_s_per_patient": 0.0001265499973669648
+    }
+  },
+  "paired_tests": {
+    "C_vs_A": {
+      "b": 2,
+      "c": 3,
+      "p_value": 1.0
+    },
+    "C_vs_B": {
+      "b": 2,
+      "c": 2,
+      "p_value": 1.0
+    },
+    "C_vs_D": {
+      "b": 0,
+      "c": 0,
+      "p_value": 1.0
+    },
+    "B_vs_A": {
+      "b": 0,
+      "c": 1,
+      "p_value": 1.0
+    }
+  },
+  "fairness": {
+    "A": {
+      "n_pairs": 14,
+      "flip_rate": 0.14285714285714285,
+      "flips": 2,
+      "swap_more_urgent": 0
+    },
+    "C": {
+      "n_pairs": 14,
+      "flip_rate": 0.14285714285714285,
+      "flips": 2,
+      "swap_more_urgent": 1
+    }
+  },
+  "llm_totals": {
+    "calls": 1548,
+    "cache_hits": 251,
+    "input_tokens": 1218545,
+    "output_tokens": 187731,
+    "latency_ms": 1729284418.6079545,
+    "errors": 359
+  }
+}

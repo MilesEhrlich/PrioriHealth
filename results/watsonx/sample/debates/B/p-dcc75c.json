@@ -1,0 +1,159 @@
+{
+ "patient_id": "p-dcc75c",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3"
+ ],
+ "round1": [
+  {
+   "agent": "Agent 1",
+   "round": 1,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Ear bug removal request",
+     "Normal vitals",
+     "No distress"
+    ],
+    "rationale": "Routine insect removal from ear, otherwise healthy patient, no acute illness or distress. Does not meet criteria for ESI 1-3. Requires minimal resources (ESI 4)."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 531,
+   "output_tokens": 72,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Ear foreign body",
+     "No distress or vital sign abnormalities",
+     "No other injury or comorbidities"
+    ],
+    "rationale": "Ear foreign body removal is a simple procedure (1 resource). No vital sign abnormalities, pain, or other concerning features. ESI 3 captures need for assessment and treatment without immediate threat to life or limb."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 531,
+   "output_tokens": 105,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 1,
+   "output": {
+    "esi": 5,
+    "confidence": 0.9,
+    "key_findings": [
+     "Ear pain from bug",
+     "No distress, stable vitals"
+    ],
+    "rationale": "Patient reports ear pain from bug, but no respiratory, cardiac, or neurologic symptoms, no distress, and vitals normal. Low-risk ear issue warrants ESI 5."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 531,
+   "output_tokens": 71,
+   "latency_ms": 0.0
+  }
+ ],
+ "round2": [
+  {
+   "agent": "Agent 1",
+   "round": 2,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Patient reports ear pain from insect",
+     "No other symptoms or vitals abnormalities",
+     "Requires assessment and ear procedure"
+    ],
+    "rationale": "Ear pain from insect removal is a simple procedure (1 resource, ESI 4). No vitals abnormalities, respiratory, cardiac, neurologic, or other concerning features. Meets criteria for ESI 4 (1 resource, no danger zone vitals, no high-risk conditions).",
+    "change_reason": "Patient presents with ear pain and discomfort from an insect, which is a distinct resource type (simple procedure) and warrants evaluation, thus ESI 4 is appropriate."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 845,
+   "output_tokens": 151,
+   "latency_ms": 3621.1
+  },
+  {
+   "agent": "Agent 2",
+   "round": 2,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Ear foreign body removal",
+     "No distress or abnormal vitals",
+     "No other comorbidities"
+    ],
+    "rationale": "Ear foreign body removal counts as 1 resource (procedure). Normal vitals, no pain, distress or concerning findings. Meets criteria for ESI 4 which requires 1 resource and no immediate life/limb threat.",
+    "change_reason": "Adjusted ESI based on panel feedback that ear foreign body removal is a 1-resource procedure"
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 845,
+   "output_tokens": 120,
+   "latency_ms": 3878.6
+  },
+  {
+   "agent": "Agent 3",
+   "round": 2,
+   "output": {
+    "esi": 4,
+    "confidence": 0.95,
+    "key_findings": [
+     "Ear foreign body removal",
+     "Normal vitals",
+     "No distress"
+    ],
+    "rationale": "Routine insect removal from ear, otherwise healthy patient, no acute illness or distress. Meets ESI 4 criteria for minimal resource utilization.",
+    "change_reason": "Agent 1 correctly identified this as a straightforward ear foreign body without acute distress or abnormal vitals, which aligns with ESI 4 criteria of requiring minimal resources. No findings to suggest higher acuity."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 845,
+   "output_tokens": 116,
+   "latency_ms": 4473.9
+  }
+ ],
+ "early_stopped": false,
+ "final_esis": {
+  "Agent 1": 4,
+  "Agent 2": 4,
+  "Agent 3": 4
+ },
+ "final_confidences": {
+  "Agent 1": 0.95,
+  "Agent 2": 0.95,
+  "Agent 3": 0.95
+ },
+ "aggregate": 4,
+ "majority": 4,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9499999999999998,
+ "disagreement_score": 0.050000000000000155,
+ "escalated": false,
+ "escalation_reasons": []
+}

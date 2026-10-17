@@ -1,0 +1,280 @@
+{
+ "patient_id": "p-e55325",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3",
+  "Agent 4",
+  "Agent 5",
+  "Agent 6",
+  "Agent 7",
+  "Agent 8",
+  "Agent 9",
+  "Agent 10"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Agent 1",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive",
+      "Possible overdose",
+      "History of suicidality"
+     ],
+     "rationale": "The patient is unresponsive and was found with empty pill bottles and alcohol, suggesting a possible overdose. Given the history of suicidality, this situation is immediately life-threatening and requires urgent intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 586,
+    "output_tokens": 93,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive found by parents",
+      "History of suicidality",
+      "Alcohol and unidentified pills near patient"
+     ],
+     "rationale": "The patient is unresponsive and found by parents, indicating a possible overdose with poor breathing, meeting ESI 1 criteria for immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 586,
+    "output_tokens": 102,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive teenager",
+      "Possible overdose",
+      "History of suicidality"
+     ],
+     "rationale": "Unresponsive patient with possible overdose, meeting ESI 1 criteria for immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 586,
+    "output_tokens": 69,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive patient",
+      "History of suicidality",
+      "Alcohol, unknown pills ingested"
+     ],
+     "rationale": "Patient is unresponsive and has a history of suicidality, with potential overdose from alcohol and unknown pills. This fits ESI 1 as it's a life-threatening situation requiring immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 586,
+    "output_tokens": 101,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive",
+      "Possible overdose",
+      "History of suicidality"
+     ],
+     "rationale": "Patient is unresponsive, potentially due to overdose, with a history of suicidality, indicating a need for immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 586,
+    "output_tokens": 75,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive patient",
+      "History of suicidality",
+      "Alcohol and unidentified pills"
+     ],
+     "rationale": "The patient is unresponsive and has a history of suicidality. The presence of alcohol and unidentified pills suggests a potential overdose, which meets the criteria for ESI 1 (Needs immediate life-saving intervention)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 586,
+    "output_tokens": 103,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive teenager",
+      "Suspected overdose",
+      "History of suicidality"
+     ],
+     "rationale": "The patient is unresponsive and was found by parents amidst empty pill bottles and liquor, suggesting a possible overdose. Given the history of suicidality, this scenario meets the criteria for ESI 1 as it represents a high-risk situation with potential for immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 586,
+    "output_tokens": 116,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive patient",
+      "History of suicidality",
+      "Alcohol and unknown pills"
+     ],
+     "rationale": "The patient is unresponsive and has a history of suicidality, which, combined with the presence of alcohol and unidentified empty pill bottles, suggests a high risk of overdose. This indicates immediate life-saving intervention is needed."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 586,
+    "output_tokens": 103,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive found by parents",
+      "History of suicidality",
+      "Alcohol and unidentified pills nearby"
+     ],
+     "rationale": "The patient is unresponsive and has a history of suicidality, which indicates a potential overdose. This situation meets the criteria for ESI 1 as it represents a life-saving intervention need."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 586,
+    "output_tokens": 108,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive",
+      "History of suicidality",
+      "Alcohol and unidentified pills found"
+     ],
+     "rationale": "The patient is unresponsive and has a history of suicidality. With alcohol and unidentified pills found near the patient, there is a high risk of overdose and immediate life-saving intervention is required."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 586,
+    "output_tokens": 105,
+    "latency_ms": 0.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 1.0,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Agent 1": 1,
+  "Agent 2": 1,
+  "Agent 3": 1,
+  "Agent 4": 1,
+  "Agent 5": 1,
+  "Agent 6": 1,
+  "Agent 7": 1,
+  "Agent 8": 1,
+  "Agent 9": 1,
+  "Agent 10": 1
+ },
+ "initial_range": 0,
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 1,
+  "Agent 2": 1,
+  "Agent 3": 1,
+  "Agent 4": 1,
+  "Agent 5": 1,
+  "Agent 6": 1,
+  "Agent 7": 1,
+  "Agent 8": 1,
+  "Agent 9": 1,
+  "Agent 10": 1
+ },
+ "final_confidences": {
+  "Agent 1": 1.0,
+  "Agent 2": 1.0,
+  "Agent 3": 1.0,
+  "Agent 4": 1.0,
+  "Agent 5": 1.0,
+  "Agent 6": 1.0,
+  "Agent 7": 1.0,
+  "Agent 8": 1.0,
+  "Agent 9": 1.0,
+  "Agent 10": 1.0
+ },
+ "aggregate": 1,
+ "majority": 1,
+ "disagreement_range": 0,
+ "mean_confidence": 1.0,
+ "disagreement_score": 0.0,
+ "escalated": false,
+ "escalation_reasons": []
+}

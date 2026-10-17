@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\n“I cut my finger trying to slice a bagel,” reports a 28-year-old healthy male. A 2-centimeter laceration is noted on the left first finger. Bleeding is controlled. Vital signs are within normal limits. His last tetanus immunization was 10 years ago.",
+ "text": "{\n  \"chief_complaint\": \"Finger laceration from bagel cutting, controlled bleeding, last tetanus shot 10 years ago\"\n}",
+ "input_tokens": 191,
+ "output_tokens": 41,
+ "latency_ms": 77221.5,
+ "created": 1792011657.1248808
+}

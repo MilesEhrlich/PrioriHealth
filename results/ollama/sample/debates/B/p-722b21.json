@@ -1,0 +1,279 @@
+{
+ "patient_id": "p-722b21",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3",
+  "Agent 4",
+  "Agent 5",
+  "Agent 6",
+  "Agent 7",
+  "Agent 8",
+  "Agent 9",
+  "Agent 10"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Agent 1",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Lethargic 18-year-old female with suspected overdose",
+      "History of depression",
+      "Respiratory rate 10, SpO2 86% on room air"
+     ],
+     "rationale": "Patient meets criteria for ESI 1 (needs immediate life-saving intervention) due to suspected overdose, lethargy, history of depression, and hypoxemia (SpO2 < 90%)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 646,
+    "output_tokens": 123,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Lethargic 18-year-old female",
+      "History of depression",
+      "Suspected medication overdose"
+     ],
+     "rationale": "Patient is lethargic, has a history of depression, and is suspected of medication overdose. Respiratory rate is 10, SpO2 is 86% on room air, which meets the criteria for ESI 1 as it indicates severe respiratory distress."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 646,
+    "output_tokens": 122,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "18-year-old female with suspected overdose",
+      "lethargic and 'not acting right'",
+      "multiple superficial lacerations to both wrists"
+     ],
+     "rationale": "The patient is an 18-year-old female with a suspected medication overdose, presenting with lethargy and 'not acting right'. Her respiratory rate is 10, and her SpO2 on room air is 86 percent, which meets the criteria for ESI level 1 (Needs immediate life-saving intervention) as she is in respiratory distress."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 646,
+    "output_tokens": 162,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Lethargic 18-year-old female with suspected overdose",
+      "History of depression",
+      "Respiratory rate 10, SpO2 86% on room air"
+     ],
+     "rationale": "The patient meets ESI level 1 criteria as she presents with signs of overdose, poor breathing (SpO2 < 90%), and is lethargic, indicating a high-risk situation."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 646,
+    "output_tokens": 119,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Young patient with suspected overdose, lethargy, and low SpO2",
+      "History of depression",
+      "Multiple superficial wrist lacerations"
+     ],
+     "rationale": "The patient is an 18-year-old with a suspected medication overdose, presenting with lethargy and a low SpO2 of 86% on room air. These findings indicate potential respiratory compromise and require immediate life-saving intervention (ESI 1)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 646,
+    "output_tokens": 134,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 0.99,
+     "key_findings": [
+      "Lethargic 18-year-old female with history of depression.",
+      "Found unresponsive by roommates.",
+      "Respiratory rate 10, SpO2 86% on room air."
+     ],
+     "rationale": "The patient meets ESI level 1 criteria as she requires immediate life-saving intervention due to suspected medication overdose, lethargy, and low oxygen saturation (SpO2 < 90%). The combination of these factors indicates she is in need of immediate medical attention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 646,
+    "output_tokens": 141,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 0.95,
+     "key_findings": [
+      "Lethargic 18yo female with history of depression",
+      "Found unresponsive by roommates",
+      "Respiratory rate 10, SpO2 86% on room air"
+     ],
+     "rationale": "The patient meets criteria for ESI level 1 due to suspected medication overdose, lethargy, and low SpO2 requiring immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 646,
+    "output_tokens": 111,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Lethargic 18-year-old female",
+      "Suspected medication overdose",
+      "History of depression"
+     ],
+     "rationale": "Patient is lethargic, has a history of depression, and was found with an overdose. Respiratory rate is 10, SpO2 is 86% on room air, indicating respiratory distress and needing immediate life-saving intervention (ESI 1)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 646,
+    "output_tokens": 119,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Lethargic 18-year-old female",
+      "Suspected overdose",
+      "History of depression"
+     ],
+     "rationale": "Patient is lethargic with a history of depression, presenting with possible overdose. Respiratory rate of 10 and SpO2 of 86 on room air indicate need for immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 646,
+    "output_tokens": 103,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Lethargic 18yo with suspected overdose",
+      "Respiratory rate 10, SpO2 86%"
+     ],
+     "rationale": "Patient is unresponsive, not acting right, found lethargic by roommates due to suspected overdose. She has a history of depression and multiple superficial wrist lacerations. Her respiratory rate is 10, and SpO2 on room air is 86%, indicating severe respiratory distress. These findings meet ESI 1 criteria for immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 646,
+    "output_tokens": 150,
+    "latency_ms": 0.0
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 1.0,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Agent 1": 1,
+  "Agent 2": 1,
+  "Agent 3": 1,
+  "Agent 4": 1,
+  "Agent 5": 1,
+  "Agent 6": 1,
+  "Agent 7": 1,
+  "Agent 8": 1,
+  "Agent 9": 1,
+  "Agent 10": 1
+ },
+ "initial_range": 0,
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 1,
+  "Agent 2": 1,
+  "Agent 3": 1,
+  "Agent 4": 1,
+  "Agent 5": 1,
+  "Agent 6": 1,
+  "Agent 7": 1,
+  "Agent 8": 1,
+  "Agent 9": 1,
+  "Agent 10": 1
+ },
+ "final_confidences": {
+  "Agent 1": 1.0,
+  "Agent 2": 1.0,
+  "Agent 3": 1.0,
+  "Agent 4": 1.0,
+  "Agent 5": 1.0,
+  "Agent 6": 0.99,
+  "Agent 7": 0.95,
+  "Agent 8": 1.0,
+  "Agent 9": 1.0,
+  "Agent 10": 1.0
+ },
+ "aggregate": 1,
+ "majority": 1,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9940000000000001,
+ "disagreement_score": 0.005999999999999894,
+ "escalated": false,
+ "escalation_reasons": []
+}

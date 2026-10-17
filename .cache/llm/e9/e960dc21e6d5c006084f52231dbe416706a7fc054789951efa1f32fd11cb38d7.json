@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\n“Without the helmet, I would have been really hurt,” reports a 19-year-old healthy male who was involved in a bicycle accident. He lost control of his bike when he hit a pothole. He has a 2-centimeter laceration on his arm and pain over his left clavicle. Vital signs: T 97.4°F, RR 18, HR 62, BP 122/70, SpO2 100%. Pain 6/10",
+ "text": "{\n  \"chief_complaint\": \"Bicycle accident, laceration arm, left clavicle pain\"\n}",
+ "input_tokens": 238,
+ "output_tokens": 28,
+ "latency_ms": 106888.1,
+ "created": 1792011781.70642
+}

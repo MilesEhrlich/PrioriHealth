@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\n“After my pediatrician saw my son’s rash, he said I had to bring him to the emergency department immediately. He has this rash on his face and chest that started today. He has little pinpoint purplish spots he called petechiae. My son is a healthy kid who has had a cold for a couple of days and a cough. My pediatrician said he had to be sure nothing bad is going on. What do you think?”",
+ "text": "{\n  \"chief_complaint\": \"Rash on face and chest, petechiae, cold and cough\"\n}",
+ "input_tokens": 226,
+ "output_tokens": 31,
+ "latency_ms": 33886.5,
+ "created": 1792011708.701979
+}

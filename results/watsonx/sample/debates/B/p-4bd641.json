@@ -1,0 +1,93 @@
+{
+ "patient_id": "p-4bd641",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3"
+ ],
+ "round1": [
+  {
+   "agent": "Agent 1",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Piercing site red, swollen, draining pus",
+     "Pain 8/10",
+     "Vital signs normal"
+    ],
+    "rationale": "Piercing infection requires antibiotics and possible drainage, but no life-threatening issue, high-risk situation, or abnormal vitals. One resource (IV antibiotics) and pain 8/10, so ESI 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 560,
+   "output_tokens": 99,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Localized infection at piercing site",
+     "Severe pain (8/10) with systemic signs absent",
+     "Routine lab/ imaging not indicated"
+    ],
+    "rationale": "Piercing infection without systemic illness or high-risk features places patient in ESI level 3. Vital signs normal, no need for immediate life-saving intervention or extensive resources."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 560,
+   "output_tokens": 83,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Pain 8/10",
+     "Pus draining from site",
+     "Swollen, red, tender abscess"
+    ],
+    "rationale": "Belly button piercing infection requires antibiotics but not immediate life-saving intervention or high-risk situation. No lab, imaging, IV fluids, or complex procedures needed. Fever absent but pain and purulent drainage warrant ESI 3."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 560,
+   "output_tokens": 99,
+   "latency_ms": 0.0
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 3,
+  "Agent 2": 3,
+  "Agent 3": 3
+ },
+ "final_confidences": {
+  "Agent 1": 0.95,
+  "Agent 2": 0.95,
+  "Agent 3": 0.95
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9499999999999998,
+ "disagreement_score": 0.050000000000000155,
+ "escalated": false,
+ "escalation_reasons": []
+}

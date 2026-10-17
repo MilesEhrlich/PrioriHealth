@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nI was smoking a cigarette and had this coughing fit, and now I feel short of breath,” reports a tall, thin 19-year-old man. No past medical history, No meds or allergies, Vital signs: T 98˚F, HR 102, RR 36, BP 128/76, SpO2 92%. Pain 0/10",
+ "text": "{\n  \"chief_complaint\": \"Coughing fit, short of breath, no past medical history\"\n}",
+ "input_tokens": 220,
+ "output_tokens": 28,
+ "latency_ms": 64475.9,
+ "created": 1792011644.379149
+}

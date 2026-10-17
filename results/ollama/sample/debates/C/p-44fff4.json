@@ -1,0 +1,290 @@
+{
+ "patient_id": "p-44fff4",
+ "condition": "C",
+ "agents": [
+  "Empath",
+  "Logician",
+  "Skeptic",
+  "Observer",
+  "Synthesizer",
+  "Pragmatist",
+  "Vigilant",
+  "Impartial",
+  "Mediator",
+  "Reflective"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Empath",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Patient reports scratching cornea with contact lens use.",
+      "Presents with redness and tearing in right eye.",
+      "Reports pain level of 6/10."
+     ],
+     "rationale": "The patient's condition, while uncomfortable, does not meet ESI 1-3 criteria. There is no risk of immediate loss of life or limb, nor is there evidence of a high-risk situation. The symptoms are primarily related to discomfort and cosmetic concern. The absence of systemic signs of distress, normal vital signs, and lack of need for immediate intervention support an ESI…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 687,
+    "output_tokens": 157,
+    "latency_ms": 494249.9
+   },
+   {
+    "agent": "Logician",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Patient reports corneal abrasion",
+      "Right eye red and tearing",
+      "Pain level 6/10"
+     ],
+     "rationale": "The patient's symptoms, including reported corneal abrasion, visible signs of redness and tearing in the right eye, and pain level of 6/10, do not meet the criteria for ESI levels 1-4. The pain is significant but not immediately life-threatening, and there are no indications of an acute high-risk situation or need for immediate intervention (ESI 1). The patient's vital signs…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 677,
+    "output_tokens": 192,
+    "latency_ms": 505622.4
+   },
+   {
+    "agent": "Skeptic",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 0.9,
+     "key_findings": [
+      "Red and tearing right eye",
+      "Patient reports pain 6/10"
+     ],
+     "rationale": "The patient's symptoms, including redness, tearing, and pain, suggest a possible corneal abrasion. However, vital signs are normal, and there is no evidence of vision loss or other immediate life-threatening conditions. Given the lack of urgent findings and the absence of signs indicating immediate intervention is required, this case is classified as ESI 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 679,
+    "output_tokens": 126,
+    "latency_ms": 516113.7
+   },
+   {
+    "agent": "Observer",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 0.99,
+     "key_findings": [
+      "Red eye, tearing",
+      "Pain level 6/10"
+     ],
+     "rationale": "The patient presents with a red, tearing eye and reports a pain level of 6/10. However, vital signs are normal and there is no mention of vision changes or signs of infection, placing this at the lowest ESI level (5)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 674,
+    "output_tokens": 100,
+    "latency_ms": 522038.6
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Corneal abrasion",
+      "Moderate pain",
+      "Normal vital signs"
+     ],
+     "rationale": "This case involves a corneal abrasion with moderate pain but normal vital signs. It doesn't meet the criteria for ESI 1-4, as it doesn't require immediate life-saving intervention, isn't in a high-risk situation, doesn't have distinct resource needs, or present danger-zone vitals. Thus, it's classified as ESI 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 673,
+    "output_tokens": 128,
+    "latency_ms": 530022.1
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Red and tearing right eye",
+      "Patient reports pain 6/10",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient's symptoms, while painful, do not meet the criteria for immediate life-saving intervention (A), nor do they present a high-risk situation requiring immediate attention (B). The distinct resources needed (ECG, X-ray, CT, labs, IV fluids, IV/IM/nebulized meds, specialty consult, simple/complex procedure) are not indicated for this case. The danger-zone vitals are not met as vital signs are normal. Therefore,…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 678,
+    "output_tokens": 174,
+    "latency_ms": 539419.9
+   },
+   {
+    "agent": "Vigilant",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 0.9,
+     "key_findings": [
+      "Red and tearing right eye",
+      "Patient reports cornea scratch",
+      "Pain level 6/10"
+     ],
+     "rationale": "The patient presents with redness and tearing in the right eye, self-reported cornea scratch, and a pain level of 6/10. While uncomfortable, there is no indication of immediate life-threat, high-risk situation, or need for urgent resource application as per ESI criteria. Vital signs are normal, and the condition does not meet the criteria for ESI 1-4. Therefore, it is classified…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 678,
+    "output_tokens": 152,
+    "latency_ms": 547847.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 0.99,
+     "key_findings": [
+      "Red and tearing right eye",
+      "Patient reports pain level 6/10",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient presents with redness and tearing in the right eye, reporting a pain level of 6/10. Although uncomfortable, these symptoms do not meet the criteria for immediate life-saving intervention (A), nor do they suggest a high-risk situation requiring immediate attention (B). The patient's normal vital signs (C) further support an ESI level of 5, as there are no distinct…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 700,
+    "output_tokens": 174,
+    "latency_ms": 558174.5
+   },
+   {
+    "agent": "Mediator",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Patient reports corneal abrasion",
+      "Right eye red and tearing",
+      "Pain level 6/10"
+     ],
+     "rationale": "The patient's symptoms, including eye pain, redness, and tearing, indicate a corneal abrasion, which is not immediately life-threatening or requiring urgent intervention. The pain level is moderate (6/10), and vital signs are normal. Given the lack of signs of severe distress, high-risk conditions, or need for immediate resources, this case does not meet criteria for ESI levels 1-4. Therefore, it…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 676,
+    "output_tokens": 164,
+    "latency_ms": 567733.7
+   },
+   {
+    "agent": "Reflective",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 0.9,
+     "key_findings": [
+      "Red eye, tearing",
+      "Reported pain 6/10",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient presents with red eye and tearing, likely due to a scratched cornea, with reported pain of 6/10. However, vital signs are normal, and there's no indication of immediate life-threatening conditions, high-risk situations, or need for advanced resources. This falls under ESI 5, as it doesn't meet criteria for higher ESI levels."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 676,
+    "output_tokens": 130,
+    "latency_ms": 575632.8
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 1.0,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Empath": 5,
+  "Logician": 5,
+  "Skeptic": 5,
+  "Observer": 5,
+  "Synthesizer": 5,
+  "Pragmatist": 5,
+  "Vigilant": 5,
+  "Impartial": 5,
+  "Mediator": 5,
+  "Reflective": 5
+ },
+ "initial_range": 0,
+ "early_stopped": true,
+ "final_esis": {
+  "Empath": 5,
+  "Logician": 5,
+  "Skeptic": 5,
+  "Observer": 5,
+  "Synthesizer": 5,
+  "Pragmatist": 5,
+  "Vigilant": 5,
+  "Impartial": 5,
+  "Mediator": 5,
+  "Reflective": 5
+ },
+ "final_confidences": {
+  "Empath": 1.0,
+  "Logician": 1.0,
+  "Skeptic": 0.9,
+  "Observer": 0.99,
+  "Synthesizer": 1.0,
+  "Pragmatist": 1.0,
+  "Vigilant": 0.9,
+  "Impartial": 0.99,
+  "Mediator": 1.0,
+  "Reflective": 0.9
+ },
+ "aggregate": 5,
+ "majority": 5,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9680000000000002,
+ "disagreement_score": 0.031999999999999806,
+ "escalated": false,
+ "escalation_reasons": []
+}

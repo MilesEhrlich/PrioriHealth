@@ -1,0 +1,93 @@
+{
+ "patient_id": "p-e55325",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3"
+ ],
+ "round1": [
+  {
+   "agent": "Agent 1",
+   "round": 1,
+   "output": {
+    "esi": 1,
+    "confidence": 0.95,
+    "key_findings": [
+     "Unresponsive teenager",
+     "Potential drug/alcohol overdose",
+     "Suicidality history"
+    ],
+    "rationale": "Unresponsive patient requires immediate life-saving intervention (airway, breathing, circulation). History of suicidality and found with alcohol/pills increase risk. Meets ESI 1 criteria for urgent care."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 495,
+   "output_tokens": 89,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 1,
+   "output": {
+    "esi": 1,
+    "confidence": 0.95,
+    "key_findings": [
+     "Unresponsive patient",
+     "History of suicidality",
+     "Alcohol and pill bottles present"
+    ],
+    "rationale": "Patient is unresponsive, a life-threatening situation requiring immediate life-saving intervention (ESI 1)."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 495,
+   "output_tokens": 69,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 1,
+   "output": {
+    "esi": 1,
+    "confidence": 0.95,
+    "key_findings": [
+     "Unresponsive patient",
+     "History of suicidality",
+     "Alcohol and pill bottles present"
+    ],
+    "rationale": "Unresponsive patient with high-risk situation (suicidality) meets criteria for ESI level 1, requiring immediate life-saving intervention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 495,
+   "output_tokens": 88,
+   "latency_ms": 0.0
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 1,
+  "Agent 2": 1,
+  "Agent 3": 1
+ },
+ "final_confidences": {
+  "Agent 1": 0.95,
+  "Agent 2": 0.95,
+  "Agent 3": 0.95
+ },
+ "aggregate": 1,
+ "majority": 1,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9499999999999998,
+ "disagreement_score": 0.050000000000000155,
+ "escalated": false,
+ "escalation_reasons": []
+}

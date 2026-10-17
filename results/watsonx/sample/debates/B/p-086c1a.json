@@ -1,0 +1,93 @@
+{
+ "patient_id": "p-086c1a",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3"
+ ],
+ "round1": [
+  {
+   "agent": "Agent 1",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Rectal foreign body, no abdominal pain",
+     "Normal vital signs",
+     "Pain 4/10"
+    ],
+    "rationale": "Patient presents for removal of a rectal foreign body without abdominal pain or vitals concerns. One resource (simple procedure) fits ESI 3 criteria for non-life-threatening conditions requiring limited resources."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 534,
+   "output_tokens": 102,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.9,
+    "key_findings": [
+     "Rectal foreign body",
+     "No abdominal pain",
+     "Pain 4/10"
+    ],
+    "rationale": "No life-threatening issue, high-risk situation, or severe pain. Requires one resource type (procedure to remove object). Vitals normal. ESI 3 reflects need for evaluation and intervention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 534,
+   "output_tokens": 86,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Rectal foreign body",
+     "No abdominal pain",
+     "Pain 4/10"
+    ],
+    "rationale": "No life-threatening issue or severe distress. Requires 1 resource (likely X-ray). Age and vitals normal. Danger-zone criteria not met."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 534,
+   "output_tokens": 77,
+   "latency_ms": 0.0
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 3,
+  "Agent 2": 3,
+  "Agent 3": 3
+ },
+ "final_confidences": {
+  "Agent 1": 0.95,
+  "Agent 2": 0.9,
+  "Agent 3": 0.95
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9333333333333332,
+ "disagreement_score": 0.06666666666666676,
+ "escalated": false,
+ "escalation_reasons": []
+}

@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\n55-year-old male with a sudden onset of worst headache of life after stressful activity.",
+ "text": "{\n  \"chief_complaint\": \"Sudden severe headache after stress\"\n}",
+ "input_tokens": 142,
+ "output_tokens": 22,
+ "latency_ms": 112578.4,
+ "created": 1792011787.396777
+}

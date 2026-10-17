@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nPolice escort a disheveled 23-year-old handcuffed male into the triage area. The police report that the patient had been standing in the middle of traffic on the local highway screaming about the end of the world. The patient claims that he had been sent from Mars as the savior of the world. He refuses to answer questions or allow you to take vital signs.",
+ "text": "{\n  \"chief_complaint\": \"Disheveled male refusing care, claims sent from Mars\"\n}",
+ "input_tokens": 211,
+ "output_tokens": 28,
+ "latency_ms": 23403.2,
+ "created": 1792011698.215476
+}

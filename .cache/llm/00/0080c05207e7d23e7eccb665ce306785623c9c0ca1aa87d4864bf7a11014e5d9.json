@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an experienced emergency department triage nurse. Assign an ESI level using the reference below.\n\nESI v4 (1 = most urgent). Apply A-D in order; stop at the first that fits.\nA. Needs immediate life-saving intervention? -> ESI 1. (Unresponsive, apneic/pulseless, severe\n   respiratory distress, SpO2 < 90%, shock, unstable major trauma, overdose with poor breathing.)\nB. Should not wait? -> ESI 2 if high-risk situation (e.g. possible ACS, stroke, ectopic, suicidal or\n   homicidal, high-risk mechanism, febrile infant, immunocompromised with fever), OR new\n   confusion/lethargy/disorientation, OR severe pain/distress (>= 7/10).\nC. Count distinct resource types: labs, ECG, X-ray, CT/MRI/US, IV fluids, IV/IM/nebulized meds,\n   specialty consult, simple procedure (1), complex procedure (2). Not resources: exam, POC tests,\n   saline lock, oral meds, tetanus, refill, simple wound care, splint/sling/crutches.\n   0 -> ESI 5; 1 -> ESI 4; 2+ -> go to D.\nD. Danger-zone vitals -> consider ESI 2, else ESI 3. HR/RR limits: <3 mo >180/>50; 3 mo-3 y\n   >160/>40; 3-8 y >140/>30; >8 y >100/>20. Any age SpO2 < 92%. Fever >= 38.0 C: age 1-28 days\n   is at least ESI 2; 1-3 months consider ESI 2.\n\nUse only clinical information from the vignette. Reply with JSON only:\n{\"esi\": 1-5, \"confidence\": 0.0-1.0, \"key_findings\": [<=3 phrases, <10 words each], \"rationale\": \"<=60 words\"}",
+ "user": "PATIENT VIGNETTE\n“I slipped on the ice, and I hurt my wrist,” reports a 58-year-old female with a history of migraines. There is no obvious deformity. Vital signs are within normal limits, and she rates her pain as 5/10.\n\nAssign the ESI level.",
+ "text": "{\"esi\": 4, \"confidence\": 0.9, \"key_findings\": [\"Fell on ice, no deformity\", \"Normal vital signs\", \"Pain 5/10\"], \"rationale\": \"Patient is a 58-year-old female with a history of migraines who fell on ice and reports wrist pain without deformity. Vital signs are normal, and pain is rated at 5/10. This case meets criteria for ESI level 4 due to the mechanism of injury and history of migraines, which may indicate a possible wrist fracture or soft tissue injury requiring further evaluation and imaging studies (ECG, X-ray).\"}",
+ "input_tokens": 605,
+ "output_tokens": 160,
+ "latency_ms": 115223.0,
+ "created": 1792008965.7694552
+}

@@ -1,0 +1,599 @@
+{
+ "patient_id": "p-f7ee7e",
+ "condition": "C",
+ "agents": [
+  "Empath",
+  "Logician",
+  "Skeptic",
+  "Observer",
+  "Synthesizer",
+  "Pragmatist",
+  "Vigilant",
+  "Impartial",
+  "Mediator",
+  "Reflective"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Empath",
+    "round": 1,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 1,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 1,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 0.99,
+     "key_findings": [
+      "2-week-old infant",
+      "101˚F fever",
+      "tachycardia (HR 154)"
+     ],
+     "rationale": "Infant under 3 months with fever >= 38.0 C requires ESI 2. This case meets criteria due to high fever in an infant under 28 days, warranting immediate attention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 681,
+    "output_tokens": 109,
+    "latency_ms": 2738639.4
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "2-week-old with fever",
+      "high heart rate",
+      "tachypnea"
+     ],
+     "rationale": "The infant meets criteria for ESI 1 due to high fever (T 101˚F), tachycardia (HR 154), and tachypnea (RR 42), requiring immediate evaluation and intervention to rule out serious infection."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 680,
+    "output_tokens": 116,
+    "latency_ms": 2766810.1
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "2-week-old with fever",
+      "tachycardia",
+      "tachypnea"
+     ],
+     "rationale": "2-week-old infant with fever, tachycardia, and tachypnea, meets ESI 1 criteria for immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 685,
+    "output_tokens": 88,
+    "latency_ms": 2786954.4
+   },
+   {
+    "agent": "Vigilant",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "2-week-old with fever",
+      "high heart rate",
+      "high respiratory rate"
+     ],
+     "rationale": "The infant's young age (2 weeks), fever (101˚F), tachycardia (154 bpm), and tachypnea (42 breaths per minute) suggest a high risk of serious infection, necessitating immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 685,
+    "output_tokens": 114,
+    "latency_ms": 2812483.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "2-week-old with fever",
+      "high heart rate",
+      "high respiratory rate"
+     ],
+     "rationale": "The patient is a 2-week-old infant with a fever of 101˚F, which qualifies for ESI 1 due to age (fever >= 38.0 C in infants <28 days requires a high ESI). The infant also has a high heart rate (154 bpm) and respiratory rate (42 breaths/min), further supporting the need for immediate attention. These clinical features necessitate ESI 1 for…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 707,
+    "output_tokens": 165,
+    "latency_ms": 2849187.3
+   },
+   {
+    "agent": "Mediator",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "2-week-old infant",
+      "Fever (101˚F)",
+      "Tachycardia (154 bpm)"
+     ],
+     "rationale": "The infant has a fever and tachycardia, which warrants further evaluation but does not meet the criteria for ESI 1 or 2. The ESI 3 is appropriate given the age of the patient, the presence of a fever, and the need for medical evaluation, but without immediate life-saving intervention or high-risk situations."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 683,
+    "output_tokens": 144,
+    "latency_ms": 2882502.8
+   },
+   {
+    "agent": "Reflective",
+    "round": 1,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Observer",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Observer",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Observer",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Observer",
+    "round": 5,
+    "output": {
+     "esi": 1,
+     "confidence": 0.99,
+     "key_findings": [
+      "High fever in infant under 28 days",
+      "Tachycardia (HR 154)",
+      "Tachypnea (RR 42)"
+     ],
+     "rationale": "Infant under 3 months with fever >= 38.0 C requires ESI 2, but the tachycardia and tachypnea warrant ESI 1 for immediate life-saving intervention.",
+     "message": "Agreed with [Synthesizer], [Pragmatist], [Vigilant], and [Impartial] on ESI 1 due to high fever, tachycardia, and tachypnea requiring immediate evaluation. Disagree with [Mediator] on ESI level.",
+     "change_reason": "Tachycardia and tachypnea in young infant necessitate ESI 1 over ESI 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1254,
+    "output_tokens": 214,
+    "latency_ms": 1553719.4
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 5,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "2-week-old with fever (101˚F)",
+      "tachycardia (HR 154)",
+      "tachypnea (RR 42)"
+     ],
+     "rationale": "Infant under 3 months with fever >= 38.0 C requires ESI 1 due to high fever, tachycardia, and tachypnea, indicating a need for immediate life-saving intervention.",
+     "message": "Agree with all members regarding ESI 1. The infant's young age, high fever, tachycardia, and tachypnea necessitate immediate evaluation and intervention.",
+     "change_reason": "No specific clinical finding or ESI step was missed; the reasoning aligns with all panel members."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1251,
+    "output_tokens": 194,
+    "latency_ms": 1566734.6
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 5,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "2-week-old infant",
+      "Fever (101˚F)",
+      "Tachycardia (154 bpm)"
+     ],
+     "rationale": "Meets ESI 1 criteria for immediate life-saving intervention due to young age, high fever, and tachycardia.",
+     "message": "I concur with the majority and stand by ESI 1. The infant's young age, high fever, and tachycardia indicate a high-risk situation requiring immediate attention.",
+     "change_reason": "None, as the clinical findings align with ESI 1 criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1255,
+    "output_tokens": 157,
+    "latency_ms": 1578012.7
+   },
+   {
+    "agent": "Vigilant",
+    "round": 5,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Young age (2 weeks)",
+      "Fever (101˚F)",
+      "Tachycardia (154 bpm)"
+     ],
+     "rationale": "The infant meets ESI 1 criteria due to young age, fever, and tachycardia, indicating a high risk of serious infection requiring immediate intervention.",
+     "message": "I concur with Observer, Synthesizer, Pragmatist, and Impartial. The Mediator's ESI 3 is not supported by the clinical findings. The young age, fever, and tachycardia necessitate ESI 1.",
+     "change_reason": "No change in ESI; agreement with fellow panel members on the severity of the presentation."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1255,
+    "output_tokens": 185,
+    "latency_ms": 1590713.8
+   },
+   {
+    "agent": "Impartial",
+    "round": 5,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "2-week-old with fever",
+      "tachycardia",
+      "tachypnea"
+     ],
+     "rationale": "Infant under 28 days with fever >= 38.0 C requires ESI 1",
+     "message": "I agree with [Observer], [Synthesizer], [Pragmatist], and [Vigilant] that this case meets ESI 1 criteria due to high fever, tachycardia, and tachypnea in a 2-week-old. I missed no clinical findings or ESI steps.",
+     "change_reason": "No changes needed as I fully agree with the ESI 1 determination based on the age, fever, tachycardia, and tachypnea."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1278,
+    "output_tokens": 189,
+    "latency_ms": 1603469.9
+   },
+   {
+    "agent": "Mediator",
+    "round": 5,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "2-week-old with fever",
+      "tachycardia",
+      "tachypnea"
+     ],
+     "rationale": "High fever, tachycardia, and tachypnea in an infant under 28 days warrant ESI 1 for immediate evaluation.",
+     "message": "I concur with the Synthesizer, Observer, Pragmatist, and Vigilant. The infant's young age, fever, tachycardia, and tachypnea necessitate immediate life-saving intervention, aligning with ESI 1 criteria.",
+     "change_reason": "Re-evaluated based on the consensus and the infant's high-risk vitals."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1256,
+    "output_tokens": 175,
+    "latency_ms": 1615486.6
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": false,
+ "consensus_share": 0.6,
+ "rounds_used": 5,
+ "first_round_esis": {
+  "Observer": 1,
+  "Synthesizer": 1,
+  "Pragmatist": 1,
+  "Vigilant": 1,
+  "Impartial": 1,
+  "Mediator": 3
+ },
+ "initial_range": 2,
+ "early_stopped": false,
+ "final_esis": {
+  "Observer": 1,
+  "Synthesizer": 1,
+  "Pragmatist": 1,
+  "Vigilant": 1,
+  "Impartial": 1,
+  "Mediator": 1
+ },
+ "final_confidences": {
+  "Observer": 0.99,
+  "Synthesizer": 1.0,
+  "Pragmatist": 1.0,
+  "Vigilant": 1.0,
+  "Impartial": 1.0,
+  "Mediator": 1.0
+ },
+ "aggregate": 1,
+ "majority": 1,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9983333333333334,
+ "disagreement_score": 8.001666666666667,
+ "escalated": true,
+ "escalation_reasons": [
+  "agent_failure",
+  "no_consensus"
+ ]
+}

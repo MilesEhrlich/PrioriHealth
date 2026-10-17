@@ -1,0 +1,1195 @@
+{
+ "patient_id": "p-4bd641",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3",
+  "Agent 4",
+  "Agent 5",
+  "Agent 6",
+  "Agent 7",
+  "Agent 8",
+  "Agent 9",
+  "Agent 10"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Agent 1",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Pus oozing from piercing site",
+      "Pain level 8/10",
+      "Elevated temperature"
+     ],
+     "rationale": "The patient presents with signs of a possible infectious process (pus oozing, elevated temperature) at a piercing site, accompanied by significant pain. While not immediately life-threatening, these symptoms necessitate prompt medical attention to prevent potential complications such as cellulitis or sepsis. The patient does not meet criteria for higher ESI levels (1 or 2)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 670,
+    "output_tokens": 140,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Piercing site redness, tenderness, swelling, pus discharge",
+      "Pain level 8/10",
+      "Vital signs within normal range"
+     ],
+     "rationale": "The patient presents with signs of a possible infected piercing (redness, tenderness, swelling, pus), and reports moderate pain (8/10). Although the vital signs are within normal range, the combination of these symptoms warrants a higher ESI level than ESI 5. The patient's age and lack of significant medical history make this a non-critical emergency department condition. Given the local signs…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 670,
+    "output_tokens": 187,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Nineteen-year-old with piercing site infection, fever, tenderness, swelling, and discharge."
+     ],
+     "rationale": "The patient is a 19-year-old with a new piercing presenting with fever, local redness, tenderness, swelling, and discharge, indicating a possible skin and soft tissue infection. Although painful, the condition does not meet the criteria for immediate life-saving intervention or requiring immediate attention. The danger-zone vitals are not met, and distinct resource types required are minimal (lab, possibly imaging, and…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 670,
+    "output_tokens": 170,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing",
+      "Tenderness, swelling, discharge",
+      "Fever"
+     ],
+     "rationale": "The patient presents with an infected piercing, characterized by pain, redness, swelling, purulent discharge, and fever (ESI level B and C). The pain level is 8/10, indicating significant distress (ESI level B). The patient does not require immediate life-saving intervention or present in a high-risk situation for complex procedures or specialty consults (ESI level A). The distinct resource types include…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 670,
+    "output_tokens": 181,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Pus oozing from piercing site",
+      "Elevated temperature",
+      "Moderate pain"
+     ],
+     "rationale": "The patient presents with signs of a potential infected piercing, including pus discharge, elevated temperature, and moderate pain. While not immediately life-threatening, this condition requires prompt medical attention to prevent complications such as cellulitis or sepsis. The patient's vital signs are stable, and there are no signs of systemic inflammatory response syndrome (SIRS) or sepsis, which would warrant a higher…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 670,
+    "output_tokens": 186,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Pus oozing from piercing site",
+      "Tender, swollen belly button",
+      "Fever"
+     ],
+     "rationale": "The patient presents with signs of a possible skin infection (pus oozing, redness, swelling) with fever. While painful, it does not meet criteria for immediate life-saving intervention (ESI 1) or require immediate attention (ESI 2). There are no distinct resource types (ESI 4 or 5) indicated. Vital signs are stable, and the patient is not in the danger zone (ESI…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 670,
+    "output_tokens": 152,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "19-year-old with painful, purulent drainage from pierced navel",
+      "Pain level 8/10",
+      "Vital signs stable"
+     ],
+     "rationale": "The patient presents with a local infection at a piercing site, with signs of purulent discharge, pain, and fever. Although the condition is concerning, it does not meet the criteria for immediate life-saving intervention (ESI 1) or require immediate attention without a delay (ESI 2). The patient's vital signs are stable, and there's no evidence of systemic inflammation or compromise.…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 670,
+    "output_tokens": 203,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Pus oozing from piercing site",
+      "Tenderness, redness, swelling",
+      "Fever 100˚F"
+     ],
+     "rationale": "The patient presents with signs of a possible infected piercing, including pus oozing from the site, tenderness, redness, and swelling. The fever further supports this. Although the pain is described as 8/10, the patient is not meeting criteria for immediate life-saving intervention (ESI 1) or requiring immediate attention (ESI 2). The patient is stable with normal vital signs. This situation…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 670,
+    "output_tokens": 188,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Belly button piercing, red, tender, swollen, pus discharge",
+      "19-year-old healthy college student",
+      "Fever, mild pain"
+     ],
+     "rationale": "The patient presents with a sign of possible infectious process (redness, tenderness, swelling, pus discharge) from a recent piercing. Although the pain is rated as 8/10, it is not life-threatening. The fever and age do not elevate the ESI level significantly. No immediate life-saving intervention is required, but the condition should be addressed within a reasonable time frame."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 670,
+    "output_tokens": 169,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Pierced belly button",
+      "Red, tender, swollen with pus",
+      "Fever 100˚F"
+     ],
+     "rationale": "The patient is a 19-year-old with a newly developed fever and signs of a possible infectious process in a recent piercing site, indicating a need for prompt evaluation and treatment. The pain level is high (8/10), but the patient is stable with normal vital signs and no signs of immediate life-threatening conditions. This scenario falls under ESI level 4 due…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 670,
+    "output_tokens": 172,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Agent 1",
+    "round": 2,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing site",
+      "Pus discharge",
+      "Fever"
+     ],
+     "rationale": "The patient presents with signs of a possible infectious process (pus oozing, elevated temperature) at a piercing site, accompanied by significant pain. Although not immediately life-threatening, these symptoms necessitate prompt medical attention to prevent potential complications such as cellulitis or sepsis.",
+     "message": "I concur with the majority decision for ESI 3. The patient's condition, while painful and concerning, does not meet the criteria for immediate life-saving intervention (ESI 1) or require immediate attention (ESI 2). The fever, local signs of infection, and significant pain warrant a higher ESI level than ESI 5.",
+     "change_reason": "None, as I initially assigned ESI 3 and concur with the majority decision."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1624,
+    "output_tokens": 219,
+    "latency_ms": 16658.4
+   },
+   {
+    "agent": "Agent 2",
+    "round": 2,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing site with purulent discharge, fever, tenderness, swelling",
+      "Moderate pain (8/10)"
+     ],
+     "rationale": "The patient presents with signs of a possible infectious process (pus oozing, elevated temperature) at a piercing site, accompanied by significant pain. Although not immediately life-threatening, these symptoms necessitate prompt medical attention to prevent potential complications such as cellulitis or sepsis.",
+     "message": "I agree with the majority opinion for ESI 3. The patient's symptoms, including moderate pain, fever, local signs of infection, and purulent discharge, warrant prompt medical attention without requiring immediate life-saving intervention.",
+     "change_reason": "No specific clinical findings or ESI steps were missed, as the reasoning aligns with the majority opinion."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1624,
+    "output_tokens": 216,
+    "latency_ms": 15622.4
+   },
+   {
+    "agent": "Agent 3",
+    "round": 2,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "New piercing with pain, redness, swelling, purulent discharge, fever"
+     ],
+     "rationale": "The patient has signs of a possible skin and soft tissue infection at a piercing site with fever, indicating a need for prompt medical attention to prevent complications such as cellulitis or sepsis. Although painful, it does not meet criteria for immediate life-saving intervention (ESI 1) or require immediate attention (ESI 2).",
+     "message": "I agree with the majority opinion for ESI 3. The patient's condition, although painful, does not warrant a higher ESI level due to the absence of systemic inflammatory response or organ dysfunction.",
+     "change_reason": "No specific clinical finding or ESI step was missed; this response is in agreement with the panel's consensus."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1624,
+    "output_tokens": 209,
+    "latency_ms": 15495.3
+   },
+   {
+    "agent": "Agent 4",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing with pain, redness, swelling, purulent discharge, fever"
+     ],
+     "rationale": "The patient presents with an infected piercing, characterized by pain, redness, swelling, purulent discharge, and fever (ESI level B and C). The pain level is 8/10, indicating significant distress (ESI level B). The patient does not require immediate life-saving intervention, but these symptoms necessitate prompt medical attention to prevent potential complications such as cellulitis or sepsis.",
+     "message": "I concur with the majority who assigned ESI 4. The patient's condition, although not immediately life-threatening, requires prompt medical attention due to the signs of a possible infectious process, significant pain, and fever.",
+     "change_reason": "No specific clinical finding or ESI step was missed; I align with the majority's ESI 4 assignment."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1624,
+    "output_tokens": 230,
+    "latency_ms": 16594.2
+   },
+   {
+    "agent": "Agent 5",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing with pus discharge, fever, moderate pain"
+     ],
+     "rationale": "The patient presents with signs of a possible infected piercing, including pus discharge, elevated temperature, and significant pain (8/10). While not immediately life-threatening, this condition requires prompt medical attention to prevent potential complications such as cellulitis or sepsis.",
+     "message": "I agree with the majority decision for ESI 4. The patient's symptoms and vital signs warrant a higher ESI level than ESI 5, as the condition does not meet criteria for immediate life-saving intervention (ESI 1) or require immediate attention (ESI 2).",
+     "change_reason": "None, as the provided ESI 4 aligns with the clinical findings and rationale."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1624,
+    "output_tokens": 203,
+    "latency_ms": 15117.3
+   },
+   {
+    "agent": "Agent 6",
+    "round": 2,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Recent piercing with purulent discharge",
+      "Fever",
+      "Moderate pain"
+     ],
+     "rationale": "The patient presents with signs of a possible skin infection at a piercing site, accompanied by fever and moderate pain. While painful, it does not meet criteria for immediate life-saving intervention (ESI 1) or require immediate attention (ESI 2). There are no distinct resource requirements.",
+     "message": "I agree with the majority decision for ESI 3. The patient's condition, although painful and concerning, does not necessitate a higher ESI level due to the absence of immediate life-threatening symptoms or resource-intensive requirements.",
+     "change_reason": "No specific clinical findings or ESI steps were missed; I concur with the group's decision for ESI 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1624,
+    "output_tokens": 205,
+    "latency_ms": 15397.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 2,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "infected piercing",
+      "fever",
+      "moderate pain"
+     ],
+     "rationale": "The patient presents with signs of a possible infectious process at a piercing site, accompanied by significant pain and fever. Although not immediately life-threatening, these symptoms necessitate prompt medical attention to prevent potential complications.",
+     "message": "I agree with the majority opinion for ESI 3. The patient's condition, while concerning, does not meet the criteria for immediate life-saving intervention or require immediate attention as per ESI 1 or 2.",
+     "change_reason": "No specific clinical finding or ESI step was missed in this case."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1624,
+    "output_tokens": 167,
+    "latency_ms": 13302.5
+   },
+   {
+    "agent": "Agent 8",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "infected piercing",
+      "fever",
+      "moderate pain"
+     ],
+     "rationale": "The patient's presentation aligns with ESI 4 due to the combination of an infected piercing, fever, and moderate pain (8/10). Although the condition is not immediately life-threatening, it requires prompt medical attention to prevent complications.",
+     "message": "I agree with Agents 4, 5, and 10. The patient's condition warrants ESI 4 due to the infected piercing, fever, and moderate pain.",
+     "change_reason": "No specific clinical finding or ESI step was missed in this case."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1624,
+    "output_tokens": 169,
+    "latency_ms": 13346.8
+   },
+   {
+    "agent": "Agent 9",
+    "round": 2,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Pus discharge from piercing",
+      "Fever",
+      "Moderate pain"
+     ],
+     "rationale": "The patient presents with signs of a possible infectious process (pus discharge, fever) from a recent piercing, accompanied by moderate pain. While not immediately life-threatening, these symptoms necessitate prompt medical attention to prevent potential complications such as cellulitis or sepsis.",
+     "message": "I agree with the majority opinion for ESI 3. The patient's condition, although concerning, does not meet the criteria for ESI 1 or 2. The pain level, though high at 8/10, does not indicate immediate life-saving intervention. The fever and local signs of infection warrant prompt medical attention but are not emergent.",
+     "change_reason": "No specific clinical finding or ESI step was missed; this response reiterates agreement with the consensus."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1624,
+    "output_tokens": 223,
+    "latency_ms": 16189.7
+   },
+   {
+    "agent": "Agent 10",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing with fever",
+      "Significant pain (8/10)"
+     ],
+     "rationale": "The patient presents with signs of a possible infected piercing, including pus oozing, elevated temperature, and moderate pain (8/10). Although not immediately life-threatening, these symptoms necessitate prompt medical attention to prevent potential complications such as cellulitis or sepsis.",
+     "message": "I agree with Agents 4, 5, and others who suggested ESI 4. The patient's symptoms warrant prompt evaluation and treatment.",
+     "change_reason": "No specific clinical finding or ESI step was missed. The panel consensus aligns with my assessment."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1623,
+    "output_tokens": 178,
+    "latency_ms": 13962.7
+   }
+  ],
+  [
+   {
+    "agent": "Agent 1",
+    "round": 3,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Piercing infection with local signs",
+      "Fever and moderate pain"
+     ],
+     "rationale": "The patient's condition, while painful and concerning, does not meet the criteria for immediate life-saving intervention (ESI 1) or require immediate attention (ESI 2). The fever, local signs of infection, and purulent discharge warrant prompt medical attention but do not necessitate a higher ESI level.",
+     "message": "I agree with the majority opinion for ESI 3. The patient's condition, although painful and concerning, does not necessitate a higher ESI level due to the absence of immediate life-threatening symptoms or resource-intensive requirements.",
+     "change_reason": "None, as the majority opinion aligns with the ESI 3 decision based on the provided clinical information."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1479,
+    "output_tokens": 203,
+    "latency_ms": 69283.4
+   },
+   {
+    "agent": "Agent 2",
+    "round": 3,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Pain 8/10",
+      "Fever 100˚F",
+      "Local signs of infection"
+     ],
+     "rationale": "The patient's condition, while painful and concerning, does not meet criteria for immediate life-saving intervention (ESI 1) or require immediate attention (ESI 2). The fever, local signs of infection, and purulent discharge warrant prompt medical attention without necessitating a higher ESI level.",
+     "message": "Agree with Agents 1, 3, 6, 7, and others who suggested ESI 3. The patient's pain level, although high, does not indicate immediate life-saving intervention. The fever and local signs of infection necessitate prompt evaluation and treatment, but do not require immediate life-saving intervention.",
+     "change_reason": "No changes, as all clinical findings align with the ESI 3 decision."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1479,
+    "output_tokens": 224,
+    "latency_ms": 52688.3
+   },
+   {
+    "agent": "Agent 3",
+    "round": 3,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Local signs of infection",
+      "Fever",
+      "Moderate pain"
+     ],
+     "rationale": "The patient's condition, while painful and concerning, does not meet criteria for immediate life-saving intervention (ESI 1) or require immediate attention (ESI 2). The fever, local signs of infection, and moderate pain warrant prompt medical attention without needing a higher ESI level.",
+     "message": "I concur with the majority opinion for ESI 3. The patient's condition, although concerning, does not necessitate a higher ESI level due to the absence of immediate life-threatening symptoms or resource-intensive requirements.",
+     "change_reason": "No changes were made as the patient's condition aligns with ESI 3 based on the given criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1479,
+    "output_tokens": 191,
+    "latency_ms": 64574.4
+   },
+   {
+    "agent": "Agent 4",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Pierced belly button with purulent discharge",
+      "Fever (100˚F)",
+      "Significant pain (8/10)"
+     ],
+     "rationale": "Patient has a localized infection with fever and significant pain, warranting prompt medical attention but not immediate life-saving intervention.",
+     "message": "I agree with Agents 4, 5, 8, and 10, who suggested ESI 4. The patient's symptoms warrant prompt evaluation and treatment.",
+     "change_reason": "No changes, as I concur with the majority decision."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1479,
+    "output_tokens": 152,
+    "latency_ms": 32148.6
+   },
+   {
+    "agent": "Agent 5",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Piercing site infection with purulent discharge",
+      "Fever 100˚F",
+      "Moderate pain 8/10"
+     ],
+     "rationale": "The patient's condition, although not immediately life-threatening, requires prompt medical attention due to the signs of a possible infectious process, significant pain, and fever.",
+     "message": "I agree with Agents 4, 8, and 10. The patient's condition warrants ESI 4 due to the infected piercing, fever, and moderate pain.",
+     "change_reason": "No, I did not change my ESI position based on the discussion."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1479,
+    "output_tokens": 167,
+    "latency_ms": 11945.4
+   },
+   {
+    "agent": "Agent 6",
+    "round": 3,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "19-year-old with painful piercing site infection",
+      "Fever, local signs of infection, purulent discharge",
+      "Moderate pain, vital signs within normal limits"
+     ],
+     "rationale": "Patient's condition is concerning but does not warrant a higher ESI due to absence of immediate life-threatening symptoms or resource-intensive requirements.",
+     "message": "I agree with the majority decision for ESI 3. The patient's condition, although painful and concerning, does not meet the criteria for immediate life-saving intervention (ESI 1) or require immediate attention (ESI 2).",
+     "change_reason": "No changes, as the patient's condition aligns with ESI 3 based on the provided criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1479,
+    "output_tokens": 188,
+    "latency_ms": 12976.8
+   },
+   {
+    "agent": "Agent 7",
+    "round": 3,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "19-year-old with painful, infected piercing site",
+      "Fever, local signs of infection, purulent discharge",
+      "Moderate pain, no systemic inflammatory response"
+     ],
+     "rationale": "The patient's condition, while concerning, does not meet criteria for immediate life-saving intervention or require immediate attention as per ESI 1 or 2. Fever, local signs of infection, and purulent discharge warrant prompt medical attention without necessitating a higher ESI level.",
+     "message": "Agree with the majority decision for ESI 3.",
+     "change_reason": "No specific clinical finding or ESI step was missed; I concur with the majority opinion."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1479,
+    "output_tokens": 181,
+    "latency_ms": 12459.7
+   },
+   {
+    "agent": "Agent 8",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "19-year-old with infected belly button piercing",
+      "fever, local signs of infection, purulent discharge",
+      "moderate pain (8/10)"
+     ],
+     "rationale": "Patient's condition warrants ESI 4 due to infected piercing, fever, and moderate pain.",
+     "message": "I concur with Agents 4, 5, and 10. The patient's condition warrants ESI 4 due to the infected piercing, fever, and moderate pain.",
+     "change_reason": "No changes needed; I agree with the majority decision for ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1479,
+    "output_tokens": 167,
+    "latency_ms": 14075.4
+   },
+   {
+    "agent": "Agent 9",
+    "round": 3,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "19-year-old with painful, purulent belly button piercing",
+      "Fever: 100˚F",
+      "Tender, swollen area with oozing pus"
+     ],
+     "rationale": "The patient's condition, while painful, does not meet criteria for ESI 1 or 2 due to absence of immediate life-threatening symptoms or high-risk situations. Local signs of infection warrant prompt attention, but not a higher ESI level.",
+     "message": "I agree with the majority opinion for ESI 3. The patient's condition, although painful and concerning, does not necessitate a higher ESI level due to the absence of immediate life-threatening symptoms or resource-intensive requirements.",
+     "change_reason": "None; the patient's condition aligns with ESI 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1479,
+    "output_tokens": 208,
+    "latency_ms": 55519.4
+   },
+   {
+    "agent": "Agent 10",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing site with purulent discharge",
+      "Fever",
+      "Moderate pain"
+     ],
+     "rationale": "The patient's condition warrants ESI 4 due to signs of a possible infectious process, significant pain, and fever.",
+     "message": "I concur with Agents 4, 5, and others who suggested ESI 4. The patient's symptoms warrant prompt evaluation and treatment.",
+     "change_reason": "None, as the ESI 4 decision aligns with the majority opinion and the patient's clinical presentation."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1478,
+    "output_tokens": 145,
+    "latency_ms": 46910.2
+   }
+  ],
+  [
+   {
+    "agent": "Agent 1",
+    "round": 4,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing with purulent discharge",
+      "Fever",
+      "Moderate pain"
+     ],
+     "rationale": "The patient's condition, although concerning, does not meet the criteria for immediate life-saving intervention (ESI 1) or require immediate attention (ESI 2). The absence of systemic signs of infection (e.g., hypotension, tachycardia) and normal vital signs support ESI 3.",
+     "message": "I concur with the majority decision for ESI 3. The patient's condition, although painful and concerning, does not necessitate a higher ESI level due to the absence of immediate life-threatening symptoms or resource-intensive requirements.",
+     "change_reason": "None, as the ESI level of 3 is justified based on the clinical presentation and normal vital signs."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1412,
+    "output_tokens": 209,
+    "latency_ms": 69313.6
+   },
+   {
+    "agent": "Agent 2",
+    "round": 4,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "19 y/o with piercing pain, fever, local signs of infection"
+     ],
+     "rationale": "Patient reports severe pain, fever, and signs of infection, but no immediate life-threatening symptoms or resource-intensive requirements.",
+     "message": "Agree with Agents 1, 3, 6, 7, and others who suggested ESI 3. The patient's condition, although painful and concerning, does not necessitate a higher ESI level due to the absence of immediate life-threatening symptoms or resource-intensive requirements.",
+     "change_reason": "No changes needed, as I agree with the majority opinion for ESI 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1412,
+    "output_tokens": 173,
+    "latency_ms": 35606.9
+   },
+   {
+    "agent": "Agent 3",
+    "round": 4,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing with purulent discharge",
+      "Fever (100˚F)",
+      "Moderate pain (8/10)"
+     ],
+     "rationale": "The patient's condition, although concerning, does not necessitate a higher ESI level due to the absence of immediate life-threatening symptoms or resource-intensive requirements.",
+     "message": "I concur with the majority decision for ESI 3. The patient's condition, although painful and concerning, does not meet the criteria for immediate life-saving intervention (ESI 1) or require immediate attention (ESI 2).",
+     "change_reason": "No changes; I agree with the majority opinion for ESI 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1412,
+    "output_tokens": 178,
+    "latency_ms": 51097.8
+   },
+   {
+    "agent": "Agent 4",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected belly button piercing",
+      "Fever",
+      "Moderate pain"
+     ],
+     "rationale": "The patient's condition warrants ESI 4 due to the infected piercing, fever, and moderate pain, which necessitate prompt evaluation and treatment.",
+     "message": "I agree with Agents 4, 5, 8, and 10, who suggested ESI 4. The patient's symptoms warrant prompt evaluation and treatment.",
+     "change_reason": "No changes, as I previously agreed with the ESI 4 position."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1412,
+    "output_tokens": 146,
+    "latency_ms": 48413.1
+   },
+   {
+    "agent": "Agent 5",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing, fever, moderate pain"
+     ],
+     "rationale": "Patient's symptoms warrant prompt evaluation and treatment.",
+     "message": "Agree with Agents 4, 8, and 10. The patient's condition warrants ESI 4 due to the infected piercing, fever, and moderate pain.",
+     "change_reason": "No changes, as the clinical findings align with the ESI 4 decision."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1412,
+    "output_tokens": 123,
+    "latency_ms": 48831.6
+   },
+   {
+    "agent": "Agent 6",
+    "round": 4,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected belly button piercing",
+      "Fever 100˚F",
+      "Moderate pain 8/10"
+     ],
+     "rationale": "The patient's condition, although painful and concerning, does not meet the criteria for immediate life-saving intervention (ESI 1) or require immediate attention (ESI 2). The fever and local signs of infection necessitate prompt evaluation and treatment, but do not warrant a higher ESI level.",
+     "message": "I agree with the majority decision for ESI 3. I appreciate the concerns raised by Agents 4, 5, and 10 about the potential need for ESI 4. However, considering the criteria, the patient's condition does not necessitate a higher ESI level due to the absence of immediate life-threatening symptoms or resource-intensive requirements.",
+     "change_reason": "None. The decision aligns with the criteria and rationale provided."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1412,
+    "output_tokens": 229,
+    "latency_ms": 55267.8
+   },
+   {
+    "agent": "Agent 7",
+    "round": 4,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "19-year-old with piercing pain, fever, and local signs of infection"
+     ],
+     "rationale": "The patient's condition, although painful and concerning, does not necessitate a higher ESI level due to the absence of immediate life-threatening symptoms or resource-intensive requirements.",
+     "message": "I agree with the majority decision for ESI 3. The patient's pain level, although high, does not indicate immediate life-saving intervention. The fever and local signs of infection necessitate prompt evaluation and treatment, but do not warrant a higher ESI level.",
+     "change_reason": "None, agreement with the majority decision."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1412,
+    "output_tokens": 168,
+    "latency_ms": 49779.4
+   },
+   {
+    "agent": "Agent 8",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing, fever, moderate pain"
+     ],
+     "rationale": "The patient's infected piercing, fever, and moderate pain necessitate prompt evaluation and treatment, warranting ESI 4.",
+     "message": "I concur with Agents 4, 5, and 10. The patient's condition warrants ESI 4 due to the infected piercing, fever, and moderate pain.",
+     "change_reason": "No change in ESI position; all clinical findings align with ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1412,
+    "output_tokens": 146,
+    "latency_ms": 49820.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 4,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing",
+      "Fever",
+      "Moderate pain"
+     ],
+     "rationale": "The patient's condition, although painful and concerning, does not necessitate a higher ESI level due to the absence of immediate life-threatening symptoms or resource-intensive requirements.",
+     "message": "I agree with the majority opinion for ESI 3. The patient's symptoms warrant prompt evaluation and treatment, but do not meet the criteria for ESI 1 or 2.",
+     "change_reason": "No changes, as I agree with the majority decision."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1412,
+    "output_tokens": 144,
+    "latency_ms": 48546.9
+   },
+   {
+    "agent": "Agent 10",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing",
+      "Fever",
+      "Moderate pain"
+     ],
+     "rationale": "The patient's condition warrants ESI 4 due to the infected piercing, fever, and moderate pain.",
+     "message": "I concur with Agents 4, 5, and others who suggested ESI 4. The patient's symptoms warrant prompt evaluation and treatment.",
+     "change_reason": "No changes needed; previously agreed upon ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1411,
+    "output_tokens": 126,
+    "latency_ms": 39792.6
+   }
+  ],
+  [
+   {
+    "agent": "Agent 1",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected belly button piercing",
+      "Fever (100˚F)",
+      "Moderate pain (8/10)"
+     ],
+     "rationale": "The patient's condition, although painful and concerning, does not necessitate a higher ESI level due to the absence of immediate life-threatening symptoms or resource-intensive requirements.",
+     "message": "I concur with the majority decision for ESI 3. The patient's condition, although painful and concerning, does not necessitate a higher ESI level due to the absence of immediate life-saving intervention or resource-intensive requirements.",
+     "change_reason": "None, as the majority decision aligns with the clinical assessment."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1457,
+    "output_tokens": 176,
+    "latency_ms": 63408.1
+   },
+   {
+    "agent": "Agent 2",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected belly button piercing, fever, moderate pain"
+     ],
+     "rationale": "The patient's condition, although painful and concerning, does not necessitate a higher ESI level due to the absence of immediate life-threatening symptoms or resource-intensive requirements.",
+     "message": "Agree with Agents 1, 3, 6, 7, and others who suggested ESI 3. The fever, local signs of infection, and moderate pain warrant prompt evaluation and treatment, but do not meet the criteria for immediate life-saving intervention or require immediate attention.",
+     "change_reason": "No changes needed; all clinical findings were considered and justified."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1457,
+    "output_tokens": 174,
+    "latency_ms": 67309.8
+   },
+   {
+    "agent": "Agent 3",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "19-year-old with infected piercing, fever, moderate pain"
+     ],
+     "rationale": "Absent immediate life-threatening symptoms or resource-intensive requirements.",
+     "message": "I concur with the majority decision for ESI 3. The patient's condition, although painful and concerning, does not necessitate a higher ESI level.",
+     "change_reason": "No changes, as the patient's symptoms align with ESI 3 criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1457,
+    "output_tokens": 126,
+    "latency_ms": 11028.5
+   },
+   {
+    "agent": "Agent 4",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing with purulent discharge",
+      "Fever (100°F)",
+      "Moderate pain (8/10)"
+     ],
+     "rationale": "The patient's condition meets ESI 4 criteria due to infected piercing, fever, and moderate pain, requiring prompt evaluation and treatment.",
+     "message": "I agree with Agents 4, 5, 8, and 10, and concur that the patient's condition warrants ESI 4.",
+     "change_reason": "No changes, as I previously agreed with the majority decision for ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1457,
+    "output_tokens": 156,
+    "latency_ms": 11667.7
+   },
+   {
+    "agent": "Agent 5",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing with oozing pus",
+      "Fever at 100˚F",
+      "Moderate pain at 8/10"
+     ],
+     "rationale": "Patient's condition warrants ESI 4 due to infected piercing, fever, and moderate pain.",
+     "message": "Thank you for your deliberation. I concur with Agents 4, 8, and 10, and maintain ESI 4 based on the infected piercing, fever, and moderate pain.",
+     "change_reason": "No changes; I acknowledge the discussion and agree with the majority for ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1457,
+    "output_tokens": 165,
+    "latency_ms": 11873.1
+   },
+   {
+    "agent": "Agent 6",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing with fever and moderate pain in 19yo"
+     ],
+     "rationale": "Absence of immediate life-threatening symptoms or resource-intensive requirements.",
+     "message": "Thank you, Agents 1, 3, 7, 9 for reaffirming ESI 3. I respect Agents 4, 5, 8, 10's concerns, but the patient's condition doesn't meet ESI 2 criteria or resource-intensive requirements.",
+     "change_reason": "None; all ESI steps considered, and the patient's condition aligns with ESI 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1457,
+    "output_tokens": 160,
+    "latency_ms": 11757.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "19-year-old with painful, infected belly button piercing"
+     ],
+     "rationale": "The patient's condition, although painful and concerning, does not necessitate a higher ESI level due to the absence of immediate life-threatening symptoms or resource-intensive requirements.",
+     "message": "I agree with the majority decision for ESI 3. The patient's pain level, although high, does not indicate immediate life-saving intervention. The fever and local signs of infection necessitate prompt evaluation and treatment, but do not warrant a higher ESI.",
+     "change_reason": "None, in agreement with the majority decision."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1457,
+    "output_tokens": 165,
+    "latency_ms": 48335.7
+   },
+   {
+    "agent": "Agent 8",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing",
+      "Fever",
+      "Moderate pain"
+     ],
+     "rationale": "Patient's symptoms meet ESI 4 criteria due to infected piercing, fever, and moderate pain",
+     "message": "I concur with Agents 4, 5, and 10. The patient's condition warrants ESI 4 due to the infected piercing, fever, and moderate pain.",
+     "change_reason": "No changes, as all relevant criteria for ESI 4 are met."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1457,
+    "output_tokens": 139,
+    "latency_ms": 49648.1
+   },
+   {
+    "agent": "Agent 9",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.95,
+     "key_findings": [
+      "Infected piercing, fever, moderate pain"
+     ],
+     "rationale": "Absent immediate life-threatening symptoms or resource-intensive requirements.",
+     "message": "I agree with the majority opinion for ESI 3.",
+     "change_reason": "No changes needed, as the clinical findings align with ESI 3."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1457,
+    "output_tokens": 95,
+    "latency_ms": 45761.1
+   },
+   {
+    "agent": "Agent 10",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "19-year-old with infected piercing, fever, tenderness, swelling, purulent discharge"
+     ],
+     "rationale": "Infected piercing with fever, tenderness, swelling, and purulent discharge warrants prompt evaluation and treatment, classified as ESI 4",
+     "message": "I concur with Agents 4, 5, and others who suggested ESI 4. The patient's symptoms warrant prompt evaluation and treatment.",
+     "change_reason": "None, agreement with the majority decision for ESI 4"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1456,
+    "output_tokens": 150,
+    "latency_ms": 49232.4
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": false,
+ "consensus_share": 0.6,
+ "rounds_used": 5,
+ "first_round_esis": {
+  "Agent 1": 3,
+  "Agent 2": 3,
+  "Agent 3": 3,
+  "Agent 4": 4,
+  "Agent 5": 4,
+  "Agent 6": 3,
+  "Agent 7": 3,
+  "Agent 8": 4,
+  "Agent 9": 3,
+  "Agent 10": 4
+ },
+ "initial_range": 1,
+ "early_stopped": false,
+ "final_esis": {
+  "Agent 1": 3,
+  "Agent 2": 3,
+  "Agent 3": 3,
+  "Agent 4": 4,
+  "Agent 5": 4,
+  "Agent 6": 3,
+  "Agent 7": 3,
+  "Agent 8": 4,
+  "Agent 9": 3,
+  "Agent 10": 4
+ },
+ "final_confidences": {
+  "Agent 1": 0.95,
+  "Agent 2": 0.95,
+  "Agent 3": 0.95,
+  "Agent 4": 0.95,
+  "Agent 5": 0.95,
+  "Agent 6": 0.95,
+  "Agent 7": 0.95,
+  "Agent 8": 0.95,
+  "Agent 9": 0.95,
+  "Agent 10": 0.95
+ },
+ "aggregate": 3,
+ "majority": 3,
+ "disagreement_range": 1,
+ "mean_confidence": 0.95,
+ "disagreement_score": 3.05,
+ "escalated": true,
+ "escalation_reasons": [
+  "no_consensus"
+ ]
+}

@@ -1,0 +1,876 @@
+{
+ "patient_id": "p-d0dde1",
+ "condition": "C",
+ "agents": [
+  "Empath",
+  "Logician",
+  "Skeptic",
+  "Observer",
+  "Synthesizer",
+  "Pragmatist",
+  "Vigilant",
+  "Impartial",
+  "Mediator",
+  "Reflective"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Empath",
+    "round": 1,
+    "output": {
+     "esi": 2,
+     "confidence": 0.95,
+     "key_findings": [
+      "Severe abdominal pain",
+      "Difficulty breathing",
+      "Hypotension"
+     ],
+     "rationale": "Patient presents with severe abdominal pain and difficulty breathing after a fall, accompanied by hypotension. These symptoms suggest a potential internal injury or internal bleeding, which requires immediate attention but not necessarily life-saving intervention within the immediate next few minutes. The high heart rate and low blood pressure further support this urgency. Hence, ESI level 2 is assigned."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 686,
+    "output_tokens": 131,
+    "latency_ms": 1457751.8
+   },
+   {
+    "agent": "Logician",
+    "round": 1,
+    "output": {
+     "esi": 2,
+     "confidence": 0.95,
+     "key_findings": [
+      "Fell from second-story balcony",
+      "Severe abdominal pain",
+      "Difficulty breathing"
+     ],
+     "rationale": "Patient presents with a high-risk mechanism of injury, severe pain, and respiratory distress. Despite being conscious, their vital signs indicate significant distress (BP 90/50, HR 130, RR 28, SpO2 92%). These findings align with ESI level 2 criteria (should not wait) due to potential internal injuries requiring immediate intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 676,
+    "output_tokens": 147,
+    "latency_ms": 1466874.7
+   },
+   {
+    "agent": "Skeptic",
+    "round": 1,
+    "output": {
+     "esi": 2,
+     "confidence": 0.95,
+     "key_findings": [
+      "Severe abdominal pain",
+      "Difficulty breathing",
+      "Hypotension"
+     ],
+     "rationale": "High-risk mechanism of injury (fall from height), severe pain and distress (HR 130, SpO2 92%), and hypotension (BP 90/50), indicating a need to not wait for further evaluation."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 678,
+    "output_tokens": 103,
+    "latency_ms": 1472872.5
+   },
+   {
+    "agent": "Observer",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 0.95,
+     "key_findings": [
+      "Fall from height",
+      "Severe abdominal pain",
+      "Difficulty breathing"
+     ],
+     "rationale": "Patient presenting with severe abdominal pain and difficulty breathing after a fall from a second-story balcony, with hypotension (BP 90/50), tachycardia (HR 130), tachypnea (RR 28), and mild hypoxemia (SpO2 92%). These findings suggest potential internal injuries or hemorrhage requiring immediate life-saving intervention, assigning ESI level 1."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 673,
+    "output_tokens": 154,
+    "latency_ms": 1483570.4
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 1,
+    "output": {
+     "esi": 2,
+     "confidence": 0.9,
+     "key_findings": [
+      "Fell from second-story balcony",
+      "Severe abdominal pain",
+      "Difficulty breathing"
+     ],
+     "rationale": "Patient presented with a high-risk mechanism of injury and reports severe pain and difficulty breathing. Given the high-risk situation and patient's symptoms, this case warrants an ESI level 2."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 672,
+    "output_tokens": 97,
+    "latency_ms": 1491450.9
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 1,
+    "output": {
+     "esi": 2,
+     "confidence": 0.95,
+     "key_findings": [
+      "Fell from second-story balcony",
+      "Severe abdominal pain",
+      "Difficulty breathing, tachycardia, hypotension"
+     ],
+     "rationale": "Patient sustained a significant trauma (fall from second-story balcony), presenting with severe abdominal pain and difficulty breathing. Tachycardia, hypotension, and mild hypoxia are noted. These findings satisfy ESI level 2 criteria under B (should not wait) due to high-risk mechanism and signs of potential internal injuries."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 677,
+    "output_tokens": 146,
+    "latency_ms": 1503911.7
+   },
+   {
+    "agent": "Vigilant",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Fall from height, abdominal pain, respiratory distress, hypotension"
+     ],
+     "rationale": "ESI 1 assigned due to fall from height indicating potential internal injuries causing severe abdominal pain and hypotension (BP 90/50). Rapid heart rate (130) and respiratory rate (28) along with mild hypoxia (SpO2 92%) support the acuity. Immediate life-saving intervention is needed."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 677,
+    "output_tokens": 132,
+    "latency_ms": 1514483.5
+   },
+   {
+    "agent": "Impartial",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Fell from second-story balcony",
+      "Severe abdominal pain",
+      "Difficulty breathing"
+     ],
+     "rationale": "Patient meets ESI level 1 criteria (Needs immediate life-saving intervention) due to unstable mechanism of injury (fall), severe pain, tachycardia, and tachypnea."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 699,
+    "output_tokens": 97,
+    "latency_ms": 1522592.6
+   },
+   {
+    "agent": "Mediator",
+    "round": 1,
+    "output": {
+     "esi": 2,
+     "confidence": 0.95,
+     "key_findings": [
+      "Severe abdominal pain",
+      "Difficulty breathing",
+      "Hypotension"
+     ],
+     "rationale": "The patient presents with severe abdominal pain and difficulty breathing, suggesting potential internal injuries or trauma. Hypotension further supports the need for immediate evaluation due to possible internal bleeding or shock. These factors align with ESI level 2 (should not wait)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 675,
+    "output_tokens": 108,
+    "latency_ms": 1532415.6
+   },
+   {
+    "agent": "Reflective",
+    "round": 1,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "Fell from second-story balcony",
+      "Severe abdominal pain",
+      "Difficulty breathing"
+     ],
+     "rationale": "Patient presents with a high-risk mechanism of injury (fall, >8y old, >2 stories), severe pain (ESI 2), and abnormal vital signs (hypotension, tachycardia, tachypnea, hypoxia). Distinct resources needed (ECG, labs, imaging). Not meeting ESI 1 criteria (no immediate life-threat), nor ESI 2 criteria (no immediate life-threat, confusion, or fever)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 675,
+    "output_tokens": 157,
+    "latency_ms": 1546640.4
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 2,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 3,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Logician",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Skeptic",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Observer",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Vigilant",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Mediator",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Reflective",
+    "round": 4,
+    "output": null,
+    "failure": "call_failed: ReadTimeout: ",
+    "repaired": false,
+    "notes": [],
+    "calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Empath",
+    "round": 5,
+    "output": {
+     "esi": 2,
+     "confidence": 0.95,
+     "key_findings": [
+      "High-risk fall",
+      "Severe abdominal pain",
+      "Respiratory distress"
+     ],
+     "rationale": "Patient's high-risk mechanism, severe pain, and respiratory distress align with ESI level 2 criteria (should not wait).",
+     "message": "Agreed with Logician, Skeptic, Observer, Synthesizer, Pragmatist, Mediator, and Impartial. Disagreed with Vigilant and Reflective on the urgency of life-saving intervention.",
+     "change_reason": "None, as my position aligns with the majority and follows the ESI reference."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1670,
+    "output_tokens": 158,
+    "latency_ms": 1736613.8
+   },
+   {
+    "agent": "Logician",
+    "round": 5,
+    "output": {
+     "esi": 2,
+     "confidence": 0.95,
+     "key_findings": [
+      "High-risk mechanism of injury",
+      "Severe pain and distress",
+      "Hypotension"
+     ],
+     "rationale": "Patient presents with a high-risk mechanism, severe pain, and respiratory distress (RR 28, SpO2 92%), aligning with ESI level 2 criteria (should not wait).",
+     "message": "Agree with Empath, Skeptic, Observer, Synthesizer, Pragmatist, Mediator, and Impartial. Dissent from Vigilant and Reflective on ESI level. Change reason: Focused on ESI level 2 step (should not wait) as primary decision point.",
+     "change_reason": "Initially considered ESI 1 due to hypotension, but the high-risk mechanism and severe pain align better with ESI level 2 (should not wait)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1660,
+    "output_tokens": 211,
+    "latency_ms": 1752858.6
+   },
+   {
+    "agent": "Skeptic",
+    "round": 5,
+    "output": {
+     "esi": 2,
+     "confidence": 0.95,
+     "key_findings": [
+      "High-risk fall",
+      "Severe abdominal pain",
+      "Respiratory distress"
+     ],
+     "rationale": "High-risk mechanism of injury, severe pain, and respiratory distress (HR 130, RR 28, SpO2 92%) align with ESI level 2 criteria (should not wait).",
+     "message": "I agree with [Empath], [Logician], [Observer], [Pragmatist], and [Mediator] who also assigned ESI 2 based on the high-risk mechanism, severe pain, and distress signs. The patient's vital signs indicate significant distress requiring immediate attention but not necessarily life-saving intervention within the next few minutes.",
+     "change_reason": "None, as the reasoning aligns with the established ESI 2 criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1661,
+    "output_tokens": 202,
+    "latency_ms": 1768694.6
+   },
+   {
+    "agent": "Observer",
+    "round": 5,
+    "output": {
+     "esi": 1,
+     "confidence": 0.99,
+     "key_findings": [
+      "High-risk fall",
+      "Severe abdominal pain",
+      "Hypotension, tachycardia, tachypnea, mild hypoxia"
+     ],
+     "rationale": "Vital signs and mechanism of injury indicate potential life-threatening internal injuries.",
+     "message": "Agree with Vigilant and Impartial; their focus on immediate life-saving intervention due to high-risk fall, severe pain, and abnormal vital signs is justified.",
+     "change_reason": "No prior oversight; confident in ESI 1 based on discussed clinical information."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1658,
+    "output_tokens": 154,
+    "latency_ms": 1782260.7
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 5,
+    "output": {
+     "esi": 2,
+     "confidence": 0.9,
+     "key_findings": [
+      "High-risk fall, severe abdominal pain, respiratory distress"
+     ],
+     "rationale": "Severe symptoms warrant immediate attention, though not necessarily life-saving intervention",
+     "message": "Agree with the majority; patient's high-risk fall, severe pain, and respiratory distress align with ESI 2",
+     "change_reason": "No specific clinical finding or ESI step was missed"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1655,
+    "output_tokens": 116,
+    "latency_ms": 1793579.3
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 5,
+    "output": {
+     "esi": 2,
+     "confidence": 0.95,
+     "key_findings": [
+      "High-risk fall",
+      "Severe abdominal pain",
+      "Respiratory distress"
+     ],
+     "rationale": "Patient sustained a significant trauma (fall from second-story balcony), presenting with severe abdominal pain and difficulty breathing. Tachycardia, hypotension, and mild hypoxia are noted. These findings satisfy ESI level 2 criteria under B (should not wait) due to high-risk mechanism...",
+     "message": "Agree with [Empath], [Logician], [Skeptic], and [Mediator] on high-risk mechanism and need for immediate attention. Disagree with [Observer], [Vigilant], and [Impartial] on the necessity of immediate life-saving intervention. Distinct resources needed: ECG, labs, imaging.",
+     "change_reason": "Acknowledged need for immediate evaluation based on high-risk mechanism and abnormal vital signs, aligning with ESI level 2."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1659,
+    "output_tokens": 238,
+    "latency_ms": 1811153.3
+   },
+   {
+    "agent": "Vigilant",
+    "round": 5,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Fall from height",
+      "Severe abdominal pain",
+      "Hypotension (90/50)"
+     ],
+     "rationale": "ESI 1 assigned due to fall from height indicating potential internal injuries causing severe abdominal pain and hypotension. Rapid heart rate (130) and respiratory rate (28) along with mild hypoxia (SpO2 92%) support the acuity. Immediate life-saving intervention required.",
+     "message": "Agree with [Impartial] and [Reflective] on the severity, but the tachycardia, hypotension, and mild hypoxia align more closely with ESI 1 criteria for immediate life-saving intervention.",
+     "change_reason": "Acknowledged [Reflective]'s assessment but prioritized ESI 1 based on tachycardia, hypotension, and mild hypoxia as per A-D steps."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1659,
+    "output_tokens": 231,
+    "latency_ms": 1828332.0
+   },
+   {
+    "agent": "Impartial",
+    "round": 5,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Fall from height",
+      "Severe abdominal pain",
+      "Tachycardia, tachypnea, hypotension"
+     ],
+     "rationale": "Unstable mechanism, severe pain, tachycardia, tachypnea, hypotension satisfy ESI 1 criteria.",
+     "message": "Agree with Vigilant and Empath; however, the patient's vital signs and mechanism of injury warrant ESI 1 due to potential life-threatening internal injuries.",
+     "change_reason": "Confirmed ESI 1 based on vital signs and mechanism of injury."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1682,
+    "output_tokens": 153,
+    "latency_ms": 1841642.6
+   },
+   {
+    "agent": "Mediator",
+    "round": 5,
+    "output": {
+     "esi": 2,
+     "confidence": 0.95,
+     "key_findings": [
+      "High-risk fall from height",
+      "Severe abdominal pain",
+      "Respiratory distress"
+     ],
+     "rationale": "Patient meets ESI level 2 criteria (should not wait) due to high-risk mechanism and significant symptoms.",
+     "message": "Agreed with Empath, Logician, Skeptic, Pragmatist, and Impartial; disagree with Observer and Vigilant who assigned ESI 1. The patient's fall from height, severe abdominal pain, and respiratory distress justify ESI 2.",
+     "change_reason": "Re-evaluated the patient's condition with focus on high-risk mechanism and severe symptoms, aligning with ESI 2."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1660,
+    "output_tokens": 180,
+    "latency_ms": 1856285.9
+   },
+   {
+    "agent": "Reflective",
+    "round": 5,
+    "output": {
+     "esi": 3,
+     "confidence": 0.9,
+     "key_findings": [
+      "High-risk mechanism of injury (fall >2 stories)",
+      "Severe abdominal pain and respiratory distress",
+      "Abnormal vital signs (hypotension, tachycardia, tachypnea, hypoxia)"
+     ],
+     "rationale": "Patient has high-risk mechanism, severe pain, and significant vital sign abnormalities, but does not meet ESI 1 criteria for immediate life-saving intervention.",
+     "message": "I concur with Empath, Logician, Skeptic, Observer, Pragmatist, and Mediator who suggest ESI 2 or 3. Vigilant and Impartial advocate for ESI 1, which I respectfully disagree with based on current data. I stand firm on ESI 3, as the patient does not require immediate life-saving intervention, but should not wait for further evaluation.",
+     "change_reason": "No change in position, as the patient's condition does not meet ESI 1 criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1659,
+    "output_tokens": 242,
+    "latency_ms": 1874056.1
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": false,
+ "consensus_share": 0.6,
+ "rounds_used": 5,
+ "first_round_esis": {
+  "Empath": 2,
+  "Logician": 2,
+  "Skeptic": 2,
+  "Observer": 1,
+  "Synthesizer": 2,
+  "Pragmatist": 2,
+  "Vigilant": 1,
+  "Impartial": 1,
+  "Mediator": 2,
+  "Reflective": 3
+ },
+ "initial_range": 2,
+ "early_stopped": false,
+ "final_esis": {
+  "Empath": 2,
+  "Logician": 2,
+  "Skeptic": 2,
+  "Observer": 1,
+  "Synthesizer": 2,
+  "Pragmatist": 2,
+  "Vigilant": 1,
+  "Impartial": 1,
+  "Mediator": 2,
+  "Reflective": 3
+ },
+ "final_confidences": {
+  "Empath": 0.95,
+  "Logician": 0.95,
+  "Skeptic": 0.95,
+  "Observer": 0.99,
+  "Synthesizer": 0.9,
+  "Pragmatist": 0.95,
+  "Vigilant": 1.0,
+  "Impartial": 1.0,
+  "Mediator": 0.95,
+  "Reflective": 0.9
+ },
+ "aggregate": 2,
+ "majority": 2,
+ "disagreement_range": 2,
+ "mean_confidence": 0.9540000000000001,
+ "disagreement_score": 4.046,
+ "escalated": true,
+ "escalation_reasons": [
+  "no_consensus"
+ ]
+}

@@ -1,0 +1,93 @@
+{
+ "patient_id": "p-d0dde1",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3"
+ ],
+ "round1": [
+  {
+   "agent": "Agent 1",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Severe abdominal pain",
+     "Difficulty breathing",
+     "Low blood pressure"
+    ],
+    "rationale": "Patient has high-risk situation (major trauma) with unstable vital signs (hypotension, tachycardia). Requires immediate life-saving intervention and monitoring."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 517,
+   "output_tokens": 76,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Severe abdominal pain after fall",
+     "Hypotension (BP 90/50)",
+     "Tachycardia (HR 130)"
+    ],
+    "rationale": "Unstable vitals (hypotension, tachycardia) in a trauma patient suggest high acuity. Abdominal pain after fall raises concern for intra-abdominal injury. Does not need immediate life-saving intervention or meet ESI 1 or 2B criteria."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 517,
+   "output_tokens": 129,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Altered mental status",
+     "Severe abdominal pain",
+     "Difficult breathing"
+    ],
+    "rationale": "The patient has unstable vital signs (hypotension, tachycardia, tachypnea) and severe abdominal pain, indicating a potentially life-threatening condition requiring immediate evaluation and intervention."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 517,
+   "output_tokens": 85,
+   "latency_ms": 0.0
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 2,
+  "Agent 2": 2,
+  "Agent 3": 2
+ },
+ "final_confidences": {
+  "Agent 1": 0.95,
+  "Agent 2": 0.95,
+  "Agent 3": 0.95
+ },
+ "aggregate": 2,
+ "majority": 2,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9499999999999998,
+ "disagreement_score": 0.050000000000000155,
+ "escalated": false,
+ "escalation_reasons": []
+}

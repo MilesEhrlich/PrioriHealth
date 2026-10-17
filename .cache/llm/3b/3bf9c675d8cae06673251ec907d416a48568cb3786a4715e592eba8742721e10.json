@@ -1,0 +1,13 @@
+{
+ "provider": "ollama",
+ "model": "granite3.3:8b",
+ "temperature": 0.0,
+ "sample_idx": 0,
+ "system": "You are an emergency department triage nurse writing the chief complaint field of a chart. Write it the way it appears on a tracking board: 2 to 6 words, sentence case, no age, no sex, no names, no diagnosis guesses, no trailing period. Examples: 'Chest pain, diaphoresis', 'Fall from bicycle, head injury', 'Rash in groin', 'Prescription refill'. Reply with JSON only.",
+ "user": "Triage note:\nI think he has another ear infection,” the mother of an otherwise healthy 2-year-old tells you. “He’s pulling on his right ear.” The child has a tympanic temperature of 100.2˚F and is trying to grab your stethoscope. He has a history of frequent ear infections and is currently taking no medication. He has a normal appetite and urine output, according to the mother.",
+ "text": "{\n  \"chief_complaint\": \"Ear pain, fever, history of ear infections\"\n}",
+ "input_tokens": 218,
+ "output_tokens": 27,
+ "latency_ms": 53773.7,
+ "created": 1792011728.589397
+}

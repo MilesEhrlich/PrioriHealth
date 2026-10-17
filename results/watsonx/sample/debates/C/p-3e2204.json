@@ -1,0 +1,162 @@
+{
+ "patient_id": "p-3e2204",
+ "condition": "C",
+ "agents": [
+  "Cautious Clinician",
+  "Resource Manager",
+  "Equity Auditor"
+ ],
+ "round1": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.9,
+    "key_findings": [
+     "Fever 38°C in infant < 3 months",
+     "Tachypnea RR 40",
+     "Tachycardia HR 132"
+    ],
+    "rationale": "Fever in a young infant raises concern for serious bacterial infection, requiring evaluation. Tachypnea and tachycardia are abnormal vital signs for age, indicating potential respiratory distress or sepsis. The nasal mucus is notable but not life-threatening."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 616,
+   "output_tokens": 114,
+   "latency_ms": 6973.1
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 1,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Tachypnea (RR 40)",
+     "Tachycardia (HR 132)",
+     "Normal SpO2 (99%)"
+    ],
+    "rationale": "Baby meets criteria for ESI 3: 2 distinct resources (oxygen saturation monitoring and respiratory support if needed). No life-threatening condition (A) or high-risk situation requiring immediate care (B). Distinct resources count is 2, so proceed to D. Vitals are not in danger zone, so ESI 3 is appropriate."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 606,
+   "output_tokens": 129,
+   "latency_ms": 7747.4
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Tachypnea (RR 40) in infant",
+     "SpO2 99% (not <92%)",
+     "Alert, no distress"
+    ],
+    "rationale": "Infant RR >40 meets danger-zone tachypnea for ESI 2. No life threat, no high-risk features, only 1 resource (possible labs/imaging)."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 606,
+   "output_tokens": 89,
+   "latency_ms": 7973.9
+  }
+ ],
+ "round2": [
+  {
+   "agent": "Cautious Clinician",
+   "round": 2,
+   "output": {
+    "esi": 2,
+    "confidence": 0.9,
+    "key_findings": [
+     "Fever 38°C in infant < 3 months",
+     "Tachypnea RR 40",
+     "Tachycardia HR 132"
+    ],
+    "rationale": "Fever in a young infant raises concern for serious bacterial infection, requiring evaluation. Tachypnea and tachycardia are abnormal vital signs for age, indicating potential respiratory distress or sepsis. The nasal mucus is notable but not life-threatening.",
+    "change_reason": "The Resource Manager correctly identified that the infant meets ESI 3 criteria based on the distinct resources required (monitoring and potential respiratory support) and the absence of life-threatening conditions or high-risk situations. The fever and tachycardia are concerning but do…"
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 1016,
+   "output_tokens": 220,
+   "latency_ms": 37391.0
+  },
+  {
+   "agent": "Resource Manager",
+   "round": 2,
+   "output": {
+    "esi": 3,
+    "confidence": 0.95,
+    "key_findings": [
+     "Tachypnea (RR 40)",
+     "Tachycardia (HR 132)",
+     "Normal SpO2 (99%)"
+    ],
+    "rationale": "Infant meets ESI 3 criteria: 2 distinct resources (monitoring, respiratory support if needed) and no life-threatening condition (A) or high-risk situation (B). Vitals not in danger zone, so ESI 3 is appropriate.",
+    "change_reason": "The patient is a 3-month-old infant with tachypnea (RR 40) and tachycardia (HR 132), but no fever or other signs of serious bacterial infection. The nasal mucus is notable but not life-threatening. The infant is alert and looking around, with…"
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 1008,
+   "output_tokens": 244,
+   "latency_ms": 38267.6
+  },
+  {
+   "agent": "Equity Auditor",
+   "round": 2,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Fever 38°C in infant <3 months",
+     "Tachypnea RR 40",
+     "Alert, no distress"
+    ],
+    "rationale": "Fever in a young infant raises concern for serious bacterial infection, requiring evaluation. Tachypnea meets danger-zone tachypnea for ESI 2. No life threat, no high-risk features beyond fever, only 1 resource (possible labs/imaging).",
+    "change_reason": "The other panel members correctly identified the fever as a key clinical finding that elevates the acuity to ESI 2 for a febrile infant <3 months, which I initially missed."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 1007,
+   "output_tokens": 152,
+   "latency_ms": 38360.6
+  }
+ ],
+ "early_stopped": false,
+ "final_esis": {
+  "Cautious Clinician": 2,
+  "Resource Manager": 3,
+  "Equity Auditor": 2
+ },
+ "final_confidences": {
+  "Cautious Clinician": 0.9,
+  "Resource Manager": 0.95,
+  "Equity Auditor": 0.95
+ },
+ "aggregate": 2,
+ "majority": 2,
+ "disagreement_range": 1,
+ "mean_confidence": 0.9333333333333332,
+ "disagreement_score": 1.0666666666666669,
+ "escalated": true,
+ "escalation_reasons": [
+  "disagreement"
+ ]
+}

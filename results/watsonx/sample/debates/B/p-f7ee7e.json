@@ -1,0 +1,93 @@
+{
+ "patient_id": "p-f7ee7e",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3"
+ ],
+ "round1": [
+  {
+   "agent": "Agent 1",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Fever in neonate",
+     "Tachycardia, tachypnea",
+     "Well-appearing infant"
+    ],
+    "rationale": "Neonates with fever require immediate evaluation for serious bacterial infection, meeting high-risk criteria for ESI 2. While vitals are abnormal, the infant is acting appropriately, avoiding immediate life-saving intervention of ESI 1."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 528,
+   "output_tokens": 106,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 2",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.9,
+    "key_findings": [
+     "Fever in neonate 1-28 days old",
+     "Tachycardia and tachypnea",
+     "Well-appearing infant"
+    ],
+    "rationale": "Neonate 1-28 days with fever should be considered high-risk (ESI 2). Tachycardia and tachypnea support this. Infant is acting well, no other concerning findings."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 528,
+   "output_tokens": 116,
+   "latency_ms": 0.0
+  },
+  {
+   "agent": "Agent 3",
+   "round": 1,
+   "output": {
+    "esi": 2,
+    "confidence": 0.95,
+    "key_findings": [
+     "Fever in neonate <28 days",
+     "Tachycardia and tachypnea",
+     "Well appearing infant"
+    ],
+    "rationale": "Fever in a neonate <28 days is a high-risk situation requiring immediate assessment. HR and RR are elevated but the infant appears well. No other life-threatening or urgent findings."
+   },
+   "failure": null,
+   "repaired": false,
+   "notes": [],
+   "calls": 1,
+   "input_tokens": 528,
+   "output_tokens": 84,
+   "latency_ms": 0.0
+  }
+ ],
+ "round2": [],
+ "early_stopped": true,
+ "final_esis": {
+  "Agent 1": 2,
+  "Agent 2": 2,
+  "Agent 3": 2
+ },
+ "final_confidences": {
+  "Agent 1": 0.95,
+  "Agent 2": 0.9,
+  "Agent 3": 0.95
+ },
+ "aggregate": 2,
+ "majority": 2,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9333333333333332,
+ "disagreement_score": 0.06666666666666676,
+ "escalated": false,
+ "escalation_reasons": []
+}

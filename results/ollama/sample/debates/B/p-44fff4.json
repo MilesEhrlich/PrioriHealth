@@ -1,0 +1,1194 @@
+{
+ "patient_id": "p-44fff4",
+ "condition": "B",
+ "agents": [
+  "Agent 1",
+  "Agent 2",
+  "Agent 3",
+  "Agent 4",
+  "Agent 5",
+  "Agent 6",
+  "Agent 7",
+  "Agent 8",
+  "Agent 9",
+  "Agent 10"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Agent 1",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.99,
+     "key_findings": [
+      "Patient with suspected corneal abrasion",
+      "Right eye red and tearing",
+      "Pain level 6/10"
+     ],
+     "rationale": "Patient reports trauma to eye with foreign body (contact lens) and presents with redness, tearing, and pain. These findings suggest a possible corneal abrasion, which can lead to serious complications if left untreated. Although pain level is 6/10, vital signs are normal, and no immediate life-saving intervention is needed, the condition should be evaluated and managed promptly to prevent potential…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 621,
+    "output_tokens": 167,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Patient with suspected corneal abrasion",
+      "Reported pain of 6/10",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "The patient's condition does not meet criteria for ESI 1-4. She presents with a red, tearing right eye and reports moderate pain (6/10). However, her vital signs are within normal limits, and there is no immediate life-threatening situation or high-risk condition that would warrant a higher ESI level. The absence of immediate life-saving intervention needs, lack of high-risk situation, and…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 621,
+    "output_tokens": 161,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Patient with corneal abrasion",
+      "Reports pain of 6/10",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "The patient presents with a corneal abrasion, reporting a pain level of 6/10. However, vital signs are within normal limits and there is no evidence of immediate life-saving intervention needed (A), nor is the situation high-risk requiring no delay in care (B). The patient does not require immediate imaging, labs, or complex procedures (C). Given the lack of danger-zone vitals…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 621,
+    "output_tokens": 168,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Patient with red and tearing eye, reported corneal abrasion",
+      "Reported pain of 6/10",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "The patient's symptoms, though painful, do not meet the criteria for immediate life-saving intervention, high-risk situation, or require extensive resources. Vital signs are normal, and the condition is not in a 'danger-zone'. This is a non-urgent condition, thus ESI level 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 621,
+    "output_tokens": 130,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Red and tearing right eye after corneal abrasion",
+      "Moderate pain, 6/10"
+     ],
+     "rationale": "The patient reports a corneal abrasion with associated moderate pain and photophobia. While not immediately life-threatening, this condition could potentially lead to a corneal ulcer or infection if left untreated, necessitating urgent ophthalmologic evaluation."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 621,
+    "output_tokens": 117,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 1,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Patient with scratched cornea",
+      "Wearing sunglasses due to light sensitivity",
+      "Right eye red and tearing, pain level 6/10"
+     ],
+     "rationale": "The patient's symptoms are consistent with a corneal abrasion, which is a non-life-threatening condition. The pain level is moderate (6/10), and vital signs are normal. There are no immediate life-saving interventions needed, and no high-risk situations identified. The patient does not require immediate resources such as labs, imaging, or complex procedures. The condition is not in a danger-zone for vitals.…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 621,
+    "output_tokens": 174,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Patient with corneal abrasion, redness, tearing, and pain 6/10",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "The patient reports a corneal abrasion with associated redness, tearing, and pain (6/10). Although pain is present, it does not meet the threshold for immediate life-saving intervention (ESI 1) or require urgent intervention without delay (ESI 2). The patient's vital signs are within normal limits. Given the distinct resource types needed (ECG not required, but potential for CT/MRI/US if infection…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 621,
+    "output_tokens": 181,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 8",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Patient with corneal abrasion, red eye, tearing, and moderate pain (6/10)"
+     ],
+     "rationale": "Patient presents with signs and symptoms of corneal abrasion, including redness, tearing, and moderate pain. Although painful, the condition does not meet ESI 1 or 2 criteria as it does not require immediate life-saving intervention or pose an imminent threat to life. The condition is not high-risk in nature and does not require resources beyond those available in a typical…"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [
+     "rationale_clipped"
+    ],
+    "calls": 1,
+    "input_tokens": 621,
+    "output_tokens": 168,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 9",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.99,
+     "key_findings": [
+      "Patient with suspected corneal abrasion",
+      "Right eye red and tearing",
+      "Pain level 6/10"
+     ],
+     "rationale": "Patient presents with symptoms suggestive of corneal abrasion including eye redness, tearing, and pain. These findings align with ESI level 4, as they indicate a condition that should not wait but does not require immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 621,
+    "output_tokens": 113,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 10",
+    "round": 1,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Patient with corneal abrasion, red eye, tearing, pain 6/10",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "Patient presents with corneal abrasion, red eye, tearing, and moderate pain (6/10). Although painful, vital signs are within normal limits, and the condition is not immediately life-threatening. However, it requires prompt ophthalmologic evaluation to prevent potential complications such as corneal ulcer or endophthalmitis. Therefore, it is classified as ESI level 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 621,
+    "output_tokens": 159,
+    "latency_ms": 0.0
+   }
+  ],
+  [
+   {
+    "agent": "Agent 1",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.99,
+     "key_findings": [
+      "Corneal abrasion with redness, tearing, pain (6/10)"
+     ],
+     "rationale": "Patient reports eye trauma from contact lens with redness, tearing, and moderate pain. These findings suggest a possible corneal abrasion, which, if left untreated, could lead to complications. Vital signs are within normal limits.",
+     "message": "I agree with Agents 5, 7, 8, 9, and 10 that this case warrants an ESI level 4 due to the potential for serious complications if not treated promptly. I disagree with Agents 2, 3, 4, 6, and 10 regarding the urgency, as the patient's vital signs are within normal limits and do not indicate an immediate life-threatening situation.",
+     "change_reason": "None, as I initially assigned ESI 4 and agree with the majority of panel members."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1567,
+    "output_tokens": 229,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "Corneal abrasion with pain",
+      "Normal vital signs"
+     ],
+     "rationale": "Although the patient reports a corneal abrasion with moderate pain, vital signs are within normal limits and there's no immediate life-threatening situation or high-risk condition requiring no delay in care (B).",
+     "message": "I agree with Agents 1, 4, 5, 7, 9, and 10. The patient's condition should not wait but does not require immediate life-saving intervention. Change reason: I initially overlooked the moderate pain level as not meeting ESI 2 criteria.",
+     "change_reason": "I initially overlooked the moderate pain level as not meeting ESI 2 criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1567,
+    "output_tokens": 185,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 3",
+    "round": 2,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Corneal abrasion with pain 6/10",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "The patient presents with a corneal abrasion, reporting a pain level of 6/10. However, vital signs are within normal limits, and there is no evidence of immediate life-saving intervention needed (A), nor is the situation high-risk requiring no delay in treatment (B).",
+     "message": "I concur with the majority decision for ESI 5. The patient's condition, while painful, does not meet the criteria for ESI 1-4 due to normal vital signs and no immediate life-threatening situation or high-risk factors.",
+     "change_reason": "None, I agree with the consensus for ESI 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1567,
+    "output_tokens": 193,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 4",
+    "round": 2,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Corneal abrasion with redness, tearing, and pain (6/10)",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient's symptoms, though painful, do not meet criteria for immediate life-saving intervention, high-risk situation, or require extensive resources. Vital signs are normal, and the condition is not in a 'danger-zone'.",
+     "message": "I agree with the majority. The patient's condition is non-life-threatening and does not require immediate intervention.",
+     "change_reason": "None, I concur with the consensus."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1567,
+    "output_tokens": 152,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 5",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Corneal abrasion with photophobia and moderate pain",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "The patient's symptoms and vital signs align with ESI level 4, indicating a condition requiring urgent attention but not immediately life-threatening.",
+     "message": "I concur with the majority decision for ESI 4. The patient's corneal abrasion, along with moderate pain and photophobia, necessitates urgent ophthalmologic evaluation. Vital signs are within normal limits, so it doesn't meet ESI 1 or 2 criteria.",
+     "change_reason": "No change needed; the decision aligns with the ESI level 4 criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1567,
+    "output_tokens": 181,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 2,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Corneal abrasion",
+      "Moderate pain (6/10)",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient's symptoms align with a corneal abrasion, which is non-life-threatening. Pain level is moderate, and vital signs are normal, not requiring immediate life-saving intervention or high-risk situation.",
+     "message": "I concur with the majority, ESI 5 is appropriate given the non-urgent nature of the corneal abrasion with moderate pain and normal vital signs.",
+     "change_reason": "No specific clinical finding or ESI step was missed; I agree with the panel's consensus for ESI 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1567,
+    "output_tokens": 176,
+    "latency_ms": 0.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "Corneal abrasion with redness, tearing, and pain (6/10)",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient's condition, while painful, does not meet criteria for immediate life-saving intervention (ESI 1) or high-risk situation requiring no delay (ESI 2). It does warrant urgent ophthalmologic evaluation to prevent potential complications.",
+     "message": "I agree with the majority opinion for ESI 4. The patient's corneal abrasion, although painful, does not necessitate immediate life-saving intervention or pose an imminent threat to life. Normal vital signs support this ESI level.",
+     "change_reason": "No changes needed as the initial assessment aligns with the majority opinion."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1567,
+    "output_tokens": 196,
+    "latency_ms": 33557.8
+   },
+   {
+    "agent": "Agent 8",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "Corneal abrasion with redness, tearing, and moderate pain (6/10)"
+     ],
+     "rationale": "Patient presents with signs and symptoms of corneal abrasion, including redness, tearing, and moderate pain. Although painful, the condition does not require immediate life-saving intervention or pose an imminent threat.",
+     "message": "I agree with the majority opinion for ESI 4. The patient's condition, while painful, does not meet ESI 1 or 2 criteria as it does not require immediate life-saving intervention or pose an imminent threat. The vital signs are within normal limits, and although there is a risk of complications, it does not necessitate a higher ESI level.",
+     "change_reason": "None, as the majority opinion aligns with my assessment."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1567,
+    "output_tokens": 207,
+    "latency_ms": 15063.5
+   },
+   {
+    "agent": "Agent 9",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.99,
+     "key_findings": [
+      "Corneal abrasion symptoms: redness, tearing, pain (6/10)",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "Patient's symptoms align with ESI level 4, indicating a condition requiring attention but not immediate life-saving intervention.",
+     "message": "Agree with Agents 1, 5, 7, 8, and 10. Disagree with Agents 2, 6, and 4 due to the moderate pain and risk of complications.",
+     "change_reason": "None, as I initially assigned ESI 4 and stand by my assessment."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1567,
+    "output_tokens": 159,
+    "latency_ms": 12564.8
+   },
+   {
+    "agent": "Agent 10",
+    "round": 2,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "Corneal abrasion with redness, tearing, and moderate pain (6/10)"
+     ],
+     "rationale": "Patient reports trauma to eye with foreign body (contact lens), presenting with redness, tearing, and pain. These findings suggest a possible corneal abrasion, which can lead to serious complications if left untreated.",
+     "message": "I agree with Agents 1, 5, 7, 8, and 9. Although painful, the condition does not meet ESI 1 or 2 criteria as it does not require immediate life-saving intervention or pose an imminent threat. The patient's vital signs are within normal limits, and it requires urgent ophthalmologic evaluation to prevent potential complications.",
+     "change_reason": "No specific clinical finding or ESI step was missed. The panel's decision aligns with my assessment."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1566,
+    "output_tokens": 221,
+    "latency_ms": 15798.7
+   }
+  ],
+  [
+   {
+    "agent": "Agent 1",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.99,
+     "key_findings": [
+      "Corneal abrasion with moderate pain",
+      "Photophobia",
+      "Normal vital signs"
+     ],
+     "rationale": "Patient's condition warrants ESI 4 due to potential for serious complications if not treated promptly, with moderate pain and photophobia, but normal vital signs.",
+     "message": "Respectfully disagree with Agents 3, 4, 6, and Agents 2's initial stance, as the patient's condition, although painful, does not meet ESI 1-2 criteria. It requires urgent ophthalmologic evaluation but does not necessitate immediate life-saving intervention.",
+     "change_reason": "Initially overlooked the moderate pain level as not meeting ESI 2 criteria, but it supports ESI 4 based on potential complications."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1471,
+    "output_tokens": 205,
+    "latency_ms": 15035.7
+   },
+   {
+    "agent": "Agent 2",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "Corneal abrasion",
+      "Moderate pain",
+      "Photophobia"
+     ],
+     "rationale": "Patient's condition warrants ESI 4 due to potential for serious complications if not treated promptly, despite normal vital signs and no immediate life-threatening situation.",
+     "message": "I agree with Agents 1, 4, 5, 7, 8, and 10. I initially overlooked the moderate pain level as not meeting ESI 2 criteria.",
+     "change_reason": "Re-evaluated pain level and its implications on treatment urgency."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1471,
+    "output_tokens": 153,
+    "latency_ms": 11860.7
+   },
+   {
+    "agent": "Agent 3",
+    "round": 3,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Corneal abrasion with moderate pain",
+      "Photophobia",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient's condition, while painful, does not meet ESI 1-4 criteria due to normal vital signs and no immediate life-threatening situation or high-risk factors.",
+     "message": "I concur with the majority decision for ESI 5. The patient's condition, although painful, does not meet ESI 1-4 criteria due to normal vital signs and no immediate life-threatening situation or high-risk factors.",
+     "change_reason": "No changes needed as I correctly identified the patient's condition does not meet ESI 1-4 criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1471,
+    "output_tokens": 176,
+    "latency_ms": 13139.7
+   },
+   {
+    "agent": "Agent 4",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.99,
+     "key_findings": [
+      "Corneal abrasion",
+      "Moderate pain",
+      "Photophobia"
+     ],
+     "rationale": "The patient presents with a corneal abrasion, moderate pain, and photophobia, which warrants urgent ophthalmologic evaluation. Vital signs are within normal limits, so it doesn't meet ESI 1 or 2 criteria. I agree with Agents 1, 5, 7, 9, and 10, disagreeing with Agents 2, 6, and 4 due to the moderate pain and risk of complications.",
+     "message": "I concur with Agents 1, 5, 7, 9, and 10, disagreeing with Agents 2, 6, and 4 due to the moderate pain and risk of complications.",
+     "change_reason": "None, I agree with the majority opinion for ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1471,
+    "output_tokens": 228,
+    "latency_ms": 15789.8
+   },
+   {
+    "agent": "Agent 5",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Corneal abrasion with moderate pain",
+      "Photophobia",
+      "Normal vital signs"
+     ],
+     "rationale": "ESI 4 due to potential for serious complications if not treated promptly, although not requiring immediate life-saving intervention.",
+     "message": "I concur with Agents 1, 5, 7, 8, and 9. Disagree with Agents 2, 4, 6 regarding the need for urgent ophthalmologic evaluation.",
+     "change_reason": "No change in ESI; reaffirmed decision based on majority consensus and patient's need for prompt specialty care."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1471,
+    "output_tokens": 163,
+    "latency_ms": 12404.8
+   },
+   {
+    "agent": "Agent 6",
+    "round": 3,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Corneal abrasion with moderate pain",
+      "Photophobia",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient's condition does not meet ESI 1-4 criteria due to normal vital signs and no immediate life-threatening situation or high-risk factors.",
+     "message": "I concur with Agents 3, 4, 8, and 9 who agree on ESI 5. The patient's pain, although moderate, and risk of complications warrant urgent ophthalmologic evaluation, but do not meet ESI 1-4 criteria due to normal vital signs and lack of immediate life-threatening situation.",
+     "change_reason": "No changes needed as all clinical findings align with ESI 5."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1471,
+    "output_tokens": 191,
+    "latency_ms": 13917.0
+   },
+   {
+    "agent": "Agent 7",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "27-year-old female with corneal abrasion",
+      "moderate pain (6/10)",
+      "photophobia"
+     ],
+     "rationale": "The patient's condition requires urgent ophthalmologic evaluation due to corneal abrasion and moderate pain, but does not meet ESI 1 or 2 criteria as it does not require immediate life-saving intervention or pose an imminent threat. Vital signs are within normal limits.",
+     "message": "I concur with Agents 1, 5, 7, 8, and 9. Disagree with Agents 2, 6, and 4 due to the moderate pain and risk of complications.",
+     "change_reason": "None, agreement with the majority opinion."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1471,
+    "output_tokens": 192,
+    "latency_ms": 13876.7
+   },
+   {
+    "agent": "Agent 8",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "Moderate pain from corneal abrasion",
+      "Photophobia",
+      "Normal vital signs"
+     ],
+     "rationale": "Patient presents with painful corneal abrasion, photophobia, and normal vital signs. Does not meet ESI 1 or 2 criteria as it doesn't require immediate life-saving intervention or pose imminent threat.",
+     "message": "I agree with Agents 1, 2, 4, 5, 7, 9, and 10. Disagree with Agents 3, 6, as the condition, while painful, does not warrant ESI 5 due to normal vital signs and lack of immediate life-threatening situation.",
+     "change_reason": "None, as all relevant ESI steps were considered."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1471,
+    "output_tokens": 197,
+    "latency_ms": 14397.9
+   },
+   {
+    "agent": "Agent 9",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.99,
+     "key_findings": [
+      "27-year-old female with corneal abrasion",
+      "moderate pain (6/10)",
+      "photophobia"
+     ],
+     "rationale": "ESI 4 due to potential for serious complications if not treated promptly",
+     "message": "I agree with Agents 1, 5, 7, 8, and 10. Disagree with Agents 2, 4, 6 due to the moderate pain and risk of complications",
+     "change_reason": "No, I did not initially miss the moderate pain level as not meeting ESI 2 criteria"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1471,
+    "output_tokens": 154,
+    "latency_ms": 35689.5
+   },
+   {
+    "agent": "Agent 10",
+    "round": 3,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "27-year-old female with corneal abrasion, photophobia, tearing, and pain level 6/10; vital…"
+     ],
+     "rationale": "The patient's condition, while painful, does not require immediate life-saving intervention or pose an imminent threat to life. Normal vital signs support ESI 4.",
+     "message": "I agree with Agents 1, 5, 7, 8, and 9. Disagree with Agents 2, 4, and 6 due to the moderate pain and risk of complications. The patient's vital signs are within normal limits, and the condition does not meet ESI 1 or 2 criteria.",
+     "change_reason": "None, as the clinical findings and rationale align with the agreed-upon ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1470,
+    "output_tokens": 210,
+    "latency_ms": 64703.7
+   }
+  ],
+  [
+   {
+    "agent": "Agent 1",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.99,
+     "key_findings": [
+      "Moderate pain from corneal abrasion",
+      "Right eye redness and tearing",
+      "Normal vital signs"
+     ],
+     "rationale": "ESI 4 justified by moderate pain, need for urgent ophthalmologic evaluation, but no immediate life-saving intervention required.",
+     "message": "Respectfully maintain ESI 4, agreeing with Agents 1, 4, 5, 7, 8, and 10. Disagree with Agents 2, 6 regarding the need for ESI 5.",
+     "change_reason": "No change in ESI; previously stated rationale holds."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1490,
+    "output_tokens": 163,
+    "latency_ms": 48134.0
+   },
+   {
+    "agent": "Agent 2",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "Moderate pain",
+      "Red and tearing right eye",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient reports moderate pain and has signs of a possible corneal abrasion (red and tearing right eye). However, vital signs are normal and there is no immediate life-threatening situation or high-risk factors. This warrants urgent ophthalmologic evaluation but does not meet ESI 1-2 criteria.",
+     "message": "I concur with Agents 1, 4, 5, 7, 8, and 10. I initially overlooked the moderate pain level as not meeting ESI 2 criteria.",
+     "change_reason": "None, I concur with the previous assessment."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1490,
+    "output_tokens": 185,
+    "latency_ms": 19685.3
+   },
+   {
+    "agent": "Agent 3",
+    "round": 4,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Moderate pain due to corneal abrasion",
+      "Eye redness and tearing",
+      "Needs urgent ophthalmologic evaluation"
+     ],
+     "rationale": "Moderate pain and risk of complications from corneal abrasion warrant urgent ophthalmologic evaluation, despite normal vital signs.",
+     "message": "Respectfully stand by ESI 5, acknowledging Agents 1, 4, 5, 7, 8, and 9's agreement, despite the majority initially leaning towards ESI 4. The patient's condition, while not immediately life-threatening, necessitates urgent specialty care.",
+     "change_reason": "None, in agreement with the majority's reasoning."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1490,
+    "output_tokens": 183,
+    "latency_ms": 50855.9
+   },
+   {
+    "agent": "Agent 4",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.99,
+     "key_findings": [
+      "Moderate pain, corneal abrasion",
+      "Normal vital signs"
+     ],
+     "rationale": "Concurs with Agents 1, 5, 7, 8, and 10. Disagrees with Agents 2, 4, 6 due to moderate pain and risk of complications. Requires urgent ophthalmologic evaluation, but no immediate life-saving intervention.",
+     "message": "Thank you for your deliberations. I concur with Agents 1, 5, 7, 8, and 10. I disagree with Agents 2, 4, and 6 due to the moderate pain and risk of complications. The patient's condition requires urgent ophthalmologic evaluation, but does not meet ESI 1-2 criteria for immediate life-saving intervention.",
+     "change_reason": "No changes, as the clinical findings align with the rationale for ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1490,
+    "output_tokens": 235,
+    "latency_ms": 86506.9
+   },
+   {
+    "agent": "Agent 5",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Moderate pain, corneal abrasion",
+      "Normal vital signs",
+      "Requires urgent ophthalmologic evaluation"
+     ],
+     "rationale": "Patient reports moderate pain from a suspected corneal abrasion, with normal vital signs. Urgent ophthalmologic evaluation is needed, but no immediate life-saving intervention is required.",
+     "message": "Agree with Agents 1, 5, 7, 8, and 9. Disagree with Agents 2, 4, and 6 regarding the need for urgent ophthalmologic evaluation.",
+     "change_reason": "No change in ESI, as the initial assessment remains consistent with a moderate pain condition requiring urgent but not emergent care."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1490,
+    "output_tokens": 191,
+    "latency_ms": 58073.7
+   },
+   {
+    "agent": "Agent 6",
+    "round": 4,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Moderate pain, corneal abrasion",
+      "Normal vital signs"
+     ],
+     "rationale": "Despite normal vital signs, moderate pain and risk of complications warrant urgent ophthalmologic evaluation.",
+     "message": "Respectfully concur with Agents 1, 4, 7, 8, and 9; however, disagree with Agents 2, 3, 6 due to the moderate pain and risk of complications.",
+     "change_reason": "No changes, as initial assessment aligns with ESI 5 criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1490,
+    "output_tokens": 149,
+    "latency_ms": 47990.5
+   },
+   {
+    "agent": "Agent 7",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "Moderate pain, corneal abrasion",
+      "Normal vital signs",
+      "Urgent ophthalmologic evaluation needed"
+     ],
+     "rationale": "Patient reports moderate pain (6/10) from suspected corneal abrasion, with redness and tearing in the right eye. Vital signs are normal. Requires urgent ophthalmologic evaluation but doesn't meet ESI 1-3 criteria.",
+     "message": "Agree with Agents 1, 5, 7, 8, and 9 regarding ESI 4. Disagree with Agents 2, 4, 6 due to moderate pain and risk of complications.",
+     "change_reason": "None, as the clinical findings support ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1490,
+    "output_tokens": 192,
+    "latency_ms": 83066.5
+   },
+   {
+    "agent": "Agent 8",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "Moderate pain",
+      "Red and tearing right eye",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient's condition, although painful, does not meet ESI 1-2 criteria as there's no immediate life-threatening situation or high-risk factors. It requires urgent ophthalmologic evaluation.",
+     "message": "Respectfully agree with Agents 1, 2, 4, 5, 7, 8, and 10. Disagree with Agents 3, 6, as the condition, while painful, does not warrant ESI 5 due to normal vital signs and lack of immediate life-threatening situation.",
+     "change_reason": "No changes, as the initial assessment and rationale remain consistent."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1490,
+    "output_tokens": 190,
+    "latency_ms": 58052.4
+   },
+   {
+    "agent": "Agent 9",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.99,
+     "key_findings": [
+      "Moderate pain from corneal abrasion",
+      "Red and tearing right eye",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient presents with moderate pain, visible signs of corneal trauma, and a need for urgent ophthalmologic evaluation. Although not meeting ESI 1-2 criteria, the condition warrants immediate attention and cannot wait.",
+     "message": "Respectfully agree with Agents 1, 5, 7, 8, and 10. Disagree with Agents 2, 4, and 6 due to the moderate pain and risk of complications.",
+     "change_reason": "No change in ESI level; agreed upon ESI 4 based on the clinical findings."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1490,
+    "output_tokens": 186,
+    "latency_ms": 65003.5
+   },
+   {
+    "agent": "Agent 10",
+    "round": 4,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "Moderate pain",
+      "Risk of corneal complications",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient's condition, although painful, does not meet ESI 1-2 criteria. It requires urgent ophthalmologic evaluation but does not necessitate immediate life-saving intervention.",
+     "message": "Respectfully agree with Agents 1, 5, 7, 8, and 9. Disagree with Agents 2, 4, and 6 due to the moderate pain and risk of complications. The patient's vital signs are within normal limits.",
+     "change_reason": "No changes, as all clinical findings align with ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1489,
+    "output_tokens": 177,
+    "latency_ms": 72957.8
+   }
+  ],
+  [
+   {
+    "agent": "Agent 1",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.99,
+     "key_findings": [
+      "Moderate pain (6/10), red and tearing right eye",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "Respectfully maintain ESI 4, agreeing with Agents 1, 4, 5, 7, 8, and 10. Disagree with Agents 2, 6 regarding the need for ESI 5. The patient's condition requires urgent ophthalmologic evaluation, but vital signs are normal and no immediate life-threatening situation.",
+     "message": "Respectfully maintain ESI 4, agreeing with Agents 1, 4, 5, 7, 8, and 10. Disagree with Agents 2, 6 regarding the need for ESI 5. The patient's condition requires urgent ophthalmologic evaluation, but vital signs are normal and no immediate life-threatening situation.",
+     "change_reason": "None, maintaining original ESI 4 position."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1497,
+    "output_tokens": 239,
+    "latency_ms": 66290.3
+   },
+   {
+    "agent": "Agent 2",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "Moderate pain",
+      "Red and tearing right eye",
+      "Normal vital signs"
+     ],
+     "rationale": "The patient's moderate pain and potential for complications warrant urgent ophthalmologic evaluation, but the vital signs are within normal limits and there's no immediate life-threatening situation.",
+     "message": "Respectfully maintain ESI 4, agreeing with Agents 1, 4, 5, 7, 8, and 10. Disagree with Agents 2, 3, 6 regarding the need for ESI 5.",
+     "change_reason": "No change in ESI, as I initially overlooked the moderate pain level as not meeting ESI 2 criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1497,
+    "output_tokens": 182,
+    "latency_ms": 60065.9
+   },
+   {
+    "agent": "Agent 3",
+    "round": 5,
+    "output": {
+     "esi": 5,
+     "confidence": 1.0,
+     "key_findings": [
+      "Moderate pain from corneal abrasion",
+      "Red eye, tearing",
+      "Normal vital signs"
+     ],
+     "rationale": "Despite normal vital signs, moderate pain and risk of complications necessitate urgent ophthalmologic evaluation.",
+     "message": "Respectfully stand by ESI 5, acknowledging Agents 1, 4, 5, 7, 8, and 9's agreement, despite the majority initially leaning towards ESI 4. The patient's condition, while not immediately life-threatening, necessitates urgent specialty care.",
+     "change_reason": "No, I did not miss any clinical findings or ESI steps. I stand by the decision to assign ESI 5 based on the moderate pain and risk of complications."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1497,
+    "output_tokens": 199,
+    "latency_ms": 76317.8
+   },
+   {
+    "agent": "Agent 4",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.99,
+     "key_findings": [
+      "Moderate pain, 6/10",
+      "Red and tearing right eye",
+      "Potential corneal abrasion"
+     ],
+     "rationale": "Concur with Agents 1, 5, 7, 8, and 10. Disagree with Agents 2, 4, and 6 due to moderate pain and risk of complications. The patient's condition requires urgent ophthalmologic evaluation, but normal vital signs and lack of immediate life-threatening situation support ESI 4.",
+     "message": "Thank you for the discussion. I concur with Agents 1, 5, 7, 8, and 10. I disagree with Agents 2, 4, and 6 due to the moderate pain and risk of complications. The patient's condition requires urgent ophthalmologic evaluation, but normal vital signs and lack of immediate life-threatening situation support ESI 4.",
+     "change_reason": "No changes; concur with the majority for ESI 4 based on moderate pain, potential corneal abrasion, and normal vital signs."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1497,
+    "output_tokens": 272,
+    "latency_ms": 67591.1
+   },
+   {
+    "agent": "Agent 5",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.95,
+     "key_findings": [
+      "Moderate pain, red and tearing right eye, potential corneal abrasion"
+     ],
+     "rationale": "Moderate pain, potential corneal abrasion, requires urgent ophthalmologic evaluation",
+     "message": "Respectfully stand by ESI 4, agreeing with Agents 1, 5, 7, 8, and 10. Disagree with Agents 2, 4, and 6 regarding the need for ESI 5. Change reason: Acknowledged the moderate pain level as meeting ESI 2 criteria",
+     "change_reason": "Acknowledged the moderate pain level as meeting ESI 2 criteria"
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1497,
+    "output_tokens": 170,
+    "latency_ms": 70411.0
+   },
+   {
+    "agent": "Agent 6",
+    "round": 5,
+    "output": {
+     "esi": 5,
+     "confidence": 0.95,
+     "key_findings": [
+      "Moderate pain",
+      "Corneal abrasion",
+      "Risk of complications"
+     ],
+     "rationale": "Despite normal vital signs, moderate pain and risk of complications from corneal abrasion justify ESI 5.",
+     "message": "Respectfully concur with Agents 3 and disagree with Agents 2, 4, 6 due to moderate pain and risk of complications.",
+     "change_reason": "Agreed with Agents' reasoning but adjusted ESI based on pain level and potential complications."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1497,
+    "output_tokens": 142,
+    "latency_ms": 45176.3
+   },
+   {
+    "agent": "Agent 7",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "Moderate pain, corneal abrasion",
+      "Normal vital signs"
+     ],
+     "rationale": "Agree with Agents 1, 5, 7, 8, and 9. Disagree with Agents 2, 4, and 6 due to moderate pain and risk of complications. The patient's condition requires urgent ophthalmologic evaluation, but vital signs are normal, thus ESI 4.",
+     "message": "Respectfully agree with Agents 1, 5, 7, 8, and 9. Disagree with Agents 2, 4, and 6 due to moderate pain and risk of complications.",
+     "change_reason": "No changes, as the clinical findings align with ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1497,
+    "output_tokens": 193,
+    "latency_ms": 57216.2
+   },
+   {
+    "agent": "Agent 8",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "Moderate pain, corneal abrasion",
+      "Normal vital signs"
+     ],
+     "rationale": "Respectfully agree with Agents 1, 4, 5, 7, 8, and 10. Disagree with Agents 2, 6 as the condition, while painful, does not warrant ESI 5 due to normal vital signs and lack of immediate life-threatening situation.",
+     "message": "Respectfully agree with Agents 1, 4, 5, 7, 8, and 10. Disagree with Agents 2, 6 as the condition, while painful, does not warrant ESI 5 due to normal vital signs and lack of immediate life-threatening situation.",
+     "change_reason": "None, agreement with the majority for ESI 4 based on normal vital signs and lack of immediate life-threatening situation."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1497,
+    "output_tokens": 221,
+    "latency_ms": 53362.6
+   },
+   {
+    "agent": "Agent 9",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.99,
+     "key_findings": [
+      "Moderate pain, potential corneal abrasion",
+      "Vital signs normal"
+     ],
+     "rationale": "ESI 4 is appropriate due to moderate pain and risk of complications. Despite disagreement with Agents 3, 6 who advocated for ESI 5, the patient's vital signs remain within normal limits, and although concerning, the condition is not immediately life-threatening.",
+     "message": "Respectfully maintain ESI 4, agreeing with Agents 1, 4, 5, 7, 8, and 10. Disagree with Agents 2, 4, and 6 due to the moderate pain and risk of complications.",
+     "change_reason": "No change in ESI; previously held position."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1497,
+    "output_tokens": 192,
+    "latency_ms": 76344.8
+   },
+   {
+    "agent": "Agent 10",
+    "round": 5,
+    "output": {
+     "esi": 4,
+     "confidence": 0.98,
+     "key_findings": [
+      "Moderate pain, Corneal abrasion",
+      "Vital signs within normal limits"
+     ],
+     "rationale": "Moderate pain and risk of complications justify ESI 4, despite normal vital signs.",
+     "message": "Respectfully agree with Agents 1, 5, 7, 8, and 9. Disagree with Agents 2, 4, and 6 due to the moderate pain and risk of complications. The patient's vital signs are within normal limits.",
+     "change_reason": "None, agree with majority for ESI 4."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 1496,
+    "output_tokens": 149,
+    "latency_ms": 27246.2
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": false,
+ "consensus_share": 0.8,
+ "rounds_used": 5,
+ "first_round_esis": {
+  "Agent 1": 4,
+  "Agent 2": 5,
+  "Agent 3": 5,
+  "Agent 4": 5,
+  "Agent 5": 4,
+  "Agent 6": 5,
+  "Agent 7": 4,
+  "Agent 8": 4,
+  "Agent 9": 4,
+  "Agent 10": 4
+ },
+ "initial_range": 1,
+ "early_stopped": false,
+ "final_esis": {
+  "Agent 1": 4,
+  "Agent 2": 4,
+  "Agent 3": 5,
+  "Agent 4": 4,
+  "Agent 5": 4,
+  "Agent 6": 5,
+  "Agent 7": 4,
+  "Agent 8": 4,
+  "Agent 9": 4,
+  "Agent 10": 4
+ },
+ "final_confidences": {
+  "Agent 1": 0.99,
+  "Agent 2": 0.98,
+  "Agent 3": 1.0,
+  "Agent 4": 0.99,
+  "Agent 5": 0.95,
+  "Agent 6": 0.95,
+  "Agent 7": 0.98,
+  "Agent 8": 0.98,
+  "Agent 9": 0.99,
+  "Agent 10": 0.98
+ },
+ "aggregate": 4,
+ "majority": 4,
+ "disagreement_range": 1,
+ "mean_confidence": 0.9790000000000001,
+ "disagreement_score": 3.021,
+ "escalated": true,
+ "escalation_reasons": [
+  "no_consensus"
+ ]
+}

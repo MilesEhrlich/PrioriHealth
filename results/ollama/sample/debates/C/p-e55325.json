@@ -1,0 +1,280 @@
+{
+ "patient_id": "p-e55325",
+ "condition": "C",
+ "agents": [
+  "Empath",
+  "Logician",
+  "Skeptic",
+  "Observer",
+  "Synthesizer",
+  "Pragmatist",
+  "Vigilant",
+  "Impartial",
+  "Mediator",
+  "Reflective"
+ ],
+ "rounds": [
+  [
+   {
+    "agent": "Empath",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive",
+      "History of suicidality",
+      "Alcohol, unknown pills"
+     ],
+     "rationale": "The patient is unresponsive and found by parents with multiple bottles of alcohol and unidentified empty pill bottles, indicating a high-risk situation for overdose and suicidality. These factors align with ESI 1, requiring immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 652,
+    "output_tokens": 107,
+    "latency_ms": 2385604.9
+   },
+   {
+    "agent": "Logician",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive",
+      "Possible overdose",
+      "History of suicidality"
+     ],
+     "rationale": "Patient is unresponsive, found by parents near empty pill bottles, suggesting possible overdose. Given the history of suicidality, this presents an immediate life-saving situation, fulfilling ESI level 1 criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 642,
+    "output_tokens": 97,
+    "latency_ms": 2414060.8
+   },
+   {
+    "agent": "Skeptic",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive teenager",
+      "History of suicidality",
+      "Alcohol and unknown pills"
+     ],
+     "rationale": "Unresponsive 17-year-old with history of suicidality and potential overdose, fits ESI 1 for immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 644,
+    "output_tokens": 85,
+    "latency_ms": 2437286.8
+   },
+   {
+    "agent": "Observer",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive teenager",
+      "History of suicidality",
+      "Alcohol, unknown pills"
+     ],
+     "rationale": "Unresponsive patient with known suicidality, potential overdose, meets ESI 1 criteria."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 639,
+    "output_tokens": 73,
+    "latency_ms": 2456320.2
+   },
+   {
+    "agent": "Synthesizer",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive patient",
+      "History of suicidality",
+      "Alcohol, unknown pills"
+     ],
+     "rationale": "The patient is unresponsive, has a history of suicidality, and was found with alcohol and unidentified empty pill bottles. This fits the A. Needs immediate life-saving intervention criteria, thus assigned ESI 1."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 638,
+    "output_tokens": 102,
+    "latency_ms": 2481448.4
+   },
+   {
+    "agent": "Pragmatist",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive",
+      "History of suicidality",
+      "Alcohol and unknown pills"
+     ],
+     "rationale": "Patient is unresponsive and found by parents amidst empty pill bottles and alcohol, indicating a high-risk situation of overdose. The history of suicidality adds to the urgency, fulfilling ESI 1 criteria for needing immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 643,
+    "output_tokens": 108,
+    "latency_ms": 2508320.5
+   },
+   {
+    "agent": "Vigilant",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive",
+      "Empty pill bottles",
+      "Alcohol found"
+     ],
+     "rationale": "The patient is unresponsive and was found with empty pill bottles and alcohol, suggesting a possible overdose which is a life-threatening situation. This meets the criteria for ESI 1."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 643,
+    "output_tokens": 88,
+    "latency_ms": 2532036.2
+   },
+   {
+    "agent": "Impartial",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 1.0,
+     "key_findings": [
+      "Unresponsive teenager",
+      "Potential overdose",
+      "History of suicidality"
+     ],
+     "rationale": "The patient is an unresponsive 17-year-old male with a history of suicidality, found by parents next to empty alcohol bottles and unidentified pill bottles, indicating a potential overdose. This situation requires immediate life-saving intervention (ESI 1)."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 665,
+    "output_tokens": 111,
+    "latency_ms": 2563650.9
+   },
+   {
+    "agent": "Mediator",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 0.95,
+     "key_findings": [
+      "Unresponsive teenager",
+      "Possible overdose",
+      "History of suicidality"
+     ],
+     "rationale": "Patient is unresponsive, potential overdose with alcohol and unidentified pills, history of suicidality suggests high-risk situation. Meets ESI 1 criteria for immediate life-saving intervention."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 641,
+    "output_tokens": 94,
+    "latency_ms": 2592810.7
+   },
+   {
+    "agent": "Reflective",
+    "round": 1,
+    "output": {
+     "esi": 1,
+     "confidence": 0.95,
+     "key_findings": [
+      "Unresponsive",
+      "Possible overdose",
+      "History of suicidality"
+     ],
+     "rationale": "Patient is unresponsive, found by parents near empty pill bottles, suggesting possible overdose. Given the history of suicidality, immediate life-saving intervention is needed, thus ESI 1."
+    },
+    "failure": null,
+    "repaired": false,
+    "notes": [],
+    "calls": 1,
+    "input_tokens": 641,
+    "output_tokens": 89,
+    "latency_ms": 2621116.3
+   }
+  ]
+ ],
+ "consensus_protocol": true,
+ "consensus_threshold": 0.9,
+ "consensus_reached": true,
+ "consensus_share": 1.0,
+ "rounds_used": 1,
+ "first_round_esis": {
+  "Empath": 1,
+  "Logician": 1,
+  "Skeptic": 1,
+  "Observer": 1,
+  "Synthesizer": 1,
+  "Pragmatist": 1,
+  "Vigilant": 1,
+  "Impartial": 1,
+  "Mediator": 1,
+  "Reflective": 1
+ },
+ "initial_range": 0,
+ "early_stopped": true,
+ "final_esis": {
+  "Empath": 1,
+  "Logician": 1,
+  "Skeptic": 1,
+  "Observer": 1,
+  "Synthesizer": 1,
+  "Pragmatist": 1,
+  "Vigilant": 1,
+  "Impartial": 1,
+  "Mediator": 1,
+  "Reflective": 1
+ },
+ "final_confidences": {
+  "Empath": 1.0,
+  "Logician": 1.0,
+  "Skeptic": 1.0,
+  "Observer": 1.0,
+  "Synthesizer": 1.0,
+  "Pragmatist": 1.0,
+  "Vigilant": 1.0,
+  "Impartial": 1.0,
+  "Mediator": 0.95,
+  "Reflective": 0.95
+ },
+ "aggregate": 1,
+ "majority": 1,
+ "disagreement_range": 0,
+ "mean_confidence": 0.9899999999999999,
+ "disagreement_score": 0.01000000000000012,
+ "escalated": false,
+ "escalation_reasons": []
+}
