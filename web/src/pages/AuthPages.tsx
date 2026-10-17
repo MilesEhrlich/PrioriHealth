@@ -244,7 +244,7 @@ export function SignUpPage() {
             <div className="mt-2 flex items-center gap-2">
               <div className="flex flex-1 gap-1" aria-hidden>
                 {[1, 2, 3, 4].map((i) => (
-                  <span key={i} className={`h-1 flex-1 rounded-full ${i <= pw.score ? "bg-accent" : "bg-line"}`} />
+                  <span key={i} className={`h-1 flex-1 ${i <= pw.score ? "bg-accent" : "bg-line"}`} />
                 ))}
               </div>
               <span className="w-16 text-right text-xs text-muted">{pw.label}</span>

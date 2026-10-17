@@ -100,7 +100,7 @@ function UserMenu() {
         aria-haspopup="menu"
         aria-expanded={open}
       >
-        <span className="grid size-8 place-items-center rounded-full bg-accent text-xs font-semibold text-white">{initials(user.name)}</span>
+        <span className="grid size-8 place-items-center rounded-[4px] bg-accent text-xs font-semibold text-white">{initials(user.name)}</span>
         <span className="hidden text-left leading-tight sm:block">
           <span className="block text-sm font-medium text-ink">{user.name}</span>
           <span className="block text-[11px] text-muted">{user.role}</span>
@@ -198,7 +198,7 @@ export function Shell() {
         )}
         <div className="ml-auto flex items-center gap-3">
           {onLinuxONE && (
-            <span className="hidden h-6 items-center rounded-full bg-accent-soft px-2.5 text-[11px] font-medium text-accent xl:inline-flex">
+            <span className="hidden h-6 items-center rounded-[3px] bg-accent-soft px-2 text-[11px] font-medium text-accent xl:inline-flex">
               IBM LinuxONE
             </span>
           )}
@@ -240,7 +240,7 @@ export function Shell() {
             </div>
           ))}
         </nav>
-        <div className="m-3 rounded-[10px] border border-line bg-field px-3 py-3 text-xs">
+        <div className="m-3 rounded-[4px] border border-line bg-field px-3 py-3 text-xs">
           <div className="text-[11px] tracking-[0.32px] text-subtle uppercase">Decision model</div>
           <div className="mt-1 font-medium text-ink">{current?.label ?? "—"}</div>
           <div className="mt-0.5 text-muted">

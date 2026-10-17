@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export function LogoMark({ size = 28 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden>
-      <rect width="32" height="32" rx="8" fill="#3F6B57" />
+      <rect width="32" height="32" rx="4" fill="#3F6B57" />
       <path d="M13 7.5h6v5.5h5.5v6H19v5.5h-6V19H7.5v-6H13z" fill="#fff" />
       <circle cx="16" cy="16" r="2.2" fill="#8BA888" />
     </svg>

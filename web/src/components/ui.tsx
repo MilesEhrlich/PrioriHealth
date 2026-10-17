@@ -24,7 +24,7 @@ export function EsiChip({ esi, size = "md", showLabel = false }: {
   return (
     <span className="inline-flex shrink-0 items-center gap-2">
       <span
-        className={`num inline-flex shrink-0 items-center justify-center rounded-[5px] font-semibold whitespace-nowrap ${dims}`}
+        className={`num inline-flex shrink-0 items-center justify-center rounded-[4px] font-semibold whitespace-nowrap ${dims}`}
         style={s ? { background: s.bg, color: s.fg } : { background: "#e3e9e4", color: "#56655d" }}
         aria-label={esi ? `ESI ${esi}, ${s?.label}` : "ESI unassigned"}
       >
@@ -40,7 +40,7 @@ export function EsiChip({ esi, size = "md", showLabel = false }: {
 export function ReviewBadge({ compact = false }: { compact?: boolean }) {
   return (
     <span
-      className={`inline-flex items-center rounded-full border border-[#b8862b]/40 bg-[#fdf3dc] font-medium whitespace-nowrap text-[#6b4a0f] ${
+      className={`inline-flex items-center rounded-[3px] border border-[#b8862b]/40 bg-[#fdf3dc] font-medium whitespace-nowrap text-[#6b4a0f] ${
         compact ? "h-5 px-1.5 text-[11px]" : "h-6 px-2 text-xs"
       }`}
     >
@@ -184,7 +184,7 @@ export function Segmented<T extends string>({ value, options, onChange, size = "
   size?: "sm" | "md";
 }) {
   return (
-    <div className="inline-flex gap-0.5 rounded-[9px] border border-line bg-field p-0.5" role="tablist">
+    <div className="inline-flex gap-0.5 rounded-[4px] border border-line bg-field p-0.5" role="tablist">
       {options.map((o) => {
         const on = o.value === value;
         return (
@@ -194,7 +194,7 @@ export function Segmented<T extends string>({ value, options, onChange, size = "
             aria-selected={on}
             disabled={o.disabled}
             onClick={() => onChange(o.value)}
-            className={`${size === "sm" ? "h-6 px-2.5 text-xs" : "h-7 px-3.5 text-sm"} rounded-[7px] transition-colors ${
+            className={`${size === "sm" ? "h-6 px-2.5 text-xs" : "h-7 px-3.5 text-sm"} rounded-[4px] transition-colors ${
               on ? "bg-surface font-medium text-accent shadow-[0_1px_2px_rgb(16_24_20/12%)]" : "text-muted hover:text-ink disabled:text-line-strong"
             }`}
           >
@@ -272,7 +272,7 @@ export function Skeleton({ className = "" }: { className?: string }) {
 
 export function ErrorNote({ message }: { message: string }) {
   return (
-    <div className="rounded-[10px] border border-danger/30 bg-[#fdf1f0] p-4 text-sm text-ink">
+    <div className="rounded-[4px] border border-danger/30 bg-[#fdf1f0] p-4 text-sm text-ink">
       <div className="font-semibold">Could not load data</div>
       <div className="mt-1 text-muted">{message}</div>
     </div>
@@ -281,7 +281,7 @@ export function ErrorNote({ message }: { message: string }) {
 
 export function Notice({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <div className="rounded-[10px] border border-sage-light bg-accent-soft px-4 py-3 text-sm">
+    <div className="rounded-[4px] border border-sage-light bg-accent-soft px-4 py-3 text-sm">
       <div className="font-semibold text-ink">{title}</div>
       <div className="mt-0.5 text-muted">{children}</div>
     </div>
