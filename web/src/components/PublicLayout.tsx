@@ -108,13 +108,6 @@ export function PublicFooter() {
       <div className="border-t border-line">
         <div className="mx-auto flex max-w-[1200px] flex-wrap justify-between gap-2 px-4 py-5 text-xs text-subtle md:px-6">
           <span>© {new Date().getFullYear()} PrioriHealth · All hospitals in this demo are fictional.</span>
-          <span>
-            Photos:{" "}
-            <a href="https://unsplash.com/@silverkblack" className="underline hover:text-ink" target="_blank" rel="noreferrer">
-              Vitaly Gariev
-            </a>{" "}
-            on Unsplash
-          </span>
         </div>
       </div>
     </footer>

@@ -11,7 +11,7 @@ A ten-member panel of small AI agents with different reasoning styles discusses 
 
 ## Run the app
 
-Photos on the landing page: Vitaly Gariev on Unsplash (Unsplash License). All hospitals are fictional.
+All hospitals in the demo are fictional.
 
 
 ```bash

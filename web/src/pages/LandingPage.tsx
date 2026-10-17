@@ -44,13 +44,6 @@ const CAPABILITIES = [
   },
 ];
 
-const FACTS = [
-  ["Decision support only", "The nurse confirms or overrides every recommendation."],
-  ["Transparent reasoning", "Every reviewer's assessment and revision is recorded."],
-  ["Runs on-premises", "Hosted on IBM LinuxONE with IBM Granite models; triage notes stay on the server."],
-  ["One queue per hospital", "Each facility has its own private waiting room and staff accounts."],
-];
-
 function SideLink({ to, onClick, title, body }: { to?: string; onClick?: () => void; title: string; body: string }) {
   const inner = (
     <>
@@ -117,9 +110,9 @@ export default function LandingPage() {
             {demo.error && <p className="mt-3 text-sm text-danger">{demo.error}</p>}
           </div>
           <img
-            src="/img/doctor-desk.jpg"
-            alt="Physician with a stethoscope seated at a clinic desk"
-            className="aspect-[1.42] w-full rounded-[16px] object-cover shadow-[0_24px_48px_-24px_rgb(31_58_46/45%)]"
+            src="/img/care-team.jpg"
+            alt="Four clinicians in white coats standing in a hospital corridor"
+            className="aspect-[1.73] w-full rounded-[16px] object-cover object-top shadow-[0_24px_48px_-24px_rgb(31_58_46/45%)]"
           />
         </div>
       </section>
@@ -136,7 +129,22 @@ export default function LandingPage() {
               </p>
             </div>
 
-            <h2 id="how" className="mt-14 scroll-mt-32 text-[30px] leading-[1.2] font-semibold tracking-[-0.5px] text-ink">
+            <h2 className="mt-14 text-[30px] leading-[1.2] font-semibold tracking-[-0.5px] text-ink">See it in one minute</h2>
+            <p className="mt-3 text-[16px] leading-7 text-muted">
+              A short animated overview of how a patient moves from the triage desk to the waiting room.
+            </p>
+            <video
+              className="mt-6 aspect-video w-full rounded-[16px] border border-line bg-page shadow-[0_24px_48px_-28px_rgb(31_58_46/45%)]"
+              src="/video/priorihealth-overview.mp4"
+              poster="/video/overview-poster.jpg"
+              controls
+              playsInline
+              preload="metadata"
+            >
+              Your browser can't play this video. <a href="/video/priorihealth-overview.mp4">Download it</a> instead.
+            </video>
+
+            <h2 id="how" className="mt-16 scroll-mt-32 text-[30px] leading-[1.2] font-semibold tracking-[-0.5px] text-ink">
               How PrioriHealth works
             </h2>
             <ol className="mt-8 space-y-8">
@@ -152,22 +160,6 @@ export default function LandingPage() {
                 </li>
               ))}
             </ol>
-
-            <h2 className="mt-16 text-[30px] leading-[1.2] font-semibold tracking-[-0.5px] text-ink">
-              Built to support clinicians, not replace them
-            </h2>
-            <p className="mt-4 text-[16px] leading-7 text-muted">
-              PrioriHealth never makes a final call on its own. Recommendations appear alongside the vital signs and the
-              panel's reasoning, and the nurse decides.
-            </p>
-            <dl className="mt-8 grid gap-4 sm:grid-cols-2">
-              {FACTS.map(([k, v]) => (
-                <div key={k} className="rounded-[12px] border border-line bg-page p-5">
-                  <dt className="text-[15px] font-semibold text-ink">{k}</dt>
-                  <dd className="mt-1 text-sm leading-6 text-muted">{v}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
 
           <aside className="lg:sticky lg:top-36 lg:self-start">
