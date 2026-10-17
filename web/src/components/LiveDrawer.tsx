@@ -118,11 +118,11 @@ export function LiveDrawer({ open, onClose, threshold }: { open: boolean; onClos
             <header className="flex h-14 shrink-0 items-center justify-between bg-chrome px-6 text-white">
               <div>
                 <h2 className="text-base font-semibold">Triage new case</h2>
-                <p className="text-xs text-[#c6c6c6]">
+                <p className="text-xs text-white/70">
                   The panel discusses until {Math.round(threshold90 * 100)}% agree (up to {maxRounds} rounds). Results are not saved.
                 </p>
               </div>
-              <button className="btn h-8 border border-[#6f6f6f] text-white hover:bg-chrome-3" onClick={onClose}>
+              <button className="btn h-8 border border-white/30 text-white hover:bg-chrome-3" onClick={onClose}>
                 Close
               </button>
             </header>
@@ -236,7 +236,7 @@ function ProviderOption({ p, selected, onSelect }: { p: LiveProvider; selected: 
       <div className="flex items-center justify-between gap-2">
         <span className="text-sm font-medium text-ink">{p.label}</span>
         {p.locked ? (
-          <span className="border border-ink px-1.5 text-[11px] font-medium text-ink">LOCKED</span>
+          <span className="rounded border border-line-strong px-1.5 text-[11px] font-medium text-muted">LOCKED</span>
         ) : !p.available ? (
           <span className="border border-line-strong px-1.5 text-[11px] font-medium text-muted">OFFLINE</span>
         ) : (

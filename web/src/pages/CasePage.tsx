@@ -26,7 +26,7 @@ export default function CasePage() {
   const selected = list.find((p) => p.patient_id === pid) ?? null;
 
   useEffect(() => {
-    if (!pid && list.length) navigate(`/case/${list[0].patient_id}`, { replace: true });
+    if (!pid && list.length) navigate(`/app/case/${list[0].patient_id}`, { replace: true });
   }, [pid, list, navigate]);
 
   const debate = useFetch(() => (pid ? api.debate(set, pid, cond) : Promise.resolve(null)), [set, pid, cond]);
@@ -85,7 +85,7 @@ export default function CasePage() {
                 return (
                   <li key={p.patient_id}>
                     <button
-                      onClick={() => navigate(`/case/${p.patient_id}`)}
+                      onClick={() => navigate(`/app/case/${p.patient_id}`)}
                       className={`w-full border-b border-l-[3px] border-b-line px-3 py-2.5 text-left transition-colors ${
                         on ? "border-l-accent bg-line" : "border-l-transparent hover:bg-hover"
                       }`}
@@ -95,7 +95,7 @@ export default function CasePage() {
                         <span className="num text-xs text-ink">{shortId(p.patient_id)}</span>
                         <span className="text-xs text-muted">{ageSex(p)}</span>
                         {p.decision?.escalated && (
-                          <span className="ml-auto border border-ink px-1 text-[10px] leading-4 font-medium text-ink" title="Needs nurse review">
+                          <span className="ml-auto rounded bg-[#fdf3dc] px-1 text-[10px] leading-4 font-medium text-[#6b4a0f]" title="Needs nurse review">
                             REVIEW
                           </span>
                         )}

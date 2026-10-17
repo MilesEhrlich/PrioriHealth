@@ -47,8 +47,12 @@ def client(tmp_path, monkeypatch):
     (d / "queue_steps.jsonl").write_text(json.dumps({"step": 1, "queue": [], "review": []}) + "\n")
 
     monkeypatch.setattr(api_mod, "results_root", lambda: tmp_path / "results")
+    monkeypatch.setattr(api_mod, "_AUTH", api_mod.auth.AuthStore(tmp_path / "auth.db"))
+    monkeypatch.setattr(api_mod, "_WAITLISTS", {})
     api_mod._load.cache_clear()
-    return TestClient(api_mod.app)
+    c = TestClient(api_mod.app)
+    assert c.post("/api/auth/demo").status_code == 200
+    return c
 
 
 def test_sets_and_overview(client):
@@ -114,7 +118,7 @@ def test_waitlist_endpoints_without_engine(client, monkeypatch, tmp_path):
     import triage_debate.api as A
     from triage_debate.waitlist import WaitingList
 
-    A._WAITLIST = WaitingList(tmp_path / "wl.json")  # no triage function: nothing runs
+    A._WAITLISTS["riverbend"] = WaitingList(tmp_path / "wl.json")  # no triage function: nothing runs
     r = client.post("/api/waitlist", json={"vignette": "A 40-year-old with a laceration to the palm.", "label": "Bed 4"})
     eid = r.json()["id"]
     snap = client.get("/api/waitlist").json()
@@ -124,4 +128,3 @@ def test_waitlist_endpoints_without_engine(client, monkeypatch, tmp_path):
     assert client.post(f"/api/waitlist/{eid}/seen").json()["status"] == "seen"
     assert client.get("/api/waitlist/nope").status_code == 404
     assert client.delete("/api/waitlist").json()["ok"]
-    A._WAITLIST = None

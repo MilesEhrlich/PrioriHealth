@@ -165,7 +165,7 @@ export default function QueuePage() {
                 }
               />
             ) : (
-              <QueueTable entries={step.queue} arrived={step.arrived} byId={byId} onOpen={(pid) => navigate(`/case/${pid}`)} />
+              <QueueTable entries={step.queue} arrived={step.arrived} byId={byId} onOpen={(pid) => navigate(`/app/case/${pid}`)} />
             )}
           </Panel>
 
@@ -194,7 +194,7 @@ export default function QueuePage() {
                         >
                           <button
                             className="w-full border-l-[3px] border-l-ink px-4 py-2.5 text-left hover:bg-hover"
-                            onClick={() => navigate(`/case/${e.patient_id}`)}
+                            onClick={() => navigate(`/app/case/${e.patient_id}`)}
                           >
                             <div className="flex items-center gap-2">
                               <EsiChip esi={e.esi} size="sm" />

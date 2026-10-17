@@ -5,9 +5,9 @@ from __future__ import annotations
 import plotly.graph_objects as go
 import plotly.io as pio
 
-ACCENT = "#0F62FE"      # IBM blue: the persona debate / anything we want the eye on
-INK = "#161616"         # primary text
-MUTED = "#525252"       # secondary text
+ACCENT = "#3F6B57"      # deep sage: the trait panel / anything we want the eye on
+INK = "#1C2B24"         # primary text
+MUTED = "#56655D"       # secondary text
 CONTEXT = "#8D8D8D"     # comparison conditions (deliberately colorless)
 CONTEXT_LIGHT = "#C6C6C6"
 GRID = "#E0E0E0"

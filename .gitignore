@@ -11,3 +11,5 @@ data/waitlist.json
 # Private keys / certificates must never be committed
 *.pem
 *.key
+data/waitlists/
+data/priorihealth.db*

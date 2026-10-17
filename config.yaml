@@ -52,7 +52,10 @@ escalation:
 waitlist:
   # Target minutes from arrival to being seen, per ESI level (ESI-weighted wait ordering).
   targets: {1: 0, 2: 10, 3: 30, 4: 60, 5: 120}
-  store: data/waitlist.json
+  store_dir: data/waitlists   # one waiting room per hospital
+
+auth:
+  db: data/priorihealth.db     # users and sessions (SQLite)
 
 queue:
   n_patients: 20

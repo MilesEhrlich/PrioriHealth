@@ -1,29 +1,31 @@
 @import "tailwindcss";
 
 /*
- * Enterprise clinical design tokens. Flat surfaces, square corners, dense tables,
- * one accent (IBM blue). ESI colors are reserved for acuity only.
+ * Clinical design tokens: soft and modern sage. White cards with 10px corners on a warm
+ * off-white page, one deep-sage accent. ESI colors are reserved for acuity only.
  */
 @theme {
   --font-sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "IBM Plex Mono", Menlo, monospace;
 
-  --color-page: #f4f4f4;
+  --color-page: #f5f7f4;
   --color-surface: #ffffff;
-  --color-field: #f4f4f4;
-  --color-line: #e0e0e0;
-  --color-line-strong: #c6c6c6;
-  --color-ink: #161616;
-  --color-muted: #525252;
-  --color-subtle: #6f6f6f;
-  --color-hover: #e8e8e8;
-  --color-chrome: #161616;
-  --color-chrome-2: #262626;
-  --color-chrome-3: #393939;
-  --color-accent: #0f62fe;
-  --color-accent-hover: #0353e9;
-  --color-accent-soft: #edf5ff;
-  --color-danger: #da1e28;
+  --color-field: #f3f6f2;
+  --color-line: #dde5de;
+  --color-line-strong: #c3cfc5;
+  --color-ink: #1c2b24;
+  --color-muted: #56655d;
+  --color-subtle: #6b7a71;
+  --color-hover: #eef3ef;
+  --color-chrome: #1f3a2e;
+  --color-chrome-2: #2a4a3b;
+  --color-chrome-3: #3a5d4c;
+  --color-accent: #3f6b57;
+  --color-accent-hover: #335846;
+  --color-accent-soft: #eaf2ec;
+  --color-sage: #8ba888;
+  --color-sage-light: #dfe9dc;
+  --color-danger: #c4302b;
 
   --color-esi-1: #da1e28;
   --color-esi-2: #ff832b;
@@ -31,7 +33,9 @@
   --color-esi-4: #24a148;
   --color-esi-5: #0f62fe;
 
-  --radius-card: 0px;
+  --radius-card: 10px;
+  --shadow-card: 0 1px 2px rgb(16 24 20 / 6%), 0 1px 3px rgb(16 24 20 / 4%);
+  --shadow-lift: 0 12px 32px -12px rgb(16 40 28 / 22%);
 }
 
 @layer base {
@@ -53,7 +57,7 @@
   }
   :focus-visible {
     outline: 2px solid var(--color-accent);
-    outline-offset: -2px;
+    outline-offset: 2px;
   }
   button {
     cursor: pointer;
@@ -70,11 +74,14 @@
     letter-spacing: 0;
   }
 
-  /* Panels: flat, square, 1px rule. */
+  /* Panels: white, soft rounded corners, light shadow. */
   .card,
   .panel {
     background: var(--color-surface);
     border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
   }
   .panel-head {
     display: flex;
@@ -99,22 +106,26 @@
     font-weight: 400;
   }
 
-  /* Buttons: rectangular (Carbon-style). */
+  /* Buttons: rounded, medium weight. */
   .btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    height: 32px;
+    height: 34px;
     padding: 0 16px;
+    border-radius: 8px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.16px;
     border: 1px solid transparent;
     transition: background 70ms ease, border-color 70ms ease, color 70ms ease;
     white-space: nowrap;
   }
   .btn-lg {
-    height: 40px;
+    height: 44px;
+    padding: 0 22px;
+    font-size: 15px;
   }
   .btn-primary {
     background: var(--color-accent);
@@ -133,16 +144,16 @@
     color: #fff;
   }
   .btn-secondary:hover:not(:disabled) {
-    background: #4c4c4c;
+    background: var(--color-chrome-2);
   }
   .btn-tertiary {
-    background: transparent;
+    background: var(--color-surface);
     color: var(--color-accent);
-    border-color: var(--color-accent);
+    border-color: var(--color-line-strong);
   }
   .btn-tertiary:hover:not(:disabled) {
-    background: var(--color-accent);
-    color: #fff;
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent);
   }
   .btn-tertiary:disabled {
     color: #8d8d8d;
@@ -158,20 +169,36 @@
 
   .input {
     width: 100%;
-    height: 32px;
+    height: 38px;
     padding: 0 12px;
-    border: none;
-    border-bottom: 1px solid #8d8d8d;
-    background: var(--color-field);
+    border: 1px solid var(--color-line-strong);
+    border-radius: 8px;
+    background: var(--color-surface);
     font-size: 14px;
     color: var(--color-ink);
+    transition: border-color 100ms ease, box-shadow 100ms ease;
+  }
+  textarea.input {
+    height: auto;
+    padding: 10px 12px;
   }
   .input::placeholder {
     color: var(--color-subtle);
   }
   .input:focus {
-    outline: 2px solid var(--color-accent);
-    outline-offset: -2px;
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgb(63 107 87 / 18%);
+  }
+  .input[aria-invalid="true"] {
+    border-color: var(--color-danger);
+  }
+  .label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-ink);
   }
 
   /* Data tables. */
@@ -181,7 +208,8 @@
     font-size: 14px;
   }
   .table thead th {
-    background: var(--color-line);
+    background: var(--color-field);
+    border-bottom: 1px solid var(--color-line);
     color: var(--color-ink);
     font-weight: 600;
     font-size: 12px;

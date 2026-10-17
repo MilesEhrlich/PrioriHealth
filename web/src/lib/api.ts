@@ -222,21 +222,72 @@ export interface WaitSnapshot {
   max_rounds: number;
 }
 
+export interface Hospital {
+  id: string;
+  name: string;
+  city: string;
+  description: string;
+}
+
+export interface User {
+  id: number;
+  email: string;
+  name: string;
+  role: string;
+  hospital: Hospital;
+  demo: boolean;
+}
+
+/** Error from the API with the server's message (FastAPI `detail`). */
+export class ApiError extends Error {
+  status: number;
+  constructor(status: number, message: string) {
+    super(message);
+    this.status = status;
+  }
+}
+
+/** Fired when any call comes back 401 so the app can return to sign-in. */
+export const UNAUTHORIZED_EVENT = "priorihealth:unauthorized";
+
+async function check(r: Response, path: string): Promise<Response> {
+  if (r.ok) return r;
+  if (r.status === 401 && !path.startsWith("/api/auth/")) window.dispatchEvent(new Event(UNAUTHORIZED_EVENT));
+  let message = `${r.status} ${r.statusText}`;
+  try {
+    const body = await r.json();
+    const d = body?.detail;
+    message = typeof d === "string" ? d : (d?.message ?? d?.[0]?.msg ?? message);
+  } catch {
+    /* keep default message */
+  }
+  throw new ApiError(r.status, message);
+}
+
 async function send<T>(method: string, path: string, body?: unknown): Promise<T> {
   const r = await fetch(path, {
     method,
+    credentials: "same-origin",
     headers: body ? { "Content-Type": "application/json" } : undefined,
     body: body ? JSON.stringify(body) : undefined,
   });
-  if (!r.ok) throw new Error(`${r.status} ${await r.text()}`);
-  return r.json() as Promise<T>;
+  return (await check(r, path)).json() as Promise<T>;
 }
 
 async function get<T>(path: string): Promise<T> {
-  const r = await fetch(path);
-  if (!r.ok) throw new Error(`${r.status} ${await r.text()}`);
-  return r.json() as Promise<T>;
+  const r = await fetch(path, { credentials: "same-origin" });
+  return (await check(r, path)).json() as Promise<T>;
 }
+
+export const auth = {
+  hospitals: () => get<{ hospitals: Hospital[]; roles: string[] }>("/api/auth/hospitals"),
+  me: () => get<{ user: User }>("/api/auth/me"),
+  signIn: (email: string, password: string) => send<{ user: User }>("POST", "/api/auth/signin", { email, password }),
+  signUp: (body: { name: string; email: string; password: string; hospital_id: string; role: string }) =>
+    send<{ user: User }>("POST", "/api/auth/signup", body),
+  demo: () => send<{ user: User }>("POST", "/api/auth/demo"),
+  signOut: () => send<{ ok: boolean }>("POST", "/api/auth/signout"),
+};
 
 export const api = {
   sets: () => get<{ sets: ResultSet[]; default: string | null }>("/api/sets"),
@@ -268,10 +319,12 @@ export async function runLive(
 ): Promise<void> {
   const r = await fetch("/api/live", {
     method: "POST",
+    credentials: "same-origin",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ vignette, provider }),
     signal,
   });
+  if (r.status === 401) window.dispatchEvent(new Event(UNAUTHORIZED_EVENT));
   if (!r.ok || !r.body) {
     let message = `Request failed (${r.status})`;
     try {

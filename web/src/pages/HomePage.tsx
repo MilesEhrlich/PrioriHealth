@@ -12,7 +12,7 @@ const formatRun = (id: string | null | undefined) => {
   return d.toLocaleString(undefined, { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit", hour12: false });
 };
 
-const STEPS = [
+export const STEPS = [
   ["Independent assessment", "Ten panel members, each with a different reasoning style (Empath, Logician, Skeptic, Observer and others), assign an ESI level from the triage note alone."],
   ["Discussion", "If they disagree, each member reads everyone's position and argument, replies to specific members by name, and may revise. Changes need a named clinical reason, not peer pressure."],
   ["Consensus", "Discussion repeats until at least 9 of 10 members agree, for up to five rounds. Without consensus, the confidence-weighted median stands."],
@@ -47,10 +47,10 @@ export default function HomePage() {
         sub="Multi-agent decision support for Emergency Severity Index (ESI) triage. A ten-member AI panel with different reasoning styles discusses each patient until it agrees, and cases it can't settle are routed to a nurse."
         actions={
           <>
-            <button className="btn btn-tertiary" onClick={() => navigate("/case")}>
+            <button className="btn btn-tertiary" onClick={() => navigate("/app/case")}>
               Review cases
             </button>
-            <button className="btn btn-primary" onClick={() => navigate("/waiting")}>
+            <button className="btn btn-primary" onClick={() => navigate("/app/waiting")}>
               Open waiting room
             </button>
           </>
@@ -94,7 +94,7 @@ export default function HomePage() {
             title="Nurse review worklist"
             sub="Cases the panel could not settle, most urgent first"
             actions={
-              <Link to="/case" className="text-sm text-accent hover:underline">
+              <Link to="/app/case" className="text-sm text-accent hover:underline">
                 Review cases
               </Link>
             }
@@ -117,7 +117,7 @@ export default function HomePage() {
                   </thead>
                   <tbody>
                     {worklist.map((p: PatientRow) => (
-                      <tr key={p.patient_id} className="cursor-pointer" onClick={() => navigate(`/case/${p.patient_id}`)}>
+                      <tr key={p.patient_id} className="cursor-pointer" onClick={() => navigate(`/app/case/${p.patient_id}`)}>
                         <td>
                           <EsiChip esi={p.decision?.esi} size="sm" />
                         </td>
@@ -233,10 +233,10 @@ export default function HomePage() {
           <Panel title="Modules">
             <ul className="divide-y divide-line">
               {[
-                ["/waiting", "Waiting Room", "Live arrivals triaged by the panel, ordered by ESI-weighted wait."],
-                ["/queue", "Surge Replay", "Replay a recorded surge from the evaluation set."],
-                ["/case", "Case Review", "Inspect each agent's reasoning, revisions, and the final decision."],
-                ["/results", "Evaluation Results", "Accuracy, safety, fairness, and cost across four configurations."],
+                ["/app/waiting", "Waiting Room", "Live arrivals triaged by the panel, ordered by ESI-weighted wait."],
+                ["/app/queue", "Surge Replay", "Replay a recorded surge from the evaluation set."],
+                ["/app/case", "Case Review", "Inspect each agent's reasoning, revisions, and the final decision."],
+                ["/app/results", "Evaluation Results", "Accuracy, safety, fairness, and cost across four configurations."],
               ].map(([to, t, d]) => (
                 <li key={to}>
                   <Link to={to} className="group flex items-start justify-between gap-3 px-4 py-3 hover:bg-hover">

@@ -17,11 +17,12 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request, Response
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
+from . import auth
 from .charts import FIGURES, load_result_set, takeaways
 from .config import PROJECT_ROOT, load_config, resolve
 from .data import example_cases, extract_vitals, generated_chief_complaints, load_dataset, patient_id
@@ -48,6 +49,102 @@ FREE_PROVIDERS = FREE_ENGINES
 DEFAULT_TOKENS_PER_CASE = 3500
 
 app = FastAPI(title="PrioriHealth", docs_url="/api/docs", openapi_url="/api/openapi.json")
+
+
+# ---------------------------------------------------------------- accounts
+
+PUBLIC_API = ("/api/auth/", "/api/system", "/api/docs", "/api/openapi.json")
+_AUTH: auth.AuthStore | None = None
+
+
+def auth_store() -> auth.AuthStore:
+    global _AUTH
+    if _AUTH is None:
+        _AUTH = auth.AuthStore(resolve(load_config().get("auth", {}).get("db", "data/priorihealth.db")))
+    return _AUTH
+
+
+@app.middleware("http")
+async def require_session(request: Request, call_next):
+    """Every /api route except sign-in and system status needs a signed-in user."""
+    path = request.url.path
+    if path.startswith("/api/") and not path.startswith(PUBLIC_API):
+        user = auth_store().user_for_token(request.cookies.get(auth.SESSION_COOKIE))
+        if user is None:
+            return JSONResponse({"detail": "Sign in required"}, status_code=401)
+        request.state.user = user
+    return await call_next(request)
+
+
+def _client_ip(request: Request) -> str:
+    fwd = request.headers.get("x-forwarded-for", "")
+    return fwd.split(",")[0].strip() or (request.client.host if request.client else "")
+
+
+def _start_session(request: Request, response: Response, user: dict[str, Any]) -> dict[str, Any]:
+    token = auth_store().create_session(user["id"])
+    secure = request.headers.get("x-forwarded-proto", request.url.scheme) == "https"
+    response.set_cookie(auth.SESSION_COOKIE, token, max_age=auth.SESSION_TTL_S, httponly=True,
+                        samesite="lax", secure=secure, path="/")
+    return {"user": user}
+
+
+def _auth_call(fn, *args, **kwargs):
+    try:
+        return fn(*args, **kwargs)
+    except auth.AuthError as e:
+        raise HTTPException(e.status, e.message) from None
+
+
+class SignUpRequest(BaseModel):
+    name: str = Field(max_length=100)
+    email: str = Field(max_length=254)
+    password: str = Field(max_length=200)
+    hospital_id: str
+    role: str
+
+
+class SignInRequest(BaseModel):
+    email: str = Field(max_length=254)
+    password: str = Field(max_length=200)
+
+
+@app.get("/api/auth/hospitals")
+def get_hospitals() -> dict[str, Any]:
+    return {"hospitals": auth.HOSPITALS, "roles": auth.ROLES}
+
+
+@app.post("/api/auth/signup")
+def sign_up(req: SignUpRequest, request: Request, response: Response) -> dict[str, Any]:
+    user = _auth_call(auth_store().create_user, email=req.email, name=req.name, password=req.password,
+                      hospital_id=req.hospital_id, role=req.role)
+    return _start_session(request, response, user)
+
+
+@app.post("/api/auth/signin")
+def sign_in(req: SignInRequest, request: Request, response: Response) -> dict[str, Any]:
+    user = _auth_call(auth_store().authenticate, req.email, req.password, _client_ip(request))
+    return _start_session(request, response, user)
+
+
+@app.post("/api/auth/demo")
+def sign_in_demo(request: Request, response: Response) -> dict[str, Any]:
+    return _start_session(request, response, auth_store().demo_user())
+
+
+@app.post("/api/auth/signout")
+def sign_out(request: Request, response: Response) -> dict[str, Any]:
+    auth_store().delete_session(request.cookies.get(auth.SESSION_COOKIE))
+    response.delete_cookie(auth.SESSION_COOKIE, path="/")
+    return {"ok": True}
+
+
+@app.get("/api/auth/me")
+def get_me(request: Request) -> dict[str, Any]:
+    user = auth_store().user_for_token(request.cookies.get(auth.SESSION_COOKIE))
+    if user is None:
+        raise HTTPException(401, "Sign in required")
+    return {"user": user}
 
 
 # ---------------------------------------------------------------- helpers
@@ -394,50 +491,77 @@ def post_vitals(req: LiveRequest) -> dict[str, Any]:
     return extract_vitals(req.vignette).model_dump()
 
 
-# ---------------------------------------------------------------- waiting room
+# ---------------------------------------------------------------- waiting rooms (one per hospital)
 
-_WAITLIST: WaitingList | None = None
-
-
-async def _triage_waitlist_entry(entry, on_event):
-    """Run the trait panel on one waiting-room arrival with a free local engine."""
-    cfg = load_config()
-    engine = await pick_free_engine(cfg)
-    if engine is None:
-        raise EngineUnavailable("No free engine online. Start Ollama or the llama.cpp server; "
-                                "this patient will be triaged automatically when one is up.")
-    panel = panel_from_config(cfg)
-    entry.engine = engine
-    entry.progress.agents = len(panel)
-    client = LLMClient.from_config(cfg, provider=engine,
-                                   log_path=results_root() / "runs" / "waitlist" / "calls.jsonl")
-    return await run_debate(client, waitlist().view(entry.id), personas=panel,
-                            temperature=panel_temperature(cfg),
-                            consensus_threshold=consensus_threshold(cfg),
-                            max_rounds=int(cfg["debate"].get("max_rounds", 5)),
-                            early_stop=bool(cfg["debate"]["early_stop"]),
-                            escalation_cfg=cfg["escalation"], on_event=on_event)
+_WAITLISTS: dict[str, WaitingList] = {}
+_ENGINE_LOCK: asyncio.Lock | None = None  # every hospital shares the one local engine
 
 
-def waitlist() -> WaitingList:
-    """The process-wide waiting list (created on first use, worker started lazily)."""
-    global _WAITLIST
-    if _WAITLIST is None:
+def _engine_lock() -> asyncio.Lock:
+    global _ENGINE_LOCK
+    if _ENGINE_LOCK is None:
+        _ENGINE_LOCK = asyncio.Lock()
+    return _ENGINE_LOCK
+
+
+def _make_triage(hospital_id: str):
+    async def triage(entry, on_event):
+        """Run the trait panel on one waiting-room arrival with a free local engine."""
+        cfg = load_config()
+        engine = await pick_free_engine(cfg)
+        if engine is None:
+            raise EngineUnavailable("No free engine online. Start Ollama or the llama.cpp server; "
+                                    "this patient will be triaged automatically when one is up.")
+        panel = panel_from_config(cfg)
+        entry.engine = engine
+        entry.progress.agents = len(panel)
+        client = LLMClient.from_config(cfg, provider=engine,
+                                       log_path=results_root() / "runs" / "waitlist" / "calls.jsonl")
+        async with _engine_lock():
+            return await run_debate(client, waitlist(hospital_id).view(entry.id), personas=panel,
+                                    temperature=panel_temperature(cfg),
+                                    consensus_threshold=consensus_threshold(cfg),
+                                    max_rounds=int(cfg["debate"].get("max_rounds", 5)),
+                                    early_stop=bool(cfg["debate"]["early_stop"]),
+                                    escalation_cfg=cfg["escalation"], on_event=on_event)
+    return triage
+
+
+def waitlist_dir() -> Path:
+    return resolve(load_config().get("waitlist", {}).get("store_dir", "data/waitlists"))
+
+
+def waitlist(hospital_id: str = auth.DEMO_HOSPITAL) -> WaitingList:
+    """The hospital's waiting list (created on first use, worker started lazily)."""
+    wl = _WAITLISTS.get(hospital_id)
+    if wl is None:
         cfg = load_config()
         wl_cfg = cfg.get("waitlist", {})
         targets = {int(k): float(v) for k, v in (wl_cfg.get("targets") or {}).items()} or None
-        _WAITLIST = WaitingList(resolve(wl_cfg.get("store", "data/waitlist.json")), targets=targets,
-                                triage=_triage_waitlist_entry)
+        path = waitlist_dir() / f"{hospital_id}.json"
+        legacy = resolve("data/waitlist.json")  # single waiting room from before accounts
+        if hospital_id == auth.DEMO_HOSPITAL and not path.exists() and legacy.exists():
+            path.parent.mkdir(parents=True, exist_ok=True)
+            legacy.replace(path)
+        wl = _WAITLISTS[hospital_id] = WaitingList(path, targets=targets,
+                                                   triage=_make_triage(hospital_id))
     try:
-        _WAITLIST.start()
+        wl.start()
     except RuntimeError:  # no running loop (sync test client before startup)
         pass
-    return _WAITLIST
+    return wl
 
 
 @app.on_event("startup")
-async def _start_waitlist() -> None:
-    waitlist()
+async def _start_waitlists() -> None:
+    d = waitlist_dir()
+    ids = {p.stem for p in d.glob("*.json")} & auth.HOSPITAL_IDS if d.exists() else set()
+    for hid in ids | {auth.DEMO_HOSPITAL}:
+        waitlist(hid)
+
+
+def _hospital_id(request: Request) -> str:
+    return request.state.user["hospital"]["id"]
 
 
 class ArrivalRequest(BaseModel):
@@ -454,17 +578,17 @@ class SimulateRequest(BaseModel):
     interval_s: float = Field(default=20.0, ge=1.0, le=600.0)
 
 
-def _entry_or_404(entry_id: str):
-    wl = waitlist()
+def _entry_or_404(request: Request, entry_id: str):
+    wl = waitlist(_hospital_id(request))
     if entry_id not in wl.entries:
         raise HTTPException(404, "Unknown waiting-room entry")
     return wl
 
 
 @app.get("/api/waitlist")
-async def get_waitlist() -> dict[str, Any]:
+async def get_waitlist(request: Request) -> dict[str, Any]:
     cfg = load_config()
-    snap = waitlist().snapshot()
+    snap = waitlist(_hospital_id(request)).snapshot()
     snap["engine"] = await pick_free_engine(cfg)
     snap["panel_size"] = len(panel_from_config(cfg))
     snap["max_rounds"] = int(cfg["debate"].get("max_rounds", 5))
@@ -472,14 +596,14 @@ async def get_waitlist() -> dict[str, Any]:
 
 
 @app.post("/api/waitlist")
-async def add_arrival(req: ArrivalRequest) -> dict[str, Any]:
-    e = await waitlist().add(req.vignette, label=req.label)
+async def add_arrival(request: Request, req: ArrivalRequest) -> dict[str, Any]:
+    e = await waitlist(_hospital_id(request)).add(req.vignette, label=req.label)
     return e.model_dump(exclude={"debate"})
 
 
 @app.get("/api/waitlist/{entry_id}")
-def get_arrival(entry_id: str) -> dict[str, Any]:
-    wl = _entry_or_404(entry_id)
+def get_arrival(request: Request, entry_id: str) -> dict[str, Any]:
+    wl = _entry_or_404(request, entry_id)
     e = wl.entries[entry_id]
     out = e.model_dump()
     out["vitals"] = wl.vitals(entry_id)
@@ -487,29 +611,29 @@ def get_arrival(entry_id: str) -> dict[str, Any]:
 
 
 @app.post("/api/waitlist/{entry_id}/confirm")
-async def confirm_arrival(entry_id: str, req: ConfirmRequest) -> dict[str, Any]:
-    e = await _entry_or_404(entry_id).confirm(entry_id, req.esi)
+async def confirm_arrival(request: Request, entry_id: str, req: ConfirmRequest) -> dict[str, Any]:
+    e = await _entry_or_404(request, entry_id).confirm(entry_id, req.esi)
     return e.model_dump(exclude={"debate"})
 
 
 @app.post("/api/waitlist/{entry_id}/seen")
-async def seen_arrival(entry_id: str) -> dict[str, Any]:
-    e = await _entry_or_404(entry_id).mark_seen(entry_id)
+async def seen_arrival(request: Request, entry_id: str) -> dict[str, Any]:
+    e = await _entry_or_404(request, entry_id).mark_seen(entry_id)
     return e.model_dump(exclude={"debate"})
 
 
 @app.delete("/api/waitlist")
-async def clear_waitlist() -> dict[str, Any]:
-    await waitlist().clear()
+async def clear_waitlist(request: Request) -> dict[str, Any]:
+    await waitlist(_hospital_id(request)).clear()
     return {"ok": True}
 
 
 @app.post("/api/waitlist/simulate")
-async def simulate_arrivals(req: SimulateRequest) -> dict[str, Any]:
+async def simulate_arrivals(request: Request, req: SimulateRequest) -> dict[str, Any]:
     """Feed training-set vignettes as arrivals (demo). Never evaluation test cases."""
     _, train, _ = load_dataset(load_config())
     picks = pick_demo_vignettes(train, req.count)
-    waitlist().simulate([p.vignette for p in picks], req.interval_s)
+    waitlist(_hospital_id(request)).simulate([p.vignette for p in picks], req.interval_s)
     return {"scheduled": len(picks), "interval_s": req.interval_s}
 
 

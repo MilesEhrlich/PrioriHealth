@@ -24,8 +24,8 @@ export function EsiChip({ esi, size = "md", showLabel = false }: {
   return (
     <span className="inline-flex shrink-0 items-center gap-2">
       <span
-        className={`num inline-flex shrink-0 items-center justify-center rounded-[2px] font-semibold whitespace-nowrap ${dims}`}
-        style={s ? { background: s.bg, color: s.fg } : { background: "#e0e0e0", color: "#525252" }}
+        className={`num inline-flex shrink-0 items-center justify-center rounded-[5px] font-semibold whitespace-nowrap ${dims}`}
+        style={s ? { background: s.bg, color: s.fg } : { background: "#e3e9e4", color: "#56655d" }}
         aria-label={esi ? `ESI ${esi}, ${s?.label}` : "ESI unassigned"}
       >
         {esi ? `ESI ${esi}` : "ESI —"}
@@ -40,7 +40,7 @@ export function EsiChip({ esi, size = "md", showLabel = false }: {
 export function ReviewBadge({ compact = false }: { compact?: boolean }) {
   return (
     <span
-      className={`inline-flex items-center border border-ink font-medium whitespace-nowrap text-ink ${
+      className={`inline-flex items-center rounded-full border border-[#b8862b]/40 bg-[#fdf3dc] font-medium whitespace-nowrap text-[#6b4a0f] ${
         compact ? "h-5 px-1.5 text-[11px]" : "h-6 px-2 text-xs"
       }`}
     >
@@ -50,7 +50,7 @@ export function ReviewBadge({ compact = false }: { compact?: boolean }) {
 }
 
 export function StatusText({ tone, children }: { tone: "ok" | "warn" | "off" | "info"; children: ReactNode }) {
-  const dot = { ok: "#24a148", warn: "#f1c21b", off: "#8d8d8d", info: "#0f62fe" }[tone];
+  const dot = { ok: "#24a148", warn: "#f1c21b", off: "#8d8d8d", info: "#3f6b57" }[tone];
   return (
     <span className="inline-flex items-center gap-2 text-sm text-ink">
       <span className="inline-block size-2 rounded-full" style={{ background: dot }} aria-hidden />
@@ -158,9 +158,9 @@ export function VitalsStrip({ v }: { v: Partial<Vitals> }) {
     ["Temp", v.temp_f != null ? `${v.temp_f}` : null, "°F"],
   ];
   if (items.every(([, val]) => val == null))
-    return <div className="border border-line bg-field px-3 py-2 text-sm text-subtle">No vital signs documented in this note.</div>;
+    return <div className="rounded-lg border border-line bg-field px-3 py-2 text-sm text-subtle">No vital signs documented in this note.</div>;
   return (
-    <dl className="grid grid-cols-5 divide-x divide-line border border-line bg-field">
+    <dl className="grid grid-cols-5 divide-x divide-line overflow-hidden rounded-lg border border-line bg-field">
       {items.map(([k, val, unit]) => (
         <div key={k} className="px-3 py-2">
           <dt className="text-[11px] tracking-[0.32px] text-subtle uppercase">{k}</dt>
@@ -184,8 +184,8 @@ export function Segmented<T extends string>({ value, options, onChange, size = "
   size?: "sm" | "md";
 }) {
   return (
-    <div className="inline-flex border border-ink" role="tablist">
-      {options.map((o, i) => {
+    <div className="inline-flex gap-0.5 rounded-[9px] border border-line bg-field p-0.5" role="tablist">
+      {options.map((o) => {
         const on = o.value === value;
         return (
           <button
@@ -194,8 +194,8 @@ export function Segmented<T extends string>({ value, options, onChange, size = "
             aria-selected={on}
             disabled={o.disabled}
             onClick={() => onChange(o.value)}
-            className={`${size === "sm" ? "h-7 px-3 text-xs" : "h-8 px-4 text-sm"} ${i ? "border-l border-ink" : ""} transition-colors ${
-              on ? "bg-ink text-white" : "bg-surface text-ink hover:bg-hover disabled:text-line-strong disabled:hover:bg-surface"
+            className={`${size === "sm" ? "h-6 px-2.5 text-xs" : "h-7 px-3.5 text-sm"} rounded-[7px] transition-colors ${
+              on ? "bg-surface font-medium text-accent shadow-[0_1px_2px_rgb(16_24_20/12%)]" : "text-muted hover:text-ink disabled:text-line-strong"
             }`}
           >
             {o.label}
@@ -245,7 +245,7 @@ export function Toggle({ checked, onChange, label }: { checked: boolean; onChang
         role="switch"
         aria-checked={checked}
         onClick={() => onChange(!checked)}
-        className={`relative h-4 w-8 rounded-full transition-colors ${checked ? "bg-[#24a148]" : "bg-[#8d8d8d]"}`}
+        className={`relative h-4 w-8 rounded-full transition-colors ${checked ? "bg-accent" : "bg-line-strong"}`}
       >
         <span className={`absolute top-[2px] left-[2px] size-3 rounded-full bg-white transition-transform ${checked ? "translate-x-4" : ""}`} />
       </button>
@@ -267,12 +267,12 @@ export function EmptyState({ title, body, action }: { title: string; body?: Reac
 }
 
 export function Skeleton({ className = "" }: { className?: string }) {
-  return <div className={`animate-pulse bg-line/70 ${className}`} />;
+  return <div className={`animate-pulse rounded-md bg-line/70 ${className}`} />;
 }
 
 export function ErrorNote({ message }: { message: string }) {
   return (
-    <div className="border-l-[3px] border-danger bg-surface p-4 text-sm text-ink">
+    <div className="rounded-[10px] border border-danger/30 bg-[#fdf1f0] p-4 text-sm text-ink">
       <div className="font-semibold">Could not load data</div>
       <div className="mt-1 text-muted">{message}</div>
     </div>
@@ -281,7 +281,7 @@ export function ErrorNote({ message }: { message: string }) {
 
 export function Notice({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <div className="border border-line border-l-[3px] border-l-accent bg-surface px-4 py-3 text-sm">
+    <div className="rounded-[10px] border border-sage-light bg-accent-soft px-4 py-3 text-sm">
       <div className="font-semibold text-ink">{title}</div>
       <div className="mt-0.5 text-muted">{children}</div>
     </div>

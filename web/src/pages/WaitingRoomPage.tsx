@@ -417,9 +417,9 @@ function ReviewDrawer({ id, onClose, onChanged }: { id: string | null; onClose: 
             <header className="flex h-14 shrink-0 items-center justify-between bg-chrome px-6 text-white">
               <div>
                 <h2 className="text-base font-semibold">{entry?.label ?? "Patient"}</h2>
-                <p className="text-xs text-[#c6c6c6]">{entry?.chief_complaint}</p>
+                <p className="text-xs text-white/70">{entry?.chief_complaint}</p>
               </div>
-              <button className="btn h-8 border border-[#6f6f6f] text-white hover:bg-chrome-3" onClick={onClose}>
+              <button className="btn h-8 border border-white/30 text-white hover:bg-chrome-3" onClick={onClose}>
                 Close
               </button>
             </header>
