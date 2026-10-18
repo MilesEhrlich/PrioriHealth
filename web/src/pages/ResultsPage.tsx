@@ -1,5 +1,5 @@
 import { ServerFigure } from "../components/Plot";
-import { PageBody, PageHeader, ResultSetSelect } from "../components/Shell";
+import { PageBody, PageHeader } from "../components/Shell";
 import { ErrorNote, Notice, Panel, Skeleton } from "../components/ui";
 import { api, type MetricRow, type Overview } from "../lib/api";
 import { pct } from "../lib/format";
@@ -30,14 +30,13 @@ export default function ResultsPage() {
         crumbs={["Analytics", "Evaluation Results"]}
         title="Evaluation Results"
         sub={`Four configurations on the same ${o?.n_patients ?? "—"} held-out patients from the TriageAgent ESI benchmark, using ${o?.label ?? "—"}.`}
-        actions={<ResultSetSelect />}
       />
       <PageBody>
         <Notice title="Interpret with caution">
           n = {o?.n_patients ?? "—"}. One patient moves a rate by {o ? Math.round(100 / o.n_patients) : "—"} percentage points and
-          confidence intervals are wide. Differences are directional, not statistically established. Escalation routes a case to a
-          nurse when final assessments differ by at least {o?.escalation.range_threshold ?? 1} level, or when any agent assigns ESI
-          1–2 while the panel assigns 3 or lower.
+          confidence intervals are wide. Differences are directional, not statistically established. A case goes to a nurse when
+          fewer than 9 of 10 members agree after up to five rounds, when a member who said ESI 1–2 is outvoted to 3 or lower, or when
+          a member fails to answer.
         </Notice>
 
         <Panel title="Configuration comparison" sub="Best value per quality metric in bold. C is the full system.">

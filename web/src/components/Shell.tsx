@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
-import { useAuth, useResultSet } from "../lib/hooks";
+import { useAuth } from "../lib/hooks";
 import { Brand } from "./Brand";
 
 const NAV: { group: string; items: { to: string; label: string; hint: string }[] }[] = [
@@ -21,26 +21,6 @@ const NAV: { group: string; items: { to: string; label: string; hint: string }[]
     ],
   },
 ];
-
-/** Benchmark result set picker (used on the research pages). */
-export function ResultSetSelect() {
-  const { sets, current, setCurrent } = useResultSet();
-  if (!current || sets.length < 2) return null;
-  return (
-    <select
-      value={current.id}
-      onChange={(e) => setCurrent(e.target.value)}
-      className="input h-[34px] w-auto max-w-[280px]"
-      aria-label="Result set"
-    >
-      {sets.map((s) => (
-        <option key={s.id} value={s.id}>
-          {s.label} (n={s.n})
-        </option>
-      ))}
-    </select>
-  );
-}
 
 function MenuIcon({ open }: { open: boolean }) {
   return (

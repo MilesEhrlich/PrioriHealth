@@ -6,7 +6,9 @@
     "voice": "uv run --with kokoro-onnx==0.4.9 --with soundfile python -I scripts/make_voice_kokoro.py",
     "voice:mac": "node scripts/make-voice.mjs",
     "studio": "remotion studio",
-    "render": "remotion render Overview out/priorihealth-overview.mp4"
+    "render": "remotion render Overview out/priorihealth-overview.mp4",
+    "voice:demo": "uv run --with kokoro-onnx==0.4.9 --with soundfile python -I scripts/make_voice_kokoro.py demo",
+    "render:demo": "remotion render Demo out/priorihealth-demo.mp4"
   },
   "dependencies": {
     "@fontsource/ibm-plex-sans": "5.1.1",

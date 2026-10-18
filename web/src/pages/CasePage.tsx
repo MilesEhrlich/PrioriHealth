@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DecisionPanel, PanelDiscussion } from "../components/Debate";
 import { LiveDrawer } from "../components/LiveDrawer";
-import { PageBody, PageHeader, ResultSetSelect } from "../components/Shell";
+import { PageBody, PageHeader } from "../components/Shell";
 import { EmptyState, ErrorNote, EsiChip, Field, Panel, ReviewBadge, Segmented, Skeleton, Toggle, VitalsStrip, esiColor } from "../components/ui";
 import { api, type Esi } from "../lib/api";
 import { ageSex, shortId } from "../lib/format";
@@ -61,12 +61,9 @@ export default function CasePage() {
         title="Case Review"
         sub="Each agent's assessment, how it changed after discussion, and why the case was or wasn't routed to a nurse."
         actions={
-          <>
-            <ResultSetSelect />
-            <button className="btn btn-primary" onClick={() => setLiveOpen(true)}>
-              Triage new case
-            </button>
-          </>
+          <button className="btn btn-primary" onClick={() => setLiveOpen(true)}>
+            Triage new case
+          </button>
         }
       />
       <PageBody>

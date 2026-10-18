@@ -32,9 +32,8 @@ export function LiveDrawer({ open, onClose, threshold }: { open: boolean; onClos
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
-  const providers = status.data?.providers ?? [];
-
-  // Preselect the first engine that can run right now (the server lists its default first).
+  // Always the hospital's own (free, local) engine: the first one online. Paid cloud engines are never offered here.
+  const providers = (status.data?.providers ?? []).filter((p) => p.id !== "watsonx");
   useEffect(() => {
     if (provider == null && providers.length) {
       setProvider((providers.find((p) => p.available && !p.locked) ?? providers[0]).id);
@@ -163,12 +162,18 @@ export function LiveDrawer({ open, onClose, threshold }: { open: boolean; onClos
                 </section>
 
                 <section className="panel flex flex-col p-4">
-                  <div className="eyebrow mb-2">Model</div>
-                  <div className="space-y-2">
-                    {providers.map((p) => (
-                      <ProviderOption key={p.id} p={p} selected={provider === p.id} onSelect={() => setProvider(p.id)} />
-                    ))}
-                    {status.loading && <div className="text-sm text-subtle">Checking models…</div>}
+                  <div className="eyebrow mb-2">Review panel</div>
+                  <p className="text-sm leading-6 text-muted">
+                    Ten reviewers assess the note, then discuss until at least 9 of 10 agree, for up to five rounds.
+                  </p>
+                  <div className="mt-3 text-sm">
+                    {status.loading ? (
+                      <span className="text-subtle">Checking the triage engine…</span>
+                    ) : chosen?.available ? (
+                      <span className="text-ink">Triage engine online</span>
+                    ) : (
+                      <span className="text-danger">Triage engine offline. Try again in a few minutes.</span>
+                    )}
                   </div>
                   <button className="btn btn-primary btn-lg mt-4 w-full justify-between" disabled={!canRun} onClick={run}>
                     {phase === "running" ? "Running panel…" : "Run panel"}<span aria-hidden>→</span>
@@ -219,42 +224,5 @@ export function LiveDrawer({ open, onClose, threshold }: { open: boolean; onClos
         </>
       )}
     </AnimatePresence>
-  );
-}
-
-function ProviderOption({ p, selected, onSelect }: { p: LiveProvider; selected: boolean; onSelect: () => void }) {
-  const disabled = !p.available || p.locked;
-  return (
-    <button
-      type="button"
-      onClick={onSelect}
-      aria-pressed={selected}
-      className={`w-full border px-3 py-2.5 text-left transition-colors ${
-        selected ? "border-accent bg-accent-soft outline outline-1 -outline-offset-2 outline-accent" : "border-line hover:bg-hover"
-      }`}
-    >
-      <div className="flex items-center justify-between gap-2">
-        <span className="text-sm font-medium text-ink">{p.label}</span>
-        {p.locked ? (
-          <span className="rounded border border-line-strong px-1.5 text-[11px] font-medium text-muted">LOCKED</span>
-        ) : !p.available ? (
-          <span className="border border-line-strong px-1.5 text-[11px] font-medium text-muted">OFFLINE</span>
-        ) : (
-          <span className="text-[11px] text-subtle">{p.cost}</span>
-        )}
-      </div>
-      <div className="num mt-0.5 text-[11px] text-subtle">{p.model}</div>
-      {selected && disabled && (
-        <p className="mt-2 text-xs leading-5 text-muted">
-          {p.id === "llamacpp"
-            ? "llama-server is not running on this host. Start the priorihealth-llama service (see deploy/linuxone/DEPLOY.md)."
-            : p.id === "watsonx"
-            ? p.available
-              ? `Uses about ${p.estimate?.toLocaleString()} watsonx tokens per case. Locked to protect your credits (${p.used?.toLocaleString()} of ${p.budget?.toLocaleString()} approved this month). Raise the budget in config.yaml to enable.`
-              : "watsonx credentials are not configured in .env."
-            : "Ollama is not running or the model is not downloaded. Start Ollama and try again."}
-        </p>
-      )}
-    </button>
   );
 }

@@ -18,10 +18,10 @@ function Clock({ x, y }: { x: number; y: number }) {
   );
 }
 
-export function Problem() {
+export function ProblemVisual() {
   const frame = useCurrentFrame();
   return (
-    <Scene id="problem">
+    <>
       <Kicker>The challenge</Kicker>
       <Floor />
       <Clock x={1600} y={70} />
@@ -49,6 +49,14 @@ export function Problem() {
       >
         Who should be seen first?
       </div>
+    </>
+  );
+}
+
+export function Problem() {
+  return (
+    <Scene id="problem">
+      <ProblemVisual />
     </Scene>
   );
 }

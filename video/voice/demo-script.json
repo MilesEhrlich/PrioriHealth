@@ -1,0 +1,19 @@
+{
+  "kokoro": { "voice": "af_heart", "speed": 1.0 },
+  "pronounce": { "PrioriHealth": "pɹaɪˈɔːɹᵻhˌɛlθ" },
+  "scenes": [
+    { "id": "intro", "text": "This is PrioriHealth: AI triage support for emergency departments, with a nurse in the loop." },
+    { "id": "problem", "text": "Every emergency department has to decide, within minutes, who needs care first. Nurses assign an Emergency Severity Index level under pressure, and the same patient can be scored differently from one shift to the next. When an urgent patient is under-triaged, care is delayed." },
+    { "id": "solution", "text": "PrioriHealth gives every patient a second opinion. Ten AI reviewers, each with a different reasoning style, assess the triage note on their own, then discuss until at least nine of ten agree. If they can't, a nurse decides." },
+    { "id": "landing", "text": "Here's the live site. Hospital staff sign in with their own account, or anyone can open the demo with one click." },
+    { "id": "dashboard", "text": "The dashboard shows the department at a glance: who is waiting, who is being triaged, and which cases need a nurse's review." },
+    { "id": "waiting", "text": "In the waiting room, new arrivals are triaged automatically. Patients are ordered by how far they are past the target time for their acuity level, so the most overdue are seen first, and nobody gets forgotten." },
+    { "id": "review", "text": "Opening a patient shows the full picture: the triage note, the vital signs, and every reviewer's vote, round by round. Select any member to read their reasoning and see exactly why they changed their answer." },
+    { "id": "nurse", "text": "When the panel can't agree, the case is flagged for review. The nurse checks it and confirms the level with one click. PrioriHealth never makes the final call." },
+    { "id": "patient", "text": "Patients scan a QR sign in the waiting room, enter the code from their ticket, and see their place in line and estimated wait, updating live on their phone, with no clinical details shown." },
+    { "id": "evaluation", "text": "We test the system on a public ESI benchmark, comparing a single AI nurse, a neutral panel, and our trait panel with and without discussion." },
+    { "id": "platform", "text": "Everything runs on one IBM LinuxONE z17 with IBM Granite. The on-chip AI accelerator reads each note about five times faster, and no patient data ever leaves the server." },
+    { "id": "impact", "text": "The result: nurses get a second opinion on every patient, the riskiest cases get human attention first, and hospitals get private, affordable decision support." },
+    { "id": "outro", "text": "PrioriHealth. Decision support that keeps clinicians in charge. Try it at priorihealth.miles-ehrlich.com.", "say": "PrioriHealth. Decision support that keeps clinicians in charge. Try it at PrioriHealth dot miles dash Ehrlich dot com." }
+  ]
+}

@@ -8,7 +8,7 @@ import { Ring } from "./Ring";
 // Reviewers 1 and 4 revise from ESI 3 to ESI 2; reviewer 7 keeps ESI 3 -> 9 of 10 agree.
 const CHANGES: Record<number, number> = { 1: 60, 4: 100 };
 
-export function Discussion() {
+export function DiscussionVisual() {
   const frame = useCurrentFrame();
   const votes = FIRST_VOTES.map((v, i) => (CHANGES[i] != null && frame >= CHANGES[i]! ? 2 : v));
   const chipPulse = FIRST_VOTES.map((_, i) =>
@@ -19,7 +19,7 @@ export function Discussion() {
   const ring = { ...RING, cx: 760 };
   const done = fade(frame, 112, 14);
   return (
-    <Scene id="discussion">
+    <>
       <Kicker step={3}>Discussion until 90% agree</Kicker>
       <NoteCard progress={1} width={300} style={{ position: "absolute", left: ring.cx - 150, top: ring.cy - 95, transform: "scale(0.8)" }} />
       <Ring {...ring} appear={Array(10).fill(1)} votes={votes} chipAppear={chipPulse} links={fade(frame, 6, 20) * 0.9} />
@@ -37,6 +37,14 @@ export function Discussion() {
           <span style={{ fontWeight: 600 }}>Consensus: Emergent</span>
         </div>
       </div>
+    </>
+  );
+}
+
+export function Discussion() {
+  return (
+    <Scene id="discussion">
+      <DiscussionVisual />
     </Scene>
   );
 }

@@ -179,7 +179,7 @@ def results_root() -> Path:
 
 
 def discover_sets(root: Path | None = None) -> list[dict[str, Any]]:
-    """Every results/<provider>/<kind>/summary.json, watsonx first, full before sample."""
+    """Result sets from the current protocol (results/<provider>/<kind>/summary.json), full before sample."""
     root = root or results_root()
     out = []
     for f in sorted(root.glob("*/*/summary.json")):
@@ -187,8 +187,13 @@ def discover_sets(root: Path | None = None) -> list[dict[str, Any]]:
         provider, kind = f.parent.parent.name, f.parent.name
         out.append({"id": f"{provider}-{kind}", "provider": provider, "kind": kind,
                     "model": s.get("model"), "label": set_label(s),
-                    "n": s.get("n_patients"), "path": str(f.parent)})
-    out.sort(key=lambda d: (d["provider"] != "watsonx", d["kind"] != "full", d["id"]))
+                    "n": s.get("n_patients"), "path": str(f.parent), "current": bool(s.get("protocol"))})
+    # Only results from the current 10-member consensus panel; once the LinuxONE (llama.cpp) run
+    # exists it is the set shown, so earlier local runs drop out on their own.
+    out = [d for d in out if d.pop("current")]
+    if any(d["provider"] == "llamacpp" for d in out):
+        out = [d for d in out if d["provider"] == "llamacpp"]
+    out.sort(key=lambda d: (d["kind"] != "full", d["id"]))
     return out
 
 

@@ -258,7 +258,6 @@ export default function WaitingRoomPage() {
   );
 }
 
-const engineName = (e: string) => (e === "llamacpp" ? "llama.cpp" : e === "ollama" ? "Ollama" : e);
 
 function Progress({ row, panelSize }: { row: WaitRow; panelSize: number }) {
   if (row.status === "queued")
@@ -470,7 +469,7 @@ function ReviewDrawer({ id, onClose, onChanged }: { id: string | null; onClose: 
                     {entry.engine && (
                       <div className="px-4 py-2 text-xs text-muted">
                         <StatusText tone="info">
-                          Triaged by {engineName(entry.engine)} · {entry.rounds_used ?? "—"} round{entry.rounds_used === 1 ? "" : "s"}
+                          Triaged by the panel · {entry.rounds_used ?? "—"} round{entry.rounds_used === 1 ? "" : "s"}
                           {entry.consensus_reached ? " · consensus" : entry.consensus_reached === false ? " · no consensus" : ""}
                         </StatusText>
                       </div>

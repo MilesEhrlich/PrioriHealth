@@ -14,7 +14,7 @@ def client(tmp_path, monkeypatch):
     d = tmp_path / "results" / "watsonx" / "sample"
     (d / "debates" / "C").mkdir(parents=True)
     summary = {
-        "model": "ibm/granite-4-h-small", "provider": "watsonx", "n_patients": 2,
+        "model": "ibm/granite-4-h-small", "provider": "watsonx", "n_patients": 2, "protocol": "v2-trait-consensus",
         "conditions": {"C": {"exact_acc": 0.5, "exact_acc_ci": [0, 1], "critical_miss": 0.0,
                              "critical_miss_ci": [0, 0], "critical_miss_unreviewed": 0.0,
                              "escalation_rate": 0.5, "acc_non_escalated": 1.0,
@@ -128,3 +128,19 @@ def test_waitlist_endpoints_without_engine(client, monkeypatch, tmp_path):
     assert client.post(f"/api/waitlist/{eid}/seen").json()["status"] == "seen"
     assert client.get("/api/waitlist/nope").status_code == 404
     assert client.delete("/api/waitlist").json()["ok"]
+
+
+def test_sets_hide_archived_and_prefer_linuxone(tmp_path):
+    def make(provider, protocol):
+        d = tmp_path / provider / "sample"
+        d.mkdir(parents=True)
+        s = {"model": "m", "provider": provider, "n_patients": 1}
+        if protocol:
+            s["protocol"] = protocol
+        (d / "summary.json").write_text(json.dumps(s))
+
+    make("watsonx", None)                    # v1 3-agent run: archived, never listed
+    make("ollama", "v2-trait-consensus")
+    assert [s["id"] for s in api_mod.discover_sets(tmp_path)] == ["ollama-sample"]
+    make("llamacpp", "v2-trait-consensus")   # the LinuxONE run replaces earlier local runs
+    assert [s["id"] for s in api_mod.discover_sets(tmp_path)] == ["llamacpp-sample"]
