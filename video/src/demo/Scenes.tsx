@@ -147,9 +147,10 @@ export function Patient() {
   return (
     <DemoScene id="patient">
       <Kicker>For patients</Kicker>
-      <div style={{ position: "absolute", left: 200, top: 130, width: 760, height: 760, borderRadius: 12, overflow: "hidden", background: "#fff", boxShadow: "0 30px 70px -30px rgba(16,40,28,0.45), 0 0 0 1px rgba(16,40,28,0.08)" }}>
-        <Img src={staticFile("demo/sign.png")} style={{ position: "absolute", width: 1920, height: 1080, left: -580, top: -95, transform: "scale(0.82)", transformOrigin: "960px 0" }} />
+      <div style={{ position: "absolute", left: 360, top: 120, width: 504, height: 758, borderRadius: 10, overflow: "hidden", background: "#fff", boxShadow: "0 30px 70px -30px rgba(16,40,28,0.45), 0 0 0 1px rgba(16,40,28,0.08)" }}>
+        <Img src={staticFile("demo/sign.png")} style={{ position: "absolute", width: 1517, height: 853, left: -506, top: -95 }} />
       </div>
+      <div style={{ position: "absolute", left: 360, top: 892, width: 504, textAlign: "center", fontSize: 24, color: C.muted }}>QR sign in the waiting room</div>
       <div style={{ position: "absolute", left: 1180, top: 70, opacity: phoneIn, transform: `translateY(${interpolate(phoneIn, [0, 1], [40, 0])}px)` }}>
         <Phone src="phone_lookup.png" style={{ left: 0, top: 0, opacity: 1 - swap }} />
         <Phone src="phone_status.png" style={{ left: 0, top: 0, opacity: swap }} />
@@ -159,13 +160,37 @@ export function Patient() {
 }
 
 export function Evaluation() {
+  const frame = useCurrentFrame();
+  const rows = [
+    ["A", "One AI triage nurse"],
+    ["B", "A panel of identical neutral reviewers"],
+    ["C", "Our trait panel, discussing to 90% agreement"],
+    ["D", "The trait panel without discussion"],
+  ];
+  const metrics = ["Exact-level accuracy", "Critical misses: urgent patients rated too low", "How often cases go to a nurse"];
   return (
-    <DemoScene id="evaluation">
-      <BrowserShot
-        url={`${SITE}/app/results`}
-        image="case.png"
-        steps={[{ at: at("evaluation", 0.45), image: "results.png" }]}
-      />
+    <DemoScene id="evaluation" background="#FFFFFF">
+      <Kicker>Evaluation</Kicker>
+      <div style={{ position: "absolute", left: 120, top: 150, fontSize: 64, fontWeight: 600, letterSpacing: -1.2, opacity: fade(frame, 6, 16) }}>Tested on a public ESI benchmark</div>
+      <div style={{ position: "absolute", left: 120, top: 290, width: 980, display: "flex", flexDirection: "column" }}>
+        {rows.map(([k, v], i) => {
+          const a = fade(frame, at("evaluation", 0.2 + i * 0.12), 12);
+          const ours = k === "C";
+          return (
+            <div key={k} style={{ display: "flex", alignItems: "center", gap: 28, padding: "26px 28px", borderTop: `1px solid ${C.line}`, background: ours ? C.accentSoft : "transparent", opacity: a }}>
+              <span style={{ fontFamily: MONO, fontSize: 36, fontWeight: 600, color: C.accent, width: 40 }}>{k}</span>
+              <span style={{ fontSize: 34, color: C.ink, fontWeight: ours ? 600 : 400 }}>{v}</span>
+            </div>
+          );
+        })}
+      </div>
+      <div style={{ position: "absolute", left: 1180, top: 290, width: 620, background: C.page, border: `1px solid ${C.line}`, borderRadius: 10, padding: 44, opacity: fade(frame, at("evaluation", 0.55), 14) }}>
+        <div style={{ fontSize: 34, fontWeight: 600 }}>What we measure</div>
+        {metrics.map((m) => (
+          <div key={m} style={{ marginTop: 20, fontSize: 28, lineHeight: 1.35, color: C.muted }}>{m}</div>
+        ))}
+        <div style={{ marginTop: 26, fontSize: 24, color: C.muted }}>Benchmark: TriageAgent (EMNLP 2024 Findings)</div>
+      </div>
     </DemoScene>
   );
 }

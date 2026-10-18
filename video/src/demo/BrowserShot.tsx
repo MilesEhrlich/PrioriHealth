@@ -66,7 +66,8 @@ export function BrowserShot({ url, image, steps, start }: { url: string; image: 
   for (const s of steps) {
     if (s.zoom !== undefined && frame >= s.at) {
       zoomFrom = zoom;
-      zoom = s.zoom ? { scale: s.zoom.scale, ...center(s.zoom.focus) } : { scale: 1, cx: PAGE_W / 2, cy: PAGE_H / 2 };
+      const f = s.zoom ? center(s.zoom.focus) : null;
+      zoom = s.zoom && f ? { scale: s.zoom.scale, cx: f.x, cy: f.y } : { scale: 1, cx: PAGE_W / 2, cy: PAGE_H / 2 };
       zoomAt = s.at;
     }
   }
