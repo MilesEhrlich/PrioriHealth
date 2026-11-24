@@ -1,18 +1,51 @@
 # PrioriHealth
 
-A ten-member panel of small AI agents with different reasoning styles discusses emergency department triage (ESI) decisions until at least 9 of 10 agree; when they can't, or when an urgent dissent is overruled, the case goes to a human nurse. Decision support prototype, not for clinical use.
+A panel of ten small AI agents discusses emergency department triage (ESI) decisions until at least 9 of 10 agree. When they can't, or when an urgent dissent gets outvoted, the case goes to a human nurse. Built for the IBM Z Datathon and deployed on an IBM LinuxONE z17, with IBM Granite models running on the z17's on-chip AI accelerator.
 
-**How it works**
-- **Panel:** Empath, Logician, Skeptic, Observer, Synthesizer, Pragmatist, Vigilant, Impartial, Mediator, Reflective. Each is a reasoning *style*; none leans toward more or less urgent levels. All share one ESI v4 reference.
-- **Discussion:** round 1 is independent; then each member reads everyone's position and argument, replies to specific members by name, and may revise (only for a named clinical reason). It stops at 90% agreement, or after 5 rounds.
-- **Escalation:** no consensus, or any member at ESI 1–2 being outvoted to 3+, goes to a nurse.
-- **Waiting Room:** live arrivals are triaged in the background and ordered by ESI-weighted wait. Each level has a target time to be seen (ESI 1 now, 2 ≤10 min, 3 ≤30, 4 ≤60, 5 ≤120), and whoever is furthest past target goes first.
-- **Accounts:** a public landing page, sign up / sign in, and a one-click **Try the demo** account. Each user belongs to one of eight fictional hospitals, and each hospital has its own waiting room. Users and sessions live in SQLite (`data/priorihealth.db`, scrypt password hashes, HttpOnly session cookie); every `/api` route except sign-in and system status requires a session.
+> Decision-support prototype only. Not for clinical use. All hospitals in the demo are fictional.
 
-## Run the app
+## Results
 
-All hospitals in the demo are fictional.
+Evaluated on a 20-patient sample of the [TriageAgent](https://github.com/Lucanyc/TriageAgent) benchmark with IBM Granite 3.3 (8B), comparing a single agent to the full ten-member panel:
 
+| | Single agent | Ten-member panel |
+|---|---|---|
+| Exactly correct ESI level | 45% | 50% |
+| Within one level | 85% | 90% |
+| Critical patients (ESI 1–2) under-triaged | 56% | 44% |
+| Critical patients under-triaged **and not sent to a nurse** | 56% | **22%** |
+| Cases escalated to a nurse | 0% | 45% |
+| LLM calls per patient | 1 | 11.4 |
+
+**Main takeaway:** the panel's accuracy is only slightly better than a single agent's, but its escalation rule catches most of the dangerous mistakes. Critical patients who were under-triaged with no nurse review dropped from 56% to 22%. The cost is more compute and a higher nurse review load.
+
+With n = 20 the confidence intervals are wide, so these numbers show direction, not a final result. The full 75-case run is supported (`--full`) but not reported here yet.
+
+![Critical misses](results/ollama/sample/charts/critical_miss.png)
+
+The experiment compares four conditions at the same model and prompt: (A) a single agent, (B) a panel of identical neutral agents discussing to consensus, (C) the ten-member trait panel discussing to consensus, and (D) the trait panel voting once with no discussion. Full numbers are in `results/ollama/sample/metrics.csv`.
+
+## How it works
+
+- **Panel:** Empath, Logician, Skeptic, Observer, Synthesizer, Pragmatist, Vigilant, Impartial, Mediator, Reflective. Each is a reasoning *style*. None leans toward more or less urgent levels, and all share one ESI v4 reference.
+- **Discussion:** round 1 is independent. In later rounds each member reads everyone's position, replies to specific members by name, and may change its answer only for a named clinical reason. Discussion stops at 90% agreement or after 5 rounds.
+- **Escalation:** a case goes to a nurse if the panel doesn't reach consensus, or if any member who called it ESI 1–2 is outvoted to ESI 3 or lower.
+- **Waiting room:** live arrivals are triaged in the background and ordered by ESI-weighted wait. Each level has a target time to be seen (ESI 1 now, ESI 2 within 10 min, 3 within 30, 4 within 60, 5 within 120), and whoever is furthest past their target goes first.
+- **Accounts:** public landing page, sign up / sign in, and a one-click demo account. Each user belongs to one of eight fictional hospitals, each with its own waiting room. Users and sessions are stored in SQLite with scrypt password hashes and HttpOnly session cookies.
+
+## Running on IBM LinuxONE (z17)
+
+The whole system (web app, Granite agents via llama.cpp, and experiments) runs on an IBM LinuxONE (s390x) server.
+
+- **On-chip AI accelerator:** llama.cpp is built with IBM zDNN so Granite runs on the z17's Telum II AI accelerator (NNPA). On a 3-vCPU z17 VM, prompt processing went from about 21 tokens/s on the CPU to about 105 tokens/s on the accelerator, **roughly 5× faster**, with the same answers.
+- Setup and service files are in [deploy/linuxone/](deploy/linuxone/DEPLOY.md).
+
+```bash
+bash deploy/linuxone/setup.sh && bash deploy/linuxone/install_services.sh
+bash deploy/linuxone/build_zdnn.sh   # accelerator build (z17 / LinuxONE 5 only)
+```
+
+## Run locally
 
 ```bash
 uv sync                                  # Python 3.11 + dependencies
@@ -20,15 +53,7 @@ cd web && npm install && npm run build   # build the web interface once
 cd .. && uv run python scripts/serve.py  # http://localhost:8000
 ```
 
-The app reads cached results in `results/`, so it works offline. "Triage new case" runs live on a free local engine: llama.cpp (on LinuxONE) or Ollama (on a Mac/PC). watsonx is locked unless `llm.monthly_token_budget.watsonx` in `config.yaml` is raised.
-
-## Run on IBM LinuxONE
-
-The whole system (web app, Granite agents via llama.cpp, experiments) runs on an IBM LinuxONE (s390x) server. See [deploy/linuxone/DEPLOY.md](deploy/linuxone/DEPLOY.md):
-
-```bash
-bash deploy/linuxone/setup.sh && bash deploy/linuxone/install_services.sh
-```
+The app reads cached results from `results/`, so it works offline. "Triage new case" runs live on a free local engine: llama.cpp on LinuxONE, or Ollama on a Mac/PC. watsonx is disabled unless `llm.monthly_token_budget.watsonx` in `config.yaml` is raised.
 
 ## Online demo (Vercel)
 
@@ -50,8 +75,31 @@ setting the two Cloudflare variables in `.env` adds Cloudflare as a live engine 
 ```bash
 uv run python scripts/download_data.py                        # TriageAgent benchmark (pinned commit)
 uv run python scripts/run_experiments.py --provider ollama    # 20-patient sample; add --full for all 75
-uv run --extra charts python scripts/make_charts.py           # slide PNGs (needs Chrome; Mac/PC only)
+uv run --extra charts python scripts/make_charts.py           # charts (needs Chrome)
 uv run pytest
 ```
 
-Credentials (watsonx only) go in `.env`; see `.env.example`. Full write-up: in progress (see PLAN.md).
+LLM responses are cached in `.cache/llm/` and committed on purpose, so the reported results can be reproduced exactly without rerunning the models. Credentials (watsonx only) go in `.env`; see `.env.example`.
+
+## Repository layout
+
+```
+src/triage_debate/   agents, discussion protocol, escalation, metrics, API
+scripts/             data download, experiments, charts, web server
+web/                 React front end
+deploy/linuxone/     LinuxONE setup, llama.cpp and zDNN builds, services
+results/             cached experiment results and charts
+tests/               unit tests (including checks that labels never leak into prompts)
+video/               overview and demo video source
+```
+
+## Limitations
+
+- Small evaluation sample (20 patients); results need the full 75-case run to confirm.
+- The panel sends a large share of cases to a nurse, which trades review workload for safety.
+- In a sex-swap fairness check, changing only the patient's sex changed 2 of 14 decisions for both the single agent and the panel, so bias needs more study before any real use.
+- Benchmark vignettes are written cases, not live clinical data.
+
+## License
+
+MIT
