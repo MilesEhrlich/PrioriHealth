@@ -1,10 +1,8 @@
-# Not needed online (and pyproject.toml/uv.lock are hidden so Vercel installs requirements.txt).
+# Not needed online. Vercel installs Python packages from pyproject.toml + uv.lock (Python from .python-version).
 .venv
 .cache
 .pytest_cache
 .env
-pyproject.toml
-uv.lock
 video
 tests
 deploy
