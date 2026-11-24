@@ -2,6 +2,8 @@
 
 A panel of ten small AI agents discusses emergency department triage (ESI) decisions until at least 9 of 10 agree. When they can't, or when an urgent dissent gets outvoted, the case goes to a human nurse. Built for the IBM Z Datathon and deployed on an IBM LinuxONE z17, with IBM Granite models running on the z17's on-chip AI accelerator.
 
+**Live demo:** [priorihealth.miles-ehrlich.com](https://priorihealth.miles-ehrlich.com)
+
 > Decision-support prototype only. Not for clinical use. All hospitals in the demo are fictional.
 
 ## Results
@@ -48,7 +50,7 @@ bash deploy/linuxone/build_zdnn.sh   # accelerator build (z17 / LinuxONE 5 only)
 ## Run locally
 
 ```bash
-uv sync                                  # Python 3.11 + dependencies
+uv sync                                  # Python 3.12 + dependencies
 cd web && npm install && npm run build   # build the web interface once
 cd .. && uv run python scripts/serve.py  # http://localhost:8000
 ```
@@ -99,6 +101,13 @@ video/               overview and demo video source
 - The panel sends a large share of cases to a nurse, which trades review workload for safety.
 - In a sex-swap fairness check, changing only the patient's sex changed 2 of 14 decisions for both the single agent and the panel, so bias needs more study before any real use.
 - Benchmark vignettes are written cases, not live clinical data.
+
+## Contributors
+
+- **Miles Ehrlich**
+- **Kaori Garcia**
+- **Sithmi Sirisooriya**
+- **Nikhil Jaggi**
 
 ## License
 
