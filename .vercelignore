@@ -1,0 +1,15 @@
+# Not needed online (and pyproject.toml/uv.lock are hidden so Vercel installs requirements.txt).
+.venv
+.cache
+.pytest_cache
+.env
+pyproject.toml
+uv.lock
+video
+tests
+deploy
+web/node_modules
+data/raw
+data/waitlists
+data/priorihealth.db*
+results/runs

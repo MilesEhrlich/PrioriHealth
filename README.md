@@ -30,6 +30,21 @@ The whole system (web app, Granite agents via llama.cpp, experiments) runs on an
 bash deploy/linuxone/setup.sh && bash deploy/linuxone/install_services.sh
 ```
 
+## Online demo (Vercel)
+
+https://priorihealth.miles-ehrlich.com runs in **showcase mode**: the recorded evaluation, case
+review and debates, plus live triage of one case at a time on **IBM Granite 4.0 Micro via
+Cloudflare Workers AI** (free tier: 10,000 neurons/day, about 30–40 cases). Sign-in is the demo
+account only, and the waiting room is off (it needs an always-on server; use LinuxONE for that).
+
+1. Import the repo in Vercel; `vercel.json` sets the build (web/dist) and the Python function (`api/index.py`).
+2. Environment variables: `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` (Cloudflare dashboard →
+   API Tokens → template "Workers AI"). Optional: `PRIORIHEALTH_LIVE_PER_IP_DAY` (default 5).
+3. Domains: add `priorihealth.miles-ehrlich.com`.
+
+Locally, `PRIORIHEALTH_SHOWCASE=1 uv run python scripts/serve.py` runs the same mode, and
+setting the two Cloudflare variables in `.env` adds Cloudflare as a live engine in the normal app.
+
 ## Reproduce the experiments
 
 ```bash

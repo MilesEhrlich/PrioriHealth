@@ -11,18 +11,19 @@ data:
   near_duplicate_ratio: 0.9  # difflib ratio above which two vignettes count as the same case
 
 llm:
-  provider: watsonx          # watsonx | ollama | llamacpp | anthropic (env PRIORIHEALTH_PROVIDER overrides)
+  provider: watsonx          # watsonx | ollama | llamacpp | cloudflare | anthropic (env PRIORIHEALTH_PROVIDER overrides)
   models:
     watsonx: ibm/granite-4-h-small  # only Granite chat model offered in us-south (checked 2026-10-14)
     ollama: granite3.3:8b
     llamacpp: granite-3.3-2b-instruct-be-q8_0  # big-endian GGUF on IBM LinuxONE (s390x)
+    cloudflare: "@cf/ibm-granite/granite-4.0-h-micro"  # Workers AI free tier (10k neurons/day)
     anthropic: claude-haiku-5-5
   temperature: 0.0
   temperature_sampling: 0.7  # used where independent samples are needed (condition B)
   max_tokens: 400
   # Requests in flight per engine. Ollama and llama.cpp on a laptop/VM process one request at a
   # time, so extra concurrency only queues inside the engine and trips timeouts.
-  max_concurrency: {default: 4, ollama: 1, llamacpp: 2, watsonx: 4}
+  max_concurrency: {default: 4, ollama: 1, llamacpp: 2, watsonx: 4, cloudflare: 5}
   max_retries: 5
   timeout_s: {default: 120, ollama: 600, llamacpp: 900}   # per request, seconds
   cache_dir: .cache/llm

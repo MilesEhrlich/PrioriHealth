@@ -104,13 +104,13 @@ def test_live_rejects_unknown_provider(client):
 def test_system_reports_platform(client):
     s = client.get("/api/system").json()
     assert s["platform"]["machine"] and "is_linuxone" in s["platform"]
-    assert set(s["engines"]) == {"llamacpp", "ollama"}
+    assert set(s["engines"]) == {"llamacpp", "ollama", "cloudflare"}
 
 
 def test_live_status_lists_all_engines(client, monkeypatch):
     monkeypatch.setenv("PRIORIHEALTH_PROVIDER", "llamacpp")
     ids = [p["id"] for p in client.get("/api/live/status").json()["providers"]]
-    assert set(ids) == {"llamacpp", "ollama", "watsonx"}
+    assert set(ids) == {"llamacpp", "ollama", "cloudflare", "watsonx"}
     assert ids[0] == "llamacpp"  # configured default listed first
 
 

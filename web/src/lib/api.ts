@@ -299,7 +299,8 @@ export const auth = {
   signIn: (email: string, password: string) => send<{ user: User }>("POST", "/api/auth/signin", { email, password }),
   signUp: (body: { name: string; email: string; password: string; hospital_id: string; role: string }) =>
     send<{ user: User }>("POST", "/api/auth/signup", body),
-  demo: () => send<{ user: User }>("POST", "/api/auth/demo"),
+  /** `start`: where to open the app (the online demo starts on Case Review, not the waiting room). */
+  demo: () => send<{ user: User; start?: string }>("POST", "/api/auth/demo"),
   signOut: () => send<{ ok: boolean }>("POST", "/api/auth/signout"),
 };
 

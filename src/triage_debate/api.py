@@ -1,6 +1,11 @@
 """HTTP API for the web app. Reads results/ for the evaluation pages. Two features run the
 model live: POST /api/live (one case) and the waiting room (/api/waitlist). Both use free
-local engines (llama.cpp or Ollama); watsonx only when its token budget is unlocked.
+engines (llama.cpp, Ollama, or IBM Granite on Cloudflare Workers AI); watsonx only when its
+token budget is unlocked.
+
+Showcase mode (the online demo on Vercel, see config.is_showcase): sign-in is the demo account
+only, with a signed stateless cookie; the waiting room is off (it needs an always-on server);
+live triage runs on Cloudflare and is rate limited per IP.
 
 Ground truth is never included in patient or debate payloads. It is served separately
 by /truth so the UI can hide it behind a "Reveal answer" toggle.
@@ -9,6 +14,8 @@ by /truth so the UI can hide it behind a "Reveal answer" toggle.
 from __future__ import annotations
 
 import asyncio
+import hashlib
+import hmac
 import json
 import math
 import os
@@ -25,10 +32,10 @@ from pydantic import BaseModel, Field
 
 from . import auth
 from .charts import FIGURES, load_result_set, takeaways
-from .config import PROJECT_ROOT, load_config, resolve
+from .config import PROJECT_ROOT, is_showcase, load_config, resolve, writable_dir
 from .data import example_cases, extract_vitals, generated_chief_complaints, load_dataset, patient_id
 from .debate import DebateResult, run_debate
-from .engines import FREE_ENGINES, engine_status, llamacpp_ready, ollama_ready, pick_free_engine
+from .engines import FREE_ENGINES, cloudflare_ready, engine_status, pick_free_engine
 from .evaluate import consensus_threshold, panel_from_config, panel_temperature
 from .llm import LLMClient, TokenBudgetExceeded
 from .schemas import AgentResult, PatientView
@@ -39,11 +46,13 @@ MODEL_LABELS = {
     "ibm/granite-4-h-small": "Granite 4 Small · watsonx",
     "granite3.3:8b": "Granite 3.3 8B · local",
     "granite-3.3-2b-instruct-be-q8_0": "Granite 3.3 2B · LinuxONE",
+    "@cf/ibm-granite/granite-4.0-h-micro": "Granite 4.0 Micro · Cloudflare",
 }
 PROVIDER_LABELS = {
     "llamacpp": "Granite on this server (llama.cpp)",
     "ollama": "Local Granite (Ollama)",
     "watsonx": "watsonx.ai Granite 4",
+    "cloudflare": "IBM Granite 4.0 on Cloudflare Workers AI",
     "anthropic": "Anthropic",
 }
 FREE_PROVIDERS = FREE_ENGINES
@@ -65,12 +74,50 @@ def auth_store() -> auth.AuthStore:
     return _AUTH
 
 
+SHOWCASE = is_showcase()
+WAITLIST_OFF = ("The live waiting room needs an always-on server, so it's turned off in this online "
+                "demo. Live triage of a single case still works.")
+ACCOUNTS_OFF = "Accounts are turned off in the online demo. Use “Try the demo” to look around."
+
+
+def _demo_user() -> dict[str, Any]:
+    """The demo clinician, without touching the database (showcase mode)."""
+    return {"id": 0, "email": auth.DEMO_EMAIL, "name": auth.DEMO_NAME, "role": auth.DEMO_ROLE,
+            "hospital": auth.hospital(auth.DEMO_HOSPITAL), "demo": True}
+
+
+def _showcase_sig(body: str) -> str:
+    key = (os.getenv("PRIORIHEALTH_SESSION_SECRET") or "priorihealth-showcase").encode()
+    return hmac.new(key, body.encode(), hashlib.sha256).hexdigest()
+
+
+def _showcase_token() -> str:
+    body = f"demo.{int(time.time()) + auth.SESSION_TTL_S}"
+    return f"{body}.{_showcase_sig(body)}"
+
+
+def _session_user(token: str | None) -> dict[str, Any] | None:
+    if not SHOWCASE:
+        return auth_store().user_for_token(token)
+    # Stateless: serverless instances share no disk. The only account is the demo one.
+    try:
+        kind, exp, sig = (token or "").split(".")
+    except ValueError:
+        return None
+    body = f"{kind}.{exp}"
+    if kind != "demo" or not hmac.compare_digest(sig, _showcase_sig(body)) or int(exp) < time.time():
+        return None
+    return _demo_user()
+
+
 @app.middleware("http")
 async def require_session(request: Request, call_next):
     """Every /api route except sign-in and system status needs a signed-in user."""
     path = request.url.path
+    if SHOWCASE and path.startswith("/api/waitlist"):
+        return JSONResponse({"detail": WAITLIST_OFF}, status_code=503)
     if path.startswith("/api/") and not path.startswith(PUBLIC_API):
-        user = auth_store().user_for_token(request.cookies.get(auth.SESSION_COOKIE))
+        user = _session_user(request.cookies.get(auth.SESSION_COOKIE))
         if user is None:
             return JSONResponse({"detail": "Sign in required"}, status_code=401)
         request.state.user = user
@@ -83,7 +130,7 @@ def _client_ip(request: Request) -> str:
 
 
 def _start_session(request: Request, response: Response, user: dict[str, Any]) -> dict[str, Any]:
-    token = auth_store().create_session(user["id"])
+    token = _showcase_token() if SHOWCASE else auth_store().create_session(user["id"])
     secure = request.headers.get("x-forwarded-proto", request.url.scheme) == "https"
     response.set_cookie(auth.SESSION_COOKIE, token, max_age=auth.SESSION_TTL_S, httponly=True,
                         samesite="lax", secure=secure, path="/")
@@ -117,6 +164,8 @@ def get_hospitals() -> dict[str, Any]:
 
 @app.post("/api/auth/signup")
 def sign_up(req: SignUpRequest, request: Request, response: Response) -> dict[str, Any]:
+    if SHOWCASE:
+        raise HTTPException(403, ACCOUNTS_OFF)
     user = _auth_call(auth_store().create_user, email=req.email, name=req.name, password=req.password,
                       hospital_id=req.hospital_id, role=req.role)
     return _start_session(request, response, user)
@@ -124,25 +173,30 @@ def sign_up(req: SignUpRequest, request: Request, response: Response) -> dict[st
 
 @app.post("/api/auth/signin")
 def sign_in(req: SignInRequest, request: Request, response: Response) -> dict[str, Any]:
+    if SHOWCASE:
+        raise HTTPException(403, ACCOUNTS_OFF)
     user = _auth_call(auth_store().authenticate, req.email, req.password, _client_ip(request))
     return _start_session(request, response, user)
 
 
 @app.post("/api/auth/demo")
 def sign_in_demo(request: Request, response: Response) -> dict[str, Any]:
+    if SHOWCASE:  # no waiting room online: open on the recorded panel debates instead
+        return {**_start_session(request, response, _demo_user()), "start": "/app/case"}
     return _start_session(request, response, auth_store().demo_user())
 
 
 @app.post("/api/auth/signout")
 def sign_out(request: Request, response: Response) -> dict[str, Any]:
-    auth_store().delete_session(request.cookies.get(auth.SESSION_COOKIE))
+    if not SHOWCASE:
+        auth_store().delete_session(request.cookies.get(auth.SESSION_COOKIE))
     response.delete_cookie(auth.SESSION_COOKIE, path="/")
     return {"ok": True}
 
 
 @app.get("/api/auth/me")
 def get_me(request: Request) -> dict[str, Any]:
-    user = auth_store().user_for_token(request.cookies.get(auth.SESSION_COOKIE))
+    user = _session_user(request.cookies.get(auth.SESSION_COOKIE))
     if user is None:
         raise HTTPException(401, "Sign in required")
     return {"user": user}
@@ -341,14 +395,6 @@ def _estimate_tokens() -> int:
     return DEFAULT_TOKENS_PER_CASE
 
 
-async def _ollama_ready(cfg: dict[str, Any]) -> bool:
-    return await ollama_ready(cfg)
-
-
-async def _llamacpp_ready() -> bool:
-    return await llamacpp_ready()
-
-
 def _accelerator() -> str | None:
     """The IBM z17 on-chip AI accelerator, when the model server was built to use it."""
     if os.getenv("PRIORIHEALTH_ACCELERATOR") != "zdnn":
@@ -380,8 +426,8 @@ def _host_platform() -> dict[str, Any]:
 async def get_system() -> dict[str, Any]:
     """Host platform and inference engines (shown on the Home page)."""
     cfg = load_config()
-    return {"platform": _host_platform(), "default_provider": cfg["llm"]["provider"],
-            "engines": {"llamacpp": await _llamacpp_ready(), "ollama": await _ollama_ready(cfg)}}
+    return {"platform": _host_platform(), "default_provider": "cloudflare" if SHOWCASE else cfg["llm"]["provider"],
+            "showcase": SHOWCASE, "engines": await engine_status(cfg)}
 
 
 @app.get("/api/live/status")
@@ -389,10 +435,12 @@ async def live_status() -> dict[str, Any]:
     cfg = load_config()
     est = _estimate_tokens()
     budget = (cfg["llm"].get("monthly_token_budget") or {}).get("watsonx")
-    ready = {"llamacpp": await _llamacpp_ready(), "ollama": await _ollama_ready(cfg)}
+    ready = await engine_status(cfg)
     providers = [{"id": pid, "label": PROVIDER_LABELS[pid], "model": cfg["llm"]["models"][pid],
                   "available": ready[pid], "cost": "free", "locked": False}
-                 for pid in FREE_PROVIDERS]
+                 for pid in FREE_PROVIDERS if not SHOWCASE or pid == "cloudflare"]
+    if SHOWCASE:
+        return {"providers": providers}
     # Put the configured default first so the UI preselects it.
     providers.sort(key=lambda p: (p["id"] != cfg["llm"]["provider"], not p["available"]))
     wx_creds = all(os.getenv(k) for k in ("WATSONX_APIKEY", "WATSONX_URL", "WATSONX_PROJECT_ID"))
@@ -413,9 +461,34 @@ async def live_status() -> dict[str, Any]:
 @app.get("/api/examples")
 def get_examples(n: int = 8) -> list[dict[str, Any]]:
     """A few training vignettes to try live (never test cases)."""
-    _, train, _ = load_dataset(load_config())
+    try:
+        _, train, _ = load_dataset(load_config())
+    except FileNotFoundError:  # the benchmark isn't deployed online: use the fictional examples
+        return SHOWCASE_EXAMPLES[:n]
     picks = example_cases(train, n)
     return [{"id": p.id, "vignette": p.vignette, "chief_complaint": p.chief_complaint} for p in picks]
+
+
+# Fictional cases written for the online demo (the benchmark dataset is not redistributed).
+SHOWCASE_EXAMPLES: list[dict[str, str]] = [
+    {"id": "demo-chest-pain", "chief_complaint": "Chest pain",
+     "vignette": "68-year-old man with crushing substernal chest pain radiating to the left arm for "
+                 "40 minutes, sweating and nauseated. HR 112, BP 88/56, RR 24, SpO2 91% on room air, "
+                 "temp 36.8 C."},
+    {"id": "demo-headache", "chief_complaint": "Severe headache",
+     "vignette": "52-year-old woman with a sudden, worst-ever headache that began 1 hour ago while "
+                 "lifting boxes, with vomiting and a stiff neck. HR 96, BP 178/102, RR 18, SpO2 98%, "
+                 "temp 37.0 C."},
+    {"id": "demo-fever-child", "chief_complaint": "Fever and cough",
+     "vignette": "4-year-old boy with fever to 39.6 C for two days, cough, and mildly increased work "
+                 "of breathing; drinking less than usual. HR 138, RR 34, SpO2 94% on room air."},
+    {"id": "demo-ankle", "chief_complaint": "Ankle injury",
+     "vignette": "24-year-old woman rolled her right ankle playing soccer 2 hours ago; swollen and "
+                 "painful but she can bear weight. HR 78, BP 122/76, RR 14, SpO2 99%, temp 36.9 C."},
+    {"id": "demo-refill", "chief_complaint": "Medication refill",
+     "vignette": "35-year-old man asking for a refill of his blood pressure medication; ran out "
+                 "yesterday and has no symptoms. HR 76, BP 138/88, RR 14, SpO2 99%, temp 36.7 C."},
+]
 
 
 def _agent_event(r: AgentResult) -> dict[str, Any]:
@@ -427,11 +500,23 @@ def _final_event(d: DebateResult) -> dict[str, Any]:
     return {"type": "final", "debate": json.loads(d.model_dump_json())}
 
 
+LIVE_PER_IP_DAY = int(os.getenv("PRIORIHEALTH_LIVE_PER_IP_DAY", "5"))
+_LIVE_RUNS: dict[str, list[float]] = {}
+
+
 @app.post("/api/live")
-async def post_live(req: LiveRequest) -> StreamingResponse:
+async def post_live(req: LiveRequest, request: Request) -> StreamingResponse:
     cfg = load_config()
+    if SHOWCASE:
+        # One engine online, and the free daily allowance is shared by every visitor.
+        req.provider = "cloudflare"
+        if not cloudflare_ready():
+            raise HTTPException(503, "Live triage isn't configured on this deployment yet.")
+        if _hit(_LIVE_RUNS, _client_ip(request), 24 * 3600, LIVE_PER_IP_DAY):
+            raise HTTPException(429, f"You've run {LIVE_PER_IP_DAY} live cases today. "
+                                     "Browse the recorded cases, or try again tomorrow.")
     if req.provider not in {*FREE_PROVIDERS, "watsonx"}:
-        raise HTTPException(400, "provider must be llamacpp, ollama or watsonx")
+        raise HTTPException(400, "provider must be llamacpp, ollama, cloudflare or watsonx")
     if req.provider == "watsonx":
         # Check the lock with an offline probe first: no client, no network, no tokens.
         probe = LLMClient.from_config(cfg, provider="watsonx", offline=True)
@@ -444,7 +529,7 @@ async def post_live(req: LiveRequest) -> StreamingResponse:
                             f"{probe.token_budget:,}). Raise llm.monthly_token_budget.watsonx in "
                             "config.yaml to allow it."),
             })
-    log = results_root() / "runs" / "live" / "calls.jsonl"
+    log = writable_dir() / "runs" / "live" / "calls.jsonl"
     client = LLMClient.from_config(cfg, provider=req.provider, log_path=log)
     text = " ".join(req.vignette.split())
     view = PatientView(id="live-" + patient_id(text), vignette=text)
@@ -522,7 +607,7 @@ def _make_triage(hospital_id: str):
         entry.engine = engine
         entry.progress.agents = len(panel)
         client = LLMClient.from_config(cfg, provider=engine,
-                                       log_path=results_root() / "runs" / "waitlist" / "calls.jsonl")
+                                       log_path=writable_dir() / "runs" / "waitlist" / "calls.jsonl")
         async with _engine_lock():
             return await run_debate(client, waitlist(hospital_id).view(entry.id), personas=panel,
                                     temperature=panel_temperature(cfg),
@@ -560,6 +645,8 @@ def waitlist(hospital_id: str = auth.DEMO_HOSPITAL) -> WaitingList:
 
 @app.on_event("startup")
 async def _start_waitlists() -> None:
+    if SHOWCASE:
+        return
     d = waitlist_dir()
     ids = {p.stem for p in d.glob("*.json")} & auth.HOSPITAL_IDS if d.exists() else set()
     for hid in ids | {auth.DEMO_HOSPITAL}:
@@ -670,6 +757,8 @@ def _all_waitlists() -> list[tuple[str, WaitingList]]:
 def public_status(code: str, request: Request, response: Response) -> dict[str, Any]:
     """A patient's place in line and estimated wait. No clinical details, no sign-in."""
     response.headers["Cache-Control"] = "no-store"
+    if SHOWCASE:
+        raise HTTPException(404, "Patient status pages aren't available in the online demo.")
     ip = _client_ip(request)
     if _hit(_LOOKUPS, ip, 60, 120) or _hit(_MISSES, ip, 600, 20, record=False):
         raise HTTPException(429, "Too many requests. Please wait a few minutes and try again.")

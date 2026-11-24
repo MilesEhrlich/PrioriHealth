@@ -16,7 +16,7 @@ export function useDemoSignIn() {
     try {
       const r = await auth.demo();
       setUser(r.user);
-      navigate("/app");
+      navigate(r.start ?? "/app");
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
       setBusy(false);

@@ -5,7 +5,9 @@ from __future__ import annotations
 import os
 from typing import Any
 
-FREE_ENGINES = ("llamacpp", "ollama")
+# Free engines, in order of preference: on-box llama.cpp (LinuxONE), local Ollama, then IBM Granite
+# on Cloudflare Workers AI's free daily allowance.
+FREE_ENGINES = ("llamacpp", "ollama", "cloudflare")
 
 
 async def llamacpp_ready() -> bool:
@@ -34,8 +36,18 @@ async def ollama_ready(cfg: dict[str, Any]) -> bool:
         return False
 
 
+def cloudflare_ready() -> bool:
+    """Cloudflare Workers AI credentials are configured (no network call; the free tier is daily)."""
+    return bool(os.getenv("CLOUDFLARE_ACCOUNT_ID") and os.getenv("CLOUDFLARE_API_TOKEN"))
+
+
 async def engine_status(cfg: dict[str, Any]) -> dict[str, bool]:
-    return {"llamacpp": await llamacpp_ready(), "ollama": await ollama_ready(cfg)}
+    from .config import is_showcase
+
+    if is_showcase():  # no local engines exist on a serverless host; skip the probes
+        return {"llamacpp": False, "ollama": False, "cloudflare": cloudflare_ready()}
+    return {"llamacpp": await llamacpp_ready(), "ollama": await ollama_ready(cfg),
+            "cloudflare": cloudflare_ready()}
 
 
 async def pick_free_engine(cfg: dict[str, Any]) -> str | None:

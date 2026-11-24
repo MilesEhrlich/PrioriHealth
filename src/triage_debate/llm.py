@@ -303,6 +303,78 @@ class LlamaCppBackend:
         )
 
 
+class CloudflareBackend:
+    """IBM Granite on Cloudflare Workers AI, via its OpenAI-compatible chat endpoint.
+
+    Free tier: 10,000 neurons/day (resets 00:00 UTC); requests fail, not bill, past that on the
+    Workers Free plan. Needs CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN (Workers AI: Read).
+    JSON output: tries a json_schema `response_format`, then json_object, then none; the
+    caller's extract_json() handles whatever text comes back.
+    """
+
+    provider = "cloudflare"
+    cache_variant = "openai-compat-v1"
+
+    def __init__(self, model: str, timeout_s: float = 120, transport: Any = None):
+        import httpx
+
+        self.model = model
+        account = os.getenv("CLOUDFLARE_ACCOUNT_ID", "")
+        token = os.getenv("CLOUDFLARE_API_TOKEN", "")
+        if not (account and token):
+            raise RuntimeError("Cloudflare Workers AI is not configured: set CLOUDFLARE_ACCOUNT_ID "
+                               "and CLOUDFLARE_API_TOKEN.")
+        self.url = f"https://api.cloudflare.com/client/v4/accounts/{account}/ai/v1/chat/completions"
+        self._client = httpx.AsyncClient(timeout=timeout_s, transport=transport,
+                                         headers={"Authorization": f"Bearer {token}"})
+        # Remember which JSON mode the model accepted so later calls skip the failed ones.
+        self._formats: list[str] = ["json_schema", "json_object", "none"]
+
+    def _response_format(self, mode: str, json_schema: dict[str, Any] | None) -> dict[str, Any] | None:
+        if mode == "json_schema" and json_schema:
+            return {"type": "json_schema",
+                    "json_schema": {"name": "triage_output", "strict": True,
+                                    "schema": strip_unsupported_constraints(json_schema)}}
+        if mode in ("json_schema", "json_object"):
+            return {"type": "json_object"}
+        return None
+
+    async def generate(self, system, user, json_schema, temperature, max_tokens):
+        import httpx
+
+        last: Exception | None = None
+        for mode in list(self._formats):
+            body: dict[str, Any] = {
+                "model": self.model,
+                "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
+                "temperature": temperature,
+                "max_tokens": max_tokens,
+            }
+            if (fmt := self._response_format(mode, json_schema)) is not None:
+                body["response_format"] = fmt
+            r = await self._client.post(self.url, json=body)
+            # 400/422 here means "this response_format isn't supported": try the next mode.
+            if r.status_code in (400, 422) and mode != "none":
+                last = httpx.HTTPStatusError(f"{r.status_code} for response_format={mode}: {r.text[:200]}",
+                                             request=r.request, response=r)
+                if mode in self._formats and len(self._formats) > 1:
+                    self._formats.remove(mode)
+                continue
+            if r.status_code == 429 and any(s in r.text.lower() for s in ("neuron", "allocation", "daily", "quota")):
+                # The free daily allowance is used up: retrying won't help until 00:00 UTC.
+                raise TokenBudgetExceeded("Today's free Cloudflare Workers AI allowance is used up. "
+                                          "Live triage resets at 00:00 UTC; cached cases still work.")
+            r.raise_for_status()
+            data = r.json()
+            usage = data.get("usage") or {}
+            return RawCompletion(
+                text=data["choices"][0]["message"].get("content") or "",
+                input_tokens=int(usage.get("prompt_tokens", 0)),
+                output_tokens=int(usage.get("completion_tokens", 0)),
+            )
+        raise last or RuntimeError("Cloudflare Workers AI request failed")
+
+
 class AnthropicBackend:
     """Anthropic Messages API with structured output (fallback provider).
 
@@ -343,6 +415,8 @@ def make_backend(provider: str, model: str, timeout_s: float) -> Backend:
         return LlamaCppBackend(model, timeout_s=max(timeout_s, 300))
     if provider == "watsonx":
         return WatsonxBackend(model, timeout_s=timeout_s)
+    if provider == "cloudflare":
+        return CloudflareBackend(model, timeout_s=timeout_s)
     if provider == "anthropic":
         return AnthropicBackend(model, timeout_s=timeout_s)
     raise ValueError(f"Unknown provider {provider!r}")
