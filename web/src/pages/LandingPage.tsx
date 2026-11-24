@@ -109,10 +109,11 @@ export default function LandingPage() {
             </div>
             {demo.error && <p className="mt-3 text-sm text-danger">{demo.error}</p>}
           </div>
+          {/* Photo: CDC on Unsplash (Unsplash License), unsplash.com/photos/Jusy7vxGPLM */}
           <img
-            src="/img/care-team.jpg"
-            alt="Four clinicians in white coats standing in a hospital corridor"
-            className="aspect-[1.73] w-full rounded-[16px] object-cover object-top shadow-[0_24px_48px_-24px_rgb(31_58_46/45%)]"
+            src="/img/clinicians.jpg"
+            alt="Two clinicians in blue scrubs and masks talking in an exam room"
+            className="aspect-[1.73] w-full rounded-[16px] object-cover object-[center_35%] shadow-[0_24px_48px_-24px_rgb(31_58_46/45%)]"
           />
         </div>
       </section>
